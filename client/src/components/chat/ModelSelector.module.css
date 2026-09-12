@@ -1,0 +1,11 @@
+.root {
+  flex: 1 1 0%;
+  gap: 0;
+}
+
+.separator {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}

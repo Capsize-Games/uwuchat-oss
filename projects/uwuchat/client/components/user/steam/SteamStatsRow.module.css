@@ -1,0 +1,17 @@
+/* SteamStatsRow — inline style refactor */
+
+.row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.onlineBadge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(103, 193, 245, 0.12);
+  color: #67c1f5;
+  font-size: 0.72rem;
+  font-weight: 600;
+}

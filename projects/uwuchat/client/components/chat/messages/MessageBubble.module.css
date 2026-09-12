@@ -1,0 +1,78 @@
+/* MessageBubble — inline style refactor */
+
+.systemWrap {
+  position: relative;
+  padding: 12px 16px;
+  background: rgba(16, 18, 34, 0.25);
+  opacity: 0.7;
+}
+
+.systemLabel {
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.messageContent {
+  color: var(--theme-text);
+}
+
+.toolCalls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.bubbleWrap {
+  position: relative;
+  padding: 16px;
+}
+
+.bubbleUser {
+  composes: bubbleWrap;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.bubbleBot {
+  composes: bubbleWrap;
+  background: rgba(16, 18, 34, 0.55);
+}
+
+.footerRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  color: var(--theme-text);
+}
+
+.timestampRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.inspectBtn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 1px 6px;
+  cursor: pointer;
+  line-height: 16px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.inspectBtn:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.3);
+}

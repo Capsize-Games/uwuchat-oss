@@ -1,0 +1,130 @@
+/* Agent calendar viewer styles */
+
+.wrapper {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  font-size: 13px;
+  color: #e2e8f0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 12px;
+}
+
+.headerTitle {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnLoad {
+  background: rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #c7d2fe;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.monthLabel {
+  font-weight: 600;
+  min-width: 120px;
+  text-align: center;
+}
+
+.checkLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.status {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.errorText {
+  color: #f87171;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.eventRow {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deleted {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.recurring {
+  border-left: 3px solid #4ade80;
+  padding-left: 8px;
+}
+
+.eventTitle {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eventMeta {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+}
+
+.eventDesc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.badgeDeleted {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.badgeRecurring {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.days {
+  color: rgba(74, 222, 128, 0.6);
+}

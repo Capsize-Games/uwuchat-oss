@@ -1,0 +1,20 @@
+/* PromptSettingsPopup — new/save/load prompt menu portal (framework) */
+
+.popup {
+  composes: popupFixed from "./PopupShared.module.css";
+  min-width: 180px;
+  overflow: hidden;
+}
+
+.menuBtn {
+  composes: menuBtn from "./PopupShared.module.css";
+}
+
+.menuBtnDisabled {
+  composes: menuBtnDisabled from "./PopupShared.module.css";
+}
+
+.menuBtnBorder {
+  composes: menuBtn;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}

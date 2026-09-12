@@ -1,0 +1,68 @@
+/* TrackRow — inline style refactor */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.rank {
+  width: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary);
+  flex-shrink: 0;
+}
+
+.albumArt {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.albumArtFallback {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--theme-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artistNames {
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.previewBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  flex-shrink: 0;
+  padding: 4px;
+}

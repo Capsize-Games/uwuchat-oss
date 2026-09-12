@@ -1,0 +1,24 @@
+/* GenTypePopup — txt2img/img2img selection portal (framework) */
+
+.popup {
+  composes: popupFixed from "./PopupShared.module.css";
+  min-width: 180px;
+  padding: 8px 0;
+  gap: 2px;
+}
+
+.headerRow {
+  padding: 4px 10px 6px;
+}
+
+.genTypeBtn {
+  composes: genTypeBtn from "./PopupShared.module.css";
+}
+
+.genTypeBtnActive {
+  composes: genTypeBtnActive from "./PopupShared.module.css";
+}
+
+.genTypeDesc {
+  composes: genTypeDesc from "./PopupShared.module.css";
+}

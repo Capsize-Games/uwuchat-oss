@@ -1,0 +1,102 @@
+/* ChatInputArea — inline style refactor */
+
+.wrap {
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--theme-input-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  resize: none;
+  background: transparent;
+  color: var(--theme-text);
+  border: none;
+  outline: none;
+  padding: 10px 12px 6px;
+  font-family: inherit;
+  font-size: inherit;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  gap: 4px;
+}
+
+.charCount {
+  font-size: 0.68rem;
+  flex-shrink: 0;
+}
+
+.charOk {
+  composes: charCount;
+  color: var(--theme-text-secondary);
+}
+
+.charWarn {
+  composes: charCount;
+  color: #ed4245;
+}
+
+.spacer {
+  margin-left: auto;
+}
+
+.statusText {
+  font-size: 0.72rem;
+  padding-right: 4px;
+}
+
+.statusTextMuted {
+  composes: statusText;
+  color: var(--theme-text-secondary);
+}
+
+.statusTextBlocked {
+  composes: statusText;
+  color: #ed4245;
+}
+
+.sendBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+
+.sendActive {
+  composes: sendBtn;
+  background: var(--bs-primary);
+  cursor: pointer;
+}
+
+.sendDisabled {
+  composes: sendBtn;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: default;
+}
+
+.sendIcon {
+  font-size: 14px;
+}
+
+.cancelBtn {
+  composes: sendBtn;
+  background: var(--bs-danger);
+  cursor: pointer;
+}
+
+.cancelIcon {
+  font-size: 13px;
+}

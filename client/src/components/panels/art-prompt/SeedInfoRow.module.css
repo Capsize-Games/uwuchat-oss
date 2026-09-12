@@ -1,0 +1,68 @@
+/* SeedInfoRow — seed editor inside InfoItem (framework) */
+
+.editorWrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.seedInput {
+  height: 22px;
+  width: 80px;
+  background: var(--theme-input-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: var(--theme-text);
+  font-size: 10px;
+  text-align: center;
+  padding: 0 4px;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.seedValue {
+  color: var(--theme-text);
+  font-size: 10px;
+}
+
+.seedValueDimmed {
+  composes: seedValue;
+  opacity: 0.35;
+}
+
+.miniBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  flex-shrink: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.miniBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.miniBtnActive {
+  composes: miniBtn;
+  background: rgba(var(--bs-primary-rgb), 0.15);
+  color: var(--bs-primary);
+}
+
+.miniBtnActive:hover {
+  background: rgba(var(--bs-primary-rgb), 0.15);
+  color: var(--bs-primary);
+}

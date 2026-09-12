@@ -1,0 +1,179 @@
+/* ChatView — inline style refactor */
+
+.root {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.chatCol {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  background: var(--theme-input-bg);
+}
+
+/* ── Error alert ──────────────────────────────────────── */
+
+.errorAlert {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  font-size: 0.82rem;
+  border-radius: 0;
+  margin: 0;
+  padding: 8px 14px;
+}
+
+.errorLink {
+  color: #fbbf24;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ── Messages ─────────────────────────────────────────── */
+
+.messagesArea {
+  overflow-anchor: none;
+  background: var(--theme-input-bg);
+}
+
+/* ── Blocked banner ───────────────────────────────────── */
+
+.blockedBanner {
+  padding: 10px 16px;
+  background: rgba(237, 66, 69, 0.08);
+  border-top: 1px solid rgba(237, 66, 69, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #ed4245;
+}
+
+.unblockBtn {
+  background: transparent;
+  border: 1px solid #ed4245;
+  color: #ed4245;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 0.72rem;
+}
+
+.offlineBanner {
+  padding: 8px 16px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.15);
+  border-top: 1px solid var(--theme-border);
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+}
+
+/* ── Mobile panel overlay ─────────────────────────────── */
+
+.mobilePanelOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: var(--theme-panel-bg, #1a1a2e);
+  border-bottom: 1px solid var(--theme-border);
+}
+
+/* ── Right panel ──────────────────────────────────────── */
+
+.panelWrap {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.panelWrapMobile {
+  composes: panelWrap;
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.dragHandle {
+  width: 4px;
+  cursor: col-resize;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.dragHandle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.panel {
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--theme-panel-bg, #1a1a2e);
+}
+
+.panelWithBorder {
+  composes: panel;
+  border-left: 1px solid var(--theme-border);
+}
+
+.panelBody {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Panel header ─────────────────────────────────────── */
+
+.panelHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.panelHeaderDefault {
+  composes: panelHeader;
+  justify-content: space-between;
+  padding: 10px 12px 6px;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.panelHeaderCompact {
+  composes: panelHeader;
+  justify-content: flex-end;
+  padding: 6px 12px;
+  border-bottom: none;
+}
+
+.panelHeaderCloseOnly {
+  composes: panelHeader;
+  justify-content: flex-end;
+  padding: 10px 12px 6px;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.panelTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 2px 4px;
+  line-height: 1;
+}

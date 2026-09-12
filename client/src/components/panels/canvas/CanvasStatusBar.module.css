@@ -1,0 +1,68 @@
+/* CanvasStatusBar — canvas zoom/center/fit controls (framework) */
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: #111118;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.zoomGroup {
+  gap: 1px;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0 3px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.iconBtnActive {
+  composes: iconBtn;
+  color: var(--bs-primary);
+}
+
+.iconBtnActive:hover {
+  background: none;
+  color: var(--bs-primary);
+}
+
+.zoomReset {
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-family: monospace;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.zoomReset:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}

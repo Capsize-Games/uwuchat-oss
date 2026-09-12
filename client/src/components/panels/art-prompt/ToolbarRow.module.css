@@ -1,0 +1,16 @@
+/* ToolbarRow — top toolbar row with popups (framework) */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.settingsPopup {
+  composes: popupFixed from "./PopupShared.module.css";
+  max-height: 400px;
+  min-width: 260px;
+}

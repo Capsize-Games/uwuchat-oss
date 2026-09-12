@@ -1,0 +1,12 @@
+{
+  "sessionId": "live_final",
+  "mode": "code",
+  "model": "deepseek/deepseek-v4-flash",
+  "iterations": 6,
+  "inputTokens": 240,
+  "outputTokens": 120,
+  "costUsd": 0.008,
+  "startedAt": "2026-08-02T12:00:00.000Z",
+  "status": "running",
+  "workspaceRoot": "/fixture/workspace"
+}

@@ -1,0 +1,36 @@
+.root {
+  font-size: 11px;
+  padding: 0 2px;
+}
+
+.modelName {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.stats {
+  font-size: 10px;
+  color: #888;
+}
+
+.desc {
+  font-size: 10px;
+  max-height: 60px;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.select {
+  font-size: 11px;
+}
+
+.btn {
+  font-size: 11px;
+}
+
+.empty {
+  font-size: 12px;
+  padding: 16px;
+  text-align: center;
+}

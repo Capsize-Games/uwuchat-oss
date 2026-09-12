@@ -1,0 +1,2 @@
+.root { display: flex; height: 100vh; overflow: hidden; }
+.content { flex: 1; min-width: 0; overflow: hidden; }

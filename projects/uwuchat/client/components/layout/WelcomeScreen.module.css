@@ -1,0 +1,11 @@
+/* WelcomeScreen — inline style refactor */
+
+.wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 40px 20px; gap: 24px; }
+.title { font-size: 1.5rem; font-weight: 800; color: var(--theme-text-primary); letter-spacing: -0.02em; text-align: center; }
+.subtitle { font-size: 0.9rem; color: var(--theme-text-secondary); text-align: center; max-width: 400px; line-height: 1.5; }
+.cards { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 170px; cursor: pointer; transition: background 0.15s,border-color 0.15s; text-decoration: none; color: inherit; }
+.card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); }
+.cardIcon { font-size: 2rem; }
+.cardLabel { font-weight: 600; font-size: 0.85rem; color: var(--theme-text-primary); text-align: center; }
+.cardDesc { font-size: 0.72rem; color: var(--theme-text-secondary); text-align: center; line-height: 1.4; }

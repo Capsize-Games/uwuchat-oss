@@ -1,0 +1,104 @@
+/* MessageInspector — inline style refactor */
+
+.error {
+  color: #f87171;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.turnHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.turnLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.turnTokens {
+  font-size: 11px;
+  color: #6c63ff;
+  font-weight: 600;
+}
+
+/* ── StepRow ──────────────────────────────────────────── */
+
+.step {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 4px;
+  margin-top: 2px;
+}
+
+.stepBtn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+}
+
+.stepBtnClickable {
+  composes: stepBtn;
+  cursor: pointer;
+}
+
+.stepBtnNoDetail {
+  composes: stepBtn;
+  cursor: default;
+}
+
+.stepArrow {
+  font-size: 9px;
+  opacity: 0.5;
+}
+
+.stepTokens {
+  margin-left: auto;
+  opacity: 0.4;
+  font-size: 10px;
+}
+
+.stepDetail {
+  margin-left: 14px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  font-family: monospace;
+}
+
+.stepMeta {
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 4px;
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+.stepMetaItem {
+  margin-top: 1px;
+}
+
+.stepMetaKey {
+  font-weight: 600;
+}
+
+.notFound {
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.6;
+}

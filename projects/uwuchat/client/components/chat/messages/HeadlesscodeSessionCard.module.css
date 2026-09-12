@@ -1,0 +1,138 @@
+/* HeadlesscodeSessionCard — collapsible live session card */
+
+.card {
+  border: 1.5px solid rgba(var(--theme-primary-rgb), 0.18);
+  border-radius: 12px;
+  background: rgba(16, 18, 34, 0.55);
+  overflow: hidden;
+  max-width: 560px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.headerIcon {
+  color: var(--theme-primary);
+  flex-shrink: 0;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectName {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--theme-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task {
+  font-size: 0.78rem;
+  color: var(--theme-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body {
+  border-top: 1px solid rgba(var(--theme-text-rgb), 0.1);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+  opacity: 0.85;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.eventRow {
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary);
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.empty {
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary);
+  opacity: 0.7;
+  padding: 8px;
+  text-align: center;
+}
+
+.inject {
+  display: flex;
+  gap: 8px;
+}
+
+.injectInput {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--theme-text-rgb), 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text);
+  font-size: 0.85rem;
+}
+
+.injectInput:disabled {
+  opacity: 0.5;
+}
+
+.injectBtn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--theme-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.injectBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pending {
+  font-size: 0.75rem;
+  color: var(--theme-primary);
+  opacity: 0.9;
+}
+
+.error {
+  font-size: 0.78rem;
+  color: var(--theme-danger, #e05b5b);
+}

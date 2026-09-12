@@ -1,0 +1,9 @@
+/* ArtPanelPopup — LoRA/embeddings/saved-prompts panel portal (framework) */
+
+.popup {
+  position: fixed;
+  z-index: 1300;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+  box-shadow: 4px -4px 24px rgba(0, 0, 0, 0.7);
+}

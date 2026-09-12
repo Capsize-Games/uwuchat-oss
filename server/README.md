@@ -1,0 +1,113 @@
+# Server
+
+The `server/` package is AIRunner's daemon orchestration layer. It
+owns the daemon entry points, FastAPI server wiring, runtime registry,
+downloads, persistence, lifecycle control, and the modality services that
+coordinate LLM, STT, TTS, and art workloads.
+
+```mermaid
+flowchart LR
+    Web[client/ web GUI] --> Daemon[server/ daemon routes]
+    API[api/ transport contracts] --> Daemon
+    Daemon --> Registry[runtime registry]
+    Registry --> Model[model/ shared runtime helpers]
+    Registry --> Native[llama.cpp or whisper.cpp binaries]
+    Daemon --> Data[(AIRUNNER_BASE_PATH)]
+```
+
+## What This Package Owns
+
+- FastAPI server bootstrap and daemon entry points
+- runtime routing, runtime load or unload control, and health checks
+- service-level downloads, migrations, persistence, and settings
+- orchestration for daemon-backed LLM, TTS, STT, and art requests
+
+Importable service code lives under `server/src/airunner_services/`.
+
+The package split contract is documented in
+[docs/architecture/package_split_contract.md](../docs/architecture/package_split_contract.md),
+and the package map lives in
+[docs/architecture/layered_product_architecture.md](../docs/architecture/layered_product_architecture.md).
+
+## Installation
+
+For normal repo development, use the developer installer. It installs the
+split packages in editable mode:
+
+```bash
+./scripts/install.sh
+```
+
+For an isolated service environment, install the local package stack and a
+service extra that matches the workload you are validating:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip setuptools wheel
+pip install -e ./model
+pip install -e './server[daemon,development]'
+```
+
+Use `server[desktop]` when you want the broader desktop-oriented extra
+set, and use `./deployment/install_distributed.sh` when you are installing
+the daemon or GUI client into separate roots.
+
+## Test Running
+
+The quickest service checks are the daemon runtime smoke commands exposed
+by the repo test runner:
+
+```bash
+./venv/bin/python scripts/run_tests.py --llm-runtime-smoke
+./venv/bin/python scripts/run_tests.py --stt-runtime-smoke
+./venv/bin/python scripts/run_tests.py --art-runtime-smoke
+./venv/bin/python scripts/run_tests.py --tts-runtime-smoke
+```
+
+The bootstrap sanity check for the server surface is:
+
+```bash
+./venv/bin/python -m pytest server/tests/test_service_bootstrap.py -v
+```
+
+When a change touches daemon routes, workers, or runtime coordination,
+pair those smoke checks with the relevant daemon-backed functional suites
+in `server/tests/`, especially:
+
+```bash
+./venv/bin/python -m pytest server/tests/test_tts_synthesize_functional.py -v --timeout=120
+./venv/bin/python -m pytest server/tests/test_llm_functional.py -v --timeout=900
+./venv/bin/python -m pytest server/tests/test_llm_tts_functional.py -v --timeout=1200
+./venv/bin/python -m pytest server/tests/test_stt_transcribe_functional.py -v --timeout=1200
+```
+
+The functional tests live under `server/tests/` because they validate the
+composed product boundary, even when the behavior under test is primarily
+owned by `server/`.
+
+## Persona & Memory Eval Tests
+
+The `server/src/airunner_services/evals/` package contains assertion-based
+eval tests that call the production LLM (OpenRouter) and verify character
+consistency for UwUchat roleplaying chatbots.
+
+### What they test
+
+| Suite | File | Coverage |
+|-------|------|----------|
+| Persona fidelity | `persona_fidelity_eval.py` | Name self-identification, speech pattern adherence, OOC bleed prevention, character-consistent refusal |
+| Memory coherence | `memory_coherence_eval.py` | Rolling memory recall, episodic bullet recall, hallucination prevention, session bridge concern surfacing |
+
+### Running
+
+Requires `OPENROUTER_API_KEY` in the environment. Run from inside the
+Docker server container:
+
+```bash
+docker compose exec -e OPENROUTER_API_KEY server \
+    python -m airunner_services.evals.run_evals
+```
+
+The runner prints PASS/FAIL per test case and exits with code 1 when any
+test fails, making it suitable for CI gating.

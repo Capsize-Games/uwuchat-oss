@@ -1,0 +1,13 @@
+/* RegisterPage — inline style refactor */
+
+.page { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 20px; }
+.card { background: var(--theme-bg-secondary); border: 1px solid var(--theme-border); border-radius: 16px; padding: 32px 28px; width: min(420px,100%); display: flex; flex-direction: column; gap: 20px; }
+.title { font-size: 1.3rem; font-weight: 800; color: var(--theme-text-primary); text-align: center; }
+.backBtn { background: none; border: none; color: var(--theme-text-secondary); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; align-self: flex-start; padding: 0; }
+.input { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--theme-border); background: var(--theme-input-bg); color: var(--theme-text-primary); font-size: 0.9rem; outline: none; box-sizing: border-box; }
+.error { color: var(--bs-danger); font-size: 0.78rem; text-align: center; }
+.submitBtn { width: 100%; padding: 12px; border-radius: 10px; border: none; background: var(--bs-primary); color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; }
+.submitBtn:disabled { opacity: 0.5; cursor: default; }
+.footer { text-align: center; font-size: 0.78rem; color: var(--theme-text-secondary); }
+.footerLink { color: var(--bs-primary); font-weight: 600; text-decoration: none; cursor: pointer; }
+.emailStrong { color: var(--theme-text-primary); }

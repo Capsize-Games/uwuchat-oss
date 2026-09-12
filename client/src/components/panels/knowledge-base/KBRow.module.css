@@ -1,0 +1,13 @@
+/* KBRow — knowledge base document row (framework) */
+
+.row {
+  cursor: grab;
+}
+
+.name {
+  max-width: 180px;
+}
+
+.cellCenter {
+  text-align: center;
+}
