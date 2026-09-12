@@ -1,0 +1,56 @@
+/* PanelMusicTab — inline style refactor */
+
+.sectionLabel {
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+
+.timeRangeRow {
+  display: flex;
+  gap: 4px;
+  padding: 6px 0 10px;
+  justify-content: center;
+}
+
+.timeRangeBtn {
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-border);
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+.timeRangeBtnActive {
+  composes: timeRangeBtn;
+  background: rgba(30, 215, 96, 0.15);
+  color: #1db954;
+}
+
+.timeRangeBtnInactive {
+  composes: timeRangeBtn;
+  background: transparent;
+  color: var(--theme-text-secondary);
+}
+
+.artistGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.trackList {
+  margin-bottom: 14px;
+}
+
+.playlistList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}

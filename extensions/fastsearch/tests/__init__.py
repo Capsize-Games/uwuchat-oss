@@ -1,0 +1,1 @@
+"""FastSearch extension — test suite."""

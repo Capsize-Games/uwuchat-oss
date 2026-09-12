@@ -1,0 +1,10 @@
+.container {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 12px;
+}

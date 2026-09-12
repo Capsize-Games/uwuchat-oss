@@ -1,0 +1,47 @@
+rules:
+  - id: missing-auth-dependency
+    languages:
+      - python
+    severity: WARNING
+    message: |
+      Router handler is missing an explicit `Depends(<auth dependency>)`
+      parameter.
+
+      Every @router.get/post/put/delete/patch handler in a non-public
+      route module must include a FastAPI Depends() parameter that
+      resolves the caller's identity (require_auth, require_superuser,
+      or an equivalent tenant-scoped dependency).  Handlers that rely
+      solely on `request.state.account_id` set by middleware are flagged
+      here so a human can confirm the route's mounted prefix is in the
+      auth middleware's public-path allowlist.
+
+      If this route is intentionally public or uses
+      `request.state.account_id`, add a suppression comment:
+        # nosemgrep: missing-auth-dependency (<one-line reason>)
+      on the line immediately before the @router decorator.
+    patterns:
+      - pattern-either:
+          - pattern: |
+              @router.get(...)
+              def $HANDLER(...):
+                ...
+          - pattern: |
+              @router.post(...)
+              def $HANDLER(...):
+                ...
+          - pattern: |
+              @router.put(...)
+              def $HANDLER(...):
+                ...
+          - pattern: |
+              @router.delete(...)
+              def $HANDLER(...):
+                ...
+          - pattern: |
+              @router.patch(...)
+              def $HANDLER(...):
+                ...
+      - pattern-not: |
+          @router.$METHOD(...)
+          def $HANDLER(..., $PARAM = Depends($AUTH), ...):
+            ...

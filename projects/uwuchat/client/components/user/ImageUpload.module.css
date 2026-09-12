@@ -1,0 +1,35 @@
+/* ImageUpload — inline style refactor */
+
+.clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.errorToast {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  padding: 2px 6px;
+  background: rgba(220, 53, 69, 0.9);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.65rem;
+  text-align: center;
+}

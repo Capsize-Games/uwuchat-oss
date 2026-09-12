@@ -1,0 +1,35 @@
+/* LocationStep — inline style refactor */
+
+.geoBtn {
+  color: var(--theme-text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 18px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.desc {
+  line-height: 1.6;
+  font-size: 0.92rem;
+  color: var(--theme-text-secondary);
+}
+
+.statusText {
+  color: var(--theme-text-secondary);
+}
+
+.sepRow {
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary);
+}
+
+.sepLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}

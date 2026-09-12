@@ -1,0 +1,173 @@
+/* SubscribeStep — inline style refactor */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.promoForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.promoInput {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  color: var(--theme-text-primary);
+  outline: none;
+}
+
+.promoBtn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text-primary);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.promoBtn:disabled {
+  cursor: wait;
+}
+
+.promoMsg {
+  position: absolute;
+  margin-top: 42px;
+  font-size: 0.72rem;
+}
+
+.promoError {
+  composes: promoMsg;
+  color: #f87171;
+}
+
+.promoSuccess {
+  composes: promoMsg;
+  color: #4ade80;
+}
+
+.tagline {
+  margin: 0 0 4px;
+  color: var(--theme-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.planBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.15s;
+  text-align: left;
+}
+
+.planBtnHighlight {
+  composes: planBtn;
+  border: 1.5px solid rgba(114, 137, 218, 0.55);
+  background: rgba(114, 137, 218, 0.07);
+}
+
+.planBtnPopular {
+  composes: planBtn;
+  border: 1.5px solid var(--theme-accent);
+  background: rgba(88, 101, 242, 0.1);
+}
+
+.planBtnDefault {
+  composes: planBtn;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.planBtnDimmed {
+  composes: planBtn;
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.planNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.planName {
+  font-weight: 700;
+  font-size: 0.93rem;
+  color: var(--theme-text);
+}
+
+.planBadge {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--theme-text);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.planBadgeIntro {
+  composes: planBadge;
+  background: rgba(114, 137, 218, 0.18);
+}
+
+.planBadgePopular {
+  composes: planBadge;
+  background: rgba(88, 101, 242, 0.15);
+}
+
+.planCap {
+  font-size: 0.76rem;
+  color: var(--theme-text-secondary);
+  margin-top: 2px;
+}
+
+.planPrice {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--theme-text);
+  flex-shrink: 0;
+  margin-left: 12px;
+  text-align: right;
+}
+
+.planPeriod {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.skipBtn {
+  padding: 10px;
+  background: transparent;
+  color: var(--theme-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  margin-top: 4px;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.skipBtn:hover {
+  opacity: 1;
+}

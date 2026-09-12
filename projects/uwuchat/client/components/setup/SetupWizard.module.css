@@ -1,0 +1,107 @@
+/* SetupWizard — inline style refactor */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 50%, rgba(88, 101, 242, 0.13) 0%, transparent 65%),
+    rgba(0, 0, 0, 0.85);
+}
+
+.card {
+  background: var(--theme-bg-secondary);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 2.5px solid var(--theme-accent);
+  padding: 36px 40px;
+  width: min(480px, 94vw);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(88, 101, 242, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logoWrap {
+  margin-bottom: -20px;
+}
+
+.stepMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--theme-text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.progressDots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.progressDot {
+  height: 6px;
+  border-radius: 3px;
+  transition: width 0.25s ease, background 0.2s ease;
+}
+
+.progressDotActive {
+  composes: progressDot;
+  width: 22px;
+  background: var(--theme-accent);
+}
+
+.progressDotInactive {
+  composes: progressDot;
+  width: 6px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--theme-heading);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.errorBox {
+  background: rgba(220, 53, 69, 0.12);
+  border: 1px solid rgba(220, 53, 69, 0.25);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #f5c6cb;
+}
+
+.retryBtn {
+  align-self: flex-start;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  border-radius: 6px;
+  background: rgba(220, 53, 69, 0.15);
+  color: #f5c6cb;
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+/* ProductivityPanel — inline style refactor */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid var(--theme-border);
+  flex-shrink: 0;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 10px 8px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: all 0.15s;
+}
+
+.tabActive {
+  composes: tabBtn;
+  background: var(--theme-accent-muted, rgba(255, 255, 255, 0.06));
+  color: var(--theme-text-primary);
+  border-bottom-color: var(--bs-primary);
+  font-weight: 600;
+}
+
+.tabInactive {
+  composes: tabBtn;
+  background: transparent;
+  color: var(--theme-text-secondary);
+  font-weight: 400;
+}
+
+.body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}

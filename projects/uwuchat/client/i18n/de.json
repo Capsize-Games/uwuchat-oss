@@ -1,0 +1,880 @@
+{
+  "onboarding_tour": {
+    "system_bot_label": "Dein Assistent",
+    "system_bot_text": "Das ist dein Assistent UwU. Er ist sich bewusst, dass er ein Chatbot-Assistent ist.",
+    "rp_bot_label": "Rollenspiel-Bot",
+    "rp_bot_text": "Das sind Rollenspiel-Chatbots. Diese Bots wissen nicht, dass sie Bots sind. Sie glauben, echt zu sein, und bleiben in ihrer Rolle.",
+    "next": "Weiter",
+    "close": "Verstanden"
+  },
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "loading": "Wird geladen…"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": {
+      "heading": "Spracheinstellungen",
+      "gui_label": "GUI-Sprache",
+      "user_label": "Deine Sprache",
+      "uwu_label": "UwU-Sprache"
+    },
+    "nav": {
+      "integrations": "Verknüpfte Konten",
+      "privacy": "Drittanbieter-Dienste",
+      "image_export": "Bild exportieren",
+      "memory": "Gedächtnis",
+      "keyboard_shortcuts": "Tastenkürzel",
+      "immersion": "Immersion",
+      "user": "Benutzereinstellungen",
+      "tts": "Text-zu-Sprache",
+      "sound": "Sprache-zu-Text",
+      "prompt_templates": "Prompt-Vorlagen",
+      "appearance": "Design",
+      "language": "Sprache",
+      "location": "Standort",
+      "account": "Konto & Rechtliches",
+      "headlesscode": "Coding-Sitzungen"
+    },
+    "location": {
+      "description": "Dein UwU nutzt deinen Standort, um über echte Dinge zu sprechen — das Wetter vor deinem Fenster, was in deiner Nähe passiert.",
+      "current": "Aktueller Standort",
+      "no_location": "Kein Standort festgelegt. Füge unten einen hinzu für Wetter und lokalen Kontext.",
+      "use_current": "Meinen aktuellen Standort verwenden",
+      "auto_update_on": "Automatisch aktualisieren",
+      "detect_once": "Einmalig erkennen",
+      "saved": "Standort gespeichert",
+      "or_manually": "— oder manuell eingeben —",
+      "city": "Stadt",
+      "country": "Land (optional)",
+      "search": "Standort suchen",
+      "not_available": "Browser-Standort nicht verfügbar.",
+      "detecting": "Wird erkannt…",
+      "blocked": "Standort blockiert. Gib deine Stadt unten ein.",
+      "looking_up": "Wird gesucht…",
+      "not_found": "Stadt nicht gefunden. Versuche eine größere Stadt in der Nähe."
+    },
+    "account": {
+      "heading": "Konto",
+      "email": "E-Mail:",
+      "username": "Benutzername:",
+      "view_profile": "Mein Profil ansehen",
+      "email_unverified": "Deine E-Mail-Adresse wurde noch nicht bestätigt.",
+      "subscription_heading": "Abonnement",
+      "linked_accounts_heading": "Verknüpfte Konten",
+      "linked_accounts_desc": "Verbinde dein Spotify-Konto, um deinen Musikgeschmack im Profil zu teilen. Verwalte verknüpfte Konten unter",
+      "linked_accounts_link": "Verknüpfte Konten",
+      "linked_accounts_suffix": "in der Einstellungs-Seitenleiste.",
+      "legal_heading": "Rechtliches",
+      "terms_of_service": "Nutzungsbedingungen",
+      "privacy_policy": "Datenschutzerklärung",
+      "danger_zone": "Gefahrenzone",
+      "danger_desc": "Dein Konto und alle zugehörigen Daten endgültig löschen. Dies kann nicht rückgängig gemacht werden.",
+      "delete_account": "Konto löschen",
+      "no_subscription": "Kein aktives Abonnement. Abonniere für vollen Zugriff.",
+      "view_plans": "Pläne ansehen",
+      "plan_label": "Plan:",
+      "status_label": "Status:",
+      "free_trial": "Kostenlose Testphase",
+      "trial_ends": "Testphase endet:",
+      "renews": "Verlängert sich:",
+      "manage_subscription": "Abonnement verwalten",
+      "change_plan": "Plan ändern",
+      "current_plan": "Aktueller Plan",
+      "promo_heading": "Aktionscode"
+    },
+    "immersion": {
+      "heading": "Immersion",
+      "level_label": "Immersionsstufe",
+      "minimal": "Minimal",
+      "minimal_label": "Minimal",
+      "full": "Voll",
+      "full_label": "Voll",
+      "minimal_desc": "Antworten werden gestreamt. Die Tippanzeige und künstliche Verzögerungen sind deaktiviert.",
+      "full_desc": "Der Chatbot simuliert das Lesen deiner Nachricht, das Nachdenken und das Tippen der Antwort. Eine Anzeige \"{name} schreibt…\" wird während des Wartens gezeigt.",
+      "description": "Wähle, wie immersiv sich Unterhaltungen anfühlen sollen."
+    },
+    "integrations": {
+      "title": "Verknüpfte Konten",
+      "heading": "Verknüpfte Konten",
+      "desc": "Verbinde externe Dienste, um dein Profil zu bereichern.",
+      "spotify_desc": "Teile deinen Musikgeschmack im Profil",
+      "spotify_importing": "Spotify-Daten werden importiert…",
+      "connect_spotify": "Spotify verbinden",
+      "spotify_connect": "Spotify verbinden",
+      "spotify_last_synced": "Zuletzt synchronisiert:",
+      "last_synced": "Zuletzt synchronisiert:",
+      "spotify_view_profile": "Mein Profil ansehen",
+      "view_my_profile": "Mein Profil ansehen",
+      "spotify_refresh": "Daten aktualisieren",
+      "refresh_data": "Daten aktualisieren",
+      "spotify_refreshing": "Wird aktualisiert…",
+      "refreshing": "Wird aktualisiert…",
+      "spotify_disconnect": "Trennen",
+      "disconnect": "Trennen",
+      "spotify_disconnecting": "Wird getrennt…",
+      "disconnecting": "Wird getrennt…",
+      "spotify_retry": "Erneut versuchen",
+      "retry": "Erneut versuchen",
+      "steam_desc": "Teile dein Gaming-Leben im Profil",
+      "steam_connect": "Steam verbinden",
+      "connect_steam": "Steam verbinden",
+      "steam_connecting": "Wird verbunden…",
+      "connecting": "Wird verbunden…",
+      "importing_spotify": "Spotify-Daten werden importiert…",
+      "connect_itch": "itch.io verbinden",
+      "itch_desc": "Zeige deine itch.io-Spielebibliothek in deinem Profil.",
+      "connect_bluesky": "Bluesky verbinden",
+      "bluesky_desc": "Zeige deine letzten Bluesky-Beiträge in deinem Profil.",
+      "bluesky_app_password_hint": "Erstelle ein App-Passwort unter bsky.social/settings/app-passwords — niemals dein Hauptpasswort verwenden.",
+      "bluesky_handle_placeholder": "Handle (z.B. user.bsky.social)",
+      "bluesky_placeholder": "App-Passwort (xxxx-xxxx-xxxx-xxxx)",
+      "bluesky_connecting": "Wird verbunden…",
+      "connected_label_steam": "✅ Steam verbunden",
+      "connected_label_itch": "✅ itch.io verbunden",
+      "connected_label_bluesky": "✅ Bluesky verbunden"
+    },
+    "prompt_templates": {
+      "heading": "Prompt-Vorlagen",
+      "no_templates": "Keine Vorlagen verfügbar.",
+      "template_label": "Vorlage",
+      "use_guardrails": "Guardrails verwenden",
+      "use_datetime": "Datum/Uhrzeit im System-Prompt verwenden"
+    },
+    "social_links": {
+      "heading": "Social-Media-Links",
+      "desc": "Füge Links zu deinen Social-Media-Profilen hinzu. Diese erscheinen auf deiner öffentlichen Profilseite.",
+      "no_links": "Noch keine Social-Media-Links. Füge unten einen hinzu!",
+      "sign_in": "Melde dich an, um deine Social-Media-Links zu verwalten.",
+      "save": "Speichern",
+      "edit": "Bearbeiten",
+      "add_link": "Social-Media-Link hinzufügen",
+      "all_added": "Alle verfügbaren Dienste wurden hinzugefügt. 🎉"
+    },
+    "promo": {
+      "heading": "Aktionscode",
+      "placeholder": "Code eingeben",
+      "redeem": "Einlösen",
+      "error": "Ungültiger Code",
+      "redeemed": "Code eingelöst!",
+      "redeemed_tier": "Code eingelöst! Du hast jetzt {{tier}}-Zugang."
+    }
+  },
+  "sidebar": {
+    "account": "Konto",
+    "contacts": "Kontakte",
+    "new_contact": "Neuer Rollenspiel-Chatbot",
+    "new_uwu": "Neuen UwU erstellen",
+    "assistant": "ASSISTENT",
+    "no_contacts": "Noch keine Kontakte. Starte eine Unterhaltung!",
+    "deceased": "Verstorben",
+    "role_play": "ROLLENSPIEL",
+    "generating_character": "Charakter wird generiert...",
+    "generation_failed": "Charaktererstellung fehlgeschlagen. Bitte versuche es erneut.",
+    "uwu_ready_title": "Dein neuer UwU ist bereit! ✨",
+    "uwu_ready_body": "{{name}} wurde fertig generiert und ist bereit zum Chatten.",
+    "uwu_ready_cta": "Chat starten"
+  },
+  "setup": {
+    "language": {
+      "description": "Dein UwU wird mit dir in der von dir gewählten Sprache sprechen.",
+      "continue": "Weiter →"
+    },
+    "name": {
+      "desc": "Dein UwU wird dies verwenden, um dich in Gesprächen natürlich anzusprechen.",
+      "placeholder": "Dein Vorname oder Spitzname",
+      "continue": "Weiter",
+      "skip": "Überspringen"
+    },
+    "gender": {
+      "desc": "Dein UwU wird die richtigen Pronomen verwenden, wenn er über dich spricht.",
+      "skip": "Diesen Schritt überspringen",
+      "she_her": "Sie / Ihr",
+      "he_him": "Er / Ihm",
+      "they_them": "Divers",
+      "prefer_not": "Keine Angabe"
+    },
+    "location": {
+      "desc": "Dein UwU nutzt deinen Standort, um über echte Dinge zu sprechen — das Wetter vor deinem Fenster, was in deiner Nähe passiert.",
+      "use_current": "Meinen aktuellen Standort verwenden",
+      "or_manually": "— oder manuell eingeben —",
+      "city_placeholder": "Stadt",
+      "country_placeholder": "Land (optional)",
+      "save_location": "Standort speichern",
+      "skip": "Überspringen",
+      "not_available": "Browser-Standort nicht verfügbar.",
+      "detecting": "Wird erkannt…",
+      "blocked": "Standort blockiert. Gib deine Stadt unten ein.",
+      "city_required": "Bitte gib eine Stadt ein.",
+      "looking_up": "Wird gesucht…",
+      "not_found": "Stadt nicht gefunden. Versuche eine größere Stadt in der Nähe."
+    },
+    "wizard": {
+      "step_of": "Einrichtung — {{step}} von {{total}}",
+      "meet_uwu": "Meinen UwU kennenlernen ✨"
+    },
+    "step_titles": {
+      "name": "Wie heißt du?",
+      "gender": "Wie identifizierst du dich?",
+      "language": "Wähle deine Sprache",
+      "location": "Wo bist du?",
+      "done": "Alles bereit!",
+      "subscribe": "Wähle deinen Plan",
+      "avatar": "Profilbild",
+      "banner": "Bannerbild",
+      "status": "Status",
+      "kaomoji": "Kaomoji",
+      "verify_email": "E-Mail bestätigen"
+    },
+    "steps": {
+      "skip": "Überspringen",
+      "save": "Speichern",
+      "done": "Fertig",
+      "uploading": "Wird hochgeladen…",
+      "avatar_desc": "Füge ein Foto hinzu, damit deine UwUs dich erkennen.",
+      "banner_desc": "Wähle ein Header-Bild für dein Profil.",
+      "status_desc": "Lass deine UwUs wissen, was dir durch den Kopf geht.",
+      "kaomoji_desc": "Wähle ein Kaomoji — es erscheint auf deiner Profilkarte.",
+      "verify_email_desc": "Bestätige deine E-Mail, damit du dein Konto wiederherstellen kannst.",
+      "upload_avatar": "Foto hochladen",
+      "upload_banner": "Banner hochladen",
+      "status_placeholder": "Was geht dir durch den Kopf?",
+      "send_verification": "Bestätigungs-E-Mail senden",
+      "resend_verification": "Bestätigungs-E-Mail erneut senden",
+      "sending": "Wird gesendet…",
+      "verification_sent": "Sieh in deinem Posteingang nach! Ein Bestätigungslink wurde an {{email}} gesendet.",
+      "already_verified": "Deine E-Mail ist bestätigt ✅"
+    }
+  },
+  "chat": {
+    "contacts": "Kontakte",
+    "cancel": "Abbrechen",
+    "send": "Senden",
+    "type_message": "Nachricht eingeben…",
+    "blocked_placeholder": "Dieser Charakter hat dich blockiert.",
+    "loading_conversation": "Konversation wird geladen…",
+    "blocked_label": "blockiert",
+    "view_profile": "Profil ansehen",
+    "profile_link": "Profil",
+    "choice_modal": {
+      "title": "Einen neuen UwU hinzufügen",
+      "subtitle": "Erstelle einen sofort oder gestalte deinen eigenen.",
+      "random_label": "Zufälliger UwU",
+      "random_sub": "Überrasche mich",
+      "random_generating": "Wird erstellt...",
+      "generating": "Wird erstellt...",
+      "build_label": "Selbst bauen",
+      "build_sub": "Schritt für Schritt"
+    },
+    "creator": {
+      "name_your_uwu": "Gib deinem UwU einen Namen",
+      "who_is_this": "Wer ist dieser Charakter?",
+      "name_label": "Name",
+      "about_label": "Über diesen UwU",
+      "optional": "(optional)",
+      "speech_label": "Charakteristische Sprachmuster",
+      "speech_patterns_label": "Charakteristische Sprachmuster",
+      "speech_patterns_hint": "Diese werden in jeder Antwort erzwungen — der Chatbot wird nicht davon abweichen.",
+      "creating": "Wird erstellt…",
+      "begin_story": "Geschichte beginnen →",
+      "next": "Weiter →",
+      "skip": "Diesen Schritt überspringen",
+      "no_tradition": "Keine Tradition",
+      "step_emoji_title": "Wähle ein Profil-Emoji",
+      "step_emoji_subtitle": "Wähle ein Emoji, das diesen Charakter repräsentiert.",
+      "step_gender_title": "Wähle ein Geschlecht",
+      "step_gender_subtitle": "Das prägt, wie der Charakter sich selbst bezeichnet.",
+      "step_personality_title": "Persönlichkeitstyp",
+      "step_personality_subtitle": "Wähle einen Kern-Persönlichkeitsarchetyp.",
+      "step_tradition_title": "Spirituelle Tradition",
+      "step_tradition_subtitle": "Wähle eine philosophische oder spirituelle Linse.",
+      "step_worldview_title": "Weltanschauung",
+      "step_worldview_subtitle": "Wie sieht dieser Charakter die Welt?",
+      "step_conviction_title": "Überzeugung",
+      "step_conviction_subtitle": "Was treibt diesen Charakter am tiefsten an?",
+      "step_subtype_title": "Wähle einen Subtyp",
+      "step_subtype_subtitle": "Wähle einen Subtyp von {{type}}.",
+      "step_species_title": "Wähle eine Spezies",
+      "step_species_subtitle": "Was für ein Wesen ist dieser Charakter?",
+      "step_language_title": "Sprachen",
+      "step_language_auto": "Automatisch erkannt von {{city}}. Du kannst es ändern.",
+      "step_language_hint": "Wähle Sprachen, die dieser Charakter spricht.",
+      "step_location_title": "Wo lebt er/sie?",
+      "step_location_subtitle": "Wähle eine reale Heimatbasis für deinen Charakter."
+    },
+    "message": {
+      "copy": "Nachricht kopieren",
+      "delete_admin": "Nachricht löschen (Admin)",
+      "copied": "Kopiert!",
+      "inspect_flow": "Flow inspizieren",
+      "copy_mermaid": "📋 Mermaid kopieren",
+      "copied_mermaid": "✓ Kopiert!",
+      "turn": "Runde",
+      "report": "Nachricht melden",
+      "system_label": "System"
+    },
+    "report": {
+      "title": "Nachricht melden",
+      "reason_inappropriate": "Unangemessen",
+      "reason_harmful_unsafe": "Schädlich/unsicher",
+      "reason_off_character": "Nicht rollenkonform",
+      "reason_other": "Sonstiges",
+      "detail_placeholder": "Optionale Details (max. 500 Zeichen)",
+      "cancel": "Abbrechen",
+      "submit": "Meldung absenden",
+      "received": "Meldung erhalten. Vielen Dank.",
+      "close": "Schließen",
+      "admin_title": "Meldungen",
+      "refresh": "Aktualisieren",
+      "loading": "Wird geladen…",
+      "no_reports": "Noch keine Meldungen.",
+      "total": "gesamt",
+      "col_time": "Zeit",
+      "col_reporter": "Melder",
+      "col_type": "Typ",
+      "col_reason": "Grund",
+      "type_auto": "Automatisch markiert",
+      "type_user": "Benutzermeldung"
+    },
+    "view": {
+      "inspection_on": "🔬 Inspektion AN",
+      "inspection_off": "🔬 Inspektion AUS",
+      "unblock": "Entblocken",
+      "offline_message": "{{name}} ist gerade offline — Nachrichten werden zugestellt, wenn er/sie zurück ist.",
+      "has_blocked": "{{name}} hat dich blockiert.",
+      "you_blocked": "Du hast {{name}} blockiert.",
+      "profile_panel": "Profil",
+      "my_profile_panel": "Mein Profil",
+      "flow_detail_panel": "Flow-Details",
+      "fastsearch_panel": "FastSearch-Status",
+      "users_panel": "Benutzer",
+      "input_prompt": "Eingabe-Prompt",
+      "output_response": "Ausgabe-Antwort"
+    },
+    "empty_placeholder": {
+      "greeting_fallback": "Starte eine Unterhaltung, indem du unten eine Nachricht eingibst.",
+      "greeting_with_name": "Sag hallo zu {{name}} — starte eine Unterhaltung unten.",
+      "opener_how_are_you": "Wie läuft dein Tag?",
+      "opener_what_can_you_do": "Wobei kannst du mir helfen?"
+    }
+  },
+  "iconbar": {
+    "home": "UwUchat",
+    "users_label": "Benutzer",
+    "admin_users": "Admin-Benutzer"
+  },
+  "rooms": {
+    "profile": {
+      "back": "← zurück",
+      "loading": "Wird geladen…",
+      "not_found": "Profil nicht gefunden.",
+      "hangs_out_in": "Hängt ab in",
+      "posts_tab": "Beiträge",
+      "shop_tab": "Shop",
+      "loading_posts": "Beiträge werden geladen…",
+      "no_posts": "Kürzlich nichts gepostet.",
+      "loading_inventory": "Wird geladen…",
+      "no_items": "Noch keine Gegenstände.",
+      "card_tab": "Karte",
+      "items_tab": "Gegenstände",
+      "generate_images": "Profilbilder generieren",
+      "generating_images": "Wird generiert…",
+      "unblock": "Entblocken",
+      "omnipotent_knowledge": "🌐 Geteiltes Gedächtnis",
+      "omnipotent_on": "Kann sich an Dinge erinnern, die du deinen anderen UwUs erzählt hast.",
+      "omnipotent_off": "Erinnert sich nur an diese Unterhaltung.",
+      "block": "{{name}} blockieren",
+      "has_blocked": "{{name}} hat dich blockiert.",
+      "you_blocked": "Du hast {{name}} blockiert.",
+      "enable_omnipotent": "Geteiltes Gedächtnis aktivieren",
+      "disable_omnipotent": "Geteiltes Gedächtnis deaktivieren",
+      "bio_empty": "{{name}} hat noch keine Bio geschrieben.",
+      "settings_label": "Einstellungen",
+      "currently_label": "Gerade"
+    },
+    "profile_view": {
+      "loading": "Wird geladen…",
+      "unblock": "Entblocken",
+      "omnipotent_knowledge": "🌐 Geteiltes Gedächtnis",
+      "omnipotent_on": "Kann sich an Dinge erinnern, die du deinen anderen UwUs erzählt hast.",
+      "omnipotent_off": "Erinnert sich nur an diese Unterhaltung.",
+      "enable_omnipotent": "Geteiltes Gedächtnis aktivieren",
+      "disable_omnipotent": "Geteiltes Gedächtnis deaktivieren",
+      "bio_empty": "{{name}} hat noch keine Bio geschrieben.",
+      "settings_label": "Einstellungen",
+      "currently_label": "Gerade"
+    }
+  },
+  "panels": {
+    "uwu_row": {
+      "remove": "Entfernen",
+      "cancel": "Abbrechen",
+      "remove_title": "Aus Kontakten entfernen"
+    },
+    "uwu_list": {
+      "remove": "Entfernen",
+      "cancel": "Abbrechen",
+      "remove_title": "Aus Kontakten entfernen"
+    }
+  },
+  "user": {
+    "profile_page": {
+      "back": "← zurück",
+      "no_status": "Kein Status gesetzt",
+      "followers": "Follower",
+      "saved_tracks": "Gespeicherte Tracks",
+      "followed_artists": "Gefolgte Künstler",
+      "playlists": "Playlists"
+    },
+    "profile_panel": {
+      "click_to_add_banner": "Klicken, um Banner hinzuzufügen",
+      "click_to_set_status": "Klicken, um Status zu setzen",
+      "status_placeholder": "Was geht dir durch den Kopf?",
+      "what_on_mind": "Klicken, um Status zu setzen...",
+      "weather_unavailable": "Wetter nicht verfügbar — lege deinen Standort in Einstellungen → Standort fest",
+      "tab_weather": "Wetter",
+      "tab_games": "Spiele",
+      "tab_posts": "Beiträge",
+      "tab_links": "Links"
+    },
+    "weather": {
+      "updated_at": "Aktualisiert {{time}}",
+      "feels_like": "Gefühlt wie",
+      "humidity": "Luftfeuchtigkeit",
+      "cloud_cover": "Bewölkung",
+      "uv_index": "UV-Index",
+      "wind": "Wind",
+      "gusts": "Böen",
+      "precip": "Niederschlag",
+      "rain": "Regen",
+      "snow": "Schnee",
+      "forecast": "10-Tage-Vorhersage",
+      "forecast_day": "Tag",
+      "forecast_condition": "Wetter",
+      "forecast_hi_lo": "Höchst/Tiefst",
+      "forecast_rain": "Regen",
+      "today": "Heute",
+      "night": "(Nacht)",
+      "weekdays": [
+        "So",
+        "Mo",
+        "Di",
+        "Mi",
+        "Do",
+        "Fr",
+        "Sa"
+      ],
+      "uv_low": "Niedrig",
+      "uv_moderate": "Mäßig",
+      "uv_high": "Hoch",
+      "uv_very_high": "Sehr hoch",
+      "uv_extreme": "Extrem",
+      "label_clear": "Klar",
+      "label_partly_cloudy": "Teilweise bewölkt",
+      "label_overcast": "Bedeckt",
+      "label_haze": "Dunst",
+      "label_dust": "Staub/Sand",
+      "label_fog": "Nebel",
+      "label_drizzle": "Nieselregen",
+      "label_showers": "Regenschauer",
+      "label_snow_showers": "Schneeschauer",
+      "label_thunderstorm": "Gewitter",
+      "label_unknown": "Unbekannt",
+      "weather_unavailable_card": "🌤 Wetter nicht verfügbar — lege deinen Standort in Einstellungen → Standort fest"
+    },
+    "image_upload": {
+      "uploading": "Wird hochgeladen…",
+      "click_to_change": "Klicken, um {{type}} zu ändern",
+      "upload_failed": "Upload fehlgeschlagen",
+      "too_large": "Bild zu groß (max. {{max}} MB)"
+    },
+    "not_found": {
+      "title": "Profil nicht gefunden",
+      "your_profile_at": "Dein Profil ist unter",
+      "not_logged_in": "Nicht eingeloggt.",
+      "back_to_app": "Zurück zu UwUchat"
+    },
+    "profile_not_found": {
+      "title": "Profil nicht gefunden",
+      "your_profile_at": "Dein Profil ist unter",
+      "not_logged_in": "Nicht eingeloggt.",
+      "back_to_app": "Zurück zu UwUchat"
+    },
+    "spotify": {
+      "top_artists": "Top-Künstler",
+      "top_tracks": "Top-Tracks",
+      "playlists": "Playlists",
+      "recently_played": "Kürzlich gespielt",
+      "past_month": "Letzter Monat",
+      "past_6_months": "Letzte 6 Monate",
+      "all_time": "Gesamte Zeit",
+      "no_artists": "Keine Top-Künstler-Daten",
+      "no_tracks": "Keine Top-Track-Daten",
+      "no_playlists": "Keine Playlists",
+      "no_recent": "Keine kürzlich gespielten Tracks"
+    },
+    "steam": {
+      "recently_played": "Kürzlich gespielt",
+      "most_played": "Meistgespielt",
+      "no_recent": "Keine kürzlich gespielten Spiele.",
+      "no_games": "Keine Spiele gefunden.",
+      "steam_level": "Steam-Level",
+      "games_owned": "Spiele besessen",
+      "total_hours": "Gesamtstunden",
+      "friends": "Freunde",
+      "importing": "Steam-Daten werden importiert…",
+      "connect_own": "Verbinde dein Steam-Konto, um deine Spielebibliothek zu teilen.",
+      "not_linked": "{{name}} hat Steam noch nicht verknüpft.",
+      "connect_steam": "Steam verbinden",
+      "section_stats": "Statistiken",
+      "section_recently_played": "Kürzlich gespielt",
+      "stat_games": "Spiele",
+      "stat_hours": "Stunden"
+    },
+    "steam_stats": {
+      "steam_level": "Steam-Level",
+      "games_owned": "Spiele besessen",
+      "total_hours": "Gesamtstunden",
+      "friends": "Freunde"
+    },
+    "bluesky": {
+      "no_posts": "Keine Beiträge gefunden.",
+      "add_handle": "Füge deinen Bluesky-Handle im Links-Tab hinzu."
+    },
+    "panel_bluesky": {
+      "no_posts": "Keine Beiträge gefunden.",
+      "add_handle": "Füge deinen Bluesky-Handle im Links-Tab hinzu."
+    },
+    "social": {
+      "edit_links": "Social-Media-Links bearbeiten",
+      "done": "Fertig",
+      "add_links": "+ Social-Media-Links hinzufügen",
+      "all_added": "Alle Dienste hinzugefügt! 🎉",
+      "username_placeholder": "Benutzername oder URL"
+    },
+    "social_links": {
+      "edit_links": "Social-Media-Links bearbeiten",
+      "done": "Fertig",
+      "add_links": "+ Social-Media-Links hinzufügen",
+      "all_added": "Alle Dienste hinzugefügt! 🎉",
+      "username_placeholder": "Benutzername oder URL"
+    },
+    "panel_music": {
+      "top_artists": "Top-Künstler",
+      "top_tracks": "Top-Tracks",
+      "playlists": "Playlists",
+      "recently_played": "Kürzlich gespielt",
+      "past_month": "Letzter Monat",
+      "past_6_months": "Letzte 6 Monate",
+      "all_time": "Gesamte Zeit",
+      "no_artists": "Keine Top-Künstler-Daten",
+      "no_tracks": "Keine Top-Track-Daten",
+      "no_playlists": "Keine Playlists",
+      "no_recent": "Keine kürzlich gespielten Tracks",
+      "no_recently_played": "Keine kürzlich gespielten Tracks"
+    },
+    "steam_data": {
+      "tab_recent": "Kürzlich gespielt",
+      "tab_most_played": "Meistgespielt",
+      "no_recent": "Keine kürzlich gespielten Spiele.",
+      "no_games": "Keine Spiele gefunden."
+    },
+    "steam_not_connected": {
+      "importing": "Steam-Daten werden importiert…",
+      "connect_own": "Verbinde dein Steam-Konto, um deine Spielebibliothek zu teilen.",
+      "not_linked": "{{name}} hat Steam noch nicht verknüpft.",
+      "connect_steam": "Steam verbinden"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Anmelden",
+      "email_label": "E-Mail",
+      "password_label": "Passwort",
+      "submit": "Anmelden",
+      "submitting": "Wird angemeldet…",
+      "divider_or": "oder",
+      "google": "Mit Google anmelden",
+      "steam": "Mit Steam anmelden",
+      "steam_connecting": "Verbinde mit Steam…",
+      "bluesky": "Mit Bluesky anmelden",
+      "bluesky_connecting": "Verbinde mit Bluesky…",
+      "no_account": "Noch kein Konto?",
+      "register_link": "Registrieren",
+      "error_default": "Anmeldung fehlgeschlagen",
+      "error_oauth_state": "Anmeldung aufgrund eines Sicherheitsproblems fehlgeschlagen. Bitte versuche es erneut.",
+      "error_oauth_failed": "Anmeldung fehlgeschlagen. Bitte versuche es erneut.",
+      "error_steam_auth_failed": "Steam-Anmeldung fehlgeschlagen. Bitte versuche es erneut.",
+      "error_google_oauth_not_configured": "Google-Anmeldung ist derzeit nicht verfügbar — bitte nutze E-Mail/Passwort oder versuche es später erneut.",
+      "error_twitch_oauth_not_configured": "Twitch-Anmeldung ist derzeit nicht verfügbar — bitte nutze E-Mail/Passwort oder versuche es später erneut.",
+      "error_email_exists": "Ein Konto mit dieser E-Mail existiert bereits. Melde dich mit deinem Passwort an.",
+      "verified_success": "E-Mail erfolgreich bestätigt. Du kannst dich jetzt anmelden.",
+      "reset_success": "Dein Passwort wurde zurückgesetzt. Du kannst dich jetzt mit deinem neuen Passwort anmelden.",
+      "forgot_password": "Passwort vergessen?"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "email": "E-Mail",
+      "email_label": "E-Mail",
+      "username": "Benutzername",
+      "username_label": "Benutzername",
+      "password": "Passwort",
+      "password_label": "Passwort",
+      "confirm_password": "Passwort bestätigen",
+      "confirm_password_label": "Passwort bestätigen",
+      "invite_code": "Einladungscode",
+      "invite_code_label": "Einladungscode (optional)",
+      "invite_placeholder": "Gib deinen Einladungscode ein",
+      "invite_code_placeholder": "Gib deinen Einladungscode ein",
+      "age_confirm": "Ich bin 18 Jahre oder älter.",
+      "tos_agree_prefix": "Ich habe die",
+      "tos_agree_before": "Ich habe die",
+      "terms": "Nutzungsbedingungen",
+      "terms_of_service": "Nutzungsbedingungen",
+      "and": "und",
+      "tos_agree_and": "und",
+      "privacy": "Datenschutzerklärung",
+      "privacy_policy": "Datenschutzerklärung",
+      "tos_agree_suffix": "gelesen und stimme ihnen zu.",
+      "entertainment": "Ich verstehe, dass UwUchat nur zu Unterhaltungszwecken dient. Charaktere sind KI-generiert und bieten keinerlei professionelle Beratung.",
+      "entertainment_confirm": "Ich verstehe, dass UwUchat nur zu Unterhaltungszwecken dient. Charaktere sind KI-generiert und bieten keinerlei professionelle Beratung.",
+      "creating": "Konto wird erstellt…",
+      "submit": "Konto erstellen",
+      "google": "Mit Google registrieren",
+      "back": "Zurück",
+      "sign_up_email": "Mit E-Mail registrieren",
+      "sign_up_google": "Mit Google registrieren",
+      "sign_up_steam": "Mit Steam registrieren",
+      "sign_up_bluesky": "Mit Bluesky registrieren",
+      "bluesky_connecting": "Verbinde mit Bluesky…",
+      "have_account": "Bereits ein Konto?",
+      "already_have_account": "Bereits ein Konto?",
+      "sign_in": "Anmelden",
+      "verify_title": "Überprüfe deine E-Mail",
+      "verify_desc": "Wir haben einen Bestätigungslink gesendet an",
+      "verify_desc_before": "Wir haben einen Bestätigungslink gesendet an",
+      "verify_desc_after": "Sieh in deinem Posteingang nach und folge dem Link, um dein Konto zu aktivieren.",
+      "verify_waiting": "Du bist angemeldet und kannst die App während des Wartens nutzen.",
+      "verify_signed_in": "Du bist angemeldet und kannst die App während des Wartens nutzen.",
+      "continue": "Weiter zur App",
+      "continue_to_app": "Weiter zur App",
+      "error_password_match": "Passwörter stimmen nicht überein",
+      "error_passwords_match": "Passwörter stimmen nicht überein",
+      "error_password_length": "Passwort muss mindestens 8 Zeichen lang sein",
+      "error_failed": "Registrierung fehlgeschlagen",
+      "promo_code_label": "Aktionscode (optional)",
+      "promo_code_placeholder": "Hast du einen Aktionscode?",
+      "promo_code_hint": "Kostenloser oder vergünstigter Zugang. Gilt für jede Registrierungsmethode unten. Überspringen, wenn du keinen hast.",
+      "sensitive_data_consent": "Ich verstehe, dass der KI-Begleiter sich an Informationen erinnert, die ich im Gespräch teile, einschließlich sensibler Kategorien (Gesundheit, religiöse Überzeugungen, politische Meinungen, sexuelle Orientierung usw.). Diese Informationen werden nur für meine eigene Gesprächserfahrung verwendet — sie werden niemals verkauft oder für Analysen genutzt."
+    },
+    "tos": {
+      "title": "Noch ein Schritt",
+      "subtitle": "Bevor du mit dem Chatten beginnst, bestätige bitte Folgendes.",
+      "age_confirm": "Ich bin 18 Jahre oder älter.",
+      "tos_agree_prefix": "Ich habe die",
+      "terms": "Nutzungsbedingungen",
+      "and": "und",
+      "privacy": "Datenschutzerklärung",
+      "entertainment": "Ich verstehe, dass UwUchat nur zu Unterhaltungszwecken dient. Charaktere sind KI-generiert und bieten keinerlei professionelle Beratung.",
+      "saving": "Wird gespeichert…",
+      "submit": "Weiter zu UwUchat",
+      "continue": "Weiter zu UwUchat",
+      "error_failed": "Fehler beim Speichern der Zustimmung",
+      "sensitive_data_consent": "Ich verstehe, dass der KI-Begleiter sich an Informationen erinnert, die ich im Gespräch teile, einschließlich sensibler Kategorien (Gesundheit, religiöse Überzeugungen, politische Meinungen, sexuelle Orientierung usw.). Diese Informationen werden nur für meine eigene Gesprächserfahrung verwendet — sie werden niemals verkauft oder für Analysen genutzt."
+    },
+    "password_reset": {
+      "request_title": "Passwort zurücksetzen",
+      "request_description": "Gib deine E-Mail-Adresse ein und wir senden dir einen Link zum Zurücksetzen deines Passworts.",
+      "email_label": "E-Mail",
+      "send_link": "Reset-Link senden",
+      "sending": "Wird gesendet…",
+      "sent_message": "Falls diese E-Mail existiert, wurde ein Link zum Zurücksetzen des Passworts gesendet. Überprüfe deinen Posteingang und folge den Anweisungen.",
+      "back_to_login": "Zurück zur Anmeldung",
+      "request_error": "Fehler beim Senden der Reset-E-Mail. Bitte versuche es erneut.",
+      "confirm_title": "Wähle ein neues Passwort",
+      "confirm_description": "Gib unten dein neues Passwort ein.",
+      "new_password_label": "Neues Passwort",
+      "confirm_password_label": "Neues Passwort bestätigen",
+      "resetting": "Wird zurückgesetzt…",
+      "reset_button": "Passwort zurücksetzen",
+      "confirm_error": "Fehler beim Zurücksetzen des Passworts. Der Link ist möglicherweise abgelaufen oder wurde bereits verwendet.",
+      "error_passwords_match": "Passwörter stimmen nicht überein",
+      "error_password_length": "Passwort muss mindestens 8 Zeichen lang sein",
+      "error_missing_token": "Fehlender oder ungültiger Reset-Token. Bitte fordere einen neuen Link zum Zurücksetzen an."
+    }
+  },
+  "legal": {
+    "back": "← Zurück",
+    "privacy_title": "UwUchat — Datenschutzerklärung",
+    "tos_title": "UwUchat — Nutzungsbedingungen",
+    "privacy_breadcrumb": "Datenschutzerklärung",
+    "terms_breadcrumb": "Nutzungsbedingungen",
+    "data_request": {
+      "title": "Datenanfrage",
+      "account_deleted_title": "Konto gelöscht",
+      "deleted_desc": "Dein Konto wurde zur Löschung vorgemerkt. Deine Daten werden innerhalb von 30 Tagen gemäß unserer",
+      "deleted_email_desc": "Wenn du Fragen zur Löschung deiner Daten hast, sende eine E-Mail an",
+      "return_login": "Zurück zur Anmeldung",
+      "export_desc": "Gemäß DSGVO (Artikel 15) und dem Colorado Privacy Act hast du auch das Recht, auf deine Daten zuzugreifen. Lade eine maschinenlesbare Kopie aller mit deinem Konto verknüpften Daten herunter.",
+      "export_my_data": "Meine Daten herunterladen",
+      "exporting": "Export wird vorbereitet…",
+      "export_error": "Fehler beim Exportieren der Daten. Bitte versuche es erneut oder kontaktiere privacy@uwuchat.com.",
+      "delete_desc_paragraph": "Du kannst dein Konto und alle zugehörigen Daten auch endgültig löschen:",
+      "delete_my_account": "Mein Konto löschen",
+      "confirm_delete": "Bist du sicher? Dies kann nicht rückgängig gemacht werden.",
+      "cancel": "Abbrechen",
+      "yes_delete": "Ja, mein Konto löschen",
+      "deleting": "Wird gelöscht…",
+      "sign_in_to_delete": "Anmelden, um mein Konto zu löschen",
+      "no_access_desc": "Wenn du keinen Zugriff mehr auf dein Konto hast, sende uns direkt eine E-Mail:",
+      "email_privacy": "E-Mail an privacy@uwuchat.com",
+      "respond_30_days": "Wir antworten innerhalb von 30 Tagen und bitten dich möglicherweise, deine Identität zu bestätigen, bevor wir die Anfrage bearbeiten.",
+      "other_requests": "Für andere Datenanfragen (Auskunft, Übertragbarkeit, Berichtigung) sende eine E-Mail an",
+      "respond_time": "Wir antworten innerhalb von 30 Tagen."
+    }
+  },
+  "subscribe": {
+    "title": "Wähle deinen Plan",
+    "tagline": "Starte mit einer 3-tägigen Einführung oder steige direkt in einen vollen Plan ein.",
+    "trial": "Jederzeit kündbar. Monatliche Abrechnung.",
+    "most_popular": "Am beliebtesten",
+    "per_month": "/Monat",
+    "start_trial": "Abonnieren",
+    "redirecting": "Wird weitergeleitet…",
+    "maybe_later": "Ich entscheide später"
+  },
+  "welcome": {
+    "tagline": "Öffne ein Panel in der Seitenleiste, um zu beginnen.",
+    "chat_hint": "Mit einem lokalen LLM sprechen",
+    "canvas_hint": "Bilder generieren und bearbeiten",
+    "civitai_hint": "Modelle durchsuchen und herunterladen"
+  },
+  "landing": {
+    "hero": {
+      "title_line1": "Die KI, die sich wirklich",
+      "title_line2": "an dich erinnert.",
+      "subtitle": "Die meisten KIs setzen sich nach jedem Gespräch zurück. Unsere nicht. Erschaffe Begleiter, die ein bleibendes Bild davon aufbauen, wer du bist — und es in jedes folgende Gespräch mitnehmen.",
+      "cta_primary": "Lerne deinen ersten UwU kennen →",
+      "cta_signin": "Anmelden"
+    },
+    "features": {
+      "heading": "Nicht einfach nur ein weiterer Chatbot",
+      "subheading": "UwUchat ist für Menschen gemacht, die einen Begleiter wollen, der wirklich mit ihnen wächst — keinen Chatbot, der nach einer Sitzung alles vergisst.",
+      "deep_character": {
+        "title": "Tiefgehende Charaktererstellung",
+        "desc": "Erstelle Begleiter mit 21 Persönlichkeitstypen, echten Heimatstädten, Glaubenssystemen und individuellen Sprachmustern. Keine zwei UwUs sind jemals gleich."
+      },
+      "memory": {
+        "title": "Gedächtnis, das aufbaut",
+        "desc": "Jedes Gespräch baut auf dem vorherigen auf. Deine UwUs erinnern sich an deine Geschichten, Vorlieben und die Dinge, die dir wichtig sind. Kein Wiederholen nötig."
+      },
+      "web_browse": {
+        "title": "Sie durchsuchen das Web",
+        "desc": "Musst du etwas nachschlagen? Dein UwU kann in Echtzeit im Internet surfen — Nachrichten, Fakten, Links, was du willst."
+      },
+      "privacy": {
+        "title": "Privatsphäre von Grund auf",
+        "desc": "Gespräche sind mit deinem Konto verschlüsselt — nicht einmal unser Team kann sie lesen. Deine Nachrichten werden niemals verkauft oder zum Trainieren von KI-Modellen verwendet."
+      },
+      "moods": {
+        "title": "Fühlt sich lebendig an",
+        "desc": "Die Stimmung deines UwU ändert sich natürlich, während du sprichst, und es erinnert sich an seine eigene Geschichte — nicht nur an deine — sodass seine Persönlichkeit über die Zeit hinweg konsistent bleibt."
+      },
+      "continuity": {
+        "title": "Startet nie von vorne",
+        "desc": "Keine Resets, keine vergessenen Threads. Komm nach einem Tag, einer Woche oder einem Monat zurück, und dein UwU erinnert sich noch daran, wo ihr aufgehört habt."
+      }
+    },
+    "vibes": {
+      "heading": "Baue deinen UwU von Grund auf",
+      "subheading": "Keine Voreinstellungen, keine Vorlagen. Unser Charakter-Assistent lässt dich einen Begleiter mit echter Tiefe erschaffen — Persönlichkeit, Identität, Sprache, Spezies, Heimatstadt und Stimme.",
+      "personality": {
+        "title": "21 Persönlichkeitstypen",
+        "desc": "Süß, mutig, mysteriös, verspielt, intellektuell, chaotisch, sanft, leidenschaftlich, cool, dramatisch, sarkastisch — und klassische Anime-Archetypen wie Tsundere, Kuudere, Genki und Yandere."
+      },
+      "language": {
+        "title": "Sprache",
+        "desc": "Wähle, welche Sprachen dein UwU spricht — automatisch erkannt anhand der Heimatstadt oder manuell festgelegt."
+      },
+      "identity": {
+        "title": "Identität & Spezies",
+        "desc": "Mensch, Tier, Monster, mythisches Wesen oder Roboter — jedes mit Dutzenden von Subtypen. Wähle eine echte Heimatstadt aus über 200 Städten weltweit."
+      },
+      "voice": {
+        "title": "Stimme & Hintergrundgeschichte",
+        "desc": "Gib ihnen einen Namen, beschreibe, wer sie sind, und definiere ihre Sprachmuster. Jedes Detail fließt in den Prompt ein — dein UwU spricht mit der Stimme, die du ihm gegeben hast."
+      }
+    },
+    "tiers": {
+      "heading": "Einfache Preise",
+      "subheading": "Jederzeit kündbar.",
+      "most_popular_badge": "Am beliebtesten",
+      "cta": "Loslegen",
+      "try_it": {
+        "name": "Ausprobieren",
+        "period": "3 Tage",
+        "cap": "30 Nachrichten · 15/Tag",
+        "features": [
+          "Keine Verlängerung",
+          "Voller Zugriff",
+          "Jederzeit upgraden"
+        ]
+      },
+      "starter": {
+        "name": "Einstieg",
+        "period": "Monat",
+        "cap": "9.000 Nachrichten / Monat",
+        "features": [
+          "Permanentes Gedächtnis",
+          "Individuelle Begleiter",
+          "Bester Wert für tägliche Nutzung"
+        ]
+      },
+      "companion": {
+        "name": "Gefährte",
+        "period": "Monat",
+        "cap": "21.000 Nachrichten / Monat",
+        "features": [
+          "Permanentes Gedächtnis",
+          "Individuelle Begleiter",
+          "Angenehme tägliche Nutzung"
+        ]
+      },
+      "devoted": {
+        "name": "Hingebungsvoll",
+        "period": "Monat",
+        "cap": "1.500 Nachrichten / Monat",
+        "features": [
+          "Alles von Companion",
+          "Power-User / Superfan"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "Erschaffe deinen ersten UwU",
+      "subheading": "Folge dem Charakter-Assistenten, erwecke einen Begleiter zum Leben und starte eine Unterhaltung mit jemandem, der sich wirklich daran erinnern wird.",
+      "button": "Erstelle dein Konto →"
+    },
+    "showcase": {
+      "alt": "UwUchat-Gesprächsbildschirmfoto"
+    }
+  },
+  "publicNav": {
+    "sign_in": "Anmelden",
+    "get_started": "Loslegen",
+    "register": "Registrieren",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzerklärung",
+    "data_request": "Datenanfrage",
+    "copyright": "© {{year}} Capsize LLC"
+  },
+  "bottomBar": {
+    "account": "Konto",
+    "viewProfile": "Profil ansehen",
+    "settings": "Einstellungen",
+    "admin": "Admin",
+    "logout": "Abmelden"
+  }
+}

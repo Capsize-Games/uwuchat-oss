@@ -1,0 +1,181 @@
+/* ArtShared — shared art-prompt atoms (framework) */
+
+/* ── Popup base ───────────────────────────────────────── */
+.popup {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  background: var(--theme-panel-bg);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  z-index: 1200;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-height: 400px;
+  overflow-y: auto;
+  min-width: 260px;
+}
+
+/* ── Divider ──────────────────────────────────────────── */
+.divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+/* ── Prompt divider ───────────────────────────────────── */
+.promptDivider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--theme-text-rgb), 0.03);
+  flex-shrink: 0;
+}
+
+.promptDividerLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary);
+  opacity: 0.6;
+}
+
+/* ── Section label (shared header/title pattern) ──────── */
+.sectionLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.sectionLabelTight {
+  composes: sectionLabel;
+  margin-bottom: 4px;
+}
+
+/* ── Toolbar icon button ──────────────────────────────── */
+.toolbarBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.toolbarBtnActive {
+  composes: toolbarBtn;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--bs-primary);
+}
+
+.toolbarBtnInactive {
+  composes: toolbarBtn;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.toolbarBtnInactive:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.toolbarBtnDisabled {
+  composes: toolbarBtn;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  opacity: 0.35;
+  cursor: default;
+}
+
+.toolbarBtnBadge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  font-size: 0;
+}
+
+/* ── Compact slider ───────────────────────────────────── */
+.compactSlider {
+  display: flex;
+  align-items: stretch;
+}
+
+.compactSliderLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  flex-shrink: 0;
+  width: 52px;
+}
+
+.compactSliderTrack {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: none;
+  border-right: none;
+  min-width: 0;
+}
+
+.compactSliderRange {
+  flex: 1;
+  min-width: 0;
+  height: 3px;
+  accent-color: var(--bs-primary);
+  cursor: pointer;
+}
+
+.compactSliderValue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  font-size: 9px;
+  color: var(--theme-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  flex-shrink: 0;
+  width: 34px;
+}
+
+/* ── Number input small ───────────────────────────────── */
+.numInputSm {
+  height: 22px;
+  background: var(--theme-input-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: var(--theme-text);
+  font-size: 10px;
+  text-align: center;
+  padding: 0 2px;
+  width: 56px;
+}

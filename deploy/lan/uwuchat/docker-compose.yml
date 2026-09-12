@@ -1,0 +1,366 @@
+# ---------------------------------------------------------------------------
+# AI Runner — LAN deployment stack for the uwuchat website (homeserver).
+#
+# Runs the uwuchat website on the home server (<homeserver-hostname>, <homeserver-ip>) behind its
+# host Caddy reverse proxy.  Chat inference is served by the workstation's
+# shared Qwen3-14B inference daemon (ollama-compatible), configured via
+# AIRUNNER_OLLAMA_BASE_URL — the SAME daemon headlesscode code-mode sessions
+# use (HEADLESSCODE_OLLAMA_URL, same host:port), so chat and code share one
+# loaded model and never contend for a second VRAM slot. The daemon/router
+# bring-up is an ops task — see deploy/lan/README.md.
+#
+# Also includes the headlesscode dashboard sidecar (the `headlesscode`
+# service below) that backs the launch_headlesscode_session tool / code
+# mode (see projects/uwuchat/server/code_mode_*.py). It shares `server`'s
+# network namespace since its control plane binds 127.0.0.1 only by
+# design — celery/celery-sync/celery-beat do too, since those are the
+# services that actually call it (session launch, poll, message).
+#
+# Image-based (no source bind-mounts) so it runs on the homeserver without
+# the repo checkout.  The `web` sidecar builds the client SPA and proxies
+# /api to `server`; the homeserver Caddy routes into `web`.
+#
+# Deploy (on the homeserver, from a repo clone — see deploy/lan/README.md):
+#   cd /opt/lan/deploy/lan/uwuchat
+#   cp .env.example .env && $EDITOR .env
+#   docker compose up -d --build
+#   docker compose ps
+#   (reload the homeserver Caddy config once the web container is healthy)
+#
+# Teardown: docker compose down
+# ---------------------------------------------------------------------------
+
+name: lan-uwuchat
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-airunner}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airunner}
+      POSTGRES_DB: ${POSTGRES_DB:-airunner}
+    # Internal network only.  Publish a host port ONLY for debugging:
+    #   ports: ["${POSTGRES_PORT:-5434}:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U ${POSTGRES_USER:-airunner} -d ${POSTGRES_DB:-airunner}
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks:
+      - internal
+
+  redis:
+    image: redis:7.2-alpine
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --maxmemory
+      - 256mb
+      - --maxmemory-policy
+      - allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks:
+      - internal
+
+  server:
+    image: <registry>/<your-org>/airunner:latest
+    env_file:
+      # Required only at deploy time — `docker compose config` must validate
+      # from a clean checkout where the real .env does not exist yet.
+      - path: .env
+        required: false
+    environment:
+      # Project overlay + deployment mode.
+      AIRUNNER_PROJECT: uwuchat
+      # Auth extension (login) — REQUIRED: the open-core image does not
+      # enable auth by default; without this the LAN site has no login.
+      AIRUNNER_EXTENSIONS: ${AIRUNNER_EXTENSIONS:-extensions.auth.config}
+      AIRUNNER_DEPLOYMENT_MODE: ${AIRUNNER_DEPLOYMENT_MODE:-production}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      # Point the app at the compose database (overrides any localhost URL
+      # in the env file).  psycopg v3 driver.
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      # DIALOGUE (chat) runs on the workstation's Qwen3-14B coder daemon
+      # — the SAME daemon headlesscode code-mode sessions use
+      # (HEADLESSCODE_OLLAMA_URL below, same host:port). Because chat and
+      # code share one daemon, no second model loads on the GPU — the
+      # VRAM contention that previously forced chat to cloud (2026-08-20)
+      # does not apply to a shared single daemon.
+      AIRUNNER_LLM_PROVIDER: ${AIRUNNER_LLM_PROVIDER:-ollama}
+      AIRUNNER_LLM_MODEL: ${AIRUNNER_LLM_MODEL:-qwen3-14b}
+      AIRUNNER_OLLAMA_BASE_URL: ${AIRUNNER_OLLAMA_BASE_URL:-http://<workstation-ip>:11435}
+      # Celery broker/backend via the internal redis.
+      AIRUNNER_CELERY_BROKER_URL: redis://redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://redis:6379/1
+      AIRUNNER_REDIS_URL: redis://redis:6379
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+      # Headlesscode dashboard sidecar (localhost-only contract — the
+      # sidecar shares this container's network namespace, so the server
+      # reaches it at 127.0.0.1:4390).
+      HEADLESSCODE_DASHBOARD_URL: ${HEADLESSCODE_DASHBOARD_URL:-http://127.0.0.1:4390}
+      HEADLESSCODE_DASHBOARD_TOKEN: ${HEADLESSCODE_DASHBOARD_TOKEN:-}
+    volumes:
+      - server_data:/data
+    ports:
+      # Published only for host-side debugging; Caddy routes into `web`, not
+      # `server`, on the homeserver.  Remove if not needed.
+      - "${AIRUNNER_HTTP_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - internal
+
+  celery:
+    image: <registry>/<your-org>/airunner:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      AIRUNNER_PROJECT: uwuchat
+      # Auth extension — REQUIRED: without it, celery's migration run
+      # never registers extensions.auth's Alembic version_locations, so
+      # it can't resolve a DB whose alembic_version already points at an
+      # auth_* revision (the server container does set this and migrates
+      # fine, which is why only celery crash-loops). Must match server.
+      AIRUNNER_EXTENSIONS: ${AIRUNNER_EXTENSIONS:-extensions.auth.config}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      # See the `server` service's identical comment — DIALOGUE uses
+      # ai_pipeline.py's own OpenRouter/DeepSeek defaults, no override.
+      AIRUNNER_CELERY_BROKER_URL: redis://redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://redis:6379/1
+      AIRUNNER_REDIS_URL: redis://redis:6379
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+    volumes:
+      - server_data:/data
+    command:
+      - celery
+      - -A
+      - airunner_services.tasks.celery_app
+      - worker
+      - -Q
+      - default,downloads
+      - -c
+      - ${AIRUNNER_CELERY_CONCURRENCY:-2}
+      - -n
+      - celery-default@%h
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 1.0
+    # Shares `server`'s netns — this worker is the one that actually
+    # calls the headlesscode dashboard (session launch, poll, message),
+    # which binds 127.0.0.1 only.
+    network_mode: "service:server"
+
+  celery-sync:
+    image: <registry>/<your-org>/airunner:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      AIRUNNER_PROJECT: uwuchat
+      AIRUNNER_EXTENSIONS: ${AIRUNNER_EXTENSIONS:-extensions.auth.config}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      # Same chat-model env as the `server` service — DIALOGUE runs on
+      # the shared Qwen3-14B daemon here too.
+      AIRUNNER_LLM_PROVIDER: ${AIRUNNER_LLM_PROVIDER:-ollama}
+      AIRUNNER_LLM_MODEL: ${AIRUNNER_LLM_MODEL:-qwen3-14b}
+      AIRUNNER_OLLAMA_BASE_URL: ${AIRUNNER_OLLAMA_BASE_URL:-http://<workstation-ip>:11435}
+      AIRUNNER_CELERY_BROKER_URL: redis://redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://redis:6379/1
+      AIRUNNER_REDIS_URL: redis://redis:6379
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+    volumes:
+      - server_data:/data
+    command:
+      - celery
+      - -A
+      - airunner_services.tasks.celery_app
+      - worker
+      - -Q
+      - sync
+      - -c
+      - ${AIRUNNER_CELERY_SYNC_CONCURRENCY:-2}
+      - -n
+      - celery-sync@%h
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 1536m
+    cpus: 4.0
+    network_mode: "service:server"
+
+  celery-beat:
+    image: <registry>/<your-org>/airunner:latest
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      AIRUNNER_PROJECT: uwuchat
+      AIRUNNER_EXTENSIONS: ${AIRUNNER_EXTENSIONS:-extensions.auth.config}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      AIRUNNER_CELERY_BROKER_URL: redis://redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://redis:6379/1
+      AIRUNNER_REDIS_URL: redis://redis:6379
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+    volumes:
+      - server_data:/data
+    command:
+      - celery
+      - -A
+      - airunner_services.tasks.celery_app
+      - beat
+      - --schedule
+      - /data/celerybeat-schedule
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 256m
+    cpus: 0.5
+    network_mode: "service:server"
+
+  # Long-lived `headlesscode dashboard` control plane.  Shares the
+  # server's network namespace so its hard 127.0.0.1 bind is the
+  # server's own loopback (localhost-only contract — never publish this
+  # port). code-mode sessions (launch_headlesscode_session) run on the
+  # shared workstation's local coder daemon — see
+  # HEADLESSCODE_CODE_MODE_* and HEADLESSCODE_OLLAMA_URL below. The
+  # image must be built from a headlesscode checkout containing the
+  # POST /api/session/:id/message route (master since 2026-08-04) and
+  # the POST /api/projects/ensure-worktree route (master since
+  # 2026-08-20).
+  headlesscode:
+    image: headlesscode:0.1.0
+    restart: unless-stopped
+    network_mode: "service:server"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # The dashboard's own process.env lookup expects
+      # HEADLESSCODE_OPENROUTER_API_KEY specifically; borrow the value
+      # from the stack .env's plain OPENROUTER_API_KEY entry.
+      HEADLESSCODE_OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      HEADLESSCODE_DASHBOARD_URL: http://127.0.0.1:4390
+      HEADLESSCODE_DATA_DIR: /data/headlesscode-store
+      HOME: /root
+      # code-mode sessions (the only mode this applies to — see cli.ts's
+      # useLocalCodeBackend) run against the shared workstation's coder
+      # daemon instead of OpenRouter.
+      HEADLESSCODE_CODE_MODE_BACKEND: ollama
+      HEADLESSCODE_CODE_MODE_MODEL: qwen3-14b
+      HEADLESSCODE_OLLAMA_URL: ${HEADLESSCODE_OLLAMA_URL:-http://<workstation-ip>:11435}
+      # POST /api/projects/ensure-worktree's store — airunner's
+      # headlesscode_service.py resolves + stores each registered
+      # project's worktree path at registration time
+      # (HeadlesscodeProject.workspace_root), not per-launch.
+      HEADLESSCODE_DASHBOARD_WORKTREE_ROOT: /opt/headlesscode-worktrees
+      # This service runs as root — git worktree add's writes into a
+      # registered project's own .git (new ref + worktree-admin
+      # metadata) would otherwise end up root-owned on the host.
+      HEADLESSCODE_DASHBOARD_WORKTREE_OWNER: ${HEADLESSCODE_DASHBOARD_WORKTREE_OWNER:-1000:1000}
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: safe.directory
+      GIT_CONFIG_VALUE_0: "*"
+    volumes:
+      # Mounted store dir on the homeserver — the dashboard's project
+      # registry + checkpoints live here.
+      - ${HEADLESSCODE_STORE_DIR:-./headlesscode-store}:/data/headlesscode-store
+      # Where a registered project's disposable worktree gets created.
+      - ${HEADLESSCODE_WORKTREES_DIR:-/opt/headlesscode-worktrees}:/opt/headlesscode-worktrees
+      # Parent directory for any project the admin registers — must be
+      # the SAME real host path on both sides (a worktree's .git points
+      # back into the source repo's .git/worktrees/<name>).
+      - ${HEADLESSCODE_PROJECTS_DIR:-/opt/headlesscode-projects}:${HEADLESSCODE_PROJECTS_DIR:-/opt/headlesscode-projects}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://127.0.0.1:4390/api/summary >/dev/null || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    command: ["headlesscode", "dashboard", "--port", "4390"]
+
+  web:
+    # Builds the client SPA for this project and serves it via nginx,
+    # proxying /api + websockets to `server`.  Build context is the repo
+    # root so VITE_PROJECT overlays + extension aliases resolve.
+    build:
+      context: ../../..
+      dockerfile: deploy/lan/web/Dockerfile
+      args:
+        VITE_PROJECT: uwuchat
+        VITE_DEPLOYMENT: cloud
+    environment:
+      SERVER_UPSTREAM: server:8080
+    depends_on:
+      - server
+    restart: unless-stopped
+    networks:
+      - internal
+      - homeserver_hs_net
+
+networks:
+  # The homeserver compose stack creates this network and attaches its Caddy
+  # reverse proxy to it; this stack joins it so Caddy can route to `web`.
+  # `server` deliberately does NOT join this network — it only needs to be
+  # reachable from `web` (via `internal`), not from Caddy directly. Every
+  # LAN stack's `server` service is named identically ("server"), so if two
+  # stacks both attached it to this shared external network, Docker's
+  # embedded DNS would return both containers' IPs for the same hostname
+  # and requests would round-robin between the two stacks' backends —
+  # this bit real users as random, intermittent "Invalid or expired
+  # token" 401s (a JWT issued by one stack's server rejected by the
+  # other's, since each has its own secret/DB).
+  homeserver_hs_net:
+    name: homeserver_hs_net
+    external: true
+  internal:
+    driver: bridge
+
+volumes:
+  pgdata:
+  redis_data:
+  server_data:

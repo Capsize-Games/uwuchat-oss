@@ -1,0 +1,72 @@
+/* SettingsButton — CSS Module with real :hover rules */
+
+.base {
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.base:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* ── Default (no variant or unset) ───────────────────── */
+
+.default {
+  composes: base;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text-primary);
+}
+
+.default:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Primary ─────────────────────────────────────────── */
+
+.primary {
+  composes: base;
+  background: var(--theme-accent);
+  color: #fff;
+  border: none;
+}
+
+.primary:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+/* ── Secondary ───────────────────────────────────────── */
+
+.secondary {
+  composes: base;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text-secondary);
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Danger ──────────────────────────────────────────── */
+
+.danger {
+  composes: base;
+  border-color: rgba(var(--bs-danger-rgb), 0.3);
+  background: rgba(var(--bs-danger-rgb), 0.1);
+  color: var(--bs-danger);
+}
+
+.danger:hover:not(:disabled) {
+  background: rgba(var(--bs-danger-rgb), 0.22);
+  border-color: rgba(var(--bs-danger-rgb), 0.5);
+}

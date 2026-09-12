@@ -1,0 +1,33 @@
+/* GenerationInfoPanel — expandable generation settings section (framework) */
+
+.wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 4px 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.toggleBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.85;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}

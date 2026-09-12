@@ -1,0 +1,16 @@
+/* ModelRows — version/model/scheduler row in toolbar (framework) */
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.spinner {
+  color: var(--theme-text-secondary);
+  width: 11px;
+  height: 11px;
+}

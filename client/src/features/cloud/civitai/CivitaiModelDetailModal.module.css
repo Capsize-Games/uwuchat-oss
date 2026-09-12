@@ -1,0 +1,160 @@
+/* CivitaiModelDetailModal — inline style refactor */
+
+.modalContent {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  width: 740px;
+  height: 520px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--theme-bg);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Left column */
+.previewColumn {
+  width: 340px;
+  gap: 8px;
+}
+
+.previewFrame {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.noPreview {
+  color: #888;
+  font-size: 12px;
+}
+
+.thumbnails {
+  gap: 4px;
+}
+
+.thumbItem {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.thumbItemActive {
+  border: 2px solid var(--bs-primary);
+}
+
+.thumbItemInactive {
+  border: 2px solid transparent;
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right column */
+.infoColumn {
+  gap: 6px;
+}
+
+.modelName {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 1px;
+}
+
+.modelCreator {
+  color: #aaa;
+  font-size: 11px;
+}
+
+.modelStats {
+  gap: 8px;
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.licenseIcons {
+  gap: 3px;
+}
+
+.licenseIcon {
+  font-size: 13px;
+  cursor: help;
+}
+
+.descriptionArea {
+  height: 0;
+  font-size: 10px;
+  color: #999;
+  line-height: 1.4;
+}
+
+/* Bottom controls */
+.controlsSection {
+  margin-bottom: 4px;
+}
+
+.controlLabel {
+  color: #aaa;
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+
+.selectInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 5px;
+}
+
+.selectOption {
+  background: #333;
+}
+
+.actionRow {
+  gap: 6px;
+}
+
+.viewOnCivitBtn {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 10px;
+}
