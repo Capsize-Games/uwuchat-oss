@@ -1,0 +1,70 @@
+/* ArtDropdownPicker — native-style dropdown trigger + portal (framework) */
+
+.trigger {
+  position: relative;
+  flex: 1 1 0%;
+}
+
+.triggerBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+.triggerBtnEnabled {
+  composes: triggerBtn;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.triggerBtnEnabled:hover {
+  background: rgba(var(--theme-text-rgb), 0.08);
+}
+
+.triggerBtnDisabled {
+  composes: triggerBtn;
+  cursor: default;
+  opacity: 0.4;
+}
+
+.triggerLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+.triggerLabelPlaceholder {
+  color: var(--theme-text-secondary);
+}
+
+.triggerLabelValue {
+  color: var(--theme-text);
+}
+
+.dropdown {
+  composes: popupFixed from "./PopupShared.module.css";
+  max-height: 240px;
+}
+
+.noOptions {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+}
+
+.opt {
+  composes: dropdownOpt from "./PopupShared.module.css";
+}
+
+.optActive {
+  composes: dropdownOptActive from "./PopupShared.module.css";
+}

@@ -1,0 +1,44 @@
+.header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.body {
+  padding: 14px 16px;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.separator {
+  margin-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 10px;
+}
+
+.radioInput {
+  accent-color: var(--bs-primary);
+  cursor: pointer;
+}
+
+.checkboxInput {
+  accent-color: var(--bs-primary);
+  cursor: pointer;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  gap: 6px;
+}
+
+.footerBtn {
+  font-size: 12px;
+}

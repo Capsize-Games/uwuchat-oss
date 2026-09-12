@@ -1,0 +1,35 @@
+/* PromptTextareas — multi-prompt textarea stack (framework) */
+
+.textarea {
+  resize: none;
+  flex: 1;
+  background: transparent;
+  color: var(--theme-text);
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.collapsed {
+  height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: transparent;
+  color: var(--theme-text);
+  border: none;
+  outline: none;
+  padding: 0 10px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  opacity: 0.85;
+  cursor: text;
+}
+
+.activeWrap {
+  display: flex;
+  flex-direction: column;
+  cursor: text;
+}

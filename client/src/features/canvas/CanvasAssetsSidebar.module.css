@@ -1,0 +1,62 @@
+.collapsedWrapper {
+  width: 36px;
+}
+
+.resizeHandle {
+  width: 4px;
+  background: transparent;
+}
+
+.panel {
+  background: #14141e;
+  min-width: 0;
+}
+
+.tabBar {
+  background: #161620;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 5px 4px;
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tabBtn:hover:not(.tabBtnActive) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tabBtnActive {
+  background: var(--theme-panel-bg);
+  border-bottom: 2px solid var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.tabBtnInactive {
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 2px solid transparent;
+}
+
+.collapseBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 6px;
+  color: rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+
+.collapseBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+}

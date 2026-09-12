@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.gridLabel {
+  font-size: 10px;
+  color: rgba(var(--theme-text-rgb), 0.35);
+  white-space: nowrap;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.dimLabel {
+  font-size: 10px;
+  color: rgba(var(--theme-text-rgb), 0.4);
+}
+
+.gridInput {
+  width: 52px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: rgba(var(--theme-text-rgb), 0.8);
+  font-size: 11px;
+  text-align: center;
+  padding: 2px 0;
+}

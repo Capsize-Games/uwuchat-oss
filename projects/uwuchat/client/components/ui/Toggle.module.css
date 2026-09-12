@@ -1,0 +1,13 @@
+.track { height: 22px; width: 40px; padding: 0; border-radius: 11px; border: none; cursor: pointer; position: relative; transition: background 0.15s; flex-shrink: 0; }
+.trackOn { composes: track; background: var(--theme-accent, #a78bfa); }
+.trackOff { composes: track; background: var(--theme-border); }
+.knob { position: absolute; top: 3px; left: 3px; display: block; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform 0.15s; }
+.knobOn { composes: knob; transform: translateX(18px); }
+.knobOff { composes: knob; transform: translateX(0); }
+
+.trackCompact { height: 14px; width: 26px; padding: 0; border-radius: 7px; border: none; cursor: pointer; position: relative; transition: background 0.15s; flex-shrink: 0; }
+.trackOnCompact { composes: trackCompact; background: var(--theme-accent, #a78bfa); }
+.trackOffCompact { composes: trackCompact; background: var(--theme-border); }
+.knobCompact { position: absolute; top: 2px; left: 2px; display: block; width: 10px; height: 10px; border-radius: 50%; background: #fff; transition: transform 0.15s; }
+.knobOnCompact { composes: knobCompact; transform: translateX(12px); }
+.knobOffCompact { composes: knobCompact; transform: translateX(0); }

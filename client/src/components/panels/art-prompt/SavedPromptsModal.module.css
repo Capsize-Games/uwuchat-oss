@@ -1,0 +1,100 @@
+/* SavedPromptsModal — saved prompts list modal (framework) */
+
+.header {
+  padding: 8px 12px 6px;
+  z-index: 1;
+}
+
+.loadingState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--theme-text-secondary);
+  gap: 8px;
+  font-size: 13px;
+}
+
+.emptyState {
+  padding: 40px;
+  gap: 8px;
+}
+
+.emptyStateText {
+  font-size: 12px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cardPrompt {
+  font-size: 12px;
+  color: var(--theme-text);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardEmptyPrompt {
+  opacity: 0.4;
+}
+
+.cardNegPrompt {
+  font-size: 11px;
+  color: var(--theme-text-secondary);
+  opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.loadBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: rgba(var(--theme-primary-rgb), 0.12);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.25);
+  border-radius: 4px;
+  color: var(--bs-primary);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.loadBtn:hover {
+  background: rgba(var(--theme-primary-rgb), 0.22);
+}
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: var(--bs-danger);
+  border-color: rgba(var(--bs-danger-rgb), 0.3);
+  background: rgba(var(--bs-danger-rgb), 0.1);
+}

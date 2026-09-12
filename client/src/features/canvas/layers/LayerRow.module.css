@@ -1,0 +1,98 @@
+.dropIndicator {
+  height: 2px;
+  background: #6399ff;
+  margin: 0 4px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
+  border-left: 2px solid transparent;
+  user-select: none;
+  transition: background 0.1s;
+}
+
+.rowActive {
+  background: rgba(99, 153, 255, 0.16);
+}
+
+.rowSelected {
+  background: rgba(99, 153, 255, 0.08);
+  border-left-color: #6399ff;
+}
+
+.rowDragOver {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rowDefault {
+  background: transparent;
+}
+
+.rowHoverable:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.eyeBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  transition: background 0.1s, color 0.1s;
+}
+
+.eyeBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(var(--theme-text-rgb), 0.85);
+}
+
+.eyeBtnVisible {
+  color: rgba(var(--theme-text-rgb), 0.55);
+}
+
+.eyeBtnHidden {
+  color: rgba(var(--theme-text-rgb), 0.2);
+}
+
+.editInput {
+  flex-grow: 1;
+  min-width: 0;
+  font-size: 11px;
+  padding: 1px 4px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(99, 153, 255, 0.5);
+  border-radius: 3px;
+  color: rgba(var(--theme-text-rgb), 0.9);
+  outline: none;
+}
+
+.nameText {
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.nameTextVisibleActive {
+  color: rgba(var(--theme-text-rgb), 0.9);
+}
+
+.nameTextVisible {
+  color: rgba(var(--theme-text-rgb), 0.65);
+}
+
+.nameTextHidden {
+  color: rgba(var(--theme-text-rgb), 0.25);
+}
+
+.opacity {
+  flex-shrink: 0;
+}

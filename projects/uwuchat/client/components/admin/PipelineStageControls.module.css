@@ -1,0 +1,188 @@
+/* PipelineStageControls — inline style refactor */
+
+/* ── Stage header ─────────────────────────────────────── */
+
+.stageHeader {
+  composes: textLabel from "../../../styles/primitives.module.css";
+  padding: 6px 12px 2px;
+}
+
+.stageHeaderMt {
+  composes: stageHeader;
+  margin-top: 8px;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+
+.card {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.collapsedRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--stage-color);
+  flex-shrink: 0;
+}
+
+.stageLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.modelName {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+}
+
+.costValue {
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--bs-info);
+  min-width: 80px;
+  text-align: right;
+}
+
+/* ── Expanded section ─────────────────────────────────── */
+
+.expanded {
+  padding: 4px 12px 10px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.triggerText {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 6px;
+}
+
+/* ── Form controls ────────────────────────────────────── */
+
+.input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: #e0e0e0;
+  padding: 3px 6px;
+  font-size: 11px;
+  box-sizing: border-box;
+}
+
+.promptSection {
+  margin-top: 6px;
+}
+
+.promptHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.promptLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.smBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 1px 8px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.promptTextarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: #e0e0e0;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-family: monospace;
+  height: 60px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.promptTextareaReadOnly {
+  composes: promptTextarea;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.errorText {
+  color: #f87171;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+/* ── Buttons ──────────────────────────────────────────── */
+
+.btnRow {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.saveBtn {
+  width: 100%;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+  cursor: pointer;
+  font-size: 11px;
+  margin-top: 4px;
+  flex: 1;
+}
+
+.saveBtnDisabled {
+  composes: saveBtn;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.resetBtn {
+  composes: saveBtn;
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  flex: 1;
+}
+
+/* ── Row (label + control grid) ───────────────────────── */
+
+.configRow {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.configLabel {
+  color: rgba(255, 255, 255, 0.45);
+  text-align: right;
+}
+
+.costRow {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,146 @@
+/* InlineFlowNodes — inline style refactor */
+
+.nodesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.nodesRail {
+  border-left: 1px dashed rgba(255, 255, 255, 0.12);
+  margin-left: 7px;
+  padding-left: 14px;
+}
+
+/* FlowStepNode / CostStepNode shared */
+.nodeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  position: relative;
+  min-height: 20px;
+}
+
+.nodeRowClickable {
+  cursor: pointer;
+}
+
+.nodeDot {
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.nodeDotCentered {
+  top: 5px;
+}
+
+.nodeContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.nodeLabel {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.nodeArrow {
+  font-size: 8px;
+  opacity: 0.5;
+  margin-right: 3px;
+}
+
+.nodeToolName {
+  font-weight: 400;
+  opacity: 0.7;
+  font-size: 9px;
+  margin-left: 4px;
+}
+
+.nodeTruncated {
+  display: block;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+  line-height: 1.3;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeCostBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: 9px;
+  padding-right: 4px;
+}
+
+.nodeModelId {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: monospace;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeTokenCount {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nodeCostValue {
+  color: var(--theme-success);
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.nodeCostNote {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+}
+
+/* CostStepNode only */
+.costStepNode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  position: relative;
+  cursor: pointer;
+  min-height: 20px;
+}
+
+.costStepLabel {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.costStepDesc {
+  display: block;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.25);
+  line-height: 1.3;
+  margin-top: 1px;
+}
+
+.costStepChars {
+  display: block;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+}

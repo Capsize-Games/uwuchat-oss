@@ -1,0 +1,127 @@
+/* ConversationFlow — inline style refactor */
+
+.userNode {
+  font-size: 11px;
+  color: #e0e0e0;
+  padding: 1px 0 1px 6px;
+}
+
+.connector {
+  width: 0;
+  height: 10px;
+  border-left-style: solid;
+}
+
+.connectorSolid {
+  composes: connector;
+  margin-left: 10px;
+  border-left-color: rgba(255, 255, 255, 0.15);
+}
+
+.connectorDashed {
+  composes: connector;
+  margin-left: 10px;
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.connectorIndentSolid {
+  composes: connector;
+  margin-left: 28px;
+  border-left-color: rgba(255, 255, 255, 0.15);
+}
+
+.connectorIndentDashed {
+  composes: connector;
+  margin-left: 28px;
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+
+.bgHeader {
+  display: flex;
+  padding-left: 16px;
+  margin-top: 2px;
+}
+
+.bgLabel {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.treePrefix {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-right: 6px;
+}
+
+.accentBold {
+  color: #6c63ff;
+}
+
+.nodeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0 2px 6px;
+}
+
+.nodeRowIndent {
+  composes: nodeRow;
+  padding-left: 24px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  flex-shrink: 0;
+}
+
+.nodeLabel {
+  font-size: 11px;
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+.nodeTrigger {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-left: 5px;
+}
+
+.nodeCost {
+  margin-left: auto;
+  font-size: 10px;
+  color: #4ade80;
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+/* ── Legend ───────────────────────────────────────────── */
+
+.legend {
+  margin-top: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.legendTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 4px;
+}
+
+.legendText {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+}
+
+.legendNote {
+  margin-top: 4px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.6;
+}

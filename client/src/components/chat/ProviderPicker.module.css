@@ -1,0 +1,80 @@
+.container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.triggerBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--theme-text);
+  font-size: 0.75rem;
+}
+
+.triggerBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.popup {
+  position: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  padding: 4px 0;
+  z-index: 1300;
+  min-width: 160px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 12px;
+  border: none;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.listItemActive {
+  background: rgba(13, 110, 253, 0.10);
+  border-left-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.listItemActive:hover {
+  background: rgba(13, 110, 253, 0.18);
+}
+
+.listItemInactive {
+  background: transparent;
+  color: var(--theme-text);
+}
+
+.configSection {
+  padding: 6px 10px;
+  margin-top: 4px;
+  gap: 4px;
+}
+
+.configInput {
+  font-size: 0.72rem;
+}

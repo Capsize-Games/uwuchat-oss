@@ -1,0 +1,122 @@
+"""
+System and application control tools.
+
+Tools for controlling the application, managing files, and system operations.
+"""
+
+import os
+from datetime import datetime
+from typing import Annotated
+
+from airunner_services.llm.core.tool_registry import tool, ToolCategory
+
+
+def get_current_datetime() -> str:
+    """Return the current local date and time.
+
+    Not exposed as a tool — the current datetime is already
+    injected into the per-turn context block.  Making it
+    available as a tool just wastes DIALOGUE calls.
+    """
+    now = datetime.now().astimezone()
+    tz_name = now.tzname() or "local"
+    offset = now.strftime("%z")
+    formatted_offset = ""
+    if offset:
+        formatted_offset = f"UTC{offset[:3]}:{offset[3:]}"
+
+    timezone_text = tz_name
+    if formatted_offset and formatted_offset not in timezone_text:
+        timezone_text = f"{tz_name} ({formatted_offset})"
+
+    return (
+        f"Current local date and time: {now.strftime('%Y-%m-%d %H:%M:%S')}. "
+        f"Day: {now.strftime('%A')}. Timezone: {timezone_text}."
+    )
+
+
+@tool(
+    name="list_directory",
+    category=ToolCategory.FILE,
+    description="List files and directories in a path",
+    return_direct=False,
+    requires_api=False,
+)
+def list_directory(
+    path: Annotated[str, "Directory path to list"],
+) -> str:
+    """List directory contents."""
+    abs_path = os.path.abspath(path)
+
+    if not os.path.exists(abs_path):
+        return f"Error: Path does not exist: {abs_path}"
+
+    if not os.path.isdir(abs_path):
+        return f"Error: Not a directory: {abs_path}"
+
+    try:
+        items = os.listdir(abs_path)
+        return "\n".join(sorted(items))
+    except PermissionError:
+        return f"Error: Permission denied: {abs_path}"
+    except Exception as e:
+        return f"Error listing directory: {e}"
+
+
+@tool(
+    name="read_file",
+    category=ToolCategory.FILE,
+    description="Read contents of a text file",
+    return_direct=False,
+    requires_api=False,
+)
+def read_file(
+    path: Annotated[str, "File path to read"],
+) -> str:
+    """Read file contents."""
+    abs_path = os.path.abspath(path)
+
+    if not os.path.exists(abs_path):
+        return f"Error: File does not exist: {abs_path}"
+
+    if not os.path.isfile(abs_path):
+        return f"Error: Not a file: {abs_path}"
+
+    try:
+        with open(abs_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return content
+    except PermissionError:
+        return f"Error: Permission denied: {abs_path}"
+    except UnicodeDecodeError:
+        return f"Error: Cannot read file (binary or unsupported encoding): {abs_path}"
+    except Exception as e:
+        return f"Error reading file: {e}"
+
+
+@tool(
+    name="write_file",
+    category=ToolCategory.FILE,
+    description="Write content to a text file",
+    return_direct=True,
+    requires_api=False,
+)
+def write_file(
+    path: Annotated[str, "File path to write to"],
+    content: Annotated[str, "Content to write"],
+) -> str:
+    """Write content to file."""
+    abs_path = os.path.abspath(path)
+
+    try:
+        # Create parent directories if needed
+        os.makedirs(os.path.dirname(abs_path), exist_ok=True)
+
+        with open(abs_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        return f"Successfully wrote to: {abs_path}"
+    except PermissionError:
+        return f"Error: Permission denied: {abs_path}"
+    except Exception as e:
+        return f"Error writing file: {e}"

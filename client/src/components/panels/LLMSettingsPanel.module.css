@@ -1,0 +1,10 @@
+/* LLMSettingsPanel — LLM override settings panel (framework) */
+
+.section {
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.resetBtn {
+  border-color: #444;
+}
