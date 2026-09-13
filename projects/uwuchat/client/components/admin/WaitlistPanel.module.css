@@ -1,0 +1,108 @@
+/* WaitlistPanel — inline style refactor */
+
+.wrapper {
+  padding: 16px;
+  color: var(--theme-text-primary);
+}
+
+.heading {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.summaryBar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--theme-text-secondary);
+}
+
+.summaryWaiting {
+  color: #fbbf24;
+}
+
+.summaryInvited {
+  color: #60a5fa;
+}
+
+.summaryConverted {
+  color: var(--theme-success);
+}
+
+.releaseRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.releaseLabel {
+  font-size: 13px;
+  color: var(--theme-text-secondary);
+}
+
+.releaseInput {
+  width: 64px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text-primary);
+  font-size: 13px;
+}
+
+.releaseBtn {
+  font-size: 13px;
+}
+
+.releaseResult {
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  background: rgba(var(--theme-success-rgb), 0.1);
+  border: 1px solid rgba(var(--theme-success-rgb), 0.3);
+  font-size: 12px;
+  color: var(--theme-success);
+}
+
+.entryTable {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+
+.entryHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text-secondary);
+}
+
+.entryHeader th {
+  text-align: left;
+  padding: 4px 8px;
+}
+
+.entryRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.entryRow td {
+  padding: 4px 8px;
+}
+
+.statusConverted {
+  color: var(--theme-success);
+}
+
+.statusInvited {
+  color: #60a5fa;
+}
+
+.statusWaiting {
+  color: #fbbf24;
+}
+
+.scrollTable {
+  max-height: 400px;
+  overflow-y: auto;
+}

@@ -1,0 +1,17 @@
+/* StatBadge — inline style refactor */
+
+.badge {
+  text-align: center;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1db954;
+}
+
+.label {
+  font-size: 0.65rem;
+  color: var(--theme-text-secondary);
+  margin-top: 2px;
+}

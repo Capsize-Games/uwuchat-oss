@@ -1,0 +1,32 @@
+/* ProjectedMessageList — inline style refactor */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.role {
+  font-size: 0.75rem;
+  color: #5865f2;
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.content {
+  font-size: 0.72rem;
+  color: var(--theme-text-primary);
+  word-break: break-word;
+}
+
+.empty {
+  padding: 8px;
+  color: var(--theme-text-muted);
+  font-size: 0.72rem;
+}

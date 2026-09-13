@@ -1,0 +1,34 @@
+/* TopBar — inline style refactor */
+
+.bar { display: flex; align-items: center; justify-content: space-between; padding: 0 8px; height: 42px; border-bottom: 1px solid var(--theme-border); background: var(--theme-panel-bg); flex-shrink: 0; gap: 2px; }
+.avatarBtn { background: none; border: none; padding: 0; cursor: pointer; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.avatarImg { width: 28px; height: 28px; object-fit: cover; border-radius: 50%; }
+.center { display: flex; align-items: center; gap: 6px; flex: 1; justify-content: center; min-width: 0; }
+.brand { font-weight: 700; font-size: 0.85rem; color: var(--theme-text-primary); letter-spacing: 0.02em; }
+.dropdown { position: absolute; top: 100%; right: 0; margin-top: 4px; z-index: 2000; background: var(--theme-bg-secondary); border: 1px solid var(--theme-border); border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); min-width: 180px; overflow: hidden; }
+.dropdownItem { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 12px; border: none; background: transparent; color: var(--theme-text-primary); cursor: pointer; font-size: 0.78rem; text-align: left; }
+.dropdownItem:hover { background: rgba(255,255,255,0.06); }
+.dropdownLabel { font-size: 0.68rem; font-weight: 600; color: var(--theme-text-secondary); padding: 6px 12px 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+.relative { position: relative; }
+.btnIcon { background: none; border: none; color: var(--theme-text-secondary); cursor: pointer; padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.btnIcon:hover { background: rgba(255,255,255,0.06); }
+.emptyState { padding: 16px; text-align: center; color: var(--theme-text-secondary); font-size: 0.75rem; }
+.panelHeader { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 6px; border-bottom: 1px solid var(--theme-border); }
+.panelTitle { font-size: 0.82rem; font-weight: 600; color: var(--theme-text-primary); }
+.closeBtn { background: none; border: none; color: var(--theme-text-secondary); cursor: pointer; font-size: 1.1rem; padding: 2px 4px; line-height: 1; }
+.logoArea { display: flex; align-items: center; gap: 6px; user-select: none; cursor: pointer; padding: 4px 6px; border-radius: 4px; transition: background 0.15s; }
+.logoArea:hover { background: rgba(255,255,255,0.06); }
+.avatarImgSmall { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+.menuDropdown { position: absolute; right: 0; top: 100%; margin-top: 4px; width: 200px; background: var(--theme-bg-secondary); border: 1px solid var(--theme-border); border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); z-index: 2000; overflow: hidden; }
+.headerRow { display: flex; align-items: center; padding: 6px 12px; border-bottom: 1px solid var(--theme-border); font-size: 0.72rem; font-weight: 600; color: var(--theme-text-primary); }
+.headerDivider { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; }
+.uwuBrand { font-size: 0.95rem; font-weight: 800; letter-spacing: -0.02em; color: var(--theme-heading, #e0e0e0); line-height: 1; }
+.barBtn { border: none; cursor: pointer; padding: 4px 6px; border-radius: 4px; display: flex; align-items: center; }
+.barBtnActive { composes: barBtn; background: rgba(255,255,255,0.08); color: var(--theme-text); }
+.barBtnInactive { composes: barBtn; background: none; color: var(--theme-text-secondary); }
+.barBtnInactive:hover { background: rgba(255,255,255,0.08); color: var(--theme-text); }
+.headerMenuRow { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px; width: 100%; padding: 8px 16px; cursor: pointer; box-sizing: border-box; background: transparent; border: none; outline: none; font-size: 14px; color: var(--theme-text); line-height: 1.4; }
+.headerMenuRow:hover { background: rgba(var(--theme-text-rgb), 0.06); }
+.headerMenuRowDanger { composes: headerMenuRow; color: var(--bs-danger); }
+.headerMenuRowDanger:hover { background: rgba(255,50,50,0.12); }
+.menuDivider { border-top: 1px solid var(--theme-border); margin: 4px 0; }

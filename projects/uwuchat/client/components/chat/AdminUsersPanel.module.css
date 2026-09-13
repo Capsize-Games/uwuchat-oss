@@ -1,0 +1,455 @@
+/* AdminUsersPanel — all styles extracted from inline + <style> tag */
+
+/* Wrapper */
+.wrapper {
+  padding: 14px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* ── Embedded style tag classes (converted to module) ── */
+.btn {
+  composes: chipBtn from "../../styles/primitives.module.css";
+}
+
+.btnSearch {
+  composes: chipBtn from "../../styles/primitives.module.css";
+}
+
+.btnCreate {
+  composes: chipBtn successChip from "../../styles/primitives.module.css";
+  white-space: nowrap;
+}
+
+.btnPager {
+  composes: chipBtn from "../../styles/primitives.module.css";
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.btnPager:disabled {
+  color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+/* Action buttons */
+.actBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.actBtn:disabled { cursor: default; }
+
+.actBtnDanger:not(:disabled):hover {
+  background: rgba(var(--bs-danger-rgb), 0.15);
+  border-color: rgba(var(--bs-danger-rgb), 0.35);
+}
+
+.actBtnWarn:not(:disabled):hover {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.actBtnOk:not(:disabled):hover {
+  background: rgba(var(--theme-success-rgb), 0.15);
+  border-color: rgba(var(--theme-success-rgb), 0.35);
+}
+
+.actSep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 2px;
+}
+
+/* ── Inline style extractions ── */
+.searchForm {
+  margin-bottom: 10px;
+}
+
+.searchRow {
+  display: flex;
+  gap: 6px;
+}
+
+
+.resultLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.errorMsg {
+  color: var(--bs-danger);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.loadingText {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.emptyText {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.accountList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accountCard {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+}
+
+.accountHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountName {
+  color: var(--theme-text, #e0e0e0);
+  font-weight: 500;
+}
+
+.accountActions {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.accountMeta {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 2px;
+}
+
+/* Confirm delete box */
+.confirmDelete {
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(var(--bs-danger-rgb), 0.08);
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.2);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirmDeleteText {
+  color: var(--bs-danger);
+}
+
+.confirmDeleteActions {
+  display: flex;
+  gap: 4px;
+}
+
+.confirmDeleteBtn {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.3);
+  background: rgba(var(--bs-danger-rgb), 0.15);
+  color: var(--bs-danger);
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.confirmCancelBtn {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* Pager */
+.pagerRow {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagerLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Icon badge */
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Modal common ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+}
+
+.modalPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--theme-panel-bg, #1a1a2e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 10001;
+}
+
+.modalPanelWide {
+  width: 340px;
+}
+
+.modalTitle {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: var(--theme-text, #e0e0e0);
+}
+
+.formGroup {
+  margin-bottom: 10px;
+}
+
+.formLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.formInput {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text, #e0e0e0);
+  outline: none;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.checkboxRow {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 16px;
+}
+
+.checkboxLabel {
+  font-size: 12px;
+  color: var(--theme-text, #e0e0e0);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.modalActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.modalCancelBtn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text, #e0e0e0);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.modalSubmitBtn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(var(--theme-success-rgb), 0.3);
+  background: rgba(var(--theme-success-rgb), 0.1);
+  color: var(--theme-success);
+  font-size: 12px;
+}
+
+.modalSubmitBtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.modalSubmitBtn:not(:disabled) {
+  cursor: pointer;
+}
+
+.modalDangerBtn {
+  composes: dangerChip from "../../styles/primitives.module.css";
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.modalDangerBtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.modalDangerBtn:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Refund result */
+.refundResultBox {
+  composes: panelCard from "@/styles/primitives.module.css";
+  background: rgba(var(--theme-success-rgb), 0.08);
+  border: 1px solid rgba(var(--theme-success-rgb), 0.2);
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--theme-text, #e0e0e0);
+}
+
+.refundResultCode {
+  color: var(--theme-success);
+}
+
+.refundError {
+  color: var(--bs-danger);
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.requiredAsterisk {
+  color: var(--bs-danger);
+}
+
+/* ── SubscriptionControls ── */
+.subControls {
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(96, 165, 250, 0.06);
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.subCurrentValues {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  display: flex;
+  gap: 8px;
+}
+
+.subValueAccent {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.subRow {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.subSelect {
+  flex: 1;
+  padding: 2px 4px;
+  font-size: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text, #e0e0e0);
+}
+
+.subSmallBtn {
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.subSmallBtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.subSmallBtn:not(:disabled) {
+  cursor: pointer;
+}
+
+.subResetBtn {
+  composes: dangerChip from "../../styles/primitives.module.css";
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+.subResetBtn:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.subResetBtn:not(:disabled) {
+  cursor: pointer;
+}
+
+.subMsg {
+  font-size: 9px;
+}
+
+.subMsgSuccess {
+  color: var(--theme-success);
+}
+
+.subMsgError {
+  color: var(--bs-danger);
+}
+
+.subDateInput {
+  flex: 1;
+  padding: 2px 4px;
+  font-size: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text, #e0e0e0);
+}
+
+.subUsageInput {
+  flex: 1;
+  padding: 2px 4px;
+  font-size: 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text, #e0e0e0);
+}

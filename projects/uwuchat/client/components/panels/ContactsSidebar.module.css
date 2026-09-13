@@ -1,0 +1,25 @@
+/* ContactsSidebar — extracted from inline styles */
+.bottomBar {
+  flex-shrink: 0;
+  padding: 6px 6px 7px 6px;
+  border-top: 1px solid var(--theme-border);
+}
+
+/* While a random chatbot is being created, the framework's
+   new-contact-btn hover fill would make a disabled button look
+   clickable — keep it muted and inert instead. */
+.bottomBar button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.bottomBar button:disabled:hover {
+  background: none;
+  color: var(--bs-primary);
+}
+
+.connectError {
+  padding: 6px 8px 0;
+  font-size: 0.75rem;
+  color: var(--bs-danger);
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+/* LocationManualForm — inline style refactor */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: var(--theme-input-bg);
+  color: var(--theme-text);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.status {
+  color: var(--theme-text-secondary);
+}

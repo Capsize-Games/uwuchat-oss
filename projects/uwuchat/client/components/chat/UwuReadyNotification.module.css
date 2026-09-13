@@ -1,0 +1,56 @@
+/* UwuReadyNotification — same backdrop/modal pattern as
+   SubscribeModal.module.css / SettingsModal.tsx. */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: var(--theme-bg, #111);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--theme-heading, #e0e0e0);
+  margin: 0 0 8px;
+}
+
+.body {
+  color: var(--theme-text-secondary, #aaa);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.cta {
+  background: var(--theme-primary, #0084b9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cta:hover {
+  filter: brightness(1.1);
+}

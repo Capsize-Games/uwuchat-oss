@@ -1,0 +1,8 @@
+.wrap { flex: 1; min-height: 0; }
+.emptyState { padding: 24px 16px; text-align: center; }
+.emptyIcon { font-size: 2.5rem; margin-bottom: 8px; }
+.sectionLabel { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.sectionLabelInner { padding: 6px 12px 2px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--theme-text-secondary); opacity: 0.6; }
+.sectionLabelEm { font-size: 0.75rem; padding: 8px 12px 6px; opacity: 0.85; }
+.divider { border-top: 1px solid rgba(255,255,255,0.06); margin: 0; }
+.helpBtn { background: transparent; border: none; cursor: pointer; padding: 0; margin-right: 12px; opacity: 0.5; display: flex; align-items: center; flex-shrink: 0; }

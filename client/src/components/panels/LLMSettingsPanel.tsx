@@ -1,0 +1,102 @@
+import Form from "react-bootstrap/Form";
+import ModelSelector from "../chat/ModelSelector";
+import PresetSelector from "./llm-settings/PresetSelector";
+import SliderFields from "./llm-settings/SliderFields";
+import CheckboxFields from "./llm-settings/CheckboxFields";
+import PrecisionSelector from "./llm-settings/PrecisionSelector";
+import ConversationSection from "./llm-settings/ConversationSection";
+import LucideIcon from "../shared/LucideIcon";
+import { useLLMSettings } from "./llm-settings/useLLMSettings";
+import styles from "./LLMSettingsPanel.module.css";
+
+export function LLMSettingsPanel() {
+  const s = useLLMSettings();
+
+  if (s.loading) {
+    return (
+      <div className="p-2 small text-theme-secondary">
+        Loading...
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-2">
+      <h6 className="text-theme-secondary mb-2">LLM Settings</h6>
+      <ModelSelector />
+
+      <div className={`p-2 mt-2 ${styles.section}`}>
+        <Form.Check
+          type="switch"
+          id="llm-override-toggle"
+          label={
+            <span className="text-theme-secondary fw-semibold">
+              Override LLM Settings
+            </span>
+          }
+          checked={s.overrideEnabled}
+          onChange={(e) => s.setOverrideEnabled(e.target.checked)}
+        />
+
+        {s.overrideEnabled && (
+          <>
+            <PresetSelector
+              presets={s.presets}
+              overriddenLabels={s.overriddenLabels}
+              selectedPreset={s.selectedPreset}
+              overrideEnabled={s.overrideEnabled}
+              selectKey={s.selectKey}
+              handlePresetChange={s.handlePresetChange}
+            />
+
+            {s.selectedPreset !== "" && (
+              <>
+                <SliderFields
+                  presets={s.presets}
+                  activePresetRef={s.activePresetRef}
+                  collectValues={s.collectValues}
+                  setOverride={s.setOverride}
+                />
+                <CheckboxFields
+                  collectValues={s.collectValues}
+                  setOverride={s.setOverride}
+                />
+                <PrecisionSelector
+                  precisionOptions={s.precisionOptions}
+                  precision={s.precision}
+                  onChange={s.handlePrecisionChange}
+                />
+                <ConversationSection
+                  performConversationSummary={s.performConversationSummary}
+                  summarizeAfterNTurns={s.summarizeAfterNTurns}
+                  onSummaryToggle={s.setPerformConversationSummary}
+                  onTurnsChange={s.setSummarizeAfterNTurns}
+                />
+                <div className="d-flex gap-2 mt-1">
+                  <button
+                    type="button"
+                    className={`btn btn-sm btn-outline-secondary flex-fill text-theme-secondary ${styles.resetBtn}`}
+                    onClick={s.resetToDefaults}
+                    title="Reset the current preset to its default values"
+                  >
+                    <LucideIcon name="rotate-ccw-square" size={14} className="me-1" />
+                    Reset {s.selectedPreset}
+                  </button>
+                  <button
+                    type="button"
+                    className={`btn btn-sm btn-outline-secondary flex-fill text-theme-secondary ${styles.resetBtn}`}
+                    onClick={s.resetAllToDefaults}
+                    title="Reset all presets to their default values"
+                  >
+                    <LucideIcon name="rotate-ccw-square" size={14} className="me-1" />
+                    Reset All
+                  </button>
+                </div>
+              </>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

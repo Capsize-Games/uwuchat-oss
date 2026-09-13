@@ -1,0 +1,25 @@
+.root {
+  gap: 6px;
+  padding: 5px 8px;
+}
+
+.colorSwatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.colorInputHidden {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.number {
+  composes: inputNumber from "@/styles/primitives.module.css";
+  width: 38px;
+}

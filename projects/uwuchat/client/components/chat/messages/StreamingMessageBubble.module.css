@@ -1,0 +1,17 @@
+/* StreamingMessageBubble — inline style refactor */
+
+.bubbleWrap {
+  position: relative;
+  padding: 16px;
+  background: rgba(16, 18, 34, 0.55);
+}
+
+.content {
+  color: var(--theme-text);
+  white-space: pre-wrap;
+}
+
+/* ── Inline tool-status pill below streamed text ───────────── */
+.inlineStatus {
+  margin-top: 12px;
+}

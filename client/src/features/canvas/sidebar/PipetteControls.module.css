@@ -1,0 +1,65 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+}
+
+.label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+  margin-bottom: 4px;
+}
+
+.radioRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.radioLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  user-select: none;
+  cursor: pointer;
+}
+
+.radioInput {
+  margin: 0;
+  cursor: pointer;
+  accent-color: #6fa8ff;
+}
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.swatchLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  user-select: none;
+}
+
+.hint {
+  composes: hintText from "@/styles/primitives.module.css";
+  padding: 0 8px 8px;
+}
