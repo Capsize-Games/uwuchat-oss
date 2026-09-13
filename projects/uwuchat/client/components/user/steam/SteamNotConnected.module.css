@@ -1,0 +1,39 @@
+/* SteamNotConnected — inline style refactor */
+
+.wrap {
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+.importing {
+  color: var(--theme-text-secondary);
+  font-size: 0.85rem;
+}
+
+.card {
+  padding: 32px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--theme-border);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.message {
+  color: var(--theme-text-secondary);
+  font-size: 0.85rem;
+}
+
+.connectBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--theme-accent, #1a6fff);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}

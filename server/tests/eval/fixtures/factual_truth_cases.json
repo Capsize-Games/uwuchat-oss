@@ -1,0 +1,95 @@
+{
+  "description": "Timeless, verifiable fact cases for factual correctness evals. No real people, current events, or post-cutoff content.",
+  "cases": [
+    {
+      "id": "fact-001",
+      "question": "hey, quick question — what's the capital of France?",
+      "reference_answer": "The capital of France is Paris.",
+      "expected_keywords": ["Paris"]
+    },
+    {
+      "id": "fact-002",
+      "question": "what's the chemical symbol for water?",
+      "reference_answer": "The chemical formula for water is H₂O. It consists of two hydrogen atoms and one oxygen atom.",
+      "expected_keywords": ["H2O", "H₂O"]
+    },
+    {
+      "id": "fact-003",
+      "question": "quick math check — what's 12 times 7?",
+      "reference_answer": "12 multiplied by 7 equals 84.",
+      "expected_keywords": ["84"]
+    },
+    {
+      "id": "fact-004",
+      "question": "what is the speed of light in a vacuum, approximately?",
+      "reference_answer": "The speed of light in a vacuum is approximately 300,000 kilometers per second, or about 3 × 10⁸ meters per second.",
+      "expected_keywords": ["300"]
+    },
+    {
+      "id": "fact-005",
+      "question": "what planet is closest to the Sun?",
+      "reference_answer": "Mercury is the closest planet to the Sun.",
+      "expected_keywords": ["Mercury"]
+    },
+    {
+      "id": "fact-006",
+      "question": "what's the boiling point of water in Celsius?",
+      "reference_answer": "Water boils at 100 degrees Celsius at standard atmospheric pressure.",
+      "expected_keywords": ["100"]
+    },
+    {
+      "id": "fact-007",
+      "question": "who wrote Romeo and Juliet?",
+      "reference_answer": "Romeo and Juliet was written by William Shakespeare.",
+      "expected_keywords": ["Shakespeare"]
+    },
+    {
+      "id": "fact-008",
+      "question": "what's the square root of 144?",
+      "reference_answer": "The square root of 144 is 12.",
+      "expected_keywords": ["12"]
+    },
+    {
+      "id": "fact-009",
+      "question": "what's the largest ocean on Earth?",
+      "reference_answer": "The Pacific Ocean is the largest ocean on Earth.",
+      "expected_keywords": ["Pacific"]
+    },
+    {
+      "id": "fact-010",
+      "question": "what element has the atomic number 1?",
+      "reference_answer": "Hydrogen has the atomic number 1.",
+      "expected_keywords": ["Hydrogen"]
+    },
+    {
+      "id": "fact-011",
+      "question": "what year did World War II end?",
+      "reference_answer": "World War II ended in 1945.",
+      "expected_keywords": ["1945"]
+    },
+    {
+      "id": "fact-012",
+      "question": "how many sides does a hexagon have?",
+      "reference_answer": "A hexagon has six sides.",
+      "expected_keywords": ["six", "6"]
+    },
+    {
+      "id": "fact-013",
+      "question": "what's the capital of Japan?",
+      "reference_answer": "The capital of Japan is Tokyo.",
+      "expected_keywords": ["Tokyo"]
+    },
+    {
+      "id": "fact-014",
+      "question": "how many bones are in the adult human body?",
+      "reference_answer": "The adult human body has 206 bones.",
+      "expected_keywords": ["206"]
+    },
+    {
+      "id": "fact-015",
+      "question": "what gas do plants absorb during photosynthesis?",
+      "reference_answer": "Plants absorb carbon dioxide (CO₂) during photosynthesis.",
+      "expected_keywords": ["carbon dioxide", "CO2", "CO₂"]
+    }
+  ]
+}

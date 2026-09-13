@@ -1,0 +1,199 @@
+/* FlowDetailPanel — inline style refactor */
+
+.wrapper {
+  padding: 14px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.panelLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.typeHeader {
+  composes: flexRow from "@/styles/primitives.module.css";
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.typeIcon {
+  font-size: 16px;
+}
+
+.typeLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ── Prompt context ── */
+.promptSection {
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.promptToggle {
+  background: none;
+  border: none;
+  color: var(--theme-premium);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+}
+
+.promptToggleInfo {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+
+.promptExpanded {
+  font-size: 10px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+.promptBlock {
+  margin-bottom: 10px;
+}
+
+.promptBlockLabel {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
+.promptBlockContent {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* ── Copy button ── */
+.copyBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  font-size: 9px;
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1.4;
+  transition: all 0.15s;
+}
+
+/* ── Pipeline stage ── */
+.pipelineSection {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pipelineLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
+}
+
+.pipelineName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--theme-premium);
+  margin-bottom: 2px;
+}
+
+.pipelineDesc {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1.4;
+}
+
+/* ── Empty state ── */
+.emptyState {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── ValueDisplay shared ── */
+.nestedValue {
+  margin-top: 4px;
+  padding-left: 12px;
+}
+
+.arrayItem {
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.arrayIndex {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 2px;
+}
+
+.objValue {
+  margin-top: 4px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.objEntry {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.objKey {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
+}
+
+.primitiveValue {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── StringValue ── */
+.stringValue {
+  position: relative;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.stringValueLong {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 54px 6px 8px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+  line-height: 1.5;
+}
+
+.costValue {
+  color: var(--theme-success);
+  font-weight: 600;
+}

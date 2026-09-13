@@ -1,0 +1,15 @@
+/* PromptInput — labeled textarea for art prompts (framework) */
+
+.label {
+  font-size: 10px;
+  color: var(--theme-text-secondary);
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  flex-shrink: 0;
+  line-height: 16px;
+  user-select: none;
+}

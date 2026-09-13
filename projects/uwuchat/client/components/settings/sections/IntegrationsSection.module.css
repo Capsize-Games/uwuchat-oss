@@ -1,0 +1,22 @@
+.wrap { display: flex; flex-direction: column; gap: 10px; }
+
+.inlineForm {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(17, 133, 254, 0.08);
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inlineFormTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+.inlineFormHint {
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+}

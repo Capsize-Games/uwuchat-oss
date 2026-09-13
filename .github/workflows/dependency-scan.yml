@@ -1,0 +1,127 @@
+name: Dependency Vulnerability Scan
+
+# Weekly scheduled scan of pinned Python and JS dependencies for
+# newly-disclosed CVEs.  Runs independently of code changes — a PR-only
+# trigger misses vulnerabilities disclosed against unchanged packages.
+#
+# Also runs on push to master to catch dependency changes immediately.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: "0 8 * * 1"  # Every Monday at 08:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  pip-audit:
+    name: pip-audit (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Free disk space
+        # GitHub-hosted runners ship with ~14GB of free disk but also carry
+        # a large preinstalled tool set; the "server" ML stack can't fit
+        # alongside it, so clear the biggest tool caches first.
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          sudo rm -rf /usr/local/lib/android
+          df -h /
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install project dependencies
+        # NOTE: no --no-cache-dir here. PIP_CACHE_DIR (below) pins the pip
+        # cache to the runner temp dir, so the heavy "server" deps (torch,
+        # llama-cpp-python) are fetched once per job. --no-cache-dir would
+        # force every install to repeat the download.
+        env:
+          PIP_CACHE_DIR: ${{ runner.temp }}/pip-cache
+        run: |
+          pip install -e "./server[server]"
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Run pip-audit
+        run: |
+          pip-audit --desc on \
+            --ignore-vuln PYSEC-2025-217 \
+            --ignore-vuln PYSEC-2026-2290 \
+            --ignore-vuln PYSEC-2026-2288 \
+            --ignore-vuln PYSEC-2026-2289 \
+            --ignore-vuln PYSEC-2026-2447 \
+            --ignore-vuln PYSEC-2026-3552 \
+            --ignore-vuln PYSEC-2026-3553 \
+            --ignore-vuln PYSEC-2026-3554 \
+            --ignore-vuln PYSEC-2026-3740
+          # Ignored, accepted-risk findings (see round-8 security
+          # remediation report for the full assessment):
+          #
+          # transformers 4.57.6 (PYSEC-2025-217, -2288, -2289, -2290):
+          # no fix exists in the 4.x line (4.57.6 is the latest 4.x
+          # release); the fix requires a 4->5 major bump that cascades
+          # into sentence-transformers and touches GPU-dependent edge
+          # code that can't be exercised/verified in CI. The CVEs
+          # require loading an attacker-chosen HF repo/model id; no
+          # HTTP/WS route was found passing user input directly into
+          # from_pretrained(), though a full trace through the edge
+          # model-selection UI was out of scope. Revisit when a safe
+          # migration path is validated on real edge hardware.
+          #
+          # diskcache 5.6.3 (PYSEC-2026-2447): no fix published yet.
+          # Not imported directly anywhere in this codebase (confirmed
+          # via grep) -- it's a transitive dependency with no code
+          # path in this app that reads/writes its cache directory.
+          #
+          # cryptography 48.0.1 (PYSEC-2026-3552/3553/3554): the
+          # server/dev extra still pins 48.0.1 because presidio-anonymizer
+          # ==2.2.364 (latest release) caps cryptography<49.0.0; the cap
+          # must be lifted upstream before this floor can rise. The PROD
+          # container is NOT affected -- Dockerfile.prod installs core +
+          # requirements-prod.txt, which now ships cryptography==50.0.0.
+          # Audit 2026-09-06.
+          #
+          # nltk 3.10.3 (PYSEC-2026-3740): no patched release exists;
+          # floor raised to >=3.10.3 (latest). Mitigation: never point
+          # NLTK model downloaders at user-controlled paths -- only trusted
+          # corpora are loaded. Accepted risk. Audit 2026-09-06.
+          #
+          # datasets 4.0.0 (PYSEC-2026-3716): FIXED -- bumped to 5.0.1 in
+          # server/package_metadata.py (folder-builder path traversal).
+          #
+          # torch 2.12.1 (PYSEC-2025-194): only the frozen server-deps
+          # GHCR base image carries 2.12.1; reaching >=2.13.0 requires a
+          # base-image rebuild + push (cu130 index). This CI job resolves
+          # torch from PyPI (>=2.13.0, fixed) so it is unaffected.
+
+  npm-audit:
+    name: npm audit (JavaScript)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high

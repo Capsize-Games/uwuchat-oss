@@ -1,0 +1,218 @@
+/* PanelWeatherTab — inline style refactor */
+
+/* Shared */
+.center {
+  text-align: center;
+  padding: 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.8rem;
+}
+
+.card {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cardSm {
+  composes: card;
+  padding: 7px 9px;
+}
+
+.cardMt {
+  margin-top: 6px;
+}
+
+.content {
+  font-size: 0.82rem;
+  color: var(--theme-text-primary);
+}
+
+/* Meta row */
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hero section */
+.heroRow {
+  display: flex;
+  align-items: center;
+}
+
+.heroIcon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.heroInfo {
+  margin-left: 14px;
+}
+
+.heroTemp {
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.heroLabel {
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary);
+}
+
+.heroAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+  text-align: right;
+}
+
+/* Detail grid */
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.8rem;
+}
+
+.gridValue {
+  color: var(--theme-text-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+.uvBadge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  background: var(--uv-bg);
+  color: var(--uv-color);
+}
+
+/* Forecast */
+.forecastSection {
+  margin-top: 14px;
+}
+
+.forecastLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--theme-text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.forecastHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 0 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--theme-text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fcDay {
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.fcIcon {
+  width: 20px;
+  text-align: center;
+}
+
+.fcCondition {
+  flex: 1;
+}
+
+.fcHiLo {
+  width: 50px;
+  text-align: right;
+}
+
+.fcRain {
+  width: 34px;
+  text-align: right;
+}
+
+.forecastRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 0.78rem;
+  color: var(--theme-text-primary);
+}
+
+.forecastRowFirst {
+  composes: forecastRow;
+  border-top: none;
+}
+
+.forecastRowBordered {
+  composes: forecastRow;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.forecastDay {
+  width: 40px;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.forecastIcon {
+  font-size: 0.9rem;
+  width: 20px;
+  text-align: center;
+}
+
+.forecastCondition {
+  flex: 1;
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+}
+
+.forecastTemps {
+  width: 50px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tempHigh {
+  font-weight: 600;
+}
+
+.tempLow {
+  color: var(--theme-text-secondary);
+  margin-left: 3px;
+}
+
+.forecastPrecip {
+  width: 34px;
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+.precipHigh {
+  color: #4fc3f7;
+}
+
+.precipNormal {
+  color: var(--theme-text-secondary);
+}

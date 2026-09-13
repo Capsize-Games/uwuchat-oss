@@ -1,0 +1,129 @@
+/* Action menu bar styles — replaces styles.ts */
+
+.bar {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  flex-shrink: 0;
+  padding: 0 2px;
+  gap: 0;
+  z-index: 200;
+  user-select: none;
+}
+
+.menuWrapper {
+  position: relative;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.menuBtn:hover {
+  color: #fff;
+}
+
+.menuBtnActive {
+  background: rgba(99, 153, 255, 0.18);
+  color: #c8d8ff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #1c1c2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  z-index: 300;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 14px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  line-height: 1.5;
+  gap: 20px;
+}
+
+.menuItem:hover {
+  background: rgba(99, 153, 255, 0.12);
+}
+
+.checkboxItem {
+  composes: menuItem;
+  gap: 8px;
+}
+
+.checkboxLabel {
+  flex: 1;
+}
+
+.submenuArrow {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.submenuWrapper {
+  position: absolute;
+  top: -4px;
+  left: 100%;
+  min-width: 160px;
+  background: #1c1c2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  z-index: 301;
+}
+
+.checkMark {
+  width: 14px;
+  text-align: center;
+  color: #6fa8ff;
+  font-size: 11px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 3px 8px;
+}
+
+.shortcut {
+  margin-left: auto;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: monospace;
+  padding-left: 12px;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

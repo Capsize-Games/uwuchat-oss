@@ -1,0 +1,31 @@
+/* ModelOptionsPopup — art model options portal (framework) */
+
+.popup {
+  composes: popupFixed from "./PopupShared.module.css";
+  min-width: 220px;
+  padding: 8px 0;
+  gap: 4px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 10px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary);
+  opacity: 0.6;
+}
+
+.headerRow {
+  padding: 4px 10px 2px;
+}

@@ -1,0 +1,72 @@
+.root {
+  gap: 2px;
+  padding: 3px 4px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-shrink: 0;
+}
+
+.iconBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.separator {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.sendBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.sendBtnActive {
+  background: var(--bs-primary);
+  cursor: pointer;
+}
+
+.sendBtnInactive {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: default;
+}
+
+.cancelBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: var(--bs-danger);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.spacer {
+  margin-left: auto;
+}

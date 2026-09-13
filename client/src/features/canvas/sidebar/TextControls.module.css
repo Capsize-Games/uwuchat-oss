@@ -1,0 +1,73 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+}
+
+.label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+  margin-bottom: 2px;
+}
+
+.select {
+  width: 100%;
+  padding: 3px 6px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.numberInput {
+  width: 64px;
+  padding: 3px 6px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  outline: none;
+}
+
+.colorInput {
+  width: 32px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.unit {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.colorValue {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hint {
+  composes: hintText from "@/styles/primitives.module.css";
+  padding: 0 8px 8px;
+}

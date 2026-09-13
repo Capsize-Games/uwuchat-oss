@@ -1,0 +1,873 @@
+{
+  "onboarding_tour": {
+    "system_bot_label": "당신의 어시스턴트",
+    "system_bot_text": "이것은 당신의 어시스턴트 UwU입니다. 그는 자신이 챗봇 어시스턴트임을 인식하고 있습니다.",
+    "rp_bot_label": "역할극 봇",
+    "rp_bot_text": "이들은 역할극 챗봇입니다. 이 봇들은 자신이 봇이라는 것을 인식하지 못합니다. 자신들이 실존한다고 믿으며 캐릭터를 유지합니다.",
+    "next": "다음",
+    "close": "확인"
+  },
+  "common": {
+    "save": "저장",
+    "cancel": "취소",
+    "close": "닫기",
+    "loading": "불러오는 중…"
+  },
+  "settings": {
+    "title": "설정",
+    "language": {
+      "heading": "언어 설정",
+      "gui_label": "GUI 언어",
+      "user_label": "사용자 언어",
+      "uwu_label": "UwU 언어"
+    },
+    "nav": {
+      "integrations": "연동 계정",
+      "privacy": "서드파티 서비스",
+      "image_export": "이미지 내보내기",
+      "memory": "메모리",
+      "keyboard_shortcuts": "키보드 단축키",
+      "immersion": "몰입감",
+      "user": "사용자 설정",
+      "tts": "텍스트 읽어주기",
+      "sound": "음성 인식",
+      "prompt_templates": "프롬프트 템플릿",
+      "appearance": "테마",
+      "language": "언어",
+      "location": "위치",
+      "account": "계정 및 약관",
+      "headlesscode": "코딩 세션"
+    },
+    "location": {
+      "description": "UwU는 당신의 위치를 바탕으로 창밖 날씨나 근처에서 일어나는 일 같은 실제 이야기를 나눕니다.",
+      "current": "현재 위치",
+      "no_location": "설정된 위치가 없습니다. 날씨와 지역 정보를 위해 아래에서 추가하세요.",
+      "use_current": "현재 위치 사용",
+      "auto_update_on": "자동 업데이트 중",
+      "detect_once": "한 번 감지",
+      "saved": "위치가 저장되었습니다",
+      "or_manually": "— 또는 수동으로 입력 —",
+      "city": "도시",
+      "country": "국가 (선택)",
+      "search": "도시 찾기",
+      "not_available": "브라우저 위치를 사용할 수 없습니다.",
+      "detecting": "감지 중…",
+      "blocked": "위치가 차단되었습니다. 아래에 도시를 입력하세요.",
+      "looking_up": "검색 중…",
+      "not_found": "도시를 찾을 수 없습니다. 근처 큰 도시를 시도해 보세요."
+    },
+    "account": {
+      "heading": "계정",
+      "email": "이메일:",
+      "username": "사용자명:",
+      "view_profile": "프로필 보기",
+      "email_unverified": "이메일 주소가 인증되지 않았습니다.",
+      "subscription_heading": "구독",
+      "linked_accounts_heading": "연동 계정",
+      "linked_accounts_desc": "Spotify 계정을 연결하여 프로필에 음악 취향을 공유하세요. 설정 사이드바의",
+      "linked_accounts_link": "연동 계정",
+      "linked_accounts_suffix": "에서 관리할 수 있습니다.",
+      "legal_heading": "법적 사항",
+      "terms_of_service": "이용약관",
+      "privacy_policy": "개인정보 처리방침",
+      "danger_zone": "위험 구역",
+      "danger_desc": "계정과 모든 관련 데이터를 영구적으로 삭제합니다. 이 작업은 되돌릴 수 없습니다.",
+      "delete_account": "계정 삭제",
+      "no_subscription": "활성 구독이 없습니다. 구독하여 모든 기능을 이용하세요.",
+      "view_plans": "플랜 보기",
+      "plan_label": "플랜:",
+      "status_label": "상태:",
+      "free_trial": "무료 체험",
+      "trial_ends": "체험 종료:",
+      "renews": "갱신일:",
+      "manage_subscription": "구독 관리",
+      "change_plan": "플랜 변경",
+      "current_plan": "현재 플랜",
+      "promo_heading": "프로모션 코드"
+    },
+    "immersion": {
+      "heading": "몰입감",
+      "level_label": "몰입 레벨",
+      "minimal": "최소",
+      "minimal_label": "최소",
+      "full": "전체",
+      "full_label": "전체",
+      "minimal_desc": "응답이 스트리밍됩니다. 타이핑 표시기와 인위적인 지연이 비활성화됩니다.",
+      "full_desc": "챗봇이 메시지를 읽고, 생각하고, 응답을 입력하는 것을 시뮬레이션합니다. 기다리는 동안 \"{name}님이 입력 중…\" 표시기가 나타납니다.",
+      "description": "대화가 얼마나 몰입감 있게 느껴지길 원하는지 선택하세요."
+    },
+    "integrations": {
+      "title": "연동 계정",
+      "heading": "연동 계정",
+      "desc": "외부 서비스를 연결하여 프로필을 풍성하게 만드세요.",
+      "spotify_desc": "프로필에 음악 취향 공유",
+      "spotify_importing": "Spotify 데이터 가져오는 중…",
+      "connect_spotify": "Spotify 연결",
+      "spotify_connect": "Spotify 연결",
+      "spotify_last_synced": "마지막 동기화:",
+      "last_synced": "마지막 동기화:",
+      "spotify_view_profile": "내 프로필 보기",
+      "view_my_profile": "내 프로필 보기",
+      "spotify_refresh": "데이터 새로고침",
+      "refresh_data": "데이터 새로고침",
+      "spotify_refreshing": "새로고침 중…",
+      "refreshing": "새로고침 중…",
+      "spotify_disconnect": "연결 해제",
+      "disconnect": "연결 해제",
+      "spotify_disconnecting": "해제 중…",
+      "disconnecting": "해제 중…",
+      "spotify_retry": "재시도",
+      "retry": "재시도",
+      "steam_desc": "프로필에 게임 라이프 공유",
+      "steam_connect": "Steam 연결",
+      "connect_steam": "Steam 연결",
+      "steam_connecting": "연결 중…",
+      "connecting": "연결 중…",
+      "importing_spotify": "Spotify 데이터 가져오는 중…",
+      "connect_itch": "itch.io 연결",
+      "itch_desc": "프로필에 itch.io 게임 라이브러리를 표시합니다.",
+      "connect_bluesky": "Bluesky 연결",
+      "bluesky_desc": "프로필에 최근 Bluesky 게시물을 표시합니다.",
+      "bluesky_app_password_hint": "bsky.social/settings/app-passwords에서 앱 비밀번호를 생성하세요 — 기본 계정 비밀번호는 절대 사용하지 마세요.",
+      "bluesky_handle_placeholder": "핸들 (예: user.bsky.social)",
+      "bluesky_placeholder": "앱 비밀번호 (xxxx-xxxx-xxxx-xxxx)",
+      "bluesky_connecting": "연결 중…",
+      "connected_label_steam": "✅ Steam 연결됨",
+      "connected_label_itch": "✅ itch.io 연결됨",
+      "connected_label_bluesky": "✅ Bluesky 연결됨"
+    },
+    "prompt_templates": {
+      "heading": "프롬프트 템플릿",
+      "no_templates": "사용 가능한 템플릿이 없습니다.",
+      "template_label": "템플릿",
+      "use_guardrails": "가드레일 사용",
+      "use_datetime": "시스템 프롬프트에 날짜/시간 사용"
+    },
+    "social_links": {
+      "heading": "소셜 링크",
+      "desc": "소셜 미디어 프로필 링크를 추가하세요. 공개 프로필 페이지에 표시됩니다.",
+      "no_links": "아직 소셜 링크가 없습니다. 아래에서 추가하세요!",
+      "sign_in": "소셜 링크를 관리하려면 로그인하세요.",
+      "save": "저장",
+      "edit": "편집",
+      "add_link": "소셜 링크 추가",
+      "all_added": "모든 사용 가능한 서비스가 추가되었습니다. 🎉"
+    },
+    "promo": {
+      "heading": "프로모션 코드",
+      "placeholder": "코드 입력",
+      "redeem": "적용",
+      "error": "유효하지 않은 코드",
+      "redeemed": "코드가 적용되었습니다!",
+      "redeemed_tier": "코드가 적용되었습니다! 이제 {{tier}} 접근 권한이 있습니다."
+    }
+  },
+  "sidebar": {
+    "account": "계정",
+    "contacts": "연락처",
+    "new_contact": "새 역할극 챗봇",
+    "new_uwu": "새 UwU 만들기",
+    "assistant": "어시스턴트",
+    "no_contacts": "아직 연락처가 없습니다. 대화를 시작하세요!",
+    "deceased": "고인",
+    "role_play": "역할극",
+    "generating_character": "캐릭터 생성 중...",
+    "generation_failed": "캐릭터 생성에 실패했습니다. 다시 시도해 주세요.",
+    "uwu_ready_title": "새로운 UwU가 준비되었습니다! ✨",
+    "uwu_ready_body": "{{name}}의 생성이 완료되어 대화할 수 있습니다.",
+    "uwu_ready_cta": "채팅 시작하기"
+  },
+  "setup": {
+    "language": {
+      "description": "당신의 UwU는 선택한 언어로 대화합니다.",
+      "continue": "계속 →"
+    },
+    "name": {
+      "desc": "UwU가 자연스럽게 당신을 부를 때 사용합니다.",
+      "placeholder": "이름 또는 닉네임",
+      "continue": "계속",
+      "skip": "건너뛰기"
+    },
+    "gender": {
+      "desc": "UwU가 당신에 대해 이야기할 때 올바른 대명사를 사용합니다.",
+      "skip": "이 단계 건너뛰기",
+      "she_her": "그녀",
+      "he_him": "그",
+      "they_them": "그들",
+      "prefer_not": "밝히고 싶지 않음"
+    },
+    "location": {
+      "desc": "UwU는 당신의 위치를 바탕으로 창밖 날씨나 근처에서 일어나는 일 같은 실제 이야기를 나눕니다.",
+      "use_current": "현재 위치 사용",
+      "or_manually": "— 또는 수동으로 입력 —",
+      "city_placeholder": "도시",
+      "country_placeholder": "국가 (선택)",
+      "save_location": "위치 저장",
+      "skip": "건너뛰기",
+      "not_available": "브라우저 위치를 사용할 수 없습니다.",
+      "detecting": "감지 중…",
+      "blocked": "위치가 차단되었습니다. 아래에 도시를 입력하세요.",
+      "city_required": "도시를 입력해 주세요.",
+      "looking_up": "검색 중…",
+      "not_found": "도시를 찾을 수 없습니다. 근처 큰 도시를 시도해 보세요."
+    },
+    "wizard": {
+      "step_of": "설정 — {{step}} / {{total}}",
+      "meet_uwu": "내 UwU 만나기 ✨"
+    },
+    "step_titles": {
+      "name": "이름이 무엇인가요?",
+      "gender": "어떻게 정체화하시나요?",
+      "language": "언어를 선택하세요",
+      "location": "어디에 계신가요?",
+      "done": "모두 준비되었습니다!",
+      "subscribe": "플랜 선택",
+      "avatar": "프로필 사진",
+      "banner": "배너 이미지",
+      "status": "상태",
+      "kaomoji": "카오모지",
+      "verify_email": "이메일 인증"
+    },
+    "steps": {
+      "skip": "건너뛰기",
+      "save": "저장",
+      "done": "완료",
+      "uploading": "업로드 중…",
+      "avatar_desc": "UwU가 당신을 알아볼 수 있도록 사진을 추가하세요.",
+      "banner_desc": "프로필 헤더 이미지를 선택하세요.",
+      "status_desc": "UwU에게 지금 기분을 알려주세요.",
+      "kaomoji_desc": "프로필 카드에 표시될 카오모지를 골라주세요.",
+      "verify_email_desc": "계정 복구를 위해 이메일을 인증해 주세요.",
+      "upload_avatar": "사진 업로드",
+      "upload_banner": "배너 업로드",
+      "status_placeholder": "무슨 생각을 하고 있나요?",
+      "send_verification": "인증 이메일 보내기",
+      "resend_verification": "인증 이메일 재전송",
+      "sending": "전송 중…",
+      "verification_sent": "받은 편지함을 확인하세요! {{email}}로 인증 링크가 전송되었습니다.",
+      "already_verified": "이메일이 인증되었습니다 ✅"
+    }
+  },
+  "chat": {
+    "contacts": "연락처",
+    "cancel": "취소",
+    "send": "보내기",
+    "type_message": "메시지 입력…",
+    "blocked_placeholder": "이 캐릭터가 당신을 차단했습니다.",
+    "loading_conversation": "대화 로딩 중…",
+    "blocked_label": "차단됨",
+    "view_profile": "프로필 보기",
+    "profile_link": "프로필",
+    "choice_modal": {
+      "title": "새 UwU 추가",
+      "subtitle": "바로 생성하거나 직접 디자인하세요.",
+      "random_label": "랜덤 UwU",
+      "random_sub": "깜짝 놀래켜줘",
+      "random_generating": "생성 중...",
+      "generating": "생성 중...",
+      "build_label": "직접 만들기",
+      "build_sub": "단계별로"
+    },
+    "creator": {
+      "name_your_uwu": "UwU 이름 정하기",
+      "who_is_this": "이 캐릭터는 누구인가요?",
+      "name_label": "이름",
+      "about_label": "이 UwU에 대해",
+      "optional": "(선택)",
+      "speech_label": "특징적인 말투",
+      "speech_patterns_label": "특징적인 말투",
+      "speech_patterns_hint": "모든 응답에 적용됩니다 — 캐릭터가 말투에서 벗어나지 않습니다.",
+      "creating": "생성 중…",
+      "begin_story": "이야기 시작 →",
+      "next": "다음 →",
+      "skip": "이 단계 건너뛰기",
+      "step_emoji_title": "프로필 이모지 선택",
+      "step_emoji_subtitle": "이 캐릭터를 대표할 이모지를 골라주세요.",
+      "step_gender_title": "성별 선택",
+      "step_gender_subtitle": "캐릭터가 자신을 어떻게 표현할지에 영향을 줍니다.",
+      "step_personality_title": "성격 유형",
+      "step_personality_subtitle": "핵심 성격 원형을 선택하세요.",
+      "step_subtype_title": "하위 유형 선택",
+      "step_subtype_subtitle": "{{type}}의 하위 유형을 선택하세요.",
+      "step_species_title": "종족 선택",
+      "step_species_subtitle": "이 캐릭터는 어떤 존재인가요?",
+      "step_language_title": "언어",
+      "step_language_auto": "{{city}}에서 자동 감지되었습니다. 변경할 수 있습니다.",
+      "step_language_hint": "이 캐릭터가 구사하는 언어를 선택하세요.",
+      "step_location_title": "어디에 살고 있나요?",
+      "step_location_subtitle": "이 캐릭터의 실제 홈 베이스를 선택하세요."
+    },
+    "message": {
+      "copy": "메시지 복사",
+      "delete_admin": "메시지 삭제 (관리자)",
+      "copied": "복사되었습니다!",
+      "inspect_flow": "플로우 검사",
+      "copy_mermaid": "📋 Mermaid 복사",
+      "copied_mermaid": "✓ 복사 완료!",
+      "turn": "턴",
+      "report": "메시지 신고",
+      "system_label": "시스템"
+    },
+    "report": {
+      "title": "메시지 신고",
+      "reason_inappropriate": "부적절함",
+      "reason_harmful_unsafe": "유해/위험함",
+      "reason_off_character": "캐릭터 붕괴",
+      "reason_other": "기타",
+      "detail_placeholder": "추가 설명 (최대 500자)",
+      "cancel": "취소",
+      "submit": "신고 제출",
+      "received": "신고가 접수되었습니다. 감사합니다.",
+      "close": "닫기",
+      "admin_title": "신고 목록",
+      "refresh": "새로고침",
+      "loading": "불러오는 중…",
+      "no_reports": "아직 신고가 없습니다.",
+      "total": "전체",
+      "col_time": "시간",
+      "col_reporter": "신고자",
+      "col_type": "유형",
+      "col_reason": "사유",
+      "type_auto": "자동 감지",
+      "type_user": "사용자 신고"
+    },
+    "view": {
+      "inspection_on": "🔬 검사 ON",
+      "inspection_off": "🔬 검사 OFF",
+      "unblock": "차단 해제",
+      "offline_message": "{{name}}님이 지금 오프라인입니다 — 돌아오면 메시지가 전달됩니다.",
+      "has_blocked": "{{name}}님이 당신을 차단했습니다.",
+      "you_blocked": "{{name}}님을 차단했습니다.",
+      "profile_panel": "프로필",
+      "my_profile_panel": "내 프로필",
+      "flow_detail_panel": "플로우 상세",
+      "fastsearch_panel": "FastSearch 상태",
+      "users_panel": "사용자",
+      "input_prompt": "입력 프롬프트",
+      "output_response": "출력 응답"
+    },
+    "empty_placeholder": {
+      "greeting_fallback": "아래에 메시지를 입력하여 대화를 시작하세요.",
+      "greeting_with_name": "{{name}}님에게 인사하세요 — 아래에서 대화를 시작하세요.",
+      "opener_how_are_you": "오늘 하루 어땠어요?",
+      "opener_what_can_you_do": "무엇을 도와드릴까요?"
+    }
+  },
+  "iconbar": {
+    "home": "UwUchat",
+    "users_label": "사용자",
+    "admin_users": "관리자 사용자"
+  },
+  "rooms": {
+    "profile": {
+      "back": "← 뒤로",
+      "loading": "불러오는 중…",
+      "not_found": "프로필을 찾을 수 없습니다.",
+      "hangs_out_in": "주로 활동하는 곳",
+      "posts_tab": "게시물",
+      "shop_tab": "상점",
+      "loading_posts": "게시물 불러오는 중…",
+      "no_posts": "최근 게시물이 없습니다.",
+      "loading_inventory": "불러오는 중…",
+      "no_items": "아직 아이템이 없습니다.",
+      "card_tab": "카드",
+      "items_tab": "아이템",
+      "generate_images": "프로필 이미지 생성",
+      "generating_images": "생성 중…",
+      "unblock": "차단 해제",
+      "omnipotent_knowledge": "🌐 공유 메모리",
+      "omnipotent_on": "다른 UwU들에게 말한 것들을 기억할 수 있습니다.",
+      "omnipotent_off": "이 대화만 기억합니다.",
+      "block": "{{name}}님 차단",
+      "has_blocked": "{{name}}님이 당신을 차단했습니다.",
+      "you_blocked": "{{name}}님을 차단했습니다.",
+      "enable_omnipotent": "공유 메모리 활성화",
+      "disable_omnipotent": "공유 메모리 비활성화",
+      "bio_empty": "{{name}}님은 아직 자기소개를 작성하지 않았습니다.",
+      "settings_label": "설정",
+      "currently_label": "현재"
+    },
+    "profile_view": {
+      "loading": "불러오는 중…",
+      "unblock": "차단 해제",
+      "omnipotent_knowledge": "🌐 공유 메모리",
+      "omnipotent_on": "다른 UwU들에게 말한 것들을 기억할 수 있습니다.",
+      "omnipotent_off": "이 대화만 기억합니다.",
+      "enable_omnipotent": "공유 메모리 활성화",
+      "disable_omnipotent": "공유 메모리 비활성화",
+      "bio_empty": "{{name}}님은 아직 자기소개를 작성하지 않았습니다.",
+      "settings_label": "설정",
+      "currently_label": "현재"
+    }
+  },
+  "panels": {
+    "uwu_row": {
+      "remove": "제거",
+      "cancel": "취소",
+      "remove_title": "연락처에서 제거"
+    },
+    "uwu_list": {
+      "remove": "제거",
+      "cancel": "취소",
+      "remove_title": "연락처에서 제거"
+    }
+  },
+  "user": {
+    "profile_page": {
+      "back": "← 뒤로",
+      "no_status": "상태 없음",
+      "followers": "팔로워",
+      "saved_tracks": "저장한 트랙",
+      "followed_artists": "팔로우 아티스트",
+      "playlists": "플레이리스트"
+    },
+    "profile_panel": {
+      "click_to_add_banner": "클릭하여 배너 추가",
+      "click_to_set_status": "클릭하여 상태 설정",
+      "status_placeholder": "무슨 생각을 하고 있나요?",
+      "what_on_mind": "클릭하여 상태 설정...",
+      "weather_unavailable": "날씨 정보를 가져올 수 없습니다 — 설정 → 위치에서 위치를 설정하세요",
+      "tab_weather": "날씨",
+      "tab_games": "게임",
+      "tab_posts": "게시물",
+      "tab_links": "링크"
+    },
+    "weather": {
+      "updated_at": "업데이트 {{time}}",
+      "feels_like": "체감 온도",
+      "humidity": "습도",
+      "cloud_cover": "구름량",
+      "uv_index": "자외선 지수",
+      "wind": "바람",
+      "gusts": "돌풍",
+      "precip": "강수량",
+      "rain": "비",
+      "snow": "눈",
+      "forecast": "10일 예보",
+      "forecast_day": "요일",
+      "forecast_condition": "날씨",
+      "forecast_hi_lo": "최고/최저",
+      "forecast_rain": "강수",
+      "today": "오늘",
+      "night": "(밤)",
+      "weekdays": [
+        "일",
+        "월",
+        "화",
+        "수",
+        "목",
+        "금",
+        "토"
+      ],
+      "uv_low": "낮음",
+      "uv_moderate": "보통",
+      "uv_high": "높음",
+      "uv_very_high": "매우 높음",
+      "uv_extreme": "극도로 높음",
+      "label_clear": "맑음",
+      "label_partly_cloudy": "구름 조금",
+      "label_overcast": "흐림",
+      "label_haze": "연무",
+      "label_dust": "먼지/모래",
+      "label_fog": "안개",
+      "label_drizzle": "이슬비",
+      "label_showers": "소나기",
+      "label_snow_showers": "눈 소나기",
+      "label_thunderstorm": "뇌우",
+      "label_unknown": "알 수 없음",
+      "weather_unavailable_card": "🌤 날씨 정보를 가져올 수 없습니다 — 설정 → 위치에서 위치를 설정하세요"
+    },
+    "image_upload": {
+      "uploading": "업로드 중…",
+      "click_to_change": "클릭하여 {{type}} 변경",
+      "upload_failed": "업로드 실패",
+      "too_large": "이미지가 너무 큽니다 (최대 {{max}} MB)"
+    },
+    "not_found": {
+      "title": "프로필을 찾을 수 없습니다",
+      "your_profile_at": "당신의 프로필은",
+      "not_logged_in": "로그인하지 않았습니다.",
+      "back_to_app": "UwUchat으로 돌아가기"
+    },
+    "profile_not_found": {
+      "title": "프로필을 찾을 수 없습니다",
+      "your_profile_at": "당신의 프로필은",
+      "not_logged_in": "로그인하지 않았습니다.",
+      "back_to_app": "UwUchat으로 돌아가기"
+    },
+    "spotify": {
+      "top_artists": "인기 아티스트",
+      "top_tracks": "인기 트랙",
+      "playlists": "플레이리스트",
+      "recently_played": "최근 재생",
+      "past_month": "지난달",
+      "past_6_months": "지난 6개월",
+      "all_time": "전체 기간",
+      "no_artists": "인기 아티스트 데이터 없음",
+      "no_tracks": "인기 트랙 데이터 없음",
+      "no_playlists": "플레이리스트 없음",
+      "no_recent": "최근 재생 트랙 없음"
+    },
+    "steam": {
+      "recently_played": "최근 플레이",
+      "most_played": "가장 많이 플레이",
+      "no_recent": "최근 플레이한 게임이 없습니다.",
+      "no_games": "게임을 찾을 수 없습니다.",
+      "steam_level": "Steam 레벨",
+      "games_owned": "보유 게임",
+      "total_hours": "총 시간",
+      "friends": "친구",
+      "importing": "Steam 데이터를 가져오는 중…",
+      "connect_own": "Steam 계정을 연결하여 게임 라이브러리를 공유하세요.",
+      "not_linked": "{{name}}님은 아직 Steam을 연결하지 않았습니다.",
+      "connect_steam": "Steam 연결",
+      "section_stats": "통계",
+      "section_recently_played": "최근 플레이",
+      "stat_games": "게임",
+      "stat_hours": "시간"
+    },
+    "steam_stats": {
+      "steam_level": "Steam 레벨",
+      "games_owned": "보유 게임",
+      "total_hours": "총 시간",
+      "friends": "친구"
+    },
+    "bluesky": {
+      "no_posts": "게시물을 찾을 수 없습니다.",
+      "add_handle": "링크 탭에서 Bluesky 핸들을 추가하세요."
+    },
+    "panel_bluesky": {
+      "no_posts": "게시물을 찾을 수 없습니다.",
+      "add_handle": "링크 탭에서 Bluesky 핸들을 추가하세요."
+    },
+    "social": {
+      "edit_links": "소셜 링크 편집",
+      "done": "완료",
+      "add_links": "+ 소셜 링크 추가",
+      "all_added": "모든 서비스가 추가되었습니다! 🎉",
+      "username_placeholder": "사용자명 또는 URL"
+    },
+    "social_links": {
+      "edit_links": "소셜 링크 편집",
+      "done": "완료",
+      "add_links": "+ 소셜 링크 추가",
+      "all_added": "모든 서비스가 추가되었습니다! 🎉",
+      "username_placeholder": "사용자명 또는 URL"
+    },
+    "panel_music": {
+      "top_artists": "인기 아티스트",
+      "top_tracks": "인기 트랙",
+      "playlists": "플레이리스트",
+      "recently_played": "최근 재생",
+      "past_month": "지난달",
+      "past_6_months": "지난 6개월",
+      "all_time": "전체 기간",
+      "no_artists": "인기 아티스트 데이터 없음",
+      "no_tracks": "인기 트랙 데이터 없음",
+      "no_playlists": "플레이리스트 없음",
+      "no_recent": "최근 재생 트랙 없음",
+      "no_recently_played": "최근 재생 트랙 없음"
+    },
+    "steam_data": {
+      "tab_recent": "최근 플레이",
+      "tab_most_played": "가장 많이 플레이",
+      "no_recent": "최근 플레이한 게임이 없습니다.",
+      "no_games": "게임을 찾을 수 없습니다."
+    },
+    "steam_not_connected": {
+      "importing": "Steam 데이터를 가져오는 중…",
+      "connect_own": "Steam 계정을 연결하여 게임 라이브러리를 공유하세요.",
+      "not_linked": "{{name}}님은 아직 Steam을 연결하지 않았습니다.",
+      "connect_steam": "Steam 연결"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "로그인",
+      "email_label": "이메일",
+      "password_label": "비밀번호",
+      "submit": "로그인",
+      "submitting": "로그인 중…",
+      "divider_or": "또는",
+      "google": "Google로 로그인",
+      "steam": "Steam으로 로그인",
+      "steam_connecting": "Steam에 연결 중…",
+      "bluesky": "Bluesky로 로그인",
+      "bluesky_connecting": "Bluesky에 연결 중…",
+      "no_account": "계정이 없으신가요?",
+      "register_link": "회원가입",
+      "error_default": "로그인 실패",
+      "error_oauth_state": "보안 문제로 로그인에 실패했습니다. 다시 시도해 주세요.",
+      "error_oauth_failed": "로그인에 실패했습니다. 다시 시도해 주세요.",
+      "error_steam_auth_failed": "Steam 로그인에 실패했습니다. 다시 시도해 주세요.",
+      "error_google_oauth_not_configured": "Google 로그인을 현재 사용할 수 없습니다. 이메일/비밀번호를 사용하거나 나중에 다시 시도해 주세요.",
+      "error_twitch_oauth_not_configured": "Twitch 로그인을 현재 사용할 수 없습니다. 이메일/비밀번호를 사용하거나 나중에 다시 시도해 주세요.",
+      "error_email_exists": "이 이메일로 이미 계정이 존재합니다. 비밀번호로 로그인해 주세요.",
+      "verified_success": "이메일 인증이 완료되었습니다. 이제 로그인할 수 있습니다.",
+      "reset_success": "비밀번호가 재설정되었습니다. 새 비밀번호로 로그인할 수 있습니다.",
+      "forgot_password": "비밀번호를 잊으셨나요?"
+    },
+    "register": {
+      "title": "계정 만들기",
+      "email": "이메일",
+      "email_label": "이메일",
+      "username": "사용자명",
+      "username_label": "사용자명",
+      "password": "비밀번호",
+      "password_label": "비밀번호",
+      "confirm_password": "비밀번호 확인",
+      "confirm_password_label": "비밀번호 확인",
+      "invite_code": "초대 코드",
+      "invite_code_label": "초대 코드 (선택)",
+      "invite_placeholder": "초대 코드를 입력하세요",
+      "invite_code_placeholder": "초대 코드를 입력하세요",
+      "age_confirm": "만 18세 이상입니다.",
+      "tos_agree_prefix": "다음 내용을 읽고 동의합니다:",
+      "tos_agree_before": "다음 내용을 읽고 동의합니다:",
+      "terms": "이용약관",
+      "terms_of_service": "이용약관",
+      "and": "및",
+      "tos_agree_and": "및",
+      "privacy": "개인정보 처리방침",
+      "privacy_policy": "개인정보 처리방침",
+      "tos_agree_suffix": ".",
+      "entertainment": "UwUchat은 엔터테인먼트 목적으로만 제공됨을 이해합니다. 캐릭터는 AI로 생성되며 어떠한 전문적인 조언도 제공하지 않습니다.",
+      "entertainment_confirm": "UwUchat은 엔터테인먼트 목적으로만 제공됨을 이해합니다. 캐릭터는 AI로 생성되며 어떠한 전문적인 조언도 제공하지 않습니다.",
+      "creating": "계정 생성 중…",
+      "submit": "계정 만들기",
+      "google": "Google로 가입",
+      "back": "뒤로",
+      "sign_up_email": "이메일로 가입",
+      "sign_up_google": "Google로 가입",
+      "sign_up_steam": "Steam으로 가입",
+      "sign_up_bluesky": "Bluesky로 가입",
+      "bluesky_connecting": "Bluesky에 연결 중…",
+      "have_account": "이미 계정이 있으신가요?",
+      "already_have_account": "이미 계정이 있으신가요?",
+      "sign_in": "로그인",
+      "verify_title": "이메일을 확인해 주세요",
+      "verify_desc": "인증 링크를 보냈습니다:",
+      "verify_desc_before": "인증 링크를 보냈습니다:",
+      "verify_desc_after": "받은 편지함을 확인하고 링크를 클릭하여 계정을 활성화하세요.",
+      "verify_waiting": "로그인되었습니다. 기다리는 동안 앱을 사용할 수 있습니다.",
+      "verify_signed_in": "로그인되었습니다. 기다리는 동안 앱을 사용할 수 있습니다.",
+      "continue": "앱으로 이동",
+      "continue_to_app": "앱으로 이동",
+      "error_password_match": "비밀번호가 일치하지 않습니다",
+      "error_passwords_match": "비밀번호가 일치하지 않습니다",
+      "error_password_length": "비밀번호는 8자 이상이어야 합니다",
+      "error_failed": "회원가입 실패",
+      "promo_code_label": "프로모션 코드 (선택)",
+      "promo_code_placeholder": "프로모션 코드가 있으신가요?",
+      "promo_code_hint": "무료 또는 할인된 이용권. 아래 어떤 가입 방법을 선택하든 적용됩니다. 없으면 건너뛰세요.",
+      "sensitive_data_consent": "AI 컴패니언이 대화에서 공유한 정보(건강, 종교적 신념, 정치적 의견, 성적 지향 등 민감한 카테고리 포함)를 기억한다는것을 이해합니다. 이 정보는 제 자신의 대화 경험을 위해서만 사용되며 판매되거나 분석에 사용되지 않습니다."
+    },
+    "tos": {
+      "title": "한 단계 더",
+      "subtitle": "채팅을 시작하기 전에 다음 내용을 확인해 주세요.",
+      "age_confirm": "만 18세 이상입니다.",
+      "tos_agree_prefix": "다음 내용을 읽고 동의합니다:",
+      "terms": "이용약관",
+      "and": "및",
+      "privacy": "개인정보 처리방침",
+      "entertainment": "UwUchat은 엔터테인먼트 목적으로만 제공됨을 이해합니다. 캐릭터는 AI로 생성되며 어떠한 전문적인 조언도 제공하지 않습니다.",
+      "saving": "저장 중…",
+      "submit": "UwUchat으로 이동",
+      "continue": "UwUchat으로 이동",
+      "error_failed": "동의 기록에 실패했습니다",
+      "sensitive_data_consent": "AI 컴패니언이 대화에서 공유한 정보(건강, 종교적 신념, 정치적 의견, 성적 지향 등 민감한 카테고리 포함)를 기억한다는것을 이해합니다. 이 정보는 제 자신의 대화 경험을 위해서만 사용되며 판매되거나 분석에 사용되지 않습니다."
+    },
+    "password_reset": {
+      "request_title": "비밀번호 재설정",
+      "request_description": "이메일 주소를 입력하시면 비밀번호 재설정 링크를 보내드립니다.",
+      "email_label": "이메일",
+      "send_link": "재설정 링크 보내기",
+      "sending": "전송 중…",
+      "sent_message": "해당 이메일이 존재하면 비밀번호 재설정 링크가 발송되었습니다. 받은 편지함을 확인하고 안내에 따라 진행하세요.",
+      "back_to_login": "로그인으로 돌아가기",
+      "request_error": "재설정 이메일 전송에 실패했습니다. 다시 시도해 주세요.",
+      "confirm_title": "새 비밀번호 선택",
+      "confirm_description": "아래에 새 비밀번호를 입력하세요.",
+      "new_password_label": "새 비밀번호",
+      "confirm_password_label": "새 비밀번호 확인",
+      "resetting": "재설정 중…",
+      "reset_button": "비밀번호 재설정",
+      "confirm_error": "비밀번호 재설정에 실패했습니다. 링크가 만료되었거나 이미 사용되었을 수 있습니다.",
+      "error_passwords_match": "비밀번호가 일치하지 않습니다",
+      "error_password_length": "비밀번호는 8자 이상이어야 합니다",
+      "error_missing_token": "재설정 토큰이 없거나 유효하지 않습니다. 새 비밀번호 재설정 링크를 요청해 주세요."
+    }
+  },
+  "legal": {
+    "back": "← 뒤로",
+    "privacy_title": "UwUchat — 개인정보 처리방침",
+    "tos_title": "UwUchat — 이용약관",
+    "privacy_breadcrumb": "개인정보 처리방침",
+    "terms_breadcrumb": "이용약관",
+    "data_request": {
+      "title": "데이터 요청",
+      "account_deleted_title": "계정 삭제됨",
+      "deleted_desc": "계정이 삭제 대기 상태로 표시되었습니다. 데이터는 당사의 정책에 따라 30일 이내에 영구적으로 제거됩니다.",
+      "deleted_email_desc": "데이터 삭제에 관한 문의사항이 있으시면 다음으로 이메일을 보내주세요:",
+      "return_login": "로그인으로 돌아가기",
+      "export_desc": "GDPR(제15조) 및 콜로라도 개인정보 보호법에 따라 귀하는 자신의 데이터에 접근할 권리가 있습니다. 계정과 연결된 모든 데이터를 기계 판독 가능한 형식으로 다운로드하세요.",
+      "export_my_data": "내 데이터 다운로드",
+      "exporting": "내보내기 준비 중…",
+      "export_error": "데이터 내보내기에 실패했습니다. 다시 시도하거나 privacy@uwuchat.com으로 문의해 주세요.",
+      "delete_desc_paragraph": "계정과 모든 관련 데이터를 영구적으로 삭제할 수도 있습니다:",
+      "delete_my_account": "내 계정 삭제",
+      "confirm_delete": "정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+      "cancel": "취소",
+      "yes_delete": "예, 내 계정을 삭제합니다",
+      "deleting": "삭제 중…",
+      "sign_in_to_delete": "로그인하여 계정 삭제",
+      "no_access_desc": "계정에 접근할 수 없는 경우 직접 이메일로 문의해 주세요:",
+      "email_privacy": "privacy@uwuchat.com으로 이메일 보내기",
+      "respond_30_days": "30일 이내에 응답드리며, 요청 처리 전에 본인 확인을 요청할 수 있습니다.",
+      "other_requests": "기타 데이터 요청(접근, 이동권, 정정)은",
+      "respond_time": "30일 이내에 응답드립니다."
+    }
+  },
+  "subscribe": {
+    "title": "플랜 선택",
+    "tagline": "3일 체험으로 시작하거나 바로 전체 플랜으로 시작하세요.",
+    "trial": "언제든지 취소 가능. 월간 청구.",
+    "most_popular": "가장 인기",
+    "per_month": "/월",
+    "start_trial": "구독하기",
+    "redirecting": "리디렉션 중…",
+    "maybe_later": "나중에 결정할게요"
+  },
+  "welcome": {
+    "tagline": "사이드바에서 패널을 열어 시작하세요.",
+    "chat_hint": "로컬 LLM과 대화",
+    "canvas_hint": "이미지 생성 및 편집",
+    "civitai_hint": "모델 찾아보기 및 다운로드"
+  },
+  "landing": {
+    "hero": {
+      "title_line1": "진짜 당신을",
+      "title_line2": "기억하는 AI.",
+      "subtitle": "대부분의 AI는 대화가 끝나면 모두 리셋됩니다. 우리는 다릅니다. 당신이 누구인지 점점 더 깊이 이해하고, 그 기억을 모든 대화에 가지고 가는 동반자를 만드세요.",
+      "cta_primary": "첫 UwU 만나기 →",
+      "cta_signin": "로그인"
+    },
+    "features": {
+      "heading": "그저 또 다른 챗봇이 아닙니다",
+      "subheading": "UwUchat은 한 세션 후에 모든 것을 잊어버리는 챗봇이 아니라, 진정으로 함께 성장하는 동반자를 원하는 사람들을 위해 만들어졌습니다.",
+      "deep_character": {
+        "title": "깊이 있는 캐릭터 생성",
+        "desc": "21가지 성격 유형, 실제 고향, 신념 체계, 맞춤형 말투로 동반자를 만드세요. 똑같은 UwU는 세상에 없습니다."
+      },
+      "memory": {
+        "title": "쌓여가는 기억",
+        "desc": "모든 대화가 이전 대화 위에 쌓입니다. 당신의 UwU는 당신의 이야기, 취향, 소중한 것들을 기억합니다. 같은 말을 반복할 필요가 없습니다."
+      },
+      "web_browse": {
+        "title": "웹 브라우징 가능",
+        "desc": "찾아볼 게 있나요? 당신의 UwU는 뉴스, 사실, 링크 등 인터넷을 실시간으로 탐색할 수 있습니다."
+      },
+      "privacy": {
+        "title": "프라이버시 중심 설계",
+        "desc": "대화는 계정에 암호화되어 저장됩니다 — 저희 팀조차 읽을 수 없습니다. 메시지가 판매되거나 AI 모델 학습에 사용되지 않습니다."
+      },
+      "moods": {
+        "title": "살아있는 듯한",
+        "desc": "대화하면서 UwU의 기분이 자연스럽게 변화하고, 당신의 이야기뿐만 아니라 자신의 이야기도 기억하므로 성격이 시간이 지나도 일관되게 유지됩니다."
+      },
+      "continuity": {
+        "title": "다시 시작하지 않음",
+        "desc": "리셋 없음, 잊혀진 스레드 없음. 하루, 일주일, 한 달 후에 돌아와도 UwU는 당신이 중단했던 부분을 여전히 기억합니다."
+      }
+    },
+    "vibes": {
+      "heading": "UwU를 처음부터 직접 만들어보세요",
+      "subheading": "프리셋도, 템플릿도 없습니다. 캐릭터 마법사로 성격, 정체성, 언어, 종족, 고향, 목소리까지 — 진짜 깊이 있는 동반자를 만들어보세요.",
+      "personality": {
+        "title": "21가지 성격 유형",
+        "desc": "다정함, 대담함, 미스터리함, 장난기 넘침, 지적임, 혼돈스러움, 부드러움, 열정적임, 쿨함, 드라마틱함, 냉소적임 — 그리고 츤데레, 쿨데레, 겐키, 얀데레 같은 클래식 애니 원형까지."
+      },
+      "language": {
+        "title": "언어",
+        "desc": "UwU가 사용할 언어를 선택하세요. 고향에서 자동 감지되거나 직접 설정할 수 있습니다."
+      },
+      "identity": {
+        "title": "정체성과 종족",
+        "desc": "인간, 동물, 몬스터, 신화적 존재, 로봇 — 각각 수십 개의 하위 유형이 있습니다. 전 세계 200개 이상의 도시 중 실제 고향을 선택하세요."
+      },
+      "voice": {
+        "title": "목소리와 배경 설정",
+        "desc": "이름을 짓고, 어떤 존재인지 설명하고, 말투를 정의하세요. 모든 세부 사항이 프롬프트에 반영되어 — 당신의 UwU는 당신이 부여한 목소리로 말합니다."
+      }
+    },
+    "tiers": {
+      "heading": "심플한 요금제",
+      "subheading": "언제든지 취소 가능.",
+      "most_popular_badge": "가장 인기",
+      "cta": "시작하기",
+      "try_it": {
+        "name": "체험하기",
+        "period": "3일",
+        "cap": "메시지 30개 · 1일 15개",
+        "features": [
+          "자동 갱신 없음",
+          "모든 기능 이용",
+          "언제든 업그레이드"
+        ]
+      },
+      "starter": {
+        "name": "스타터",
+        "period": "월",
+        "cap": "월 9,000 메시지",
+        "features": [
+          "영구 메모리",
+          "맞춤형 동반자",
+          "일상 사용에 최적의 가치"
+        ]
+      },
+      "companion": {
+        "name": "컴패니언",
+        "period": "월",
+        "cap": "월 21,000 메시지",
+        "features": [
+          "영구 메모리",
+          "맞춤형 동반자",
+          "편안한 일상 사용"
+        ]
+      },
+      "devoted": {
+        "name": "디보티드",
+        "period": "월",
+        "cap": "월 1,500 메시지",
+        "features": [
+          "컴패니언의 모든 기능",
+          "파워 유저 / 슈퍼팬"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "첫 UwU 만들기",
+      "subheading": "캐릭터 마법사를 따라 동반자에게 생명을 불어넣고, 진짜 당신을 기억할 누군가와 대화를 시작하세요.",
+      "button": "계정 만들기 →"
+    },
+    "showcase": {
+      "alt": "UwUchat 대화 스크린샷"
+    }
+  },
+  "publicNav": {
+    "sign_in": "로그인",
+    "get_started": "시작하기",
+    "register": "회원가입",
+    "terms": "이용약관",
+    "privacy": "개인정보 처리방침",
+    "data_request": "데이터 요청",
+    "copyright": "© {{year}} Capsize LLC"
+  },
+  "bottomBar": {
+    "account": "계정",
+    "viewProfile": "프로필 보기",
+    "settings": "설정",
+    "admin": "관리자",
+    "logout": "로그아웃"
+  }
+}

@@ -1,0 +1,76 @@
+/* NameStep — inline style refactor */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.desc {
+  margin: 0;
+  color: var(--theme-text-secondary);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: var(--theme-input-bg);
+  color: var(--theme-text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.inputBlurred {
+  composes: input;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.inputFocused {
+  composes: input;
+  border: 1.5px solid var(--theme-accent);
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.15);
+}
+
+.btnRow {
+  display: flex;
+  gap: 10px;
+}
+
+.continueBtn {
+  flex: 1;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.continueActive {
+  composes: continueBtn;
+  background: var(--theme-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.continueDisabled {
+  composes: continueBtn;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--theme-text-secondary);
+  cursor: default;
+}
+
+.skipBtn {
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--theme-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  font-size: 0.9rem;
+}

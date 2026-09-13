@@ -1,0 +1,873 @@
+{
+  "onboarding_tour": {
+    "system_bot_label": "Asisten Anda",
+    "system_bot_text": "Ini adalah asisten UwU Anda. Dia sadar bahwa dia adalah asisten chatbot.",
+    "rp_bot_label": "Bot Role-Play",
+    "rp_bot_text": "Ini adalah chatbot role-play. Bot ini tidak sadar bahwa mereka adalah bot. Mereka percaya bahwa mereka nyata dan akan tetap dalam karakter.",
+    "next": "Lanjut",
+    "close": "Mengerti"
+  },
+  "common": {
+    "save": "Simpan",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "loading": "Memuat…"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "language": {
+      "heading": "Pengaturan Bahasa",
+      "gui_label": "Bahasa GUI",
+      "user_label": "Bahasa Pengguna",
+      "uwu_label": "Bahasa UwU"
+    },
+    "nav": {
+      "integrations": "Akun Tertaut",
+      "privacy": "Layanan Pihak Ketiga",
+      "image_export": "Ekspor Gambar",
+      "memory": "Memori",
+      "keyboard_shortcuts": "Pintasan Keyboard",
+      "immersion": "Imersi",
+      "user": "Pengaturan Pengguna",
+      "tts": "Teks-ke-Suara",
+      "sound": "Suara-ke-Teks",
+      "prompt_templates": "Template Prompt",
+      "appearance": "Tema",
+      "language": "Bahasa",
+      "location": "Lokasi",
+      "account": "Akun & Legal",
+      "headlesscode": "Sesi Koding"
+    },
+    "location": {
+      "description": "UwU Anda menggunakan lokasi Anda untuk membicarakan hal-hal nyata — cuaca di luar jendela, apa yang terjadi di sekitar Anda.",
+      "current": "Lokasi saat ini",
+      "no_location": "Belum ada lokasi. Tambahkan di bawah untuk cuaca dan konteks lokal.",
+      "use_current": "Gunakan lokasi saya saat ini",
+      "auto_update_on": "Memperbarui otomatis",
+      "detect_once": "Deteksi sekali",
+      "saved": "Lokasi disimpan",
+      "or_manually": "— atau masukkan manual —",
+      "city": "Kota",
+      "country": "Negara (opsional)",
+      "search": "Cari lokasi",
+      "not_available": "Lokasi browser tidak tersedia.",
+      "detecting": "Mendeteksi…",
+      "blocked": "Lokasi diblokir. Masukkan kota Anda di bawah.",
+      "looking_up": "Mencari…",
+      "not_found": "Kota tidak ditemukan. Coba kota besar terdekat."
+    },
+    "account": {
+      "heading": "Akun",
+      "email": "Surel:",
+      "username": "Nama Pengguna:",
+      "view_profile": "Lihat profil saya",
+      "email_unverified": "Alamat email Anda belum diverifikasi.",
+      "subscription_heading": "Langganan",
+      "linked_accounts_heading": "Akun Tertaut",
+      "linked_accounts_desc": "Hubungkan akun Spotify Anda untuk membagikan selera musik di profil. Kelola akun tertaut di",
+      "linked_accounts_link": "Akun Tertaut",
+      "linked_accounts_suffix": "di sidebar pengaturan.",
+      "legal_heading": "Legal",
+      "terms_of_service": "Ketentuan Layanan",
+      "privacy_policy": "Kebijakan Privasi",
+      "danger_zone": "Zona Bahaya",
+      "danger_desc": "Hapus akun Anda dan semua data terkait secara permanen. Ini tidak dapat dibatalkan.",
+      "delete_account": "Hapus Akun",
+      "no_subscription": "Tidak ada langganan aktif. Berlangganan untuk membuka akses penuh.",
+      "view_plans": "Lihat paket",
+      "plan_label": "Paket:",
+      "status_label": "Status:",
+      "free_trial": "Uji coba gratis",
+      "trial_ends": "Uji coba berakhir:",
+      "renews": "Perpanjang:",
+      "manage_subscription": "Kelola langganan",
+      "change_plan": "Ubah paket",
+      "current_plan": "Paket saat ini",
+      "promo_heading": "Kode Promo"
+    },
+    "immersion": {
+      "heading": "Imersi",
+      "level_label": "Level Imersi",
+      "minimal": "Minimal",
+      "minimal_label": "Minimal",
+      "full": "Penuh",
+      "full_label": "Penuh",
+      "minimal_desc": "Respons mengalir langsung. Indikator mengetik dan jeda buatan dinonaktifkan.",
+      "full_desc": "Chatbot mensimulasikan membaca pesan Anda, berpikir, dan mengetik respons. Indikator \"{name} sedang mengetik…\" ditampilkan saat Anda menunggu.",
+      "description": "Pilih seberapa imersif Anda ingin percakapan terasa."
+    },
+    "integrations": {
+      "title": "Akun Tertaut",
+      "heading": "Akun Tertaut",
+      "desc": "Hubungkan layanan eksternal untuk memperkaya profil Anda.",
+      "spotify_desc": "Bagikan selera musik Anda di profil",
+      "spotify_importing": "Mengimpor data Spotify…",
+      "connect_spotify": "Hubungkan Spotify",
+      "spotify_connect": "Hubungkan Spotify",
+      "spotify_last_synced": "Terakhir disinkronkan:",
+      "last_synced": "Terakhir disinkronkan:",
+      "spotify_view_profile": "Lihat profil saya",
+      "view_my_profile": "Lihat profil saya",
+      "spotify_refresh": "Segarkan Data",
+      "refresh_data": "Segarkan Data",
+      "spotify_refreshing": "Menyegarkan…",
+      "refreshing": "Menyegarkan…",
+      "spotify_disconnect": "Putuskan",
+      "disconnect": "Putuskan",
+      "spotify_disconnecting": "Memutuskan…",
+      "disconnecting": "Memutuskan…",
+      "spotify_retry": "Coba Lagi",
+      "retry": "Coba Lagi",
+      "steam_desc": "Bagikan kehidupan gaming Anda di profil",
+      "steam_connect": "Hubungkan Steam",
+      "connect_steam": "Hubungkan Steam",
+      "steam_connecting": "Menghubungkan…",
+      "connecting": "Menghubungkan…",
+      "importing_spotify": "Mengimpor data Spotify…",
+      "connect_itch": "Hubungkan itch.io",
+      "itch_desc": "Tampilkan pustaka game itch.io Anda di profil.",
+      "connect_bluesky": "Hubungkan Bluesky",
+      "bluesky_desc": "Tampilkan postingan Bluesky terbaru Anda di profil.",
+      "bluesky_app_password_hint": "Buat kata sandi aplikasi di bsky.social/settings/app-passwords — jangan pernah gunakan kata sandi akun utama Anda.",
+      "bluesky_handle_placeholder": "handle (mis. user.bsky.social)",
+      "bluesky_placeholder": "kata sandi aplikasi (xxxx-xxxx-xxxx-xxxx)",
+      "bluesky_connecting": "Menghubungkan…",
+      "connected_label_steam": "✅ Steam terhubung",
+      "connected_label_itch": "✅ itch.io terhubung",
+      "connected_label_bluesky": "✅ Bluesky terhubung"
+    },
+    "prompt_templates": {
+      "heading": "Template Prompt",
+      "no_templates": "Tidak ada template tersedia.",
+      "template_label": "Templat",
+      "use_guardrails": "Gunakan guardrails",
+      "use_datetime": "Gunakan datetime di system prompt"
+    },
+    "social_links": {
+      "heading": "Tautan Sosial",
+      "desc": "Tambahkan tautan ke profil media sosial Anda. Ini akan muncul di halaman profil publik Anda.",
+      "no_links": "Belum ada tautan sosial. Tambahkan di bawah!",
+      "sign_in": "Masuk untuk mengelola tautan sosial Anda.",
+      "save": "Simpan",
+      "edit": "Sunting",
+      "add_link": "Tambah tautan sosial",
+      "all_added": "Semua layanan yang tersedia telah ditambahkan. 🎉"
+    },
+    "promo": {
+      "heading": "Kode Promo",
+      "placeholder": "Masukkan kode",
+      "redeem": "Tukarkan",
+      "error": "Kode tidak valid",
+      "redeemed": "Kode diterapkan!",
+      "redeemed_tier": "Kode diterapkan! Anda sekarang memiliki akses {{tier}}."
+    }
+  },
+  "sidebar": {
+    "account": "Akun",
+    "contacts": "Kontak",
+    "new_contact": "Chatbot Role-Play Baru",
+    "new_uwu": "Buat UwU baru",
+    "assistant": "ASISTEN",
+    "no_contacts": "Belum ada kontak. Mulai percakapan!",
+    "deceased": "Almarhum",
+    "role_play": "BERMAIN PERAN",
+    "generating_character": "Membuat karakter...",
+    "generation_failed": "Pembuatan karakter gagal. Silakan coba lagi.",
+    "uwu_ready_title": "UwU barumu sudah siap! ✨",
+    "uwu_ready_body": "{{name}} selesai dibuat dan siap untuk diajak ngobrol.",
+    "uwu_ready_cta": "Mulai mengobrol"
+  },
+  "setup": {
+    "language": {
+      "description": "UwU Anda akan berbicara dengan Anda dalam bahasa yang Anda pilih.",
+      "continue": "Lanjutkan →"
+    },
+    "name": {
+      "desc": "UwU Anda akan menggunakan ini untuk menyapa Anda secara alami dalam percakapan.",
+      "placeholder": "Nama depan atau nama panggilan",
+      "continue": "Lanjutkan",
+      "skip": "Lewati"
+    },
+    "gender": {
+      "desc": "UwU Anda akan menggunakan kata ganti yang tepat saat membicarakan Anda.",
+      "skip": "Lewati langkah ini",
+      "she_her": "Dia (Perempuan)",
+      "he_him": "Dia (Laki-laki)",
+      "they_them": "Mereka",
+      "prefer_not": "Pilih untuk tidak menjawab"
+    },
+    "location": {
+      "desc": "UwU Anda menggunakan lokasi Anda untuk membicarakan hal-hal nyata — cuaca di luar jendela, apa yang terjadi di sekitar Anda.",
+      "use_current": "Gunakan lokasi saya saat ini",
+      "or_manually": "— atau masukkan manual —",
+      "city_placeholder": "Kota",
+      "country_placeholder": "Negara (opsional)",
+      "save_location": "Simpan lokasi",
+      "skip": "Lewati",
+      "not_available": "Lokasi browser tidak tersedia.",
+      "detecting": "Mendeteksi…",
+      "blocked": "Lokasi diblokir. Masukkan kota Anda di bawah.",
+      "city_required": "Silakan masukkan kota.",
+      "looking_up": "Mencari…",
+      "not_found": "Kota tidak ditemukan. Coba kota besar terdekat."
+    },
+    "wizard": {
+      "step_of": "Pengaturan — {{step}} dari {{total}}",
+      "meet_uwu": "Temui UwU saya ✨"
+    },
+    "step_titles": {
+      "name": "Siapa nama Anda?",
+      "gender": "Bagaimana Anda mengidentifikasi diri?",
+      "language": "Pilih bahasa Anda",
+      "location": "Di mana Anda?",
+      "done": "Anda sudah siap!",
+      "subscribe": "Pilih paket Anda",
+      "avatar": "Foto Profil",
+      "banner": "Gambar Banner",
+      "status": "Status",
+      "kaomoji": "Kaomoji",
+      "verify_email": "Verifikasi Email"
+    },
+    "steps": {
+      "skip": "Lewati",
+      "save": "Simpan",
+      "done": "Selesai",
+      "uploading": "Mengunggah…",
+      "avatar_desc": "Tambahkan foto agar UwU Anda mengenali Anda.",
+      "banner_desc": "Pilih gambar header untuk profil Anda.",
+      "status_desc": "Beri tahu UwU Anda apa yang ada di pikiran Anda.",
+      "kaomoji_desc": "Pilih kaomoji — ini muncul di kartu profil Anda.",
+      "verify_email_desc": "Konfirmasi email Anda agar Anda dapat memulihkan akun.",
+      "upload_avatar": "Unggah Foto",
+      "upload_banner": "Unggah Banner",
+      "status_placeholder": "Apa yang ada di pikiran Anda?",
+      "send_verification": "Kirim email verifikasi",
+      "resend_verification": "Kirim ulang email verifikasi",
+      "sending": "Mengirim…",
+      "verification_sent": "Periksa kotak masuk Anda! Tautan verifikasi telah dikirim ke {{email}}.",
+      "already_verified": "Email Anda telah diverifikasi ✅"
+    }
+  },
+  "chat": {
+    "contacts": "Kontak",
+    "cancel": "Batal",
+    "send": "Kirim",
+    "type_message": "Ketik pesan…",
+    "blocked_placeholder": "Karakter ini telah memblokir Anda.",
+    "loading_conversation": "Memuat percakapan…",
+    "blocked_label": "diblokir",
+    "view_profile": "Lihat profil",
+    "profile_link": "profil",
+    "choice_modal": {
+      "title": "Tambah UwU baru",
+      "subtitle": "Buat langsung, atau desain sendiri.",
+      "random_label": "UwU Acak",
+      "random_sub": "Kejutkan saya",
+      "random_generating": "Membuat...",
+      "generating": "Membuat...",
+      "build_label": "Buat sendiri",
+      "build_sub": "Langkah demi langkah"
+    },
+    "creator": {
+      "name_your_uwu": "Namai UwU Anda",
+      "who_is_this": "Siapa karakter ini?",
+      "name_label": "Nama",
+      "about_label": "Tentang UwU ini",
+      "optional": "(opsional)",
+      "speech_label": "Pola bicara khas",
+      "speech_patterns_label": "Pola bicara khas",
+      "speech_patterns_hint": "Ini diterapkan di setiap respons — chatbot tidak akan menyimpang darinya.",
+      "creating": "Membuat…",
+      "begin_story": "Mulai Cerita →",
+      "next": "Lanjut →",
+      "skip": "Lewati langkah ini",
+      "step_emoji_title": "Pilih Emoji Profil",
+      "step_emoji_subtitle": "Pilih emoji yang mewakili karakter ini.",
+      "step_gender_title": "Pilih Gender",
+      "step_gender_subtitle": "Ini membentuk cara karakter merujuk pada diri mereka sendiri.",
+      "step_personality_title": "Tipe Kepribadian",
+      "step_personality_subtitle": "Pilih arketipe kepribadian inti.",
+      "step_subtype_title": "Pilih Subtipe",
+      "step_subtype_subtitle": "Pilih subtipe dari {{type}}.",
+      "step_species_title": "Pilih Spesies",
+      "step_species_subtitle": "Makhluk seperti apa karakter ini?",
+      "step_language_title": "Bahasa",
+      "step_language_auto": "Terdeteksi otomatis dari {{city}}. Anda bisa mengubahnya.",
+      "step_language_hint": "Pilih bahasa yang digunakan karakter ini.",
+      "step_location_title": "Di Mana Mereka Tinggal?",
+      "step_location_subtitle": "Pilih home base dunia nyata untuk karakter Anda."
+    },
+    "message": {
+      "copy": "Salin pesan",
+      "delete_admin": "Hapus pesan (admin)",
+      "copied": "Tersalin!",
+      "inspect_flow": "Periksa Flow",
+      "copy_mermaid": "📋 Salin Mermaid",
+      "copied_mermaid": "✓ Tersalin!",
+      "turn": "Giliran",
+      "report": "Laporkan pesan",
+      "system_label": "Sistem"
+    },
+    "report": {
+      "title": "Laporkan pesan",
+      "reason_inappropriate": "Tidak pantas",
+      "reason_harmful_unsafe": "Berbahaya/tidak aman",
+      "reason_off_character": "Di luar karakter",
+      "reason_other": "Lainnya",
+      "detail_placeholder": "Detail opsional (maks 500 karakter)",
+      "cancel": "Batal",
+      "submit": "Kirim laporan",
+      "received": "Laporan diterima. Terima kasih.",
+      "close": "Tutup",
+      "admin_title": "Laporan",
+      "refresh": "Segarkan",
+      "loading": "Memuat…",
+      "no_reports": "Belum ada laporan.",
+      "total": "total",
+      "col_time": "Waktu",
+      "col_reporter": "Pelapor",
+      "col_type": "Tipe",
+      "col_reason": "Alasan",
+      "type_auto": "Ditandai otomatis",
+      "type_user": "Laporan pengguna"
+    },
+    "view": {
+      "inspection_on": "🔬 Inspeksi ON",
+      "inspection_off": "🔬 Inspeksi OFF",
+      "unblock": "Buka blokir",
+      "offline_message": "{{name}} sedang offline sekarang — pesan akan terkirim saat mereka kembali.",
+      "has_blocked": "{{name}} telah memblokir Anda.",
+      "you_blocked": "Anda telah memblokir {{name}}.",
+      "profile_panel": "Profil",
+      "my_profile_panel": "Profil Saya",
+      "flow_detail_panel": "Detail Flow",
+      "fastsearch_panel": "Status FastSearch",
+      "users_panel": "Pengguna",
+      "input_prompt": "Prompt masukan",
+      "output_response": "Respons keluaran"
+    },
+    "empty_placeholder": {
+      "greeting_fallback": "Mulai percakapan dengan mengetik pesan di bawah.",
+      "greeting_with_name": "Sapa {{name}} — mulai percakapan di bawah.",
+      "opener_how_are_you": "Bagaimana harimu?",
+      "opener_what_can_you_do": "Apa yang bisa kamu bantu?"
+    }
+  },
+  "iconbar": {
+    "home": "UwUchat",
+    "users_label": "Pengguna",
+    "admin_users": "Admin Pengguna"
+  },
+  "rooms": {
+    "profile": {
+      "back": "← kembali",
+      "loading": "Memuat…",
+      "not_found": "Profil tidak ditemukan.",
+      "hangs_out_in": "Nongkrong di",
+      "posts_tab": "postingan",
+      "shop_tab": "toko",
+      "loading_posts": "Memuat postingan…",
+      "no_posts": "Tidak ada yang diposting baru-baru ini.",
+      "loading_inventory": "Memuat…",
+      "no_items": "Belum ada item.",
+      "card_tab": "Kartu",
+      "items_tab": "Item",
+      "generate_images": "Buat gambar profil",
+      "generating_images": "Membuat…",
+      "unblock": "Buka blokir",
+      "omnipotent_knowledge": "🌐 Memori Bersama",
+      "omnipotent_on": "Dapat mengingat hal-hal yang Anda ceritakan ke UwU lain.",
+      "omnipotent_off": "Hanya mengingat percakapan ini.",
+      "block": "Blokir {{name}}",
+      "has_blocked": "{{name}} telah memblokir Anda.",
+      "you_blocked": "Anda telah memblokir {{name}}.",
+      "enable_omnipotent": "Aktifkan memori bersama",
+      "disable_omnipotent": "Nonaktifkan memori bersama",
+      "bio_empty": "{{name}} belum menulis bio.",
+      "settings_label": "Pengaturan",
+      "currently_label": "Saat ini"
+    },
+    "profile_view": {
+      "loading": "Memuat…",
+      "unblock": "Buka blokir",
+      "omnipotent_knowledge": "🌐 Memori Bersama",
+      "omnipotent_on": "Dapat mengingat hal-hal yang Anda ceritakan ke UwU lain.",
+      "omnipotent_off": "Hanya mengingat percakapan ini.",
+      "enable_omnipotent": "Aktifkan memori bersama",
+      "disable_omnipotent": "Nonaktifkan memori bersama",
+      "bio_empty": "{{name}} belum menulis bio.",
+      "settings_label": "Pengaturan",
+      "currently_label": "Saat ini"
+    }
+  },
+  "panels": {
+    "uwu_row": {
+      "remove": "Hapus",
+      "cancel": "Batal",
+      "remove_title": "Hapus dari kontak"
+    },
+    "uwu_list": {
+      "remove": "Hapus",
+      "cancel": "Batal",
+      "remove_title": "Hapus dari kontak"
+    }
+  },
+  "user": {
+    "profile_page": {
+      "back": "← kembali",
+      "no_status": "Tidak ada status",
+      "followers": "Pengikut",
+      "saved_tracks": "Lagu Tersimpan",
+      "followed_artists": "Artis Diikuti",
+      "playlists": "Playlist"
+    },
+    "profile_panel": {
+      "click_to_add_banner": "Klik untuk menambah banner",
+      "click_to_set_status": "Klik untuk mengatur status",
+      "status_placeholder": "Apa yang ada di pikiran Anda?",
+      "what_on_mind": "Klik untuk mengatur status...",
+      "weather_unavailable": "Cuaca tidak tersedia — atur lokasi Anda di Pengaturan → Lokasi",
+      "tab_weather": "Cuaca",
+      "tab_games": "Game",
+      "tab_posts": "Postingan",
+      "tab_links": "Tautan"
+    },
+    "weather": {
+      "updated_at": "Diperbarui {{time}}",
+      "feels_like": "Terasa seperti",
+      "humidity": "Kelembaban",
+      "cloud_cover": "Tutupan awan",
+      "uv_index": "Indeks UV",
+      "wind": "Angin",
+      "gusts": "Hembusan",
+      "precip": "Curah hujan",
+      "rain": "Hujan",
+      "snow": "Salju",
+      "forecast": "Prakiraan 10 Hari",
+      "forecast_day": "Hari",
+      "forecast_condition": "Kondisi",
+      "forecast_hi_lo": "Tertinggi/Terendah",
+      "forecast_rain": "Hujan",
+      "today": "Hari ini",
+      "night": "(malam)",
+      "weekdays": [
+        "Min",
+        "Sen",
+        "Sel",
+        "Rab",
+        "Kam",
+        "Jum",
+        "Sab"
+      ],
+      "uv_low": "Rendah",
+      "uv_moderate": "Sedang",
+      "uv_high": "Tinggi",
+      "uv_very_high": "Sangat Tinggi",
+      "uv_extreme": "Ekstrem",
+      "label_clear": "Cerah",
+      "label_partly_cloudy": "Berawan sebagian",
+      "label_overcast": "Mendung",
+      "label_haze": "Kabut tipis",
+      "label_dust": "Debu/Pasir",
+      "label_fog": "Kabut",
+      "label_drizzle": "Gerimis",
+      "label_showers": "Hujan lebat",
+      "label_snow_showers": "Hujan salju",
+      "label_thunderstorm": "Badai petir",
+      "label_unknown": "Tidak diketahui",
+      "weather_unavailable_card": "🌤 Cuaca tidak tersedia — atur lokasi Anda di Pengaturan → Lokasi"
+    },
+    "image_upload": {
+      "uploading": "Mengunggah…",
+      "click_to_change": "Klik untuk mengubah {{type}}",
+      "upload_failed": "Unggah gagal",
+      "too_large": "Gambar terlalu besar (maks {{max}} MB)"
+    },
+    "not_found": {
+      "title": "Profil tidak ditemukan",
+      "your_profile_at": "Profil Anda ada di",
+      "not_logged_in": "Belum login.",
+      "back_to_app": "Kembali ke UwUchat"
+    },
+    "profile_not_found": {
+      "title": "Profil tidak ditemukan",
+      "your_profile_at": "Profil Anda ada di",
+      "not_logged_in": "Belum login.",
+      "back_to_app": "Kembali ke UwUchat"
+    },
+    "spotify": {
+      "top_artists": "Artis Teratas",
+      "top_tracks": "Lagu Teratas",
+      "playlists": "Playlist",
+      "recently_played": "Baru Diputar",
+      "past_month": "Sebulan Terakhir",
+      "past_6_months": "6 Bulan Terakhir",
+      "all_time": "Sepanjang Waktu",
+      "no_artists": "Tidak ada data artis teratas",
+      "no_tracks": "Tidak ada data lagu teratas",
+      "no_playlists": "Tidak ada playlist",
+      "no_recent": "Tidak ada lagu yang baru diputar"
+    },
+    "steam": {
+      "recently_played": "Baru Dimainkan",
+      "most_played": "Paling Sering Dimainkan",
+      "no_recent": "Tidak ada game yang baru dimainkan.",
+      "no_games": "Tidak ada game ditemukan.",
+      "steam_level": "Level Steam",
+      "games_owned": "Game Dimiliki",
+      "total_hours": "Total Jam",
+      "friends": "Teman",
+      "importing": "Data Steam sedang diimpor…",
+      "connect_own": "Hubungkan akun Steam Anda untuk membagikan koleksi game.",
+      "not_linked": "{{name}} belum menautkan Steam mereka.",
+      "connect_steam": "Hubungkan Steam",
+      "section_stats": "Statistik",
+      "section_recently_played": "Baru Dimainkan",
+      "stat_games": "Game",
+      "stat_hours": "Jam"
+    },
+    "steam_stats": {
+      "steam_level": "Level Steam",
+      "games_owned": "Game Dimiliki",
+      "total_hours": "Total Jam",
+      "friends": "Teman"
+    },
+    "bluesky": {
+      "no_posts": "Tidak ada postingan ditemukan.",
+      "add_handle": "Tambahkan handle Bluesky Anda di tab Tautan."
+    },
+    "panel_bluesky": {
+      "no_posts": "Tidak ada postingan ditemukan.",
+      "add_handle": "Tambahkan handle Bluesky Anda di tab Tautan."
+    },
+    "social": {
+      "edit_links": "Edit Tautan Sosial",
+      "done": "Selesai",
+      "add_links": "+ Tambah tautan sosial",
+      "all_added": "Semua layanan ditambahkan! 🎉",
+      "username_placeholder": "nama pengguna atau URL"
+    },
+    "social_links": {
+      "edit_links": "Edit Tautan Sosial",
+      "done": "Selesai",
+      "add_links": "+ Tambah tautan sosial",
+      "all_added": "Semua layanan ditambahkan! 🎉",
+      "username_placeholder": "nama pengguna atau URL"
+    },
+    "panel_music": {
+      "top_artists": "Artis Teratas",
+      "top_tracks": "Lagu Teratas",
+      "playlists": "Playlist",
+      "recently_played": "Baru Diputar",
+      "past_month": "Sebulan Terakhir",
+      "past_6_months": "6 Bulan Terakhir",
+      "all_time": "Sepanjang Waktu",
+      "no_artists": "Tidak ada data artis teratas",
+      "no_tracks": "Tidak ada data lagu teratas",
+      "no_playlists": "Tidak ada playlist",
+      "no_recent": "Tidak ada lagu yang baru diputar",
+      "no_recently_played": "Tidak ada lagu yang baru diputar"
+    },
+    "steam_data": {
+      "tab_recent": "Baru Dimainkan",
+      "tab_most_played": "Paling Sering Dimainkan",
+      "no_recent": "Tidak ada game yang baru dimainkan.",
+      "no_games": "Tidak ada game ditemukan."
+    },
+    "steam_not_connected": {
+      "importing": "Data Steam sedang diimpor…",
+      "connect_own": "Hubungkan akun Steam Anda untuk membagikan koleksi game.",
+      "not_linked": "{{name}} belum menautkan Steam mereka.",
+      "connect_steam": "Hubungkan Steam"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Masuk",
+      "email_label": "Surel",
+      "password_label": "Kata Sandi",
+      "submit": "Masuk",
+      "submitting": "Masuk…",
+      "divider_or": "atau",
+      "google": "Masuk dengan Google",
+      "steam": "Masuk dengan Steam",
+      "steam_connecting": "Menghubungkan ke Steam…",
+      "bluesky": "Masuk dengan Bluesky",
+      "bluesky_connecting": "Menghubungkan ke Bluesky…",
+      "no_account": "Belum punya akun?",
+      "register_link": "Daftar",
+      "error_default": "Login gagal",
+      "error_oauth_state": "Login gagal karena masalah keamanan. Silakan coba lagi.",
+      "error_oauth_failed": "Login gagal. Silakan coba lagi.",
+      "error_steam_auth_failed": "Login Steam gagal. Silakan coba lagi.",
+      "error_google_oauth_not_configured": "Login Google tidak tersedia saat ini — silakan gunakan email/kata sandi atau coba lagi nanti.",
+      "error_twitch_oauth_not_configured": "Login Twitch tidak tersedia saat ini — silakan gunakan email/kata sandi atau coba lagi nanti.",
+      "error_email_exists": "Akun dengan email ini sudah ada. Masuk dengan kata sandi Anda.",
+      "verified_success": "Email berhasil diverifikasi. Anda sekarang bisa masuk.",
+      "reset_success": "Kata sandi Anda telah direset. Anda sekarang bisa masuk dengan kata sandi baru.",
+      "forgot_password": "Lupa kata sandi?"
+    },
+    "register": {
+      "title": "Buat Akun",
+      "email": "Surel",
+      "email_label": "Surel",
+      "username": "Nama Pengguna",
+      "username_label": "Nama Pengguna",
+      "password": "Kata Sandi",
+      "password_label": "Kata Sandi",
+      "confirm_password": "Konfirmasi Kata Sandi",
+      "confirm_password_label": "Konfirmasi Kata Sandi",
+      "invite_code": "Kode Undangan",
+      "invite_code_label": "Kode Undangan (opsional)",
+      "invite_placeholder": "Masukkan kode undangan Anda",
+      "invite_code_placeholder": "Masukkan kode undangan Anda",
+      "age_confirm": "Saya berusia 18 tahun atau lebih.",
+      "tos_agree_prefix": "Saya telah membaca dan menyetujui",
+      "tos_agree_before": "Saya telah membaca dan menyetujui",
+      "terms": "Ketentuan Layanan",
+      "terms_of_service": "Ketentuan Layanan",
+      "and": "dan",
+      "tos_agree_and": "dan",
+      "privacy": "Kebijakan Privasi",
+      "privacy_policy": "Kebijakan Privasi",
+      "tos_agree_suffix": ".",
+      "entertainment": "Saya memahami bahwa UwUchat hanya untuk tujuan hiburan. Karakter dibuat oleh AI dan tidak memberikan saran profesional dalam bentuk apa pun.",
+      "entertainment_confirm": "Saya memahami bahwa UwUchat hanya untuk tujuan hiburan. Karakter dibuat oleh AI dan tidak memberikan saran profesional dalam bentuk apa pun.",
+      "creating": "Membuat akun…",
+      "submit": "Buat Akun",
+      "google": "Daftar dengan Google",
+      "back": "Kembali",
+      "sign_up_email": "Daftar dengan email",
+      "sign_up_google": "Daftar dengan Google",
+      "sign_up_steam": "Daftar dengan Steam",
+      "sign_up_bluesky": "Daftar dengan Bluesky",
+      "bluesky_connecting": "Menghubungkan ke Bluesky…",
+      "have_account": "Sudah punya akun?",
+      "already_have_account": "Sudah punya akun?",
+      "sign_in": "Masuk",
+      "verify_title": "Periksa email Anda",
+      "verify_desc": "Kami mengirim tautan verifikasi ke",
+      "verify_desc_before": "Kami mengirim tautan verifikasi ke",
+      "verify_desc_after": "Periksa kotak masuk Anda dan ikuti tautan untuk mengaktifkan akun Anda.",
+      "verify_waiting": "Anda sudah masuk dan dapat menggunakan aplikasi sambil menunggu.",
+      "verify_signed_in": "Anda sudah masuk dan dapat menggunakan aplikasi sambil menunggu.",
+      "continue": "Lanjutkan ke Aplikasi",
+      "continue_to_app": "Lanjutkan ke Aplikasi",
+      "error_password_match": "Kata sandi tidak cocok",
+      "error_passwords_match": "Kata sandi tidak cocok",
+      "error_password_length": "Kata sandi minimal 8 karakter",
+      "error_failed": "Pendaftaran gagal",
+      "promo_code_label": "Kode Promo (opsional)",
+      "promo_code_placeholder": "Punya kode promo?",
+      "promo_code_hint": "Akses gratis atau diskon. Berlaku untuk metode pendaftaran apa pun di bawah. Lewati jika tidak punya.",
+      "sensitive_data_consent": "Saya memahami bahwa pendamping AI mengingat informasi yang saya bagikan dalam percakapan, yang dapat mencakup kategori sensitif (kesehatan, keyakinan agama, pendapat politik, orientasi seksual, dll.). Informasi ini hanya digunakan untuk pengalaman percakapan saya sendiri — tidak pernah dijual atau digunakan untuk analitik."
+    },
+    "tos": {
+      "title": "Satu langkah lagi",
+      "subtitle": "Sebelum mulai mengobrol, mohon konfirmasi hal berikut.",
+      "age_confirm": "Saya berusia 18 tahun atau lebih.",
+      "tos_agree_prefix": "Saya telah membaca dan menyetujui",
+      "terms": "Ketentuan Layanan",
+      "and": "dan",
+      "privacy": "Kebijakan Privasi",
+      "entertainment": "Saya memahami bahwa UwUchat hanya untuk tujuan hiburan. Karakter dibuat oleh AI dan tidak memberikan saran profesional dalam bentuk apa pun.",
+      "saving": "Menyimpan…",
+      "submit": "Lanjutkan ke UwUchat",
+      "continue": "Lanjutkan ke UwUchat",
+      "error_failed": "Gagal mencatat persetujuan",
+      "sensitive_data_consent": "Saya memahami bahwa pendamping AI mengingat informasi yang saya bagikan dalam percakapan, yang dapat mencakup kategori sensitif (kesehatan, keyakinan agama, pendapat politik, orientasi seksual, dll.). Informasi ini hanya digunakan untuk pengalaman percakapan saya sendiri — tidak pernah dijual atau digunakan untuk analitik."
+    },
+    "password_reset": {
+      "request_title": "Reset kata sandi Anda",
+      "request_description": "Masukkan alamat email Anda dan kami akan mengirimkan tautan untuk mereset kata sandi Anda.",
+      "email_label": "Surel",
+      "send_link": "Kirim tautan reset",
+      "sending": "Mengirim…",
+      "sent_message": "Jika email itu ada, tautan reset kata sandi telah dikirim. Periksa kotak masuk Anda dan ikuti petunjuknya.",
+      "back_to_login": "Kembali ke masuk",
+      "request_error": "Gagal mengirim email reset. Silakan coba lagi.",
+      "confirm_title": "Pilih kata sandi baru",
+      "confirm_description": "Masukkan kata sandi baru Anda di bawah.",
+      "new_password_label": "Kata Sandi Baru",
+      "confirm_password_label": "Konfirmasi Kata Sandi Baru",
+      "resetting": "Mereset…",
+      "reset_button": "Reset Kata Sandi",
+      "confirm_error": "Gagal mereset kata sandi. Tautan mungkin telah kedaluwarsa atau sudah digunakan.",
+      "error_passwords_match": "Kata sandi tidak cocok",
+      "error_password_length": "Kata sandi minimal 8 karakter",
+      "error_missing_token": "Token reset tidak ada atau tidak valid. Mohon minta tautan reset kata sandi baru."
+    }
+  },
+  "legal": {
+    "back": "← Kembali",
+    "privacy_title": "UwUchat — Kebijakan Privasi",
+    "tos_title": "UwUchat — Ketentuan Layanan",
+    "privacy_breadcrumb": "Kebijakan Privasi",
+    "terms_breadcrumb": "Ketentuan Layanan",
+    "data_request": {
+      "title": "Permintaan Data",
+      "account_deleted_title": "Akun Dihapus",
+      "deleted_desc": "Akun Anda telah ditandai untuk dihapus. Data Anda akan dihapus secara permanen dalam 30 hari sesuai dengan",
+      "deleted_email_desc": "Jika Anda memiliki pertanyaan tentang penghapusan data Anda, email",
+      "return_login": "Kembali ke Login",
+      "export_desc": "Berdasarkan GDPR (Pasal 15) dan Undang-Undang Privasi Colorado, Anda juga berhak mengakses data Anda. Unduh salinan yang dapat dibaca mesin dari semua data yang terkait dengan akun Anda.",
+      "export_my_data": "Unduh Data Saya",
+      "exporting": "Menyiapkan ekspor…",
+      "export_error": "Gagal mengekspor data. Silakan coba lagi atau hubungi privacy@uwuchat.com.",
+      "delete_desc_paragraph": "Anda juga dapat menghapus akun Anda dan semua data terkait secara permanen:",
+      "delete_my_account": "Hapus Akun Saya",
+      "confirm_delete": "Anda yakin? Ini tidak dapat dibatalkan.",
+      "cancel": "Batal",
+      "yes_delete": "Ya, Hapus Akun Saya",
+      "deleting": "Menghapus…",
+      "sign_in_to_delete": "Masuk untuk Menghapus Akun Saya",
+      "no_access_desc": "Jika Anda tidak lagi memiliki akses ke akun Anda, email kami langsung:",
+      "email_privacy": "Kirim email ke privacy@uwuchat.com",
+      "respond_30_days": "Kami akan merespons dalam 30 hari dan mungkin meminta Anda memverifikasi identitas sebelum memproses permintaan.",
+      "other_requests": "Untuk permintaan data lainnya (akses, portabilitas, koreksi), email",
+      "respond_time": "Kami merespons dalam 30 hari."
+    }
+  },
+  "subscribe": {
+    "title": "Pilih paket Anda",
+    "tagline": "Mulai dengan perkenalan 3 hari, atau langsung ke paket penuh.",
+    "trial": "Dapat dibatalkan kapan saja. Ditagih bulanan.",
+    "most_popular": "Paling populer",
+    "per_month": "/bln",
+    "start_trial": "Berlangganan",
+    "redirecting": "Mengalihkan…",
+    "maybe_later": "Saya putuskan nanti"
+  },
+  "welcome": {
+    "tagline": "Buka panel dari sidebar untuk memulai.",
+    "chat_hint": "Ngobrol dengan LLM lokal",
+    "canvas_hint": "Buat dan edit gambar",
+    "civitai_hint": "Telusuri dan unduh model"
+  },
+  "landing": {
+    "hero": {
+      "title_line1": "AI yang benar-benar",
+      "title_line2": "mengingatmu.",
+      "subtitle": "Kebanyakan AI mereset setelah setiap percakapan. Milik kami tidak. Ciptakan pendamping yang membangun gambaran abadi tentang siapa Anda — dan membawanya ke setiap percakapan berikutnya.",
+      "cta_primary": "Temui UwU pertamamu →",
+      "cta_signin": "Masuk"
+    },
+    "features": {
+      "heading": "Bukan sekadar chatbot biasa",
+      "subheading": "UwUchat dibuat untuk orang yang menginginkan pendamping yang benar-benar tumbuh bersama mereka — bukan chatbot yang melupakan semuanya setelah satu sesi.",
+      "deep_character": {
+        "title": "Pembuatan karakter mendalam",
+        "desc": "Bangun pendamping dengan 21 tipe kepribadian, kampung halaman dunia nyata, sistem kepercayaan, dan pola bicara kustom. Tidak ada dua UwU yang sama."
+      },
+      "memory": {
+        "title": "Memori yang terus bertumbuh",
+        "desc": "Setiap percakapan membangun dari yang sebelumnya. UwU Anda mengingat cerita, preferensi, dan hal-hal yang berarti bagi Anda. Tidak perlu mengulang diri sendiri."
+      },
+      "web_browse": {
+        "title": "Mereka bisa menjelajah web",
+        "desc": "Perlu mencari sesuatu? UwU Anda bisa menjelajah internet secara real-time — berita, fakta, tautan, apa saja."
+      },
+      "privacy": {
+        "title": "Privasi sejak desain",
+        "desc": "Percakapan dienkripsi ke akun Anda — bahkan tim kami tidak dapat membacanya. Pesan Anda tidak pernah dijual atau digunakan untuk melatih model AI."
+      },
+      "moods": {
+        "title": "Terasa hidup",
+        "desc": "Suasana hati UwU Anda berubah secara alami saat Anda berbicara, dan ia mengingat ceritanya sendiri — bukan hanya milik Anda — sehingga kepribadiannya tetap konsisten dari waktu ke waktu."
+      },
+      "continuity": {
+        "title": "Tidak pernah memulai ulang",
+        "desc": "Tidak ada reset, tidak ada utas yang terlupakan. Kembali setelah sehari, seminggu, atau sebulan, dan UwU Anda masih ingat di mana Anda tinggalkan."
+      }
+    },
+    "vibes": {
+      "heading": "Bangun UwU Anda dari nol",
+      "subheading": "Tanpa preset, tanpa template. Wizard karakter kami memungkinkan Anda menciptakan pendamping dengan kedalaman nyata — kepribadian, identitas, bahasa, spesies, kampung halaman, dan suara.",
+      "personality": {
+        "title": "21 tipe kepribadian",
+        "desc": "Manis, berani, misterius, playful, intelektual, chaotik, lembut, penuh gairah, keren, dramatis, sarkastik — dan arketipe anime klasik seperti tsundere, kuudere, genki, dan yandere."
+      },
+      "language": {
+        "title": "Bahasa",
+        "desc": "Pilih bahasa yang digunakan UwU Anda, terdeteksi otomatis dari kampung halaman atau diatur secara manual."
+      },
+      "identity": {
+        "title": "Identitas & spesies",
+        "desc": "Manusia, hewan, monster, makhluk mitos, atau robot — masing-masing dengan puluhan subtipe. Pilih kampung halaman dunia nyata dari lebih dari 200 kota di seluruh dunia."
+      },
+      "voice": {
+        "title": "Suara & latar belakang",
+        "desc": "Beri nama, deskripsikan siapa mereka, dan tentukan pola bicara mereka. Setiap detail masuk ke prompt — UwU Anda berbicara dengan suara yang Anda berikan."
+      }
+    },
+    "tiers": {
+      "heading": "Harga sederhana",
+      "subheading": "Dapat dibatalkan kapan saja.",
+      "most_popular_badge": "Paling populer",
+      "cta": "Mulai",
+      "try_it": {
+        "name": "Coba",
+        "period": "3 hari",
+        "cap": "30 pesan · 15/hari",
+        "features": [
+          "Tanpa perpanjangan",
+          "Akses penuh",
+          "Upgrade kapan saja"
+        ]
+      },
+      "starter": {
+        "name": "Pemula",
+        "period": "bln",
+        "cap": "9.000 pesan / bulan",
+        "features": [
+          "Memori persisten",
+          "Pendamping kustom",
+          "Nilai terbaik untuk penggunaan harian"
+        ]
+      },
+      "companion": {
+        "name": "Teman",
+        "period": "bln",
+        "cap": "21.000 pesan / bulan",
+        "features": [
+          "Memori persisten",
+          "Pendamping kustom",
+          "Penggunaan harian yang nyaman"
+        ]
+      },
+      "devoted": {
+        "name": "Setia",
+        "period": "bln",
+        "cap": "1.500 pesan / bulan",
+        "features": [
+          "Semua di Companion",
+          "Pengguna berat / penggemar super"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "Ciptakan UwU pertamamu",
+      "subheading": "Ikuti wizard karakter, hidupkan pendamping, dan mulai percakapan dengan seseorang yang benar-benar akan mengingatnya.",
+      "button": "Buat akunmu →"
+    },
+    "showcase": {
+      "alt": "Tangkapan layar percakapan UwUchat"
+    }
+  },
+  "publicNav": {
+    "sign_in": "Masuk",
+    "get_started": "Mulai",
+    "register": "Daftar",
+    "terms": "Ketentuan Layanan",
+    "privacy": "Kebijakan Privasi",
+    "data_request": "Permintaan Data",
+    "copyright": "© {{year}} Capsize LLC"
+  },
+  "bottomBar": {
+    "account": "Akun",
+    "viewProfile": "Lihat Profil",
+    "settings": "Pengaturan",
+    "admin": "Admin",
+    "logout": "Keluar"
+  }
+}

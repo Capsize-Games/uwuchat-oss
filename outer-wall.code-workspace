@@ -1,0 +1,37 @@
+{
+  // ──────────────────────────────────────────────────────────────────────
+  // Extensions development workspace
+  //
+  // Open with: code outer-wall.code-workspace
+  //
+  // Scopes the editor to extensions/ so AI agents (Zoocode, Claude, etc.)
+  // stay focused on extension work and don't wander into the full repo.
+  // ──────────────────────────────────────────────────────────────────────
+  "folders": [
+    {
+      "name": "AIRunner Extensions",
+      "path": "extensions"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "../server": true,
+      "../client": true,
+      "../projects": true,
+      "../scripts": true,
+      "../docker": true,
+      "../.github": true
+    },
+    "search.exclude": {
+      "../**": true
+    },
+    "files.watcherExclude": {
+      "../**": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "RooVeterinaryInc.roo-cline"
+    ]
+  }
+}

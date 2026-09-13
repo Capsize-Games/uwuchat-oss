@@ -1,0 +1,108 @@
+/*
+ * Shared CSS Module primitives — framework-generic layout/typography atoms
+ * used across many components via `composes`. Add to this file when the
+ * SAME declaration block (not just a similar one) recurs across 2+
+ * components anywhere in client/src. Don't put anything UwUChat-specific
+ * here — see projects/uwuchat/client/styles/primitives.module.css for that.
+ *
+ * Usage in a component's own .module.css:
+ *   .myRow {
+ *     composes: flexRow from "@/styles/primitives.module.css";
+ *     gap: 6px;
+ *   }
+ * (Vite/postcss-modules resolves `composes ... from` the same way it
+ * resolves any other import — the `@/` alias works.)
+ */
+
+.flexRow {
+  display: flex;
+  align-items: center;
+}
+
+.flexRowBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.separatorV {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.separatorH {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.textMuted {
+  color: var(--theme-text-secondary);
+}
+
+.textLabel {
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary);
+}
+
+.scrollColumn {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.panelCard {
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--theme-panel-bg);
+  border: 1px solid var(--theme-border);
+}
+
+/*
+ * Small dark number/spinbox input — used across canvas tool controls.
+ * Width is set locally per component (varies 38–48px).
+ */
+.inputNumber {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-align: center;
+  padding: 2px 0;
+  flex-shrink: 0;
+}
+
+/*
+ * Muted hint text — used in canvas sidebar tool panels.
+ * Small, low-opacity line of instructions.
+ */
+.hintText {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  user-select: none;
+  line-height: 1.4;
+}
+
+/*
+ * Section header / label for a group of tool controls.
+ * Small uppercase label.
+ */
+.sectionLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}

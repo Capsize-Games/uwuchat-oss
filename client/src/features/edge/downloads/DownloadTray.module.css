@@ -1,0 +1,47 @@
+.tray {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--theme-bg, #1a1a2e);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #888;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.headerActions {
+  display: flex;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  font-size: 11px;
+}
+
+.rowLabel {
+  color: #ccc;
+}
+
+.rowMeta {
+  font-size: 10px;
+  color: #666;
+}
+
+.progressWrap {
+  flex: 0 0 180px;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+}

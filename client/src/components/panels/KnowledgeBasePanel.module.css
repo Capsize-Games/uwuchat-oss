@@ -1,0 +1,55 @@
+/* KnowledgeBasePanel — document management panel (framework) */
+
+.header {
+  padding: 8px 12px 6px;
+}
+
+.table {
+  font-size: 0.75rem;
+}
+
+.progressBar {
+  height: 6px;
+}
+
+.cellCenter {
+  text-align: center;
+}
+
+.thActive {
+  width: 50px;
+}
+
+.thIndexed {
+  width: 55px;
+}
+
+.thError {
+  width: 45px;
+}
+
+.footer {
+  padding: 6px 10px 8px;
+  gap: 6px;
+}
+
+.statColor {
+  color: var(--bs-success);
+}
+
+.statColorWarning {
+  color: var(--bs-warning);
+}
+
+.progressWrap {
+  position: relative;
+  height: 6px;
+}
+
+.indeterminateBar {
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, transparent 0%, #0dcaf0 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: indeterminate-bar 1.5s ease-in-out infinite;
+}

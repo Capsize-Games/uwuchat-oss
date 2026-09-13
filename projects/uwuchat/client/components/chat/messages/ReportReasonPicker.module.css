@@ -1,0 +1,144 @@
+/* ReportReasonPicker — inline style refactor */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.dialog {
+  background: var(--bg-surface, #1a1a2e);
+  border: 1px solid var(--theme-border, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  padding: 20px 24px;
+  max-width: 340px;
+  width: 100%;
+  color: var(--theme-text-primary);
+}
+
+.dialogSubmitted {
+  composes: dialog;
+  max-width: 320px;
+  text-align: center;
+}
+
+.submittedText {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.closeConfirmBtn {
+  margin-top: 12px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: var(--theme-text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  padding: 2px;
+}
+
+.reasonList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reasonBtn {
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--theme-text-primary);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.reasonBtnSelected {
+  composes: reasonBtn;
+  background: rgba(138, 43, 226, 0.2);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+}
+
+.reasonBtnUnselected {
+  composes: reasonBtn;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--theme-text-primary);
+  font-size: 0.78rem;
+  resize: vertical;
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 6px 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: var(--theme-text-secondary);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.submitBtn {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: 4px;
+  font-size: 0.78rem;
+}
+
+.submitBtnDisabled {
+  composes: submitBtn;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--theme-text-secondary);
+  cursor: default;
+  opacity: 0.5;
+}
+
+.submitBtnActive {
+  composes: submitBtn;
+  background: rgba(138, 43, 226, 0.3);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+}

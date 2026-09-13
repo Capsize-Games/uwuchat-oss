@@ -1,0 +1,134 @@
+/* ChatHistoryPanel — conversation list panel (framework) */
+
+.header {
+  padding: 8px 12px 6px;
+  gap: 8px;
+}
+
+.confirmRow {
+  gap: 4px;
+}
+
+.confirmText {
+  font-size: 0.7rem;
+}
+
+.confirmBtn {
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  background: var(--bs-danger);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmCancelBtn {
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--theme-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.deleteAllBtnEnabled {
+  composes: deleteAllBtn;
+  color: var(--bs-danger);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  cursor: pointer;
+}
+
+.deleteAllBtnDisabled {
+  composes: deleteAllBtn;
+  color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: default;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  background: transparent;
+  border-left: 2px solid transparent;
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rowCurrent {
+  composes: row;
+  background: rgba(13, 110, 253, 0.10);
+  border-left-color: var(--bs-primary);
+}
+
+.rowCurrent:hover {
+  background: rgba(13, 110, 253, 0.10);
+}
+
+.rowBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rowTitle {
+  font-size: 0.78rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowTitleCurrent {
+  composes: rowTitle;
+  color: var(--bs-primary);
+}
+
+.rowTitleDefault {
+  composes: rowTitle;
+  color: var(--theme-text);
+}
+
+.rowDate {
+  font-size: 0.65rem;
+  color: var(--theme-secondary, rgba(255, 255, 255, 0.45));
+}
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  flex-shrink: 0;
+  margin-left: 6px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  color: var(--bs-danger);
+  background: rgba(220, 53, 69, 0.12);
+}

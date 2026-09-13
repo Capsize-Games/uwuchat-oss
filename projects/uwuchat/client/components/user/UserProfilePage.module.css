@@ -1,0 +1,34 @@
+/* UserProfilePage — inline style refactor */
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--theme-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--theme-text-primary);
+}
