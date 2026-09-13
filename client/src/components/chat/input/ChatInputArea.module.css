@@ -1,0 +1,27 @@
+.resizeHandle {
+  height: 4px;
+  cursor: row-resize;
+  flex-shrink: 0;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.resizeHandle:hover {
+  background: rgba(99, 153, 255, 0.3);
+}
+
+.inputArea {
+  flex: 1;
+  min-height: 0;
+}
+
+.textarea {
+  resize: none;
+  background: transparent;
+  color: var(--theme-text);
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: inherit;
+}

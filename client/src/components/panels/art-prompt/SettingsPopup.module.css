@@ -1,0 +1,7 @@
+/* SettingsPopup — compact art settings wrapper (framework) */
+
+.wrap {
+  padding: 10px 12px;
+  gap: 4px;
+  width: 100%;
+}

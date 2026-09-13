@@ -1,0 +1,65 @@
+/* LanguageStep — inline style refactor */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.desc {
+  margin: 0;
+  color: var(--theme-text-secondary);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.langBtn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--theme-text);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.langBtnSelected {
+  composes: langBtn;
+  border: 1.5px solid var(--theme-accent);
+  background: rgba(88, 101, 242, 0.12);
+}
+
+.langBtnUnselected {
+  composes: langBtn;
+  border: 1.5px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.langNative {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.langLabel {
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.continueBtn {
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: var(--theme-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}

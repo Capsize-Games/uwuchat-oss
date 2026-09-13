@@ -1,0 +1,68 @@
+/* DisputesPanel — inline style refactor */
+
+.wrapper {
+  padding: 16px;
+  color: var(--theme-text-primary);
+}
+
+.heading {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.summaryRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--theme-text-secondary);
+}
+
+.tableWrap {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text-secondary);
+}
+
+.tableHeader th {
+  text-align: left;
+  padding: 4px 8px;
+}
+
+.tableRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tableRow td {
+  padding: 4px 8px;
+}
+
+.statusWon {
+  color: var(--theme-success);
+}
+
+.statusLost {
+  color: var(--bs-danger);
+}
+
+.statusOpen {
+  color: #fbbf24;
+}
+
+.openCount {
+  color: #fbbf24;
+}
+
+.emptyText {
+  font-size: 13px;
+}

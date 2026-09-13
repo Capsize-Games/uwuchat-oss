@@ -1,0 +1,59 @@
+name: Security Scan (Semgrep + Bandit)
+
+# Runs on every push to master and every pull request.
+#
+# Trigger rationale: this repo commits straight to master in normal
+# operation (no PR-gated merge flow), so a PR-only trigger would
+# silently never run.  `push` to `master` is the primary trigger.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  semgrep:
+    name: Semgrep (custom auth rules)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install semgrep
+        run: pip install semgrep
+
+      - name: Run Semgrep
+        run: |
+          semgrep --config .semgrep/ \
+            --error \
+            server/src/airunner_services/api/routes/ \
+            extensions/ \
+            projects/uwuchat/server/
+
+  bandit:
+    name: Bandit (Python security lint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install bandit
+        run: pip install bandit
+
+      - name: Run Bandit
+        run: |
+          bandit -c bandit.yml \
+            --severity-level high \
+            -r server/src/airunner_services extensions projects/uwuchat/server

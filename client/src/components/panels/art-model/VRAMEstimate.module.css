@@ -1,0 +1,5 @@
+/* VRAMEstimate — VRAM progress bar (framework) */
+
+.bar {
+  height: 6px;
+}

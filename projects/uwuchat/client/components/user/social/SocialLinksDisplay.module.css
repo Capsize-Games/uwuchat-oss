@@ -1,0 +1,186 @@
+/* SocialLinksDisplay — inline style refactor */
+
+/* ── Link row (edit mode) ─────────────────────────────── */
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--theme-border);
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.linkServiceName {
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--theme-text-primary);
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.editInput {
+  flex: 1;
+  min-width: 60px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--theme-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--theme-text-primary);
+  font-size: 0.75rem;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iconBtnSave {
+  composes: iconBtn;
+  border: none;
+  background: var(--bs-primary, #8a2be2);
+  color: #fff;
+}
+
+.iconBtnCancel {
+  composes: iconBtn;
+  border: 1px solid var(--theme-border);
+  background: transparent;
+  color: var(--theme-text-secondary);
+}
+
+.iconBtnEdit {
+  composes: iconBtn;
+  border: 1px solid var(--theme-border);
+  background: transparent;
+  color: var(--theme-text-secondary);
+}
+
+.iconBtnRemove {
+  composes: iconBtn;
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.3);
+  background: transparent;
+  color: var(--bs-danger, #dc3545);
+}
+
+.linkValue {
+  flex: 1;
+  font-size: 0.75rem;
+  color: var(--bs-primary, #8a2be2);
+  min-width: 60px;
+  word-break: break-all;
+}
+
+/* ── View mode ────────────────────────────────────────── */
+
+.emptyStateWrap {
+  padding: 12px 0;
+  text-align: center;
+}
+
+.emptyStateBtn {
+  padding: 6px 18px;
+  border-radius: 16px;
+  border: 1px dashed var(--theme-border);
+  background: transparent;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.viewWrap {
+  padding: 0 0 16px;
+}
+
+.badgeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badgeGridCenter {
+  composes: badgeGrid;
+  justify-content: center;
+}
+
+.badgeGridLeft {
+  composes: badgeGrid;
+  justify-content: flex-start;
+}
+
+.badgeLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: filter 0.15s;
+  opacity: 1;
+}
+
+.badgeLink:hover {
+  filter: brightness(1.15);
+}
+
+.editBadgeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px dashed var(--theme-border);
+  background: transparent;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ── Edit mode ────────────────────────────────────────── */
+
+.editWrap {
+  padding: 0 0 16px;
+}
+
+.editHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.editTitle {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--theme-text-primary);
+}
+
+.doneBtn {
+  padding: 4px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--theme-border);
+  background: transparent;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.existingLinks {
+  margin-bottom: 12px;
+}
+
+.allDone {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+  text-align: center;
+  padding: 8px;
+}

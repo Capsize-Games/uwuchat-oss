@@ -1,0 +1,46 @@
+# nginx config template for the LAN web sidecar.
+#
+# Served as /etc/nginx/templates/default.conf.template — the official nginx
+# image entrypoint substitutes environment variables (here $SERVER_UPSTREAM)
+# at container start and writes the rendered result to /etc/nginx/conf.d/.
+#
+# Mirrors the private uwuchat-caddy edge behavior:
+#   - static SPA build served from /usr/share/nginx/html (client-side routing
+#     via try_files fallback to /index.html)
+#   - /api/* proxied to the `server` container (REST)
+#   - the websocket upgrade path proxied to the same upstream (WS)
+#
+# The compose file passes the upstream as
+#   SERVER_UPSTREAM=server:8080
+# so nginx resolves the `server` service name on the compose network.
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ""      close;
+}
+
+server {
+    listen 80;
+    server_name _;
+
+    # nginx requires the proxy host header to be passed through unmodified
+    # (compose's default network already handles DNS; no proxy_* overrides
+    # are needed because Caddy terminates TLS in front of this sidecar).
+
+    location /api/ {
+        proxy_pass http://${SERVER_UPSTREAM};
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+    }
+
+    # SPA fallback: unknown paths serve index.html for client-side routing.
+    location / {
+        root /usr/share/nginx/html;
+        try_files $uri /index.html;
+    }
+}

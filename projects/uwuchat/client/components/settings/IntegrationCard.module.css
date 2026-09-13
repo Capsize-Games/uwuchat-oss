@@ -1,0 +1,114 @@
+/* IntegrationCard — fully clickable card */
+
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-border);
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  appearance: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+/* ── Interactive card (rendered as <button>) ──────────── */
+
+button.card {
+  cursor: pointer;
+}
+
+button.card:hover:not(:disabled) {
+  border-color: var(--theme-accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+button.card:focus-visible {
+  outline: 2px solid var(--theme-accent);
+  outline-offset: 2px;
+}
+
+button.card:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* ── Internal layout (shared by both modes) ──────────── */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--theme-text);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--theme-text);
+}
+
+.desc {
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+  margin-top: 2px;
+}
+
+.connected {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.off {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--theme-text-secondary);
+}
+
+.statusText {
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+  margin-top: -4px;
+}
+
+.loading {
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+}
+
+.error {
+  font-size: 0.7rem;
+  color: var(--bs-danger);
+}
+
+/* ── Action labels (replacing old button chrome) ─────── */
+
+.connectLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--theme-accent);
+}
+
+.disconnectLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--bs-danger);
+}

@@ -1,0 +1,317 @@
+# ---------------------------------------------------------------------------
+# AI Runner — local DEVELOPMENT stack (open-core).
+#
+# Every service's `env_file:` is interpolated from
+#   ${AIRUNNER_ENV_FILE:-.env}
+# The --env-file flag selects the interpolation source; the
+# AIRUNNER_ENV_FILE variable selects which file is injected into containers.
+#
+# Recommended — the wrapper picks the env file and GPU layer automatically:
+#   ./scripts/docker.sh up                       # start the dev stack
+#   ./scripts/docker.sh up --with-code-harness    # + headlesscode sidecar
+#                                                  # (code mode / harness)
+#   ./scripts/docker.sh down
+#   First run may prompt for missing credentials (OpenRouter API key) and
+#   saves them to projects/uwuchat/.env automatically — no manual setup.
+#
+# Advanced — raw compose:
+#   AIRUNNER_ENV_FILE=projects/uwuchat/.env \
+#     docker compose --env-file projects/uwuchat/.env -f docker-compose.yml \
+#     --profile client up -d
+#
+# Advanced — raw compose, with the code harness (adds the local override):
+#   AIRUNNER_ENV_FILE=projects/uwuchat/.env \
+#     docker compose --env-file projects/uwuchat/.env \
+#     -f docker-compose.yml -f docker-compose.code-harness-local.yml \
+#     --profile client up -d
+#   (see docker-compose.code-harness-local.yml for details)
+#
+# Default local login (dev stacks): admin@example.com / admin123 (superuser),
+# user@example.com / user1234 — auto-created by the initial migration on first
+# boot when no accounts exist (development mode only).
+#
+# GPU: add the override to give the server the host GPU(s):
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up
+# (requires the NVIDIA driver + nvidia-container-toolkit on the host).
+#
+# Source is bind-mounted for live reload. Private extensions are bind-mounted
+# from ./extensions and enabled via AIRUNNER_EXTENSIONS in the project env
+# file (e.g. projects/uwuchat/.env) — they are never baked into this image.
+# ---------------------------------------------------------------------------
+
+services:
+  # Airunner's own Redis — isolated from fastsearch-redis on the same
+  # host.  Not exposed to the host network; internal compose network only.
+  airunner-redis:
+    image: redis:7.2-alpine
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    volumes:
+      - airunner_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    mem_limit: 256mb
+
+  db:
+    # pgvector image = stock postgres:16 + the `vector` extension preinstalled.
+    # Data dir is compatible with the previous postgres:16-bookworm volume.
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-airunner}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airunner}
+      POSTGRES_DB: ${POSTGRES_DB:-airunner}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - airunner_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-airunner} -d ${POSTGRES_DB:-airunner}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  server:
+    image: ghcr.io/<your-org>/airunner:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        EXTRAS: ${AIRUNNER_DOCKER_EXTRAS:-server}
+    env_file:
+      - ${AIRUNNER_ENV_FILE:-.env}
+    environment:
+      # Point the app at the compose database (overrides any localhost URL in the
+      # project env file).
+      # Use psycopg v3 driver (installed via psycopg[binary]).
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      # airunner_services (editable) + repo root so `extensions.*` imports resolve.
+      # /opt/ext-deps added so extension deps installed into the named volume
+      # are importable without polluting site-packages on every container start.
+      PYTHONPATH: /app/server/src:/app:/opt/ext-deps
+      DEV_ENV: "1"
+      # Set to "1" to enable watchdog-based auto-reload.
+      # The server restarts automatically when Python source files change
+      # in /app/server/src and /app/extensions (bind-mounted host dirs).
+      AIRUNNER_DEV_RELOAD: ${AIRUNNER_DEV_RELOAD:-0}
+      # Optional: colon-separated override for watch directories.
+      # AIRUNNER_DEV_RELOAD_PATHS: /app/server/src:/app/extensions
+      # Optional: debounce interval in seconds (default: 1.0).
+      # AIRUNNER_DEV_RELOAD_DEBOUNCE: "1.0"
+      # Point Hugging Face at the mounted cache (the volume above binds the
+      # host HF cache here). Without this, HF_HOME from the project env file
+      # can arrive with an
+      # unexpanded "~" and downloads land in a bogus literal "~" directory.
+      HF_HOME: /data/huggingface
+      # The data volume is mounted at /data — tell the app to use it for
+      # model resolution (otherwise it defaults to ~/.local/share/airunner).
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+    volumes:
+      # NB: we deliberately do NOT mount the project env file into the
+      # container. compose reads it via env_file and injects the values as real
+      # env vars; mounting the
+      # file would let settings.py's load_dotenv(override=True) clobber the
+      # compose-set AIRUNNER_DATABASE_URL (db host) with the host's localhost URL.
+      - ./server:/app/server
+      - ./extensions:/app/extensions
+      - ./projects:/app/projects
+      - airunner_ext_deps:/opt/ext-deps
+      # Model/data dir. Defaults to the named volume (isolated, survives
+      # `down` but not `down -v`). Set AIRUNNER_DATA_DIR to a host path to
+      # reuse an existing AI Runner home (e.g. ~/.local/share/airunner) so the
+      # container sees already-downloaded models and persists outside Docker.
+      - ${AIRUNNER_DATA_DIR:-airunner_data}:/data
+      # Hugging Face / model cache shared with the host to avoid re-downloads.
+      - ${HF_HOME:-~/.cache/huggingface}:/data/huggingface
+    ports:
+      - "${AIRUNNER_HTTP_PORT:-8080}:8080"
+    healthcheck:
+      # The server exposes a public /health endpoint.  A healthcheck lets
+      # dependents (client, celery, ...) and `docker compose restart`
+      # verify readiness instead of failing with "no healthcheck
+      # configured" when server is a dependency.
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=3).status == 200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    depends_on:
+      db:
+        condition: service_healthy
+      airunner-redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Celery worker — default + downloads queues.  Short-lived tasks
+  # (RAG indexing, knowledge extraction, downloads) isolated from
+  # the long-running per-tenant sync work in celery-sync.
+  celery:
+    image: ghcr.io/<your-org>/airunner:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        EXTRAS: ${AIRUNNER_DOCKER_EXTRAS:-server}
+    env_file:
+      - ${AIRUNNER_ENV_FILE:-.env}
+    environment:
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      PYTHONPATH: /app/server/src:/app:/opt/ext-deps
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+      HF_HOME: /data/huggingface
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_CELERY_BROKER_URL: redis://airunner-redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://airunner-redis:6379/1
+      AIRUNNER_REDIS_URL: redis://airunner-redis:6379
+    volumes:
+      - ./server:/app/server
+      - ./extensions:/app/extensions
+      - ./projects:/app/projects
+      - airunner_ext_deps:/opt/ext-deps
+      - ${AIRUNNER_DATA_DIR:-airunner_data}:/data
+      - ${HF_HOME:-~/.cache/huggingface}:/data/huggingface
+    command: >
+      celery -A airunner_services.tasks.celery_app worker
+      -Q default,downloads
+      -c ${AIRUNNER_CELERY_CONCURRENCY:-2}
+      -n celery-default@%h
+    depends_on:
+      db:
+        condition: service_healthy
+      airunner-redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 512m
+    cpus: 1.0
+
+  # Celery worker — sync queue only.  Isolated so the potentially
+  # long-running per-tenant email backfill cannot starve the default
+  # queue's short-lived tasks.
+  celery-sync:
+    image: ghcr.io/<your-org>/airunner:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        EXTRAS: ${AIRUNNER_DOCKER_EXTRAS:-server}
+    env_file:
+      - ${AIRUNNER_ENV_FILE:-.env}
+    environment:
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      PYTHONPATH: /app/server/src:/app:/opt/ext-deps
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+      HF_HOME: /data/huggingface
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_CELERY_BROKER_URL: redis://airunner-redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://airunner-redis:6379/1
+      AIRUNNER_REDIS_URL: redis://airunner-redis:6379
+    volumes:
+      - ./server:/app/server
+      - ./extensions:/app/extensions
+      - ./projects:/app/projects
+      - airunner_ext_deps:/opt/ext-deps
+      - ${AIRUNNER_DATA_DIR:-airunner_data}:/data
+      - ${HF_HOME:-~/.cache/huggingface}:/data/huggingface
+    command: >
+      celery -A airunner_services.tasks.celery_app worker
+      -Q sync
+      -c ${AIRUNNER_CELERY_SYNC_CONCURRENCY:-2}
+      -n celery-sync@%h
+    depends_on:
+      db:
+        condition: service_healthy
+      airunner-redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 1536m
+    cpus: 4.0
+
+  # Celery Beat scheduler — triggers periodic tasks (email sync).
+  celery-beat:
+    image: ghcr.io/<your-org>/airunner:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        EXTRAS: ${AIRUNNER_DOCKER_EXTRAS:-server}
+    env_file:
+      - ${AIRUNNER_ENV_FILE:-.env}
+    environment:
+      AIRUNNER_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-airunner}:${POSTGRES_PASSWORD:-airunner}@db:5432/${POSTGRES_DB:-airunner}
+      AIRUNNER_DB_TENANCY: ${AIRUNNER_DB_TENANCY:-multi}
+      AIRUNNER_REQUIRE_POSTGRES: "1"
+      PYTHONPATH: /app/server/src:/app:/opt/ext-deps
+      AIRUNNER_BASE_PATH: /data
+      AIRUNNER_USER_DATA_PATH: /data
+      HF_HOME: /data/huggingface
+      AIRUNNER_SKIP_DB_WAIT: "0"
+      AIRUNNER_CELERY_BROKER_URL: redis://airunner-redis:6379/0
+      AIRUNNER_CELERY_RESULT_BACKEND_URL: redis://airunner-redis:6379/1
+      AIRUNNER_REDIS_URL: redis://airunner-redis:6379
+    volumes:
+      - ./server:/app/server
+      - ./extensions:/app/extensions
+      - ./projects:/app/projects
+      - airunner_ext_deps:/opt/ext-deps
+      - ${AIRUNNER_DATA_DIR:-airunner_data}:/data
+      - ${HF_HOME:-~/.cache/huggingface}:/data/huggingface
+    command: >
+      celery -A airunner_services.tasks.celery_app beat
+      --schedule /data/celerybeat-schedule
+    depends_on:
+      db:
+        condition: service_healthy
+      airunner-redis:
+        condition: service_healthy
+    restart: unless-stopped
+    mem_limit: 256m
+    cpus: 0.5
+
+  # Vite dev server. Opt-in via `--profile client` (many devs run it on the host).
+  client:
+    image: node:22-bookworm-slim
+    working_dir: /app/client
+    profiles: ["client"]
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    environment:
+      # Proxy API requests to the server container on the Docker network.
+      VITE_API_PROXY_TARGET: http://server:8080
+      VITE_PROJECT: uwuchat
+    env_file:
+      - ${AIRUNNER_ENV_FILE:-.env}
+    volumes:
+      - ./client:/app/client
+      - ./extensions:/app/extensions
+      - ./projects:/app/projects
+    ports:
+      # The container-side target must match the port Vite actually binds
+      # (server.port reads VITE_PORT, injected via env_file into the
+      # container). Previously the target was hardcoded 5173, so a stack
+      # with VITE_PORT set (e.g. headlesscode=5174) published host:5174 ->
+      # container:5173, where nothing listened.
+      - "${VITE_PORT:-5173}:${VITE_PORT:-5173}"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+volumes:
+  airunner_pgdata:
+  airunner_redis_data:
+  airunner_data:
+  airunner_ext_deps:

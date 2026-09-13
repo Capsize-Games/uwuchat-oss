@@ -1,0 +1,121 @@
+# ---------------------------------------------------------------------------
+# UwUchat local-dev CHAT daemon (Qwen3.5-9B) — local GPU inference for
+# DIALOGUE when code mode is OFF.
+#
+# Runs the <private-desktop-repo> image in headless ollama-mode (an
+# Ollama-API-compatible HTTP server) holding the Qwen3.5-9B chat GGUF on
+# the local RTX 5080 (16GB VRAM). Published on 0.0.0.0:11434.
+#
+# This is the "qwen 9b chat model" the owner refers to: when code mode is
+# off, DIALOGUE uses this daemon instead of cloud OpenRouter DeepSeek.
+# See plans/uwuchat-code-mode-gpu-model-switching.md.
+#
+# Project name kept as `lan-daemon` so this compose project adopts the
+# pre-existing container (lan-daemon-daemon-1) instead of creating a
+# duplicate.
+#
+# Manual start/stop for debugging:
+#   docker compose -f deploy/local/daemons/chat-daemon/docker-compose.yml up -d
+#   docker compose -f deploy/local/daemons/chat-daemon/docker-compose.yml down
+#   curl http://127.0.0.1:11434/api/tags          # what's loaded
+# ---------------------------------------------------------------------------
+
+name: lan-daemon
+
+# The UwUchat dev stack's server container joins `code-daemon_default`
+# (see docker-compose.code-harness-local.yml). The chat daemon joins the
+# same network so the server reaches it by container name at
+# http://lan-daemon-daemon-1:11434 when code mode is OFF and chat uses a
+# SEPARATE daemon from code (DIALOGUE uses the local chat daemon then).
+# By default (dev override) chat and code share the code daemon, so this
+# chat daemon is only brought up when the two models are configured
+# separately (UWUCHAT_CHAT_DAEMON_* / UWUCHAT_CHAT_DAEMON_CONTAINER).
+# This network is created by the code-daemon compose project;
+# `docker compose up` on this file will fail before it exists unless the
+# code-daemon project has been brought up at least once.
+networks:
+  code-daemon_default:
+    external: true
+
+services:
+  daemon:
+    image: <private-desktop-repo>:daemon
+    restart: unless-stopped
+    networks:
+      - default
+      - code-daemon_default
+    ports:
+      # Expose the ollama-compatible API on all interfaces so the dev
+      # stack's server container reaches it at the host's LAN IP.
+      - "0.0.0.0:11434:11434"
+    environment:
+      # Private dev daemon, no auth — never expose beyond this machine.
+      AIRUNNER_INSECURE_NO_AUTH: "1"
+      # Unload the model from VRAM after inactivity to free the GPU.
+      AIRUNNER_LLM_AUTO_UNLOAD: "1"
+      AIRUNNER_LLM_INACTIVITY_TIMEOUT_SECONDS: "600"
+      # The model file to serve (inside the container, under the data
+      # mount at /home/airunner/.local/share/airunner).
+      AIRUNNER_LLM_MODEL_PATH: /home/airunner/.local/share/airunner/text/models/llm/causallm/Qwen/Qwen3.5-9B-Q8_0.gguf
+      # llama.cpp runtime overrides. n_ctx MUST be bounded: the daemon's
+      # default is 32768, whose KV cache exceeds the 16 GB RTX 5080 for a
+      # 9B Q8 model and hangs the load. The full UwUchat DIALOGUE prompt
+      # (persona + rules + tool schemas, see system_bot_prompt.py /
+      # prompt_rules.py / prompt_style.py) plus conversation history and
+      # tool-call context routinely runs several thousand tokens on its
+      # own — 4096 left too little (sometimes negative) room for output,
+      # which is why the daemon returned the canned "empty reply" string
+      # for real UwUchat traffic (verified 2026-08-21) even though it
+      # answered fine for short test prompts. 16384 gives real headroom
+      # (weights ~9.5 GB loaded + this KV cache still fits well inside
+      # the 16 GB card); raise further only if you confirm VRAM headroom
+      # with nvidia-smi first.
+      AIRUNNER_GGUF_N_CTX: "16384"
+      # Full GPU offload (default -1); keep explicit so a CPU fallback
+      # never silently kicks in.
+      AIRUNNER_GGUF_N_GPU_LAYERS: "-1"
+      AIRUNNER_OLLAMA_MODE: "1"
+      HOME: /home/airunner
+      HF_HOME: /home/airunner/.cache/huggingface
+      # The model load is dispatched on a Qt QThread; without a display
+      # the Qt platform plugin must be told to use the offscreen backend
+      # or the thread's event loop never runs and loads hang until the
+      # 120s timeout.
+      QT_QPA_PLATFORM: offscreen
+    volumes:
+      # Model dir + local data (matches the <private-desktop-repo> compose
+      # layout: ~/.local/share/airunner -> /home/airunner/.local/share/airunner).
+      - /home/<user>/.local/share/airunner:/home/airunner/.local/share/airunner
+      # HF cache for any download-time needs.
+      - /home/<user>/.cache/huggingface:/home/airunner/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    command:
+      # The image entrypoint maps `--headless ...` (with --headless
+      # stripped) to the headless daemon (airunner-headless). `airunner`
+      # itself must NOT appear here — the entrypoint would pass it through
+      # and airunner-headless would reject it ("unrecognized arguments:
+      # airunner").
+      - --headless
+      - --host
+      - 0.0.0.0
+      - --ollama-mode
+      - --no-preload
+      - --model
+      - /home/airunner/.local/share/airunner/text/models/llm/causallm/Qwen/Qwen3.5-9B-Q8_0.gguf
+    # The image bakes a HEALTHCHECK against port 8080 (/health), which is
+    # NOT served in ollama-mode (the daemon listens on 11434) — so the
+    # container would report unhealthy forever. Override it to probe the
+    # ollama-compat /api/tags endpoint on the port the daemon actually
+    # serves.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      start_period: 180s
+      retries: 3

@@ -1,0 +1,18 @@
+/* KaomojiStep — inline style refactor */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.desc {
+  margin: 0;
+  color: var(--theme-text-secondary);
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}

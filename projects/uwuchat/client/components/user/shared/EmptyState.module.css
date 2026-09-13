@@ -1,0 +1,9 @@
+/* EmptyState — inline style refactor */
+
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--theme-text-secondary);
+  font-size: 0.85rem;
+  grid-column: 1 / -1;
+}

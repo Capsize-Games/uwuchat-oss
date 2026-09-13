@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) — disabled on localhost to avoid
+         polluting production analytics with dev traffic -->
+    <script>
+      (function() {
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7F63RJTZF1';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7F63RJTZF1');
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>uwuchat.com</title>
+    <script>
+      // Apply saved theme immediately to prevent flash of wrong theme
+      (function() {
+        try {
+          var t = localStorage.getItem("airunner_theme");
+          if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch(e) {}
+      })();
+      // Mobile: set --app-height to the visible viewport height so the
+      // footer isn't hidden behind browser chrome (Firefox Android).
+      (function() {
+        function fixHeight() {
+          var h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+          document.documentElement.style.setProperty('--app-height', h + 'px');
+        }
+        fixHeight();
+        window.visualViewport && window.visualViewport.addEventListener('resize', fixHeight);
+        window.addEventListener('resize', fixHeight);
+        window.addEventListener('orientationchange', function() { setTimeout(fixHeight, 100); });
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

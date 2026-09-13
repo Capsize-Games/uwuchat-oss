@@ -1,0 +1,58 @@
+.card {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.cardTool {
+  background: rgba(180, 90, 0, 0.08);
+  border: 1px solid rgba(180, 90, 0, 0.15);
+}
+
+.headerLabel {
+  font-size: 0.75rem;
+}
+
+.body {
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.fieldLabel {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+  margin-bottom: 2px;
+}
+
+.fieldValue {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  color: var(--theme-text);
+}
+
+.fieldGroup {
+  margin-bottom: 4px;
+}
+
+.resultSection {
+  margin-top: 8px;
+}
+
+.resultLabel {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--theme-accent, #8844cc);
+  margin-bottom: 2px;
+}
+
+.resultValue {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  color: var(--theme-text);
+  white-space: pre-wrap;
+}

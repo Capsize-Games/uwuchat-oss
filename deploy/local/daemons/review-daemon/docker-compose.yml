@@ -1,0 +1,153 @@
+# ---------------------------------------------------------------------------
+# UwUchat REVIEW daemon (DeepSeek-R1-Distill-Qwen-7B) — dedicated local
+# inference for lighter-weight modes (ask, debug, qa-agent, zoo-audit/Audit,
+# deepseek-reviewer/Reviewer, script-agent) on the RTX 2080 SUPER on the
+# staging server `<staging-hostname>` (<staging-ip>), NOT the dev box's RTX 5080.
+#
+# This is a SEPARATE model from the chat/coder daemons, run entirely on its
+# own GPU with zero RPC/network split (unlike the RPC-pooling work
+# described in the GPU model-switching design doc) — full local speed on <staging-hostname>.
+# See GitHub issue <your-org>/<repo>#147.
+#
+# Model choice: DeepSeek-R1-Distill-Qwen-7B was picked over a "Coder"-tuned
+# model because these roles (review/audit/debug/QA) are broader reasoning-
+# over-existing-work tasks, not code completion — R1-distill's step-by-step
+# reasoning training fits the "catch problems" judgment these modes need
+# better than a completion-tuned model. This is a first pick, not yet
+# benchmarked against alternatives — see issue #147 for the open question.
+#
+# IMPORTANT — this compose file does NOT run on the same host as the dev
+# box's chat-daemon/code-daemon. It targets <staging-hostname> specifically. Deploy it by
+# copying this file to <staging-hostname> and running compose there over SSH:
+#
+#   scp deploy/local/daemons/review-daemon/docker-compose.yml \
+#     <staging-ip>:~/review-daemon-docker-compose.yml
+#   ssh <staging-ip> 'docker compose -f ~/review-daemon-docker-compose.yml up -d'
+#
+# (A remote Docker context would also work, but plain scp+ssh was simpler
+# and needs no additional local Docker configuration — this is a one-off
+# manual deploy step for now, not part of any automated pipeline.)
+#
+# RESOLVED 2026-08-21 (was a real bug, now fixed — history kept for the
+# next person who hits this class of issue on an older host): <staging-hostname>'s
+# nvidia-container-toolkit (1.20.0) is registered in
+# /etc/docker/daemon.json ONLY as the legacy named runtime ("nvidia"),
+# without the OCI prestart-hook wiring the modern `--gpus` flag (and
+# therefore Compose's `deploy.resources.reservations.devices` AND
+# `gpus: all`) both depend on. `--gpus all` silently produced a
+# container with `/dev/nvidia0` present and NVIDIA_VISIBLE_DEVICES=all
+# set, but `cudaGetDeviceCount()` genuinely returned 0 devices inside
+# it — confirmed with a minimal standalone CUDA program compiled and
+# run in a bare `nvidia/cuda:12.9.1-devel-ubuntu24.04` container (no
+# <private-desktop-repo> involved), ruling out anything specific to this
+# image. `--runtime=nvidia` (the explicit legacy runtime path) DOES
+# work correctly on this host — verified: `cudaGetDeviceCount()`
+# returns 1, and the running daemon logs
+# `ggml_cuda_init: found 1 CUDA devices ... Device 0: NVIDIA GeForce
+# RTX 2080 SUPER` with `GPU offload support=True`, at real GPU speed
+# (~78 tok/s, up from ~3 tok/s CPU-only).
+#
+# Since Compose's `gpus:`/`deploy.reservations.devices` don't work here
+# either, this daemon is deployed via a raw `docker run --runtime=nvidia
+# -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=compute,utility
+# ...` command (NOT `docker compose up` with this file) — this compose
+# file documents the equivalent config for reference/future migration,
+# but is not what's actually running. Compose DOES support an explicit
+# `runtime: nvidia` service-level key (unlike `gpus:`, this has been
+# supported since Compose file format 2.3+, much more broadly than the
+# newer hook-based mechanism) — worth switching this file to that and
+# confirming it actually works via `docker compose up` before treating
+# compose as usable here again.
+#
+# Manual start/stop for debugging (run ON <staging-hostname>, or prefix with `ssh <staging-ip>`):
+#   docker compose -f ~/review-daemon-docker-compose.yml up -d
+#   docker compose -f ~/review-daemon-docker-compose.yml down
+#   curl http://127.0.0.1:11500/api/tags          # what's loaded
+# ---------------------------------------------------------------------------
+
+name: review-daemon
+
+services:
+  daemon:
+    image: <private-desktop-repo>:daemon
+    restart: unless-stopped
+    ports:
+      # Port 11434 and 8080 are both already taken on <staging-hostname> by unrelated
+      # services (confirmed live 2026-08-21, `ss -tln` showed a long list
+      # of ports in active use there) — 11500 was confirmed free.
+      - "0.0.0.0:11500:11434"
+    environment:
+      AIRUNNER_INSECURE_NO_AUTH: "1"
+      AIRUNNER_LLM_AUTO_UNLOAD: "1"
+      AIRUNNER_LLM_INACTIVITY_TIMEOUT_SECONDS: "600"
+      # Model lives directly under <staging-hostname>'s ~/models (bind-mounted below), not
+      # the usual ~/.local/share/airunner layout the chat/code daemons use
+      # — <staging-hostname> doesn't have that directory structure set up.
+      AIRUNNER_LLM_MODEL_PATH: /models/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf
+      # 16384 matches the chat-daemon's own reasoning (see its compose
+      # file's comment on n_ctx): ample room for a real review/audit
+      # prompt + tool schemas + R1-distill's own chain-of-thought
+      # reasoning output, while a 7B model's KV cache at this size is
+      # small enough to leave plenty of headroom on an 8GB card alongside
+      # the ~4.4GB Q4_K_M weights.
+      AIRUNNER_GGUF_N_CTX: "16384"
+      AIRUNNER_GGUF_N_GPU_LAYERS: "-1"
+      AIRUNNER_OLLAMA_MODE: "1"
+      # Missing on the first deploy attempt — without these the daemon's
+      # alembic migrations ran against a different SQLite file
+      # (airunner.dev.db) than the one the runtime API queries from
+      # (airunner.db), producing "no such table: llm_generator_settings"
+      # on every real request even though the container reported healthy
+      # and migrations completed successfully. Verified live 2026-08-21
+      # against the working chat/code daemons' real running env
+      # (`docker exec bench-daemon-daemon-1 env`) — these two vars are
+      # present there but were absent from this file's first version.
+      AIRUNNER_ENVIRONMENT: production
+      AIRUNNER_DATA_DIR: /home/airunner/.local/share/airunner
+      HOME: /home/airunner
+      HF_HOME: /home/airunner/.cache/huggingface
+      QT_QPA_PLATFORM: offscreen
+    volumes:
+      # <staging-hostname>'s model directory (created this session at ~/models on <staging-hostname>,
+      # NOT the dev box) — bind-mounted read-only into the container at
+      # /models, matching AIRUNNER_LLM_MODEL_PATH above.
+      - /home/<user>/models:/models:ro
+      # Persistent app data dir (settings DB, alembic migrations run
+      # against this on container start) — without this the container's
+      # SQLite DB lives only in its own ephemeral filesystem and every
+      # restart re-runs migrations against a ghost DB the API layer
+      # can't find (`no such table: llm_generator_settings` — verified
+      # live 2026-08-21, first deploy attempt hit exactly this before
+      # this volume was added). Matches chat-daemon/code-daemon's own
+      # pattern, just under <staging-hostname>'s home directory since it doesn't have
+      # the dev box's ~/.local/share/airunner layout.
+      - /home/<user>/.local/share/airunner:/home/airunner/.local/share/airunner
+      - /home/<user>/.cache/huggingface:/home/airunner/.cache/huggingface
+    # <staging-hostname> runs an older Docker Compose (2.26.1) than this dev box — the
+    # deploy.resources.reservations.devices block (swarm-style GPU
+    # reservation) was silently ignored there, producing a real, subtly
+    # broken deployment: the container started, reported healthy, and
+    # served real (but CPU-only, ~2.7 tok/s) generations with zero
+    # visible error — the only tell was "ggml_cuda_init: failed to
+    # initialize CUDA: no CUDA-capable device is detected" buried in the
+    # container logs. Verified live 2026-08-21. `gpus: all` (the
+    # Compose Specification's directly-recognized top-level service
+    # field, not the swarm-only deploy.reservations block) is what
+    # actually works on <staging-hostname>'s compose version — kept here instead of the
+    # deploy block the local chat/code daemons use, since THIS
+    # compose file is <staging-hostname>-specific anyway (see the file header).
+    runtime: nvidia
+    command:
+      - --headless
+      - --host
+      - 0.0.0.0
+      - --ollama-mode
+      - --no-preload
+      - --model
+      - /models/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      start_period: 180s
+      retries: 3

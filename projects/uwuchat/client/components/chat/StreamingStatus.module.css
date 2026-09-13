@@ -1,0 +1,11 @@
+/* ── Row layout — matches MessageBubble/StreamingMessageBubble's
+   card treatment (position/padding/background) so this row reads
+   as part of the conversation instead of a floating overlay. ── */
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(16, 18, 34, 0.55);
+}

@@ -1,0 +1,27 @@
+.root {
+  min-height: 100%;
+}
+
+.card {
+  gap: 14px;
+  padding: 36px 10px;
+  max-width: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  line-height: 1.5;
+}

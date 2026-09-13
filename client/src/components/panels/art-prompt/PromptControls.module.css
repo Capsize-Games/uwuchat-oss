@@ -1,0 +1,51 @@
+/* PromptControls — bottom action bar with progress + generate/cancel (framework) */
+
+.bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 6px 5px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.progressWrap {
+  padding: 0 4px;
+}
+
+.progressTrack {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.actionBtn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancelBtn {
+  composes: actionBtn;
+  background: var(--bs-danger);
+}
+
+.generateBtn {
+  composes: actionBtn;
+  transition: background 0.3s;
+}
+
+.generateBtnDisabled {
+  composes: actionBtn;
+  cursor: default;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}

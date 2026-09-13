@@ -1,0 +1,51 @@
+/* Third-party services table */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  text-align: left;
+  padding: 4px 8px 4px 0;
+  font-size: 11px;
+  color: var(--theme-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.thCenter {
+  composes: th;
+  width: 80px;
+  text-align: center;
+  padding: 4px 0 4px 8px;
+}
+
+.thWide {
+  composes: th;
+  text-align: left;
+  padding: 4px 8px;
+}
+
+.tdService {
+  padding: 4px 8px 4px 0;
+  vertical-align: middle;
+  color: var(--theme-text-secondary);
+  font-size: 13px;
+}
+
+.tdInput {
+  padding: 3px 8px;
+}
+
+.tdToggle {
+  padding: 3px 0 3px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.noKey {
+  color: #555;
+  font-size: 12px;
+  font-style: italic;
+}

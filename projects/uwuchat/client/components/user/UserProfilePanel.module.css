@@ -1,0 +1,140 @@
+/* UserProfilePanel — inline style refactor */
+
+.panel {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--theme-border);
+  background: var(--theme-panel-bg, #12121e);
+  overflow: hidden;
+}
+
+.headerFixed {
+  flex-shrink: 0;
+}
+
+/* ── Banner (desktop) ─────────────────────────────────── */
+
+.bannerWrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bannerPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  font-size: 0.7rem;
+}
+
+.genderBadgePos {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  z-index: 1;
+}
+
+/* ── Hero (desktop) ───────────────────────────────────── */
+
+.heroWrap {
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Tab bar ──────────────────────────────────────────── */
+
+.tabBar {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--theme-border);
+  gap: 2px;
+  overflow-x: auto;
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-weight: 400;
+  font-size: 0.72rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+
+.tabBtn:focus-visible {
+  outline: 2px solid var(--bs-primary, #8a2be2);
+  outline-offset: -2px;
+  border-radius: 2px;
+}
+
+.tabBtnActive {
+  composes: tabBtn;
+  border-bottom-color: var(--bs-primary, #8a2be2);
+  color: var(--bs-primary, #8a2be2);
+}
+
+.tabBtnInactive {
+  composes: tabBtn;
+  color: var(--theme-text-secondary);
+}
+
+.tabBtnInactive:hover {
+  color: var(--theme-text-primary);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.tabIcon {
+  font-size: 16px;
+}
+
+.tabLabel {
+  font-size: 0.7rem;
+}
+
+/* ── Tab content ──────────────────────────────────────── */
+
+.tabContentScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.tabContentPad {
+  padding: 10px;
+}
+
+.steamContent {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--theme-text-secondary);
+  font-size: 0.82rem;
+}

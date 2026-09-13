@@ -1,0 +1,108 @@
+/* Collapsible tool-call widget — inline in the assistant bubble. */
+
+.widget {
+  margin: 6px 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.widget.error {
+  border-color: rgba(237, 66, 69, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  color: var(--theme-text, #e5e7eb);
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotRun {
+  background: #f0a040;
+}
+
+.dotDone {
+  background: #57f287;
+}
+
+.dotError {
+  background: #ed4245;
+}
+
+.name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.statusText {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.chevron {
+  transition: transform 0.15s ease;
+  opacity: 0.7;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+
+.query,
+.result {
+  margin: 0;
+}
+
+.pre {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--theme-text, #e5e7eb);
+}
+
+.empty {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  font-style: italic;
+}

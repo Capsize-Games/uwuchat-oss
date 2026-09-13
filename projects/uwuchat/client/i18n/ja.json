@@ -1,0 +1,873 @@
+{
+  "onboarding_tour": {
+    "system_bot_label": "あなたのアシスタント",
+    "system_bot_text": "これはあなたのアシスタントUwUです。彼は自分がチャットボットアシスタントであることを認識しています。",
+    "rp_bot_label": "ロールプレイボット",
+    "rp_bot_text": "これらはロールプレイチャットボットです。これらのボットは自分がボットであることを認識していません。彼らは自分が本物だと信じており、キャラクターを保ち続けます。",
+    "next": "次へ",
+    "close": "了解"
+  },
+  "common": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "loading": "読み込み中…"
+  },
+  "settings": {
+    "title": "設定",
+    "language": {
+      "heading": "言語設定",
+      "gui_label": "GUI言語",
+      "user_label": "ユーザー言語",
+      "uwu_label": "UwU言語"
+    },
+    "nav": {
+      "integrations": "連携アカウント",
+      "privacy": "サードパーティサービス",
+      "image_export": "画像エクスポート",
+      "memory": "メモリ",
+      "keyboard_shortcuts": "キーボードショートカット",
+      "immersion": "没入感",
+      "user": "ユーザー設定",
+      "tts": "テキスト読み上げ",
+      "sound": "音声認識",
+      "prompt_templates": "プロンプトテンプレート",
+      "appearance": "テーマ",
+      "language": "言語",
+      "location": "位置情報",
+      "account": "アカウントと利用規約",
+      "headlesscode": "コーディングセッション"
+    },
+    "location": {
+      "description": "UwUはあなたの場所を使って、窓の外の天気や近くの出来事を話題にします。",
+      "current": "現在の場所",
+      "no_location": "位置情報が設定されていません。天気や地域情報のために追加してください。",
+      "use_current": "📍 現在地を使用",
+      "auto_update_on": "自動更新中",
+      "detect_once": "一度だけ検出",
+      "saved": "場所を保存しました",
+      "or_manually": "— または手動で入力 —",
+      "city": "都市",
+      "country": "国（任意）",
+      "search": "都市を検索",
+      "not_available": "ブラウザの位置情報が利用できません。",
+      "detecting": "検出中…",
+      "blocked": "位置情報がブロックされています。下に都市を入力してください。",
+      "looking_up": "検索中…",
+      "not_found": "都市が見つかりません。近くの大きな都市を試してください。"
+    },
+    "account": {
+      "heading": "アカウント",
+      "email": "メール：",
+      "username": "ユーザー名：",
+      "view_profile": "プロフィールを見る",
+      "email_unverified": "メールアドレスが認証されていません。",
+      "subscription_heading": "サブスクリプション",
+      "linked_accounts_heading": "連携アカウント",
+      "linked_accounts_desc": "Spotifyアカウントを連携して音楽の好みをプロフィールでシェアしましょう。設定サイドバーの",
+      "linked_accounts_link": "連携アカウント",
+      "linked_accounts_suffix": "から管理できます。",
+      "legal_heading": "法的事項",
+      "terms_of_service": "利用規約",
+      "privacy_policy": "プライバシーポリシー",
+      "danger_zone": "危険ゾーン",
+      "danger_desc": "アカウントとすべての関連データを完全に削除します。この操作は取り消せません。",
+      "delete_account": "アカウントを削除",
+      "no_subscription": "有効なサブスクリプションがありません。登録してフルアクセスを解放しましょう。",
+      "view_plans": "プランを見る",
+      "plan_label": "プラン：",
+      "status_label": "状態：",
+      "free_trial": "無料トライアル",
+      "trial_ends": "トライアル終了：",
+      "renews": "更新日：",
+      "manage_subscription": "サブスクリプションを管理",
+      "change_plan": "プランを変更",
+      "current_plan": "現在のプラン",
+      "promo_heading": "プロモコード"
+    },
+    "immersion": {
+      "heading": "没入感",
+      "level_label": "没入レベル",
+      "minimal": "最小",
+      "minimal_label": "最小",
+      "full": "フル",
+      "full_label": "フル",
+      "minimal_desc": "返答がストリームされます。タイピングインジケーターと人工的な遅延は無効です。",
+      "full_desc": "チャットボットがメッセージを読んで、考えて、入力するシミュレーションをします。待つ間「{name} が入力中…」インジケーターが表示されます。",
+      "description": "会話がどれくらい没入感を感じるか選んでください。"
+    },
+    "integrations": {
+      "title": "連携アカウント",
+      "heading": "連携アカウント",
+      "desc": "外部サービスと連携してプロフィールを充実させましょう。",
+      "spotify_desc": "音楽の好みをプロフィールでシェア",
+      "spotify_importing": "Spotifyデータをインポート中…",
+      "connect_spotify": "Spotifyを連携",
+      "spotify_connect": "Spotifyを連携",
+      "spotify_last_synced": "最終同期：",
+      "last_synced": "最終同期：",
+      "spotify_view_profile": "プロフィールを見る",
+      "view_my_profile": "プロフィールを見る",
+      "spotify_refresh": "データを更新",
+      "refresh_data": "データを更新",
+      "spotify_refreshing": "更新中…",
+      "refreshing": "更新中…",
+      "spotify_disconnect": "連携解除",
+      "disconnect": "連携解除",
+      "spotify_disconnecting": "解除中…",
+      "disconnecting": "解除中…",
+      "spotify_retry": "再試行",
+      "retry": "再試行",
+      "steam_desc": "ゲームライフをプロフィールでシェア",
+      "steam_connect": "Steamを連携",
+      "connect_steam": "Steamを連携",
+      "steam_connecting": "接続中…",
+      "connecting": "接続中…",
+      "importing_spotify": "Spotifyデータをインポート中…",
+      "connect_itch": "itch.ioに接続",
+      "itch_desc": "あなたのitch.ioゲームライブラリをプロフィールに表示します。",
+      "connect_bluesky": "Blueskyに接続",
+      "bluesky_desc": "あなたの最近のBluesky投稿をプロフィールに表示します。",
+      "bluesky_app_password_hint": "bsky.social/settings/app-passwordsでアプリパスワードを作成してください — メインのアカウントパスワードは絶対に使用しないでください。",
+      "bluesky_handle_placeholder": "ハンドル（例：user.bsky.social）",
+      "bluesky_placeholder": "アプリパスワード（xxxx-xxxx-xxxx-xxxx）",
+      "bluesky_connecting": "接続中…",
+      "connected_label_steam": "✅ Steam接続済み",
+      "connected_label_itch": "✅ itch.io接続済み",
+      "connected_label_bluesky": "✅ Bluesky接続済み"
+    },
+    "prompt_templates": {
+      "heading": "プロンプトテンプレート",
+      "no_templates": "テンプレートがありません。",
+      "template_label": "テンプレート",
+      "use_guardrails": "ガードレールを使用",
+      "use_datetime": "システムプロンプトに日時を使用"
+    },
+    "social_links": {
+      "heading": "ソーシャルリンク",
+      "desc": "SNSプロフィールへのリンクを追加しましょう。公開プロフィールページに表示されます。",
+      "no_links": "まだソーシャルリンクがありません。下から追加してください！",
+      "sign_in": "ソーシャルリンクを管理するにはサインインしてください。",
+      "save": "保存",
+      "edit": "編集",
+      "add_link": "ソーシャルリンクを追加",
+      "all_added": "利用可能なすべてのサービスが追加されました。🎉"
+    },
+    "promo": {
+      "heading": "プロモコード",
+      "placeholder": "コードを入力",
+      "redeem": "適用",
+      "error": "無効なコード",
+      "redeemed": "コードが適用されました！",
+      "redeemed_tier": "コードが適用されました！{{tier}} アクセスが有効になりました。"
+    }
+  },
+  "sidebar": {
+    "account": "アカウント",
+    "contacts": "連絡先",
+    "new_contact": "新しいロールプレイチャットボット",
+    "new_uwu": "新しいUwUを作成",
+    "assistant": "アシスタント",
+    "no_contacts": "まだ連絡先がありません。会話を始めましょう！",
+    "deceased": "故",
+    "role_play": "ロールプレイ",
+    "generating_character": "キャラクターを生成中...",
+    "generation_failed": "キャラクターの作成に失敗しました。もう一度お試しください。",
+    "uwu_ready_title": "新しいUwUの準備ができました！✨",
+    "uwu_ready_body": "{{name}}の生成が完了し、チャットできるようになりました。",
+    "uwu_ready_cta": "チャットを始める"
+  },
+  "setup": {
+    "language": {
+      "description": "あなたのUwUは、選択した言語であなたと会話します。",
+      "continue": "続ける →"
+    },
+    "name": {
+      "desc": "UwUはこれを使って自然に話しかけます。",
+      "placeholder": "名前またはニックネーム",
+      "continue": "続ける",
+      "skip": "スキップ"
+    },
+    "gender": {
+      "desc": "UwUはあなたの代名詞を正しく使います。",
+      "skip": "このステップをスキップ",
+      "she_her": "彼女 / 女性",
+      "he_him": "彼 / 男性",
+      "they_them": "ノンバイナリー",
+      "prefer_not": "答えたくない"
+    },
+    "location": {
+      "desc": "UwUはあなたの場所を使って、窓の外の天気や近くの出来事を話題にします。",
+      "use_current": "📍 現在地を使用",
+      "or_manually": "— または手動で入力 —",
+      "city_placeholder": "都市",
+      "country_placeholder": "国（任意）",
+      "save_location": "場所を保存",
+      "skip": "スキップ",
+      "not_available": "ブラウザの位置情報が利用できません。",
+      "detecting": "検出中…",
+      "blocked": "位置情報がブロックされています。下に都市を入力してください。",
+      "city_required": "都市を入力してください。",
+      "looking_up": "検索中…",
+      "not_found": "都市が見つかりません。近くの大きな都市を試してください。"
+    },
+    "wizard": {
+      "step_of": "セットアップ — {{step}} / {{total}}",
+      "meet_uwu": "UwUに会う ✨"
+    },
+    "step_titles": {
+      "name": "あなたの名前は？",
+      "gender": "あなたの性別は？",
+      "language": "言語を選んでください",
+      "location": "どこにいますか？",
+      "done": "準備完了！",
+      "subscribe": "プランを選択",
+      "avatar": "プロフィール写真",
+      "banner": "バナー画像",
+      "status": "ステータス",
+      "kaomoji": "顔文字",
+      "verify_email": "メール確認"
+    },
+    "steps": {
+      "skip": "スキップ",
+      "save": "保存",
+      "done": "完了",
+      "uploading": "アップロード中…",
+      "avatar_desc": "UwUがあなたを認識できるように写真を追加してください。",
+      "banner_desc": "プロフィールのヘッダー画像を選んでください。",
+      "status_desc": "今の気分をUwUに伝えましょう。",
+      "kaomoji_desc": "プロフィールカードに表示される顔文字を選んでください。",
+      "verify_email_desc": "アカウントを復旧できるようにメールアドレスを確認してください。",
+      "upload_avatar": "写真をアップロード",
+      "upload_banner": "バナーをアップロード",
+      "status_placeholder": "今何を考えていますか？",
+      "send_verification": "確認メールを送信",
+      "resend_verification": "確認メールを再送信",
+      "sending": "送信中…",
+      "verification_sent": "受信トレイを確認してください！{{email}} に確認リンクを送信しました。",
+      "already_verified": "メールアドレスは確認済みです ✅"
+    }
+  },
+  "chat": {
+    "contacts": "連絡先",
+    "cancel": "キャンセル",
+    "send": "送信",
+    "type_message": "メッセージを入力…",
+    "blocked_placeholder": "このキャラクターにブロックされています。",
+    "loading_conversation": "会話を読み込み中…",
+    "blocked_label": "ブロック済み",
+    "view_profile": "プロフィールを見る",
+    "profile_link": "プロフィール",
+    "choice_modal": {
+      "title": "新しいUwUを追加",
+      "subtitle": "すぐに生成するか、自分でデザインしましょう。",
+      "random_label": "ランダムUwU",
+      "random_sub": "サプライズ",
+      "random_generating": "生成中...",
+      "generating": "生成中...",
+      "build_label": "自分で作る",
+      "build_sub": "ステップバイステップ"
+    },
+    "creator": {
+      "name_your_uwu": "UwUに名前をつける",
+      "who_is_this": "このキャラクターは誰ですか？",
+      "name_label": "名前",
+      "about_label": "このUwUについて",
+      "optional": "（任意）",
+      "speech_label": "特徴的な話し方",
+      "speech_patterns_label": "特徴的な話し方",
+      "speech_patterns_hint": "すべての返答に適用されます — ドリフトしません。",
+      "creating": "作成中…",
+      "begin_story": "ストーリーを始める →",
+      "next": "次へ →",
+      "skip": "スキップ",
+      "step_emoji_title": "プロフィール絵文字を選んでください",
+      "step_emoji_subtitle": "このキャラクターを表す絵文字を選んでください。",
+      "step_gender_title": "性別を選んでください",
+      "step_gender_subtitle": "キャラクターの自己表現の仕方に影響します。",
+      "step_personality_title": "パーソナリティタイプ",
+      "step_personality_subtitle": "コアとなる個性の型を選んでください。",
+      "step_subtype_title": "サブタイプを選んでください",
+      "step_subtype_subtitle": "{{type}}のサブタイプを選んでください。",
+      "step_species_title": "種族を選んでください",
+      "step_species_subtitle": "このキャラクターはどんな存在ですか？",
+      "step_language_title": "言語",
+      "step_language_auto": "{{city}}から自動検出されました。変更できます。",
+      "step_language_hint": "このキャラクターが話す言語を選んでください。",
+      "step_location_title": "どこに住んでいますか？",
+      "step_location_subtitle": "キャラクターのホームベースとなる実在の場所を選んでください。"
+    },
+    "message": {
+      "copy": "メッセージをコピー",
+      "delete_admin": "メッセージを削除（管理者）",
+      "copied": "コピーしました！",
+      "inspect_flow": "フローを確認",
+      "copy_mermaid": "📋 Mermaidをコピー",
+      "copied_mermaid": "✓ コピー済み！",
+      "turn": "ターン",
+      "report": "メッセージを報告",
+      "system_label": "システム"
+    },
+    "view": {
+      "inspection_on": "🔬 検査ON",
+      "inspection_off": "🔬 検査OFF",
+      "unblock": "ブロック解除",
+      "offline_message": "{{name}}は今オフラインです — 戻ったときにメッセージが届きます。",
+      "has_blocked": "{{name}}にブロックされています。",
+      "you_blocked": "{{name}}をブロックしています。",
+      "profile_panel": "プロフィール",
+      "my_profile_panel": "マイプロフィール",
+      "flow_detail_panel": "フロー詳細",
+      "fastsearch_panel": "FastSearchステータス",
+      "users_panel": "ユーザー",
+      "input_prompt": "入力プロンプト",
+      "output_response": "出力レスポンス"
+    },
+    "empty_placeholder": {
+      "greeting_fallback": "下のメッセージを入力して会話を始めましょう。",
+      "greeting_with_name": "{{name}}に話しかけてみましょう — 下から会話を始めてください。",
+      "opener_how_are_you": "今日の調子はどうですか？",
+      "opener_what_can_you_do": "何ができますか？"
+    },
+    "report": {
+      "title": "メッセージを報告",
+      "reason_inappropriate": "不適切",
+      "reason_harmful_unsafe": "有害・危険",
+      "reason_off_character": "キャラクター逸脱",
+      "reason_other": "その他",
+      "detail_placeholder": "詳細（任意、最大500文字）",
+      "cancel": "キャンセル",
+      "submit": "報告を送信",
+      "received": "報告を受け付けました。ありがとうございます。",
+      "close": "閉じる",
+      "admin_title": "報告一覧",
+      "refresh": "更新",
+      "loading": "読み込み中…",
+      "no_reports": "まだ報告はありません。",
+      "total": "件",
+      "col_time": "日時",
+      "col_reporter": "報告者",
+      "col_type": "種類",
+      "col_reason": "理由",
+      "type_auto": "自動検出",
+      "type_user": "ユーザー報告"
+    }
+  },
+  "iconbar": {
+    "users_label": "ユーザー",
+    "admin_users": "管理ユーザー",
+    "home": "UwUchat"
+  },
+  "rooms": {
+    "profile": {
+      "back": "← 戻る",
+      "loading": "読み込み中…",
+      "not_found": "プロフィールが見つかりません。",
+      "hangs_out_in": "よくいる場所",
+      "posts_tab": "投稿",
+      "shop_tab": "ショップ",
+      "loading_posts": "投稿を読み込み中…",
+      "no_posts": "最近の投稿はありません。",
+      "loading_inventory": "読み込み中…",
+      "no_items": "まだアイテムがありません。",
+      "card_tab": "カード",
+      "items_tab": "アイテム",
+      "generate_images": "プロフィール画像を生成",
+      "generating_images": "生成中…",
+      "unblock": "ブロック解除",
+      "omnipotent_knowledge": "🌐 全知識",
+      "omnipotent_on": "すべての連携チャットボットから知識にアクセスしています。",
+      "omnipotent_off": "この会話の知識のみを使用しています。",
+      "block": "{{name}}をブロック",
+      "has_blocked": "{{name}}にブロックされています。",
+      "you_blocked": "{{name}}をブロックしています。",
+      "enable_omnipotent": "全知識を有効にする",
+      "disable_omnipotent": "全知識を無効にする",
+      "bio_empty": "{{name}}はまだ自己紹介を書いていません。",
+      "settings_label": "設定",
+      "currently_label": "現在"
+    },
+    "profile_view": {
+      "loading": "読み込み中…",
+      "unblock": "ブロック解除",
+      "omnipotent_knowledge": "🌐 全知識",
+      "omnipotent_on": "すべての連携チャットボットから知識にアクセスしています。",
+      "omnipotent_off": "この会話の知識のみを使用しています。",
+      "enable_omnipotent": "全知識を有効にする",
+      "disable_omnipotent": "全知識を無効にする",
+      "bio_empty": "{{name}}はまだ自己紹介を書いていません。",
+      "settings_label": "設定",
+      "currently_label": "現在"
+    }
+  },
+  "panels": {
+    "uwu_row": {
+      "remove": "削除",
+      "cancel": "キャンセル",
+      "remove_title": "連絡先から削除"
+    },
+    "uwu_list": {
+      "remove": "削除",
+      "cancel": "キャンセル",
+      "remove_title": "連絡先から削除"
+    }
+  },
+  "user": {
+    "profile_page": {
+      "back": "← 戻る",
+      "no_status": "ステータスなし",
+      "followers": "フォロワー",
+      "saved_tracks": "保存済みトラック",
+      "followed_artists": "フォロー中のアーティスト",
+      "playlists": "プレイリスト"
+    },
+    "profile_panel": {
+      "click_to_add_banner": "クリックしてバナーを追加",
+      "click_to_set_status": "クリックしてステータスを設定",
+      "status_placeholder": "今何を考えていますか？",
+      "what_on_mind": "クリックしてステータスを設定...",
+      "weather_unavailable": "天気情報を取得できません — 設定 → 位置情報で場所を設定してください",
+      "tab_weather": "天気",
+      "tab_games": "ゲーム",
+      "tab_posts": "投稿",
+      "tab_links": "リンク"
+    },
+    "weather": {
+      "updated_at": "更新 {{time}}",
+      "feels_like": "体感温度",
+      "humidity": "湿度",
+      "cloud_cover": "雲量",
+      "uv_index": "UV指数",
+      "wind": "風",
+      "gusts": "突風",
+      "precip": "降水量",
+      "rain": "雨",
+      "snow": "雪",
+      "forecast": "10日間天気予報",
+      "forecast_day": "日",
+      "forecast_condition": "天気",
+      "forecast_hi_lo": "最高/最低",
+      "forecast_rain": "降水",
+      "today": "今日",
+      "night": "（夜）",
+      "weekdays": [
+        "日",
+        "月",
+        "火",
+        "水",
+        "木",
+        "金",
+        "土"
+      ],
+      "uv_low": "低い",
+      "uv_moderate": "中程度",
+      "uv_high": "高い",
+      "uv_very_high": "非常に高い",
+      "uv_extreme": "極端",
+      "label_clear": "晴れ",
+      "label_partly_cloudy": "曇り時々晴れ",
+      "label_overcast": "曇り",
+      "label_haze": "もや",
+      "label_dust": "砂塵",
+      "label_fog": "霧",
+      "label_drizzle": "霧雨",
+      "label_showers": "にわか雨",
+      "label_snow_showers": "にわか雪",
+      "label_thunderstorm": "雷雨",
+      "label_unknown": "不明",
+      "weather_unavailable_card": "🌤 天気情報を取得できません — 設定 → 位置情報で場所を設定してください"
+    },
+    "image_upload": {
+      "uploading": "アップロード中…",
+      "click_to_change": "クリックして{{type}}を変更",
+      "upload_failed": "アップロード失敗",
+      "too_large": "画像が大きすぎます（最大{{max}} MB）"
+    },
+    "not_found": {
+      "title": "プロフィールが見つかりません",
+      "your_profile_at": "あなたのプロフィールは",
+      "not_logged_in": "ログインしていません。",
+      "back_to_app": "UwUchatに戻る"
+    },
+    "profile_not_found": {
+      "title": "プロフィールが見つかりません",
+      "your_profile_at": "あなたのプロフィールは",
+      "not_logged_in": "ログインしていません。",
+      "back_to_app": "UwUchatに戻る"
+    },
+    "spotify": {
+      "top_artists": "トップアーティスト",
+      "top_tracks": "トップトラック",
+      "playlists": "プレイリスト",
+      "recently_played": "最近再生",
+      "past_month": "過去1か月",
+      "past_6_months": "過去6か月",
+      "all_time": "全期間",
+      "no_artists": "トップアーティストデータなし",
+      "no_tracks": "トップトラックデータなし",
+      "no_playlists": "プレイリストなし",
+      "no_recent": "最近再生したトラックなし"
+    },
+    "steam": {
+      "recently_played": "最近プレイ",
+      "most_played": "最多プレイ",
+      "no_recent": "最近プレイしたゲームはありません。",
+      "no_games": "ゲームが見つかりません。",
+      "steam_level": "Steamレベル",
+      "games_owned": "所有ゲーム数",
+      "total_hours": "合計時間",
+      "friends": "フレンド",
+      "importing": "Steamデータをインポート中…",
+      "connect_own": "Steamアカウントを連携してゲームライブラリをシェアしましょう。",
+      "not_linked": "{{name}}はまだSteamを連携していません。",
+      "connect_steam": "Steamを連携",
+      "section_stats": "統計",
+      "section_recently_played": "最近プレイ",
+      "stat_games": "ゲーム",
+      "stat_hours": "時間"
+    },
+    "steam_stats": {
+      "steam_level": "Steamレベル",
+      "games_owned": "所有ゲーム数",
+      "total_hours": "合計時間",
+      "friends": "フレンド"
+    },
+    "bluesky": {
+      "no_posts": "投稿が見つかりません。",
+      "add_handle": "リンクタブでBlueskyハンドルを追加してください。"
+    },
+    "panel_bluesky": {
+      "no_posts": "投稿が見つかりません。",
+      "add_handle": "リンクタブでBlueskyハンドルを追加してください。"
+    },
+    "social": {
+      "edit_links": "ソーシャルリンクを編集",
+      "done": "完了",
+      "add_links": "+ ソーシャルリンクを追加",
+      "all_added": "すべてのサービスが追加されました！🎉",
+      "username_placeholder": "ユーザー名またはURL"
+    },
+    "social_links": {
+      "edit_links": "ソーシャルリンクを編集",
+      "done": "完了",
+      "add_links": "+ ソーシャルリンクを追加",
+      "all_added": "すべてのサービスが追加されました！🎉",
+      "username_placeholder": "ユーザー名またはURL"
+    },
+    "panel_music": {
+      "top_artists": "トップアーティスト",
+      "top_tracks": "トップトラック",
+      "playlists": "プレイリスト",
+      "recently_played": "最近再生",
+      "past_month": "過去1か月",
+      "past_6_months": "過去6か月",
+      "all_time": "全期間",
+      "no_artists": "トップアーティストデータなし",
+      "no_tracks": "トップトラックデータなし",
+      "no_playlists": "プレイリストなし",
+      "no_recent": "最近再生したトラックなし",
+      "no_recently_played": "最近再生したトラックなし"
+    },
+    "steam_data": {
+      "tab_recent": "最近プレイ",
+      "tab_most_played": "最多プレイ",
+      "no_recent": "最近プレイしたゲームはありません。",
+      "no_games": "ゲームが見つかりません。"
+    },
+    "steam_not_connected": {
+      "importing": "Steamデータをインポート中…",
+      "connect_own": "Steamアカウントを連携してゲームライブラリをシェアしましょう。",
+      "not_linked": "{{name}}はまだSteamを連携していません。",
+      "connect_steam": "Steamを連携"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "サインイン",
+      "email_label": "メール",
+      "password_label": "パスワード",
+      "submit": "サインイン",
+      "submitting": "サインイン中…",
+      "divider_or": "または",
+      "google": "Googleでサインイン",
+      "steam": "Steamでサインイン",
+      "steam_connecting": "Steamに接続中…",
+      "bluesky": "Blueskyでサインイン",
+      "bluesky_connecting": "Blueskyに接続中…",
+      "no_account": "アカウントをお持ちでないですか？",
+      "register_link": "登録",
+      "error_default": "サインインに失敗しました",
+      "error_oauth_state": "セキュリティ上の問題によりサインインに失敗しました。もう一度お試しください。",
+      "error_oauth_failed": "サインインに失敗しました。もう一度お試しください。",
+      "error_steam_auth_failed": "Steamでのサインインに失敗しました。もう一度お試しください。",
+      "error_google_oauth_not_configured": "Googleでのサインインは現在ご利用いただけません。メール/パスワードをご利用いただくか、後でもう一度お試しください。",
+      "error_twitch_oauth_not_configured": "Twitchでのサインインは現在ご利用いただけません。メール/パスワードをご利用いただくか、後でもう一度お試しください。",
+      "error_email_exists": "このメールアドレスのアカウントは既に存在します。パスワードでサインインしてください。",
+      "verified_success": "メールアドレスの確認が完了しました。サインインできます。",
+      "reset_success": "パスワードがリセットされました。新しいパスワードでサインインできます。",
+      "forgot_password": "パスワードをお忘れですか？"
+    },
+    "register": {
+      "title": "アカウント作成",
+      "email": "メール",
+      "email_label": "メール",
+      "username": "ユーザー名",
+      "password": "パスワード",
+      "password_label": "パスワード",
+      "confirm_password": "パスワードの確認",
+      "confirm_password_label": "パスワードの確認",
+      "invite_code": "招待コード",
+      "invite_code_label": "招待コード（任意）",
+      "invite_placeholder": "招待コードを入力",
+      "invite_code_placeholder": "招待コードを入力",
+      "age_confirm": "18歳以上であることを確認します。",
+      "tos_agree_prefix": "以下に同意します：",
+      "tos_agree_before": "以下に同意します：",
+      "terms": "利用規約",
+      "terms_of_service": "利用規約",
+      "and": "および",
+      "tos_agree_and": "および",
+      "privacy": "プライバシーポリシー",
+      "privacy_policy": "プライバシーポリシー",
+      "tos_agree_suffix": "。",
+      "entertainment": "UwUchatはエンターテインメント目的のみであることを理解しています。キャラクターはAI生成であり、専門的なアドバイスを提供しません。",
+      "entertainment_confirm": "UwUchatはエンターテインメント目的のみであることを理解しています。キャラクターはAI生成であり、専門的なアドバイスを提供しません。",
+      "creating": "アカウント作成中…",
+      "submit": "アカウントを作成",
+      "google": "Googleで登録",
+      "back": "戻る",
+      "sign_up_email": "メールで登録",
+      "sign_up_google": "Googleで登録",
+      "sign_up_steam": "Steamで登録",
+      "sign_up_bluesky": "Blueskyで登録",
+      "bluesky_connecting": "Blueskyに接続中…",
+      "have_account": "すでにアカウントをお持ちですか？",
+      "already_have_account": "すでにアカウントをお持ちですか？",
+      "sign_in": "サインイン",
+      "verify_title": "メールを確認してください",
+      "verify_desc": "確認リンクを送信しました：",
+      "verify_desc_before": "確認リンクを送信しました：",
+      "verify_desc_after": "受信トレイを確認し、リンクをクリックしてアカウントを有効化してください。",
+      "verify_waiting": "サインイン済みです。待つ間もアプリを使えます。",
+      "verify_signed_in": "サインイン済みです。待つ間もアプリを使えます。",
+      "continue": "アプリへ進む",
+      "continue_to_app": "アプリへ進む",
+      "error_password_match": "パスワードが一致しません",
+      "error_passwords_match": "パスワードが一致しません",
+      "error_password_length": "パスワードは8文字以上必要です",
+      "error_failed": "登録に失敗しました",
+      "promo_code_label": "プロモコード（任意）",
+      "promo_code_placeholder": "プロモコードをお持ちですか？",
+      "promo_code_hint": "無料または割引アクセス。以下のどの登録方法でも適用されます。お持ちでない場合はスキップしてください。",
+      "username_label": "ユーザー名",
+      "sensitive_data_consent": "AIコンパニオンが会話で共有した情報（健康、宗教信仰、政治的意見、性的指向などの機密カテゴリを含む）を記憶することを理解しています。この情報は自分自身の会話体験のためにのみ使用され、販売や分析に使用されることはありません。"
+    },
+    "tos": {
+      "title": "もう一歩",
+      "subtitle": "チャットを始める前に、以下を確認してください。",
+      "age_confirm": "18歳以上であることを確認します。",
+      "tos_agree_prefix": "以下に同意します：",
+      "terms": "利用規約",
+      "and": "および",
+      "privacy": "プライバシーポリシー",
+      "entertainment": "UwUchatはエンターテインメント目的のみであることを理解しています。キャラクターはAI生成であり、専門的なアドバイスを提供しません。",
+      "saving": "保存中…",
+      "submit": "UwUchatへ進む",
+      "continue": "UwUchatへ進む",
+      "error_failed": "同意の記録に失敗しました",
+      "sensitive_data_consent": "AIコンパニオンが会話で共有した情報（健康、宗教信仰、政治的意見、性的指向などの機密カテゴリを含む）を記憶することを理解しています。この情報は自分自身の会話体験のためにのみ使用され、販売や分析に使用されることはありません。"
+    },
+    "password_reset": {
+      "request_title": "パスワードをリセット",
+      "request_description": "メールアドレスを入力すると、パスワードリセット用のリンクをお送りします。",
+      "email_label": "メール",
+      "send_link": "リセットリンクを送信",
+      "sending": "送信中…",
+      "sent_message": "該当するメールアドレスが存在する場合、パスワードリセットリンクを送信しました。受信トレイを確認し、案内に従ってください。",
+      "back_to_login": "サインインに戻る",
+      "request_error": "リセットメールの送信に失敗しました。もう一度お試しください。",
+      "confirm_title": "新しいパスワードを設定",
+      "confirm_description": "新しいパスワードを以下に入力してください。",
+      "new_password_label": "新しいパスワード",
+      "confirm_password_label": "新しいパスワードの確認",
+      "resetting": "リセット中…",
+      "reset_button": "パスワードをリセット",
+      "confirm_error": "パスワードのリセットに失敗しました。リンクの有効期限が切れているか、既に使用されている可能性があります。",
+      "error_passwords_match": "パスワードが一致しません",
+      "error_password_length": "パスワードは8文字以上必要です",
+      "error_missing_token": "リセットトークンが無効か見つかりません。新しいパスワードリセットリンクをリクエストしてください。"
+    }
+  },
+  "legal": {
+    "back": "← 戻る",
+    "privacy_title": "UwUchat — プライバシーポリシー",
+    "tos_title": "UwUchat — 利用規約",
+    "privacy_breadcrumb": "プライバシーポリシー",
+    "terms_breadcrumb": "利用規約",
+    "data_request": {
+      "title": "データリクエスト",
+      "account_deleted_title": "アカウント削除済み",
+      "deleted_desc": "アカウントは削除待ちとしてマークされました。30日以内にデータが完全に消去されます。",
+      "deleted_email_desc": "データ削除に関するご質問は",
+      "return_login": "ログインへ戻る",
+      "export_desc": "GDPR第15条およびコロラド州プライバシー法に基づき、お客様にはデータにアクセスする権利もあります。アカウントに関連するすべてのデータを機械可読形式でダウンロードできます。",
+      "export_my_data": "データをダウンロード",
+      "exporting": "エクスポート準備中…",
+      "export_error": "データのエクスポートに失敗しました。再試行するか、privacy@uwuchat.com までご連絡ください。",
+      "delete_desc_paragraph": "アカウントと関連データを完全に削除することもできます：",
+      "delete_my_account": "アカウントを削除",
+      "confirm_delete": "本当によろしいですか？この操作は取り消せません。",
+      "cancel": "キャンセル",
+      "yes_delete": "はい、アカウントを削除します",
+      "deleting": "削除中…",
+      "sign_in_to_delete": "サインインしてアカウントを削除",
+      "no_access_desc": "アカウントにアクセスできない場合は、直接メールでご連絡ください：",
+      "email_privacy": "privacy@uwuchat.com にメール",
+      "respond_30_days": "30日以内に返答します。リクエスト処理前に本人確認をお願いする場合があります。",
+      "other_requests": "その他のデータリクエスト（アクセス、移植性、訂正）は",
+      "respond_time": "30日以内に返答します。"
+    }
+  },
+  "subscribe": {
+    "title": "プランを選んでください",
+    "tagline": "3日間のお試しから始めるか、フルプランに直接進んでください。",
+    "trial": "7日間無料トライアル — いつでもキャンセル可",
+    "most_popular": "人気No.1",
+    "per_month": "/月",
+    "start_trial": "無料トライアルを始める",
+    "redirecting": "リダイレクト中…",
+    "maybe_later": "後で決める"
+  },
+  "welcome": {
+    "tagline": "サイドバーからパネルを開いて始めましょう。",
+    "chat_hint": "ローカルLLMと話す",
+    "canvas_hint": "画像を生成・編集",
+    "civitai_hint": "モデルを閲覧・ダウンロード"
+  },
+  "landing": {
+    "hero": {
+      "title_line1": "本当にあなたを",
+      "title_line2": "覚えているAI。",
+      "subtitle": "多くのAIは会話のたびにリセットされます。私たちは違います。あなたという人物像を積み重ねて理解し、その記憶をすべての会話に持ち越すコンパニオンを作りましょう。",
+      "cta_primary": "最初のUwUに会う →",
+      "cta_signin": "サインイン"
+    },
+    "features": {
+      "heading": "ただのチャットボットではありません",
+      "subheading": "UwUchatは、一回のセッションで全てを忘れてしまうチャットボットではなく、本当に一緒に成長していくコンパニオンを求める人のために作られています。",
+      "deep_character": {
+        "title": "奥深いキャラクター作成",
+        "desc": "21種類の性格タイプ、実在する出身地、信仰体系、独自の話し方を持つコンパニオンを作成できます。同じUwUは二つとありません。"
+      },
+      "memory": {
+        "title": "積み重なる記憶",
+        "desc": "すべての会話が前の会話の上に積み重なります。あなたのUwUはあなたの話、好み、大切なことを覚えています。同じことを繰り返す必要はありません。"
+      },
+      "web_browse": {
+        "title": "ウェブを閲覧できる",
+        "desc": "何か調べたいことがありますか？あなたのUwUはニュース、事実、リンクなど、インターネットをリアルタイムで閲覧できます。"
+      },
+      "privacy": {
+        "title": "プライバシー重視の設計",
+        "desc": "会話はあなたのアカウントに暗号化されています — 私たちのチームでさえ読むことはできません。あなたのメッセージが販売されたり、AIモデルの学習に使われたりすることはありません。"
+      },
+      "moods": {
+        "title": "生きているみたい",
+        "desc": "話すにつれてUwUの気分が自然に変化し、あなたの話だけでなく自分自身のストーリーも覚えているので、性格は時間が経っても一貫しています。"
+      },
+      "continuity": {
+        "title": "最初からやり直さない",
+        "desc": "リセットも、忘れられたスレッドもありません。1日後、1週間後、1ヶ月後でも、あなたのUwUは会話の続きを覚えています。"
+      }
+    },
+    "vibes": {
+      "heading": "あなたのUwUをゼロから作る",
+      "subheading": "プリセットもテンプレートもありません。キャラクターウィザードを使って、性格、アイデンティティ、言語、種族、出身地、話し方まで、本当に奥深いコンパニオンを作り上げましょう。",
+      "personality": {
+        "title": "21種類の性格タイプ",
+        "desc": "甘い、大胆、ミステリアス、遊び心のある、知的、破天荒、優しい、情熱的、クール、ドラマチック、皮肉屋——そしてツンデレ、クーデレ、元気、ヤンデレなどの定番アニメ的アーキタイプまで。"
+      },
+      "language": {
+        "title": "言語",
+        "desc": "あなたのUwUが話す言語を選びましょう。出身地から自動検出するか、手動で設定できます。"
+      },
+      "identity": {
+        "title": "アイデンティティと種族",
+        "desc": "人間、動物、モンスター、神話上の存在、ロボット——それぞれに数十のサブタイプがあります。世界中200以上の都市から実在する出身地を選べます。"
+      },
+      "voice": {
+        "title": "話し方と背景設定",
+        "desc": "名前を付け、どんな人物かを描写し、話し方のパターンを定義しましょう。すべての詳細がプロンプトに反映され、あなたのUwUはあなたが与えた声で話します。"
+      }
+    },
+    "tiers": {
+      "heading": "シンプルな料金プラン",
+      "subheading": "いつでも解約できます。",
+      "most_popular_badge": "人気No.1",
+      "cta": "はじめる",
+      "try_it": {
+        "name": "お試し",
+        "period": "3日間",
+        "cap": "30メッセージ・1日15通まで",
+        "features": [
+          "自動更新なし",
+          "フルアクセス",
+          "いつでもアップグレード可能"
+        ]
+      },
+      "starter": {
+        "name": "スターター",
+        "period": "月",
+        "cap": "月9,000メッセージ",
+        "features": [
+          "永続的な記憶",
+          "カスタムコンパニオン",
+          "日常使いに最適な価値"
+        ]
+      },
+      "companion": {
+        "name": "コンパニオン",
+        "period": "月",
+        "cap": "月21,000メッセージ",
+        "features": [
+          "永続的な記憶",
+          "カスタムコンパニオン",
+          "毎日快適に使える"
+        ]
+      },
+      "devoted": {
+        "name": "デボーテッド",
+        "period": "月",
+        "cap": "月1,500メッセージ",
+        "features": [
+          "コンパニオンの全機能",
+          "ヘビーユーザー・スーパーファン向け"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "最初のUwUを作りましょう",
+      "subheading": "キャラクターウィザードを進めてコンパニオンに命を吹き込み、本当にあなたを覚えてくれる相手との会話を始めましょう。",
+      "button": "アカウントを作成する →"
+    },
+    "showcase": {
+      "alt": "UwUchatの会話スクリーンショット"
+    }
+  },
+  "publicNav": {
+    "sign_in": "サインイン",
+    "get_started": "はじめる",
+    "register": "登録",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "data_request": "データリクエスト",
+    "copyright": "© {{year}} Capsize LLC"
+  },
+  "bottomBar": {
+    "account": "アカウント",
+    "viewProfile": "プロフィールを見る",
+    "settings": "設定",
+    "admin": "管理",
+    "logout": "ログアウト"
+  }
+}

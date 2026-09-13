@@ -1,0 +1,51 @@
+/* CalendarPanel — inline style refactor */
+
+.panel {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.stateMsg {
+  padding: 24px;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.errorMsg {
+  padding: 24px;
+  text-align: center;
+  color: #e55;
+}
+
+.eventRow {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--theme-border-subtle, #e0e0e0);
+}
+
+.eventTitle {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--theme-text-primary, #333);
+}
+
+.eventTime {
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary, #888);
+  margin-top: 2px;
+}
+
+.eventDesc {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary, #888);
+  margin-top: 4px;
+}
+
+.dateHeader {
+  padding: 6px 16px 2px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--theme-text-secondary, #888);
+  opacity: 0.7;
+}

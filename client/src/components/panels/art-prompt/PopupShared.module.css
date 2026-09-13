@@ -1,0 +1,104 @@
+/* PopupShared — reusable portal popup atoms (framework) */
+
+.popupFixed {
+  position: fixed;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  z-index: 1300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Menu-style popup buttons ──────────────────────────── */
+.menuBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  color: var(--theme-text);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.menuBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menuBtnDisabled {
+  composes: menuBtn;
+  cursor: default;
+  opacity: 0.4;
+}
+
+.menuBtnDisabled:hover {
+  background: transparent;
+}
+
+/* ── Dropdown option row ────────────────────────────────── */
+.dropdownOpt {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 12px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--theme-text);
+  font-size: 0.78rem;
+  background: transparent;
+  border-left: 2px solid transparent;
+}
+
+.dropdownOpt:hover {
+  background: rgba(var(--theme-text-rgb), 0.08);
+}
+
+.dropdownOptActive {
+  composes: dropdownOpt;
+  background: rgba(var(--theme-primary-rgb), 0.10);
+  color: var(--bs-primary);
+  border-left-color: var(--bs-primary);
+}
+
+.dropdownOptActive:hover {
+  background: rgba(var(--theme-primary-rgb), 0.18);
+}
+
+/* ── Gen-type button row ────────────────────────────────── */
+.genTypeBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--theme-text);
+  font-size: 0.78rem;
+  background: transparent;
+  border-left: 2px solid transparent;
+}
+
+.genTypeBtn:hover {
+  background: rgba(var(--theme-text-rgb), 0.08);
+}
+
+.genTypeBtnActive {
+  composes: genTypeBtn;
+  background: rgba(var(--theme-primary-rgb), 0.10);
+  color: var(--bs-primary);
+  border-left-color: var(--bs-primary);
+}
+
+.genTypeBtnActive:hover {
+  background: rgba(var(--theme-primary-rgb), 0.10);
+}
+
+.genTypeDesc {
+  font-size: 0.65rem;
+  opacity: 0.55;
+  font-weight: 400;
+}
