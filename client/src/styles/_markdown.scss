@@ -1,0 +1,211 @@
+/* ── Markdown content styling (math, code, tables, blockquotes, hr) ── */
+
+/* ── Inline code ── */
+:not(pre) > code {
+  background: var(--theme-input-bg);
+  color: var(--theme-text-secondary);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family:
+    "Cascadia Code", "Fira Code", "JetBrains Mono", Consolas,
+    "Liberation Mono", monospace;
+}
+
+/* ── Fenced code blocks ── */
+.code-block-wrapper {
+  margin: 0.5em 0;
+  border: 1px solid var(--theme-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--theme-input-bg);
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  background: rgba(var(--theme-primary-rgb), 0.1);
+  border-bottom: 1px solid var(--theme-border);
+  font-size: 0.75rem;
+}
+
+.code-block-lang {
+  color: var(--theme-text-secondary);
+  font-weight: 600;
+  text-transform: none;
+}
+
+.code-block-copy-btn {
+  background: none;
+  border: 1px solid var(--theme-border);
+  color: var(--theme-text-secondary);
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition:
+    color 0.12s ease,
+    border-color 0.12s ease;
+
+  &:hover {
+    color: var(--theme-text);
+    border-color: var(--theme-text-secondary);
+  }
+}
+
+.code-block-pre {
+  margin: 0;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  font-family:
+    "Cascadia Code", "Fira Code", "JetBrains Mono", Consolas,
+    "Liberation Mono", monospace;
+  color: var(--theme-text);
+  background: var(--theme-input-bg);
+
+  code {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+}
+
+/* ── KaTeX math output ── */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0.75em 0;
+}
+
+.katex-display > .katex {
+  white-space: normal;
+}
+
+/* Math rendering error fallback */
+.math-error {
+  color: var(--bs-danger);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+/* AsciiMath block */
+.asciimath-block {
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.asciimath-error {
+  padding: 10px;
+  background: rgba(255, 85, 85, 0.08);
+  border: 1px solid rgba(255, 85, 85, 0.2);
+  border-radius: 4px;
+
+  pre {
+    margin: 0 0 4px;
+    color: var(--theme-text);
+    font-size: 0.8rem;
+  }
+}
+
+.asciimath-error-msg {
+  color: var(--bs-danger);
+  font-size: 0.75rem;
+}
+
+/* ── Tables ── */
+.message-bubble table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5em 0;
+  font-size: 0.85rem;
+}
+
+.message-bubble th,
+.message-bubble td {
+  border: 1px solid var(--theme-border);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.message-bubble th {
+  background: rgba(var(--theme-primary-rgb), 0.1);
+  color: var(--theme-heading);
+  font-weight: 600;
+}
+
+.message-bubble td {
+  color: var(--theme-text);
+}
+
+/* ── Blockquotes ── */
+.message-bubble blockquote {
+  border-left: 3px solid var(--theme-primary);
+  margin: 0.5em 0;
+  padding: 4px 12px;
+  color: var(--theme-text-secondary);
+  background: rgba(var(--theme-primary-rgb), 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+.message-bubble blockquote p {
+  margin: 0;
+  color: inherit;
+}
+
+/* ── Horizontal rules ── */
+.message-bubble hr {
+  border: none;
+  border-top: 1px solid var(--theme-border);
+  margin: 1em 0;
+}
+
+/* ── Highlight.js theme overrides (for rehype-highlight) ── */
+/* Dark themes used for all AIRunner themes; customize via CSS vars. */
+.hljs {
+  color: var(--theme-text);
+  background: transparent;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #c792ea;
+}
+
+.hljs-string,
+.hljs-addition {
+  color: #c3e88d;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #f78c6c;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #676e95;
+  font-style: italic;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #82aaff;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable {
+  color: #f07178;
+}
+
+.hljs-built_in,
+.hljs-selector-class {
+  color: #ffcb6b;
+}

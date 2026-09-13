@@ -1,0 +1,56 @@
+.root {
+  padding: 4px 6px;
+  gap: 2px;
+}
+
+.toolBtn {
+  flex: 1;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  transition: background 0.1s, color 0.1s;
+}
+
+.toolBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.toolBtnActive {
+  background: rgba(99, 153, 255, 0.22);
+  color: #6fa8ff;
+  box-shadow: inset 0 0 0 1.5px rgba(99, 153, 255, 0.55);
+}
+
+.toolBtnActive:hover {
+  background: rgba(99, 153, 255, 0.22);
+  color: #6fa8ff;
+}
+
+.iconBtn {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}

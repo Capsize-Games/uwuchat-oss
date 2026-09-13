@@ -1,0 +1,86 @@
+/* CallChainInspector — inline style refactor */
+
+.error {
+  color: #f87171;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.summaryLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.summaryCost {
+  font-size: 14px;
+  color: #6c63ff;
+  font-weight: 700;
+}
+
+.tokenInfo {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 8px;
+}
+
+.stepRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 6px 0;
+}
+
+.stepHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.stepName {
+  font-size: 11px;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.skippedTag {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-left: 4px;
+}
+
+.stepCost {
+  font-size: 10px;
+  color: #4ade80;
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+.stepMeta {
+  margin-left: 12px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 2px;
+}
+
+.stepModel {
+  font-family: monospace;
+}
+
+.tierName {
+  margin-left: 4px;
+}

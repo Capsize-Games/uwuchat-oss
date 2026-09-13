@@ -1,0 +1,20 @@
+/* Layout — panel sizing and footer padding */
+
+.chatPanelCanvasOpen {
+  flex: none;
+  overflow: hidden;
+}
+
+.chatPanelAlone {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.footerBar {
+  padding: 0 12px;
+}
+
+.footerRight {
+  gap: 12px;
+}

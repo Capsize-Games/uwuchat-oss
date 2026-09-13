@@ -1,0 +1,873 @@
+{
+  "onboarding_tour": {
+    "system_bot_label": "Your Assistant",
+    "system_bot_text": "This is your assistant UwU. He is aware that he is a chatbot assistant.",
+    "rp_bot_label": "Role-Play Bot",
+    "rp_bot_text": "These are role-play chatbots. These bots are not aware that they are bots. They believe they're real and will stay in character.",
+    "next": "Next",
+    "close": "Got it"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading…"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "heading": "Language Settings",
+      "gui_label": "GUI Language",
+      "user_label": "User Language",
+      "uwu_label": "UwU Language"
+    },
+    "nav": {
+      "integrations": "Linked Accounts",
+      "privacy": "Third-party Services",
+      "image_export": "Image Export",
+      "memory": "Memory",
+      "keyboard_shortcuts": "Keyboard Shortcuts",
+      "immersion": "Immersion",
+      "user": "User Settings",
+      "tts": "Text-to-Speech",
+      "sound": "Speech-to-Text",
+      "prompt_templates": "Prompt Templates",
+      "appearance": "Theme",
+      "language": "Language",
+      "location": "Location",
+      "account": "Account & Legal",
+      "headlesscode": "Coding Sessions",
+      "hostexec": "Host Commands"
+    },
+    "location": {
+      "description": "Your UwU uses your location to talk about real things — the weather outside your window, what's happening in the world near you.",
+      "current": "Current location",
+      "no_location": "No location set. Add one below for weather and local context.",
+      "use_current": "Use my current location",
+      "auto_update_on": "Auto-updating",
+      "detect_once": "Detect once",
+      "saved": "Location saved",
+      "or_manually": "— or enter manually —",
+      "city": "City",
+      "country": "Country (optional)",
+      "search": "Find location",
+      "not_available": "Browser location not available.",
+      "detecting": "Detecting…",
+      "blocked": "Location blocked. Enter your city below.",
+      "looking_up": "Looking up…",
+      "not_found": "City not found. Try a larger nearby city."
+    },
+    "account": {
+      "heading": "Account",
+      "email": "Email:",
+      "username": "Username:",
+      "view_profile": "View my profile",
+      "email_unverified": "Your email address has not been verified.",
+      "subscription_heading": "Subscription",
+      "linked_accounts_heading": "Linked Accounts",
+      "linked_accounts_desc": "Connect your Spotify account to share your music taste on your profile. Manage linked accounts in",
+      "linked_accounts_link": "Linked Accounts",
+      "linked_accounts_suffix": "in the settings sidebar.",
+      "legal_heading": "Legal",
+      "terms_of_service": "Terms of Service",
+      "privacy_policy": "Privacy Policy",
+      "danger_zone": "Danger Zone",
+      "danger_desc": "Permanently delete your account and all associated data. This cannot be undone.",
+      "delete_account": "Delete Account",
+      "no_subscription": "No active subscription. Subscribe to unlock full access.",
+      "view_plans": "View plans",
+      "plan_label": "Plan:",
+      "status_label": "Status:",
+      "free_trial": "Free trial",
+      "trial_ends": "Trial ends:",
+      "renews": "Renews:",
+      "manage_subscription": "Manage subscription",
+      "change_plan": "Change Plan",
+      "current_plan": "Current plan",
+      "promo_heading": "Promo Code"
+    },
+    "immersion": {
+      "heading": "Immersion",
+      "level_label": "Immersion Level",
+      "minimal": "Minimal",
+      "minimal_label": "Minimal",
+      "full": "Full",
+      "full_label": "Full",
+      "minimal_desc": "Responses stream in. The typing indicator and artificial delays are disabled.",
+      "full_desc": "The chatbot simulates reading your message, thinking, and typing the response. A \"{name} is typing…\" indicator is shown while you wait.",
+      "description": "Choose how immersive you want conversations to feel."
+    },
+    "integrations": {
+      "title": "Linked Accounts",
+      "heading": "Linked Accounts",
+      "desc": "Connect external services to enhance your profile.",
+      "spotify_desc": "Share your music taste on your profile",
+      "spotify_importing": "Importing your Spotify data…",
+      "connect_spotify": "Connect Spotify",
+      "spotify_connect": "Connect Spotify",
+      "spotify_last_synced": "Last synced:",
+      "last_synced": "Last synced:",
+      "spotify_view_profile": "View my profile",
+      "view_my_profile": "View my profile",
+      "spotify_refresh": "Refresh Data",
+      "refresh_data": "Refresh Data",
+      "spotify_refreshing": "Refreshing…",
+      "refreshing": "Refreshing…",
+      "spotify_disconnect": "Disconnect",
+      "disconnect": "Disconnect",
+      "spotify_disconnecting": "Disconnecting…",
+      "disconnecting": "Disconnecting…",
+      "spotify_retry": "Retry",
+      "retry": "Retry",
+      "steam_desc": "Share your gaming life on your profile",
+      "steam_connect": "Connect Steam",
+      "connect_steam": "Connect Steam",
+      "steam_connecting": "Connecting…",
+      "connecting": "Connecting…",
+      "importing_spotify": "Importing your Spotify data…",
+      "connect_itch": "Connect itch.io",
+      "itch_desc": "Show your itch.io game library on your profile.",
+      "connect_bluesky": "Connect Bluesky",
+      "bluesky_desc": "Show your recent Bluesky posts on your profile.",
+      "bluesky_app_password_hint": "Create an app password at bsky.social/settings/app-passwords — never use your main account password.",
+      "bluesky_handle_placeholder": "handle (e.g. user.bsky.social)",
+      "bluesky_placeholder": "app password (xxxx-xxxx-xxxx-xxxx)",
+      "bluesky_connecting": "Connecting…",
+      "connected_label_steam": "✅ Steam Connected",
+      "connected_label_itch": "✅ itch.io Connected",
+      "connected_label_bluesky": "✅ Bluesky Connected"
+    },
+    "prompt_templates": {
+      "heading": "Prompt Templates",
+      "no_templates": "No templates available.",
+      "template_label": "Template",
+      "use_guardrails": "Use guardrails",
+      "use_datetime": "Use datetime in system prompt"
+    },
+    "social_links": {
+      "heading": "Social Links",
+      "desc": "Add links to your social media profiles. These will appear on your public profile page.",
+      "no_links": "No social links yet. Add one below!",
+      "sign_in": "Sign in to manage your social links.",
+      "save": "Save",
+      "edit": "Edit",
+      "add_link": "Add a social link",
+      "all_added": "All available services have been added. 🎉"
+    },
+    "promo": {
+      "heading": "Promo Code",
+      "placeholder": "Enter code",
+      "redeem": "Redeem",
+      "error": "Invalid code",
+      "redeemed": "Code applied!",
+      "redeemed_tier": "Code applied! You now have {{tier}} access."
+    }
+  },
+  "sidebar": {
+    "account": "Account",
+    "contacts": "Contacts",
+    "new_contact": "Create a new companion",
+    "new_uwu": "Create new UwU",
+    "assistant": "ASSISTANT",
+    "no_contacts": "No contacts yet. Start a conversation!",
+    "deceased": "Deceased",
+    "generating_character": "Generating character...",
+    "generation_failed": "Character creation failed. Please try again.",
+    "uwu_ready_title": "Your new UwU is ready! ✨",
+    "uwu_ready_body": "{{name}} has finished generating and is ready to chat.",
+    "uwu_ready_cta": "Start chatting"
+  },
+  "setup": {
+    "language": {
+      "description": "Your UwU will speak with you in the language you choose.",
+      "continue": "Continue →"
+    },
+    "name": {
+      "desc": "Your UwU will use this to address you naturally in conversation.",
+      "placeholder": "Your first name or nickname",
+      "continue": "Continue",
+      "skip": "Skip"
+    },
+    "gender": {
+      "desc": "Your UwU will use the right pronouns when talking about you.",
+      "skip": "Skip this step",
+      "she_her": "She / Her",
+      "he_him": "He / Him",
+      "they_them": "They / Them",
+      "prefer_not": "Prefer not to say"
+    },
+    "location": {
+      "desc": "Your UwU uses your location to talk about real things — the weather outside your window, what's happening in the world near you.",
+      "use_current": "Use my current location",
+      "or_manually": "— or enter manually —",
+      "city_placeholder": "City",
+      "country_placeholder": "Country (optional)",
+      "save_location": "Save location",
+      "skip": "Skip",
+      "not_available": "Browser location not available.",
+      "detecting": "Detecting…",
+      "blocked": "Location blocked. Enter your city below.",
+      "city_required": "Please enter a city.",
+      "looking_up": "Looking up…",
+      "not_found": "City not found. Try a larger nearby city."
+    },
+    "wizard": {
+      "step_of": "Setup — {{step}} of {{total}}",
+      "meet_uwu": "Meet my UwU ✨"
+    },
+    "step_titles": {
+      "name": "What's your name?",
+      "gender": "How do you identify?",
+      "language": "Choose your language",
+      "location": "Where are you?",
+      "done": "You're all set!",
+      "subscribe": "Choose your plan",
+      "avatar": "Profile Picture",
+      "banner": "Banner Image",
+      "status": "Status",
+      "kaomoji": "Kaomoji",
+      "verify_email": "Verify Email"
+    },
+    "steps": {
+      "skip": "Skip",
+      "save": "Save",
+      "done": "Done",
+      "uploading": "Uploading…",
+      "avatar_desc": "Add a photo so your UwUs recognize you.",
+      "banner_desc": "Choose a header image for your profile.",
+      "status_desc": "Let your UwUs know what's on your mind.",
+      "kaomoji_desc": "Pick a kaomoji — it appears on your profile card.",
+      "verify_email_desc": "Confirm your email so you can recover your account.",
+      "upload_avatar": "Upload Photo",
+      "upload_banner": "Upload Banner",
+      "status_placeholder": "What's on your mind?",
+      "send_verification": "Send verification email",
+      "resend_verification": "Resend verification email",
+      "sending": "Sending…",
+      "verification_sent": "Check your inbox! A verification link has been sent to {{email}}.",
+      "already_verified": "Your email is verified ✅"
+    }
+  },
+  "chat": {
+    "contacts": "Contacts",
+    "cancel": "Cancel",
+    "send": "Send",
+    "type_message": "Type a message…",
+    "blocked_placeholder": "This character has blocked you.",
+    "loading_conversation": "Loading conversation…",
+    "blocked_label": "blocked",
+    "view_profile": "View profile",
+    "profile_link": "profile",
+    "choice_modal": {
+      "title": "Add a new UwU",
+      "subtitle": "Generate one instantly, or design your own.",
+      "random_label": "Random UwU",
+      "random_sub": "Surprise me",
+      "random_generating": "Generating...",
+      "generating": "Generating...",
+      "build_label": "Build your own",
+      "build_sub": "Step by step"
+    },
+    "creator": {
+      "name_your_uwu": "Name Your UwU",
+      "who_is_this": "Who is this character?",
+      "name_label": "Name",
+      "about_label": "About this UwU",
+      "optional": "(optional)",
+      "speech_label": "Signature speech patterns",
+      "speech_patterns_label": "Signature speech patterns",
+      "speech_patterns_hint": "These are enforced in every response — the chatbot will not drift from them.",
+      "creating": "Creating…",
+      "begin_story": "Begin Story →",
+      "next": "Next →",
+      "skip": "Skip this step",
+      "step_emoji_title": "Choose a Profile Emoji",
+      "step_emoji_subtitle": "Pick an emoji that represents this character.",
+      "step_gender_title": "Choose a Gender",
+      "step_gender_subtitle": "This shapes how the character refers to themselves.",
+      "step_personality_title": "Personality Type",
+      "step_personality_subtitle": "Choose a core personality archetype.",
+      "step_subtype_title": "Pick a Subtype",
+      "step_subtype_subtitle": "Choose a subtype of {{type}}.",
+      "step_species_title": "Choose Species",
+      "step_species_subtitle": "What kind of being is this character?",
+      "step_language_title": "Languages",
+      "step_language_auto": "Auto-detected from {{city}}. You can change it.",
+      "step_language_hint": "Choose languages this character speaks.",
+      "step_location_title": "Where Do They Live?",
+      "step_location_subtitle": "Pick a real-world home base for your character."
+    },
+    "message": {
+      "copy": "Copy message",
+      "delete_admin": "Delete message (admin)",
+      "copied": "Copied!",
+      "inspect_flow": "Inspect Flow",
+      "copy_mermaid": "📋 Copy Mermaid",
+      "copied_mermaid": "✓ Copied!",
+      "turn": "Turn",
+      "report": "Report message",
+      "system_label": "System"
+    },
+    "report": {
+      "title": "Report message",
+      "reason_inappropriate": "Inappropriate",
+      "reason_harmful_unsafe": "Harmful/unsafe",
+      "reason_off_character": "Off-character",
+      "reason_other": "Other",
+      "detail_placeholder": "Optional detail (max 500 chars)",
+      "cancel": "Cancel",
+      "submit": "Submit report",
+      "received": "Report received. Thank you.",
+      "close": "Close",
+      "admin_title": "Reports",
+      "refresh": "Refresh",
+      "loading": "Loading…",
+      "no_reports": "No reports yet.",
+      "total": "total",
+      "col_time": "Time",
+      "col_reporter": "Reporter",
+      "col_type": "Type",
+      "col_reason": "Reason",
+      "type_auto": "Auto-flagged",
+      "type_user": "User report"
+    },
+    "view": {
+      "inspection_on": "🔬 Inspection ON",
+      "inspection_off": "🔬 Inspection OFF",
+      "unblock": "Unblock",
+      "offline_message": "{{name}} is offline right now — messages will go through when they return.",
+      "has_blocked": "{{name}} has blocked you.",
+      "you_blocked": "You've blocked {{name}}.",
+      "profile_panel": "Profile",
+      "my_profile_panel": "My Profile",
+      "flow_detail_panel": "Flow Detail",
+      "fastsearch_panel": "FastSearch Status",
+      "users_panel": "Users",
+      "input_prompt": "Input prompt",
+      "output_response": "Output response"
+    },
+    "empty_placeholder": {
+      "greeting_fallback": "Start a conversation by typing a message below.",
+      "greeting_with_name": "Say hi to {{name}} — start a conversation below.",
+      "opener_how_are_you": "How's your day going?",
+      "opener_what_can_you_do": "What can you help me with?"
+    }
+  },
+  "iconbar": {
+    "home": "UwUchat",
+    "users_label": "Users",
+    "admin_users": "Admin Users"
+  },
+  "rooms": {
+    "profile": {
+      "back": "← back",
+      "loading": "Loading…",
+      "not_found": "Profile not found.",
+      "hangs_out_in": "Hangs out in",
+      "posts_tab": "posts",
+      "shop_tab": "shop",
+      "loading_posts": "Loading posts…",
+      "no_posts": "Nothing posted recently.",
+      "loading_inventory": "Loading…",
+      "no_items": "No items yet.",
+      "card_tab": "Card",
+      "items_tab": "Items",
+      "generate_images": "Generate profile images",
+      "generating_images": "Generating…",
+      "unblock": "Unblock",
+      "omnipotent_knowledge": "🌐 Shared Memory",
+      "omnipotent_on": "Can recall things you've told your other UwUs.",
+      "omnipotent_off": "Only remembers this conversation.",
+      "block": "Block {{name}}",
+      "has_blocked": "{{name}} has blocked you.",
+      "you_blocked": "You've blocked {{name}}.",
+      "enable_omnipotent": "Enable shared memory",
+      "disable_omnipotent": "Disable shared memory",
+      "bio_empty": "{{name}} hasn't written a bio yet.",
+      "settings_label": "Settings",
+      "currently_label": "Currently"
+    },
+    "profile_view": {
+      "loading": "Loading…",
+      "unblock": "Unblock",
+      "omnipotent_knowledge": "🌐 Shared Memory",
+      "omnipotent_on": "Can recall things you've told your other UwUs.",
+      "omnipotent_off": "Only remembers this conversation.",
+      "enable_omnipotent": "Enable shared memory",
+      "disable_omnipotent": "Disable shared memory",
+      "bio_empty": "{{name}} hasn't written a bio yet.",
+      "settings_label": "Settings",
+      "currently_label": "Currently"
+    }
+  },
+  "panels": {
+    "uwu_row": {
+      "remove": "Remove",
+      "cancel": "Cancel",
+      "remove_title": "Remove from contacts"
+    },
+    "uwu_list": {
+      "remove": "Remove",
+      "cancel": "Cancel",
+      "remove_title": "Remove from contacts"
+    }
+  },
+  "user": {
+    "profile_page": {
+      "back": "← back",
+      "no_status": "No status set",
+      "followers": "Followers",
+      "saved_tracks": "Saved Tracks",
+      "followed_artists": "Followed Artists",
+      "playlists": "Playlists"
+    },
+    "profile_panel": {
+      "click_to_add_banner": "Click to add banner",
+      "click_to_set_status": "Click to set status",
+      "status_placeholder": "What's on your mind?",
+      "what_on_mind": "Click to set status...",
+      "weather_unavailable": "Weather unavailable — set your location in Settings → Location",
+      "tab_weather": "Weather",
+      "tab_games": "Games",
+      "tab_posts": "Posts",
+      "tab_links": "Links"
+    },
+    "weather": {
+      "updated_at": "Updated {{time}}",
+      "feels_like": "Feels like",
+      "humidity": "Humidity",
+      "cloud_cover": "Cloud cover",
+      "uv_index": "UV index",
+      "wind": "Wind",
+      "gusts": "Gusts",
+      "precip": "Precipitation",
+      "rain": "Rain",
+      "snow": "Snow",
+      "forecast": "10-Day Forecast",
+      "forecast_day": "Day",
+      "forecast_condition": "Condition",
+      "forecast_hi_lo": "Hi/Lo",
+      "forecast_rain": "Rain",
+      "today": "Today",
+      "night": "(night)",
+      "weekdays": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ],
+      "uv_low": "Low",
+      "uv_moderate": "Moderate",
+      "uv_high": "High",
+      "uv_very_high": "Very High",
+      "uv_extreme": "Extreme",
+      "label_clear": "Clear",
+      "label_partly_cloudy": "Partly cloudy",
+      "label_overcast": "Overcast",
+      "label_haze": "Haze",
+      "label_dust": "Dust/Sand",
+      "label_fog": "Fog",
+      "label_drizzle": "Drizzle",
+      "label_showers": "Showers",
+      "label_snow_showers": "Snow showers",
+      "label_thunderstorm": "Thunderstorm",
+      "label_unknown": "Unknown",
+      "weather_unavailable_card": "🌤 Weather unavailable — set your location in Settings → Location"
+    },
+    "image_upload": {
+      "uploading": "Uploading…",
+      "click_to_change": "Click to change {{type}}",
+      "upload_failed": "Upload failed",
+      "too_large": "Image too large (max {{max}} MB)"
+    },
+    "not_found": {
+      "title": "Profile not found",
+      "your_profile_at": "Your profile is at",
+      "not_logged_in": "Not logged in.",
+      "back_to_app": "Back to UwUchat"
+    },
+    "profile_not_found": {
+      "title": "Profile not found",
+      "your_profile_at": "Your profile is at",
+      "not_logged_in": "Not logged in.",
+      "back_to_app": "Back to UwUchat"
+    },
+    "spotify": {
+      "top_artists": "Top Artists",
+      "top_tracks": "Top Tracks",
+      "playlists": "Playlists",
+      "recently_played": "Recently Played",
+      "past_month": "Past Month",
+      "past_6_months": "Past 6 Months",
+      "all_time": "All Time",
+      "no_artists": "No top artists data",
+      "no_tracks": "No top tracks data",
+      "no_playlists": "No playlists",
+      "no_recent": "No recently played tracks"
+    },
+    "steam": {
+      "recently_played": "Recently Played",
+      "most_played": "Most Played",
+      "no_recent": "No recently played games.",
+      "no_games": "No games found.",
+      "steam_level": "Steam Level",
+      "games_owned": "Games Owned",
+      "total_hours": "Total Hours",
+      "friends": "Friends",
+      "importing": "Steam data is being imported…",
+      "connect_own": "Connect your Steam account to share your game library.",
+      "not_linked": "{{name}} hasn't linked their Steam yet.",
+      "connect_steam": "Connect Steam",
+      "section_stats": "Stats",
+      "section_recently_played": "Recently Played",
+      "stat_games": "Games",
+      "stat_hours": "Hours"
+    },
+    "steam_stats": {
+      "steam_level": "Steam Level",
+      "games_owned": "Games Owned",
+      "total_hours": "Total Hours",
+      "friends": "Friends"
+    },
+    "bluesky": {
+      "no_posts": "No posts found.",
+      "add_handle": "Add your Bluesky handle in the Links tab."
+    },
+    "panel_bluesky": {
+      "no_posts": "No posts found.",
+      "add_handle": "Add your Bluesky handle in the Links tab."
+    },
+    "social": {
+      "edit_links": "Edit Social Links",
+      "done": "Done",
+      "add_links": "+ Add social links",
+      "all_added": "All services added! 🎉",
+      "username_placeholder": "username or URL"
+    },
+    "social_links": {
+      "edit_links": "Edit Social Links",
+      "done": "Done",
+      "add_links": "+ Add social links",
+      "all_added": "All services added! 🎉",
+      "username_placeholder": "username or URL"
+    },
+    "panel_music": {
+      "top_artists": "Top Artists",
+      "top_tracks": "Top Tracks",
+      "playlists": "Playlists",
+      "recently_played": "Recently Played",
+      "past_month": "Past Month",
+      "past_6_months": "Past 6 Months",
+      "all_time": "All Time",
+      "no_artists": "No top artists data",
+      "no_tracks": "No top tracks data",
+      "no_playlists": "No playlists",
+      "no_recent": "No recently played tracks",
+      "no_recently_played": "No recently played tracks"
+    },
+    "steam_data": {
+      "tab_recent": "Recently Played",
+      "tab_most_played": "Most Played",
+      "no_recent": "No recently played games.",
+      "no_games": "No games found."
+    },
+    "steam_not_connected": {
+      "importing": "Steam data is being imported…",
+      "connect_own": "Connect your Steam account to share your game library.",
+      "not_linked": "{{name}} hasn't linked their Steam yet.",
+      "connect_steam": "Connect Steam"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "email_label": "Email",
+      "password_label": "Password",
+      "submit": "Sign In",
+      "submitting": "Signing in…",
+      "divider_or": "or",
+      "google": "Sign in with Google",
+      "steam": "Sign in with Steam",
+      "steam_connecting": "Connecting to Steam…",
+      "bluesky": "Sign in with Bluesky",
+      "bluesky_connecting": "Connecting to Bluesky…",
+      "no_account": "Don't have an account?",
+      "register_link": "Register",
+      "error_default": "Login failed",
+      "error_oauth_state": "Sign-in failed due to a security issue. Please try again.",
+      "error_oauth_failed": "Sign-in failed. Please try again.",
+      "error_steam_auth_failed": "Steam sign-in failed. Please try again.",
+      "error_google_oauth_not_configured": "Google sign-in isn't available right now — please use email/password or try again later.",
+      "error_twitch_oauth_not_configured": "Twitch sign-in isn't available right now — please use email/password or try again later.",
+      "error_email_exists": "An account with this email already exists. Sign in with your password.",
+      "verified_success": "Email verified successfully. You can now sign in.",
+      "reset_success": "Your password has been reset. You can now sign in with your new password.",
+      "forgot_password": "Forgot your password?"
+    },
+    "register": {
+      "title": "Create Account",
+      "email": "Email",
+      "email_label": "Email",
+      "username": "Username",
+      "username_label": "Username",
+      "password": "Password",
+      "password_label": "Password",
+      "confirm_password": "Confirm Password",
+      "confirm_password_label": "Confirm Password",
+      "invite_code": "Invite Code",
+      "invite_code_label": "Invite Code (optional)",
+      "invite_placeholder": "Enter your invite code",
+      "invite_code_placeholder": "Enter your invite code",
+      "age_confirm": "I am 18 years of age or older.",
+      "tos_agree_prefix": "I have read and agree to the",
+      "tos_agree_before": "I have read and agree to the",
+      "terms": "Terms of Service",
+      "terms_of_service": "Terms of Service",
+      "and": "and",
+      "tos_agree_and": "and",
+      "privacy": "Privacy Policy",
+      "privacy_policy": "Privacy Policy",
+      "tos_agree_suffix": ".",
+      "entertainment": "I understand that UwUchat is for entertainment purposes only. Characters are AI-generated and do not provide professional advice of any kind.",
+      "entertainment_confirm": "I understand that UwUchat is for entertainment purposes only. Characters are AI-generated and do not provide professional advice of any kind.",
+      "sensitive_data_consent": "I understand that the AI companion remembers information I share in conversation, which may include sensitive categories (health, religious beliefs, political opinions, sexual orientation, etc.). This information is used only for my own conversational experience — it is never sold or used for analytics.",
+      "creating": "Creating account…",
+      "submit": "Create Account",
+      "google": "Sign up with Google",
+      "back": "Back",
+      "sign_up_email": "Sign up with email",
+      "sign_up_google": "Sign up with Google",
+      "sign_up_steam": "Sign up with Steam",
+      "sign_up_bluesky": "Sign up with Bluesky",
+      "bluesky_connecting": "Connecting to Bluesky…",
+      "have_account": "Already have an account?",
+      "already_have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "verify_title": "Check your email",
+      "verify_desc": "We sent a verification link to",
+      "verify_desc_before": "We sent a verification link to",
+      "verify_desc_after": "Check your inbox and follow the link to activate your account.",
+      "verify_waiting": "You are signed in and can use the app while waiting.",
+      "verify_signed_in": "You are signed in and can use the app while waiting.",
+      "continue": "Continue to App",
+      "continue_to_app": "Continue to App",
+      "error_password_match": "Passwords do not match",
+      "error_passwords_match": "Passwords do not match",
+      "error_password_length": "Password must be at least 8 characters",
+      "error_failed": "Registration failed",
+      "promo_code_label": "Promo Code (optional)",
+      "promo_code_placeholder": "Have a promo code?",
+      "promo_code_hint": "Free or discounted access. Applies to whichever signup method you use below. Skip if you don't have one."
+    },
+    "tos": {
+      "title": "One more step",
+      "subtitle": "Before you start chatting, please confirm the following.",
+      "age_confirm": "I am 18 years of age or older.",
+      "tos_agree_prefix": "I have read and agree to the",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy",
+      "entertainment": "I understand that UwUchat is for entertainment purposes only. Characters are AI-generated and do not provide professional advice of any kind.",
+      "sensitive_data_consent": "I understand that the AI companion remembers information I share in conversation, which may include sensitive categories (health, religious beliefs, political opinions, sexual orientation, etc.). This information is used only for my own conversational experience — it is never sold or used for analytics.",
+      "saving": "Saving…",
+      "submit": "Continue to UwUchat",
+      "continue": "Continue to UwUchat",
+      "error_failed": "Failed to record agreement"
+    },
+    "password_reset": {
+      "request_title": "Reset your password",
+      "request_description": "Enter your email address and we'll send you a link to reset your password.",
+      "email_label": "Email",
+      "send_link": "Send reset link",
+      "sending": "Sending…",
+      "sent_message": "If that email exists, a password-reset link has been sent. Check your inbox and follow the instructions.",
+      "back_to_login": "Back to sign in",
+      "request_error": "Failed to send reset email. Please try again.",
+      "confirm_title": "Choose a new password",
+      "confirm_description": "Enter your new password below.",
+      "new_password_label": "New Password",
+      "confirm_password_label": "Confirm New Password",
+      "resetting": "Resetting…",
+      "reset_button": "Reset Password",
+      "confirm_error": "Failed to reset password. The link may have expired or already been used.",
+      "error_passwords_match": "Passwords do not match",
+      "error_password_length": "Password must be at least 8 characters",
+      "error_missing_token": "Missing or invalid reset token. Please request a new password-reset link."
+    }
+  },
+  "legal": {
+    "back": "← Back",
+    "privacy_title": "UwUchat — Privacy Policy",
+    "tos_title": "UwUchat — Terms of Service",
+    "privacy_breadcrumb": "Privacy Policy",
+    "terms_breadcrumb": "Terms of Service",
+    "data_request": {
+      "title": "Data Request",
+      "account_deleted_title": "Account Deleted",
+      "deleted_desc": "Your account has been marked for deletion. Your data will be permanently purged within 30 days in accordance with our",
+      "deleted_email_desc": "If you have any questions about your data deletion, email",
+      "return_login": "Return to Login",
+      "export_desc": "Under the GDPR (Article 15) and the Colorado Privacy Act, you also have the right to access your data. Download a machine-readable copy of everything tied to your account.",
+      "export_my_data": "Download My Data",
+      "exporting": "Preparing export…",
+      "export_error": "Failed to export data. Please try again or contact privacy@uwuchat.com.",
+      "delete_desc_paragraph": "You may also permanently delete your account and all associated data:",
+      "delete_my_account": "Delete My Account",
+      "confirm_delete": "Are you sure? This cannot be undone.",
+      "cancel": "Cancel",
+      "yes_delete": "Yes, Delete My Account",
+      "deleting": "Deleting…",
+      "sign_in_to_delete": "Sign In to Delete My Account",
+      "no_access_desc": "If you no longer have access to your account, email us directly:",
+      "email_privacy": "Email privacy@uwuchat.com",
+      "respond_30_days": "We will respond within 30 days and may ask you to verify your identity before processing the request.",
+      "other_requests": "For other data requests (access, portability, correction), email",
+      "respond_time": "We respond within 30 days."
+    }
+  },
+  "subscribe": {
+    "title": "Choose your plan",
+    "tagline": "Start with a 3-day intro, or jump straight into a full plan.",
+    "trial": "Cancel any time. Billed monthly.",
+    "most_popular": "Most popular",
+    "per_month": "/mo",
+    "start_trial": "Subscribe",
+    "redirecting": "Redirecting…",
+    "maybe_later": "I'll decide later"
+  },
+  "welcome": {
+    "tagline": "Open a panel from the sidebar to get started.",
+    "chat_hint": "Talk to a local LLM",
+    "canvas_hint": "Generate and edit images",
+    "civitai_hint": "Browse and download models"
+  },
+  "landing": {
+    "hero": {
+      "title_line1": "The AI that actually",
+      "title_line2": "remembers you.",
+      "subtitle": "Most AI forgets everything after one chat. UwUchat doesn't — build a companion that remembers you and grows with every conversation.",
+      "cta_primary": "Meet your first UwU →",
+      "cta_signin": "Sign in"
+    },
+    "features": {
+      "heading": "More than a chatbot",
+      "subheading": "A companion that grows with you — not a chatbot that resets every session.",
+      "deep_character": {
+        "title": "Deep character creation",
+        "desc": "Give your UwU a personality, hometown, belief system, and a voice that's distinctly theirs."
+      },
+      "memory": {
+        "title": "Memory that builds",
+        "desc": "Your UwU remembers your conversations, preferences, and personality — a private memory that grows with you."
+      },
+      "web_browse": {
+        "title": "Real-time web browsing",
+        "desc": "Your UwU can browse the web in real time for current news, facts, and links."
+      },
+      "privacy": {
+        "title": "Private by design",
+        "desc": "Your conversations are encrypted at rest with a key unique to your account — a database breach exposes nothing readable. Never sold, never used to train AI models."
+      },
+      "moods": {
+        "title": "Feels alive",
+        "desc": "Your UwU's mood shifts naturally as you talk, and it remembers its own story — not just yours — so its personality stays consistent over time."
+      },
+      "continuity": {
+        "title": "Never starts over",
+        "desc": "No resets, no forgotten threads. Come back after a day, a week, or a month, and your UwU still remembers where you left off."
+      }
+    },
+    "vibes": {
+      "heading": "Build your UwU from scratch",
+      "subheading": "No presets, no templates — every detail is yours to choose, from personality to voice.",
+      "personality": {
+        "title": "Personality types",
+        "desc": "From sweet and gentle to chaotic and dramatic, including classic archetypes like tsundere and kuudere."
+      },
+      "language": {
+        "title": "Language",
+        "desc": "Choose which languages your UwU speaks, auto-detected from their hometown or set by hand."
+      },
+      "identity": {
+        "title": "Identity & species",
+        "desc": "Human, animal, monster, mythical being, or robot — each with its own subtypes, plus a hometown anywhere in the real world."
+      },
+      "voice": {
+        "title": "Voice & backstory",
+        "desc": "Name them, describe who they are, and define how they talk — down to the voice you give them."
+      }
+    },
+    "tiers": {
+      "heading": "Simple pricing",
+      "subheading": "Cancel any time.",
+      "most_popular_badge": "Most popular",
+      "cta": "Get started",
+      "try_it": {
+        "name": "Try it",
+        "period": "3 days",
+        "cap": "30 messages · 15/day",
+        "features": [
+          "No renewal",
+          "Full access",
+          "Upgrade any time"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "period": "mo",
+        "cap": "9,000 messages / month",
+        "features": [
+          "Persistent memory",
+          "Custom companions",
+          "Best value for daily use"
+        ]
+      },
+      "companion": {
+        "name": "Companion",
+        "period": "mo",
+        "cap": "21,000 messages / month",
+        "features": [
+          "Persistent memory",
+          "Custom companions",
+          "Comfortable daily use"
+        ]
+      },
+      "devoted": {
+        "name": "Devoted",
+        "period": "mo",
+        "cap": "1,500 messages / month",
+        "features": [
+          "Everything in Companion",
+          "For power users"
+        ]
+      }
+    },
+    "cta": {
+      "heading": "Create your first UwU",
+      "subheading": "Step through the character wizard and start a conversation with someone who remembers it.",
+      "button": "Create your account →"
+    },
+    "showcase": {
+      "alt": "UwUchat conversation screenshot"
+    }
+  },
+  "publicNav": {
+    "sign_in": "Sign in",
+    "get_started": "Get started",
+    "register": "Register",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "data_request": "Data Request",
+    "copyright": "© {{year}} Capsize LLC"
+  },
+  "bottomBar": {
+    "account": "Account",
+    "viewProfile": "View Profile",
+    "settings": "Settings",
+    "admin": "Admin",
+    "logout": "Logout"
+  }
+}

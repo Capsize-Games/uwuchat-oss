@@ -1,0 +1,98 @@
+/* SteamGameLibrary — inline style refactor */
+
+.empty {
+  padding: 12px 0;
+  color: var(--theme-text-secondary);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.wrap {
+  margin-top: 4px;
+}
+
+.wrapFill {
+  margin-top: 4px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--theme-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--theme-text-primary);
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+  outline: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.listScroll {
+  padding-right: 2px;
+}
+
+.listFill {
+  composes: listScroll;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.listFixed {
+  composes: listScroll;
+  max-height: min(50vh, 500px);
+  overflow-y: auto;
+}
+
+.gameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.gameRowClickable {
+  composes: gameRow;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.gameRowClickable:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.gameIcon {
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.gameIconFallback {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.gameName {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.72rem;
+  color: var(--theme-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameHours {
+  font-size: 0.65rem;
+  color: var(--theme-text-secondary);
+  flex-shrink: 0;
+}

@@ -1,0 +1,58 @@
+/* Row detail modal styles */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 80vw;
+  max-height: 80vh;
+  overflow: auto;
+  color: #e2e8f0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 0;
+  font-size: 12px;
+  color: #cbd5e1;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.label {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.labelMargin {
+  composes: label;
+  margin-top: 8px;
+}
+
+.btn {
+  background: #334155;
+  color: #e2e8f0;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+}

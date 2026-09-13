@@ -1,0 +1,25 @@
+/* InlineOptionBtn — toggle button for inline editors (framework) */
+
+.btn {
+  padding: 2px 8px;
+  font-size: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: var(--theme-text-secondary);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btnActive {
+  composes: btn;
+  background: rgba(var(--theme-primary-rgb), 0.15);
+  color: var(--bs-primary);
+}
+
+.btnActive:hover {
+  background: rgba(var(--theme-primary-rgb), 0.15);
+}

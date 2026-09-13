@@ -1,0 +1,365 @@
+/* PanelSteamTab — inline style refactor */
+
+.loadingBlock {
+  padding: 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.82rem;
+}
+
+.centeredBlock {
+  padding: 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.82rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.steamIcon {
+  margin-bottom: 12px;
+}
+
+.connectedRoot {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fixedTop {
+  flex-shrink: 0;
+}
+
+.profileHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.profileAvatar {
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.profileNameCompact {
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileNameFull {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--theme-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileSub {
+  font-size: 0.7rem;
+  color: var(--theme-text-secondary);
+}
+
+.profileInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Itch profile */
+.itchRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.itchCover {
+  border-radius: 4px;
+}
+
+.itchName {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--theme-text-primary);
+}
+
+/* Connected but no profile */
+.noProfileSteamIcon {
+  margin-bottom: 12px;
+}
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.statCard {
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+}
+
+.statValue {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--theme-steam, #67c1f5);
+}
+
+.statLabel {
+  font-size: 0.62rem;
+  color: var(--theme-text-secondary);
+  margin-top: 1px;
+}
+
+/* Section label (reused) */
+.sectionLabel {
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--theme-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+
+/* Recently played */
+.recentGame {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.recentGameIcon {
+  border-radius: 4px;
+}
+
+.recentGamePlaceholder {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.recentGameName {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.75rem;
+  color: var(--theme-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentGameHours {
+  font-size: 0.65rem;
+  color: var(--theme-text-secondary);
+  flex-shrink: 0;
+}
+
+/* Separator */
+.separator {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 12px 0;
+}
+
+/* Library section */
+.librarySection {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.libraryHeader {
+  flex-shrink: 0;
+}
+
+/* Achievement views */
+.achLoading {
+  padding: 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.achError {
+  padding: 12px;
+  color: var(--bs-danger);
+  font-size: 0.72rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.achEmpty {
+  padding: 16px;
+  color: var(--theme-text-secondary);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.achList {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.achItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.achIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.achPlaceholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.achInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.achName {
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.achDesc {
+  font-size: 0.62rem;
+  color: var(--theme-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.achPercent {
+  font-size: 0.6rem;
+  color: var(--theme-text-secondary);
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* Viewing game header */
+.viewingHeader {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.viewingHeaderIcon {
+  width: var(--thumbSize);
+  height: var(--thumbSize);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.viewingHeaderInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.viewingHeaderTitle {
+  font-weight: 600;
+  font-size: 0.72rem;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewingHeaderSub {
+  font-size: 0.65rem;
+  color: var(--theme-text-secondary);
+}
+
+.viewingHeaderBack {
+  background: none;
+  border: none;
+  color: var(--bs-primary, #67c1f5);
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.connectSection {
+  margin-top: 16px;
+}
+
+/* ── Additional classes for inline style removal ── */
+
+.avatarThumb {
+  border-radius: 4px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.itchCoverThumb {
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.profileNameCompactText {
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+.profileNameCompactSecondary {
+  color: var(--theme-text-secondary);
+}
+
+.achItemDim {
+  opacity: 0.5;
+}
+
+.achItemBright {
+  opacity: 1;
+}
+
+.achNameAchieved {
+  color: #a4d16b;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.achNameUnachieved {
+  color: var(--theme-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

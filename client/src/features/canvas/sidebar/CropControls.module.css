@@ -1,0 +1,46 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+}
+
+.label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  flex: none;
+  width: 42px;
+  user-select: none;
+}
+
+.slider {
+  flex: 1;
+  min-width: 0;
+}
+
+.number {
+  composes: inputNumber from "@/styles/primitives.module.css";
+  width: 48px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 2px 8px;
+}
+
+.sectionLabel {
+  composes: sectionLabel from "@/styles/primitives.module.css";
+  padding: 6px 8px 2px;
+}
+
+.hint {
+  composes: hintText from "@/styles/primitives.module.css";
+  padding: 4px 8px 8px;
+}

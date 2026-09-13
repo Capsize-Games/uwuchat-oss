@@ -1,0 +1,30 @@
+/* Footer hardware stats */
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.popup {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  z-index: 9999;
+}

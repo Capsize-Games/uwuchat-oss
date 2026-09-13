@@ -1,0 +1,43 @@
+/* Individual Calls table styles */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+  background: #1e293b;
+  z-index: 1;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover {
+  background: #334155;
+}
+
+.mono {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.costCol {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.expandCol {
+  width: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}

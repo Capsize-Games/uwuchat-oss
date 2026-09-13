@@ -1,0 +1,110 @@
+/* ConversationCostSummary — inline style refactor */
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 0;
+}
+
+.todayTotal {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4ade80;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.total {
+  font-size: 28px;
+  font-weight: 700;
+  color: #6c63ff;
+  margin: 8px 0;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.barWrap {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+  float: left;
+}
+
+.banner {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  padding: 32px 0;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0;
+  margin-top: 12px;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.skipped {
+  color: #4ade80;
+  font-size: 13px;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.costName {
+  color: #e0e0e0;
+}
+
+.costMeta {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.fallbackTotal {
+  composes: total;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.sectionLabel {
+  composes: label;
+  margin-top: 12px;
+}
+
+.emptyBanner {
+  composes: banner;
+  padding: 12px 0;
+  opacity: 0.5;
+}

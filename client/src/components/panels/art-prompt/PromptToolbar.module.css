@@ -1,0 +1,57 @@
+/* PromptToolbar — size picker in the prompt toolbar (framework) */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.sizeBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0 6px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sizeBtn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sizeBtnActive {
+  composes: sizeBtn;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--bs-primary);
+}
+
+.sizePopup {
+  composes: popupFixed from "./PopupShared.module.css";
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.sizePopupRow {
+  gap: 6px;
+}
+
+.sizePopupLabel {
+  font-size: 9px;
+  color: var(--theme-text-secondary);
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.sizePopupInput {
+  composes: numInputSm from "./ArtShared.module.css";
+}

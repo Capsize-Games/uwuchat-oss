@@ -1,0 +1,60 @@
+/* MetadataTable — image metadata display (framework) */
+
+.empty {
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.headerRow {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.th {
+  padding: 3px 8px 3px 0;
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.thRight {
+  composes: th;
+  padding: 3px 0;
+}
+
+.tdKey {
+  padding: 2px 8px 2px 0;
+  vertical-align: top;
+  white-space: nowrap;
+  color: #aaa;
+  font-weight: 600;
+  width: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tdValue {
+  padding: 2px 0;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rowEven {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.rowOdd {
+  background: transparent;
+}

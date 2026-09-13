@@ -1,0 +1,34 @@
+/* App.tsx — full-page loading and 404 styles */
+
+.loadingScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+  color: #888;
+}
+
+.notFoundBg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+  color: #888;
+  background: #16162a;
+}
+
+.notFoundInner {
+  text-align: center;
+}
+
+.notFoundTitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.notFoundText {
+  font-size: 14px;
+}

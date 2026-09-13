@@ -1,0 +1,10 @@
+/* LocationSection — inline style refactor */
+
+.wrap { display: flex; flex-direction: column; gap: 12px; }
+.desc { color: var(--theme-text-secondary); font-size: 0.78rem; line-height: 1.5; margin: 0; }
+.row { display: flex; gap: 8px; }
+.input { flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--theme-border); background: var(--theme-input-bg); color: var(--theme-text-primary); font-size: 0.82rem; outline: none; }
+.status { font-size: 0.72rem; color: var(--theme-text-secondary); }
+.sepRow { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--theme-text-secondary); }
+.sepLine { flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+.label { font-size: 0.82rem; color: var(--theme-text-primary); white-space: nowrap; }
