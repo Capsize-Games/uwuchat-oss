@@ -1,0 +1,31 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  margin: 0;
+  cursor: pointer;
+  accent-color: #6fa8ff;
+}
+
+.checkboxText {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}

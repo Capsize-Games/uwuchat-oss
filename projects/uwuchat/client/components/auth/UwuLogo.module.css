@@ -1,0 +1,4 @@
+.wrapper { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; user-select: none; }
+.icon { flex-shrink: 0; color: var(--theme-primary, #0084b9); }
+.wordmark { font-weight: 800; letter-spacing: -0.02em; color: var(--theme-heading, #e0e0e0); line-height: 1; }
+.chatSpan { color: var(--theme-primary, #0084b9); }

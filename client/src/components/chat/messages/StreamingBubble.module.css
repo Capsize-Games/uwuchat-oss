@@ -1,0 +1,36 @@
+.bubble {
+  background: rgba(71, 0, 129, 0.15);
+  border: 1px solid rgba(71, 0, 129, 0.2);
+}
+
+.thinkingCard {
+  background: rgba(0, 132, 185, 0.08);
+  border: 1px solid rgba(0, 132, 185, 0.15);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.thinkingBody {
+  white-space: pre-wrap;
+  font-style: italic;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.partialToolCard {
+  background: rgba(180, 90, 0, 0.08);
+  border: 1px solid rgba(180, 90, 0, 0.15);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.partialToolBody {
+  white-space: pre-wrap;
+  font-style: italic;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.content {
+  color: var(--theme-text);
+}

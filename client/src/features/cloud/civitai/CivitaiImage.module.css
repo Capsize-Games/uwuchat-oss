@@ -1,0 +1,15 @@
+.fallbackIcon {
+  color: var(--theme-text-secondary);
+  opacity: 0.4;
+}
+
+.placeholder {
+  background: var(--theme-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  color: var(--bs-primary);
+}

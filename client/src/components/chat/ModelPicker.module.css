@@ -1,0 +1,93 @@
+.container {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.triggerBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.triggerBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.triggerLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.popup {
+  position: fixed;
+  min-width: 220px;
+  max-width: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  z-index: 1300;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  max-height: 300px;
+}
+
+.searchInput {
+  padding: 6px 8px;
+}
+
+.searchFormControl {
+  font-size: 0.75rem;
+}
+
+.emptyText {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 12px;
+  border: none;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.78rem;
+}
+
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.listItemActive {
+  background: rgba(13, 110, 253, 0.10);
+  border-left-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.listItemActive:hover {
+  background: rgba(13, 110, 253, 0.18);
+}
+
+.listItemInactive {
+  background: transparent;
+  color: var(--theme-text);
+}
+
+.inputWrapper {
+  padding: 8px;
+}
+
+.formInput {
+  font-size: 0.75rem;
+}

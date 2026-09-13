@@ -1,0 +1,31 @@
+/* Top 5 by Cost table styles */
+
+.card {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.heading {
+  margin: 0 0 8px;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.mono {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.costCol {
+  text-align: right;
+  white-space: nowrap;
+}

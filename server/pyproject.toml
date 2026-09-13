@@ -1,0 +1,65 @@
+[tool.ruff]
+exclude = ["**/vendor/"]
+
+[tool.ruff.lint.per-file-ignores]
+# Vendor code — pre-existing violations we do not own
+"**/vendor/**" = ["ALL"]
+# Test files — E402 imports intentional after path setup
+"**/tests/**" = ["E402"]
+# Source files with structural import ordering requirements
+"**/daemon.py" = ["E402"]
+"**/service_app.py" = ["E402"]
+"**/knowledge_base_index.py" = ["E402"]
+"**/rpc_spotify.py" = ["E402"]
+"**/chat_gguf_streaming_gpt_oss_tail.py" = ["E402"]
+"**/openvoice_model_manager.py" = ["E402"]
+"**/model_scanner_worker.py" = ["E402"]
+"**/knowledge_rag.py" = ["E402"]
+"**/web_tools.py" = ["E402"]
+# Edge-to-cloud backward-compat re-export shims (deliberate wildcard)
+"**/airunner_services/art/**" = ["F403"]
+"**/airunner_services/workers/**" = ["F403"]
+"**/airunner_services/model_management/**" = ["F403"]
+"**/airunner_services/contracts_compat/**" = ["F403"]
+"**/airunner_services/eval/**" = ["F403"]
+"**/airunner_services/daemon_client/**" = ["F403"]
+"**/airunner_services/downloads/**" = ["F403"]
+# Re-export modules (imports are used by downstream modules)
+"**/parts.py" = ["F401"]
+# Pytest fixture imports (import is how pytest discovers the fixture)
+"server/tests/test_entity_resolver_cross_tenant.py" = ["F401"]
+"server/tests/test_conversation_recall_cross_tenant.py" = ["F401"]
+# Import-as-test: the import itself is the test body
+"server/tests/test_service_bootstrap.py" = ["F401"]
+
+[tool.pytest.ini_options]
+markers = [
+    "gui: tests that require Qt GUI components (may cause thread issues when run in bulk)",
+    "gui_functional: headless GUI functional tests with mocked backends",
+    "slow: tests that take a long time to run",
+    "fast: tests that use mocked responses and run quickly",
+    "asyncio: asynchronous test marker",
+    "integration: integration test marker",
+    "gpu: tests that require GPU hardware",
+    "eval: evaluation tests for LLM/model quality testing",
+    "streaming: tests for streaming response functionality",
+    "llm_runtime_smoke: safe llama.cpp runtime smoke tests using doubles only",
+    "stt_runtime_smoke: safe STT runtime smoke tests using doubles only",
+    "art_runtime_smoke: safe art runtime smoke tests using doubles only",
+    "art_service_runtime: direct art service runtime tests using real local models",
+    "functional: DB-backed functional tests requiring a real database",
+    "tts_runtime_smoke: safe TTS runtime smoke tests using doubles only",
+    "llm_required: tests that require an LLM model to be loaded",
+    "benchmark: tests using standard benchmark datasets (GSM8K, MATH, HumanEval)",
+    "code: tests for code generation capabilities",
+]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+# Eval, integration, slow, and gpu tests are NEVER selected by a bare
+# "pytest server/tests" / "python -m pytest server/tests".  They make
+# real provider API calls (burning money, no account attribution) and
+# require live model access.  They must be invoked explicitly via
+# -m eval (or -m integration / -m slow / -m gpu) and never as part of
+# a default "run the tests" pass, especially against a shared dev
+# environment with real provider keys configured.
+addopts = "--maxfail=100 -s -v -m \"not eval and not integration and not slow and not gpu\""

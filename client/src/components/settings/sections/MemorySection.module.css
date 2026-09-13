@@ -1,0 +1,5 @@
+.resetBtn {
+  background: var(--bs-primary);
+  border: none;
+  color: #fff;
+}

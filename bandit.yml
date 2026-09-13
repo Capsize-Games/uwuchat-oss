@@ -1,0 +1,39 @@
+# Bandit configuration — Python security lint for AIRunner.
+#
+# Scopes: framework + extensions + UwUchat server code.
+# Excludes test directories (test fixtures routinely trip secret-detection
+# and assert rules with intentional test-only values).
+#
+# No rules are blanket-disabled.  Suppress individual findings via
+# `# nosec` comments with a required trailing reason, never via this
+# config file.
+
+exclude_dirs:
+  - server/tests
+  - server/src/airunner_services/tests
+  - extensions/auth/tests
+  - extensions/fastsearch/tests
+  - projects/uwuchat/server/tests
+  - server/.pytest_cache
+  - server/.ruff_cache
+  - .ruff_cache
+  # Genuine third-party vendored code (confirmed: MeloTTS/OpenVoice
+  # integration) -- pyproject.toml's ruff config already excludes
+  # this wholesale as "pre-existing violations we do not own"; keep
+  # the two tools' vendor-code policy consistent.  Bandit's
+  # exclude_dirs only matches by directory *name*, not a full
+  # relative path (a deep path like server/src/.../vendor silently
+  # fails to match) -- confirmed by testing both forms directly.
+  - vendor
+
+# Directories to scan (relative to repo root).
+targets:
+  - server/src/airunner_services
+  - extensions
+  - projects/uwuchat/server
+
+# Severity filter: report MEDIUM and above in CI; LOW findings are
+# informational and surfaced in the triage report but do not fail CI.
+# Bandit's --severity-level flag overrides this at runtime, so the CI
+# workflow explicitly passes --severity-level=high.
+skips: []

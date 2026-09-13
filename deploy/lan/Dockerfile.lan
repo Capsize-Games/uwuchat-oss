@@ -1,0 +1,46 @@
+# LAN deployment image: open-core airunner:latest + the private extensions
+# package + the uwuchat project server overlay (projects/uwuchat).
+#
+# The public open-core image (docker/Dockerfile) deliberately never COPYs
+# extensions/ or projects/ — they are bind-mounted at runtime in dev.  The
+# LAN stacks on the homeserver are image-based (no source bind-mounts), and
+# the initial-schema migration imports extensions.auth.server.models, so an
+# image without extensions crash-loops with ModuleNotFoundError.  The
+# production image (extensions/docker/Dockerfile.prod, private) ships
+# extensions but does NOT include celery, so its celery workers crash-loop
+# with exit 127 ("exec: celery: not found").
+#
+# Without projects/, AIRUNNER_PROJECT=uwuchat has no server overlay to
+# load: pipeline_loader._load_project_config() silently catches the
+# ImportError (no module named 'projects') and falls back to the
+# framework's generic PIPELINE_DEFAULTS (provider="local"), so every chat
+# request tries to load an in-process GGUF model instead of routing to the
+# configured AIRUNNER_LLM_PROVIDER=ollama daemon.
+#
+# airunner:lan = airunner:latest (has celery + the W2/W3 env plumbing) +
+# extensions baked in + installed + the uwuchat project server overlay.  It is
+# used by the <homeserver-hostname>-local docker-compose.override.yml in the LAN deployment
+# (see deploy/lan/README.md).
+#
+# Build (from repo root; requires GHCR read auth for the base image):
+#   docker build -f deploy/lan/Dockerfile.lan \
+#     -t <registry>/<your-org>/airunner:lan .
+#   docker push <registry>/<your-org>/airunner:lan
+FROM <registry>/<your-org>/airunner:latest
+
+COPY extensions/__init__.py extensions/pyproject.toml extensions/setup.py \
+     extensions/README.md /app/extensions/
+COPY extensions/auth /app/extensions/auth
+COPY extensions/conversation_inspector /app/extensions/conversation_inspector
+COPY extensions/fastsearch /app/extensions/fastsearch
+COPY extensions/object_storage /app/extensions/object_storage
+COPY extensions/uwu_creator /app/extensions/uwu_creator
+
+RUN pip install --no-cache-dir -e "/app/extensions[all]"
+
+COPY projects/uwuchat/server /app/projects/uwuchat/server
+
+# Copy the framework server source so server-side changes (not just
+# extensions/project overlays) reach staging on every master push.
+# The base image's /app/server/src is replaced by the checked-out tree.
+COPY server/src /app/server/src

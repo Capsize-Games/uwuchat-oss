@@ -1,0 +1,160 @@
+# ---------------------------------------------------------------------------
+# UwUchat local-dev CODE daemon (Qwen3.5-9B coder) — local GPU inference
+# for headlesscode `code`-mode sessions AND (by default in the dev
+# override) UwUchat DIALOGUE chat. Both modes share this single daemon;
+# see docker-compose.code-harness-local.yml and
+# projects/uwuchat/server/dialogue_routing.py / gpu_inference_mode.py.
+#
+# Runs the <private-desktop-repo> image in headless ollama-mode holding the
+# Qwen3.5-9B-Q8_0 GGUF coder model on the local RTX 5080 (16GB VRAM).
+# Published on 0.0.0.0:11435 (container port 11434). This is the daemon
+# the headlesscode sidecar (docker-compose.code-harness-local.yml) points
+# HEADLESSCODE_OLLAMA_URL at, and the dev server's chat daemon
+# (UWUCHAT_CHAT_DAEMON_URL) when chat and code share a model.
+#
+# Project name `code-daemon` (container code-daemon-daemon-1) — the
+# CURRENT canonical project/container name. (Historical: this compose
+# project was previously named `bench-daemon` / `bench-daemon-daemon-1`;
+# the running container was renamed and the project adopted the new name,
+# so `bench-daemon` no longer exists on this host.)
+#
+# Manual start/stop for debugging:
+#   docker compose -f deploy/local/daemons/code-daemon/docker-compose.yml up -d
+#   docker compose -f deploy/local/daemons/code-daemon/docker-compose.yml down
+#   curl http://127.0.0.1:11435/api/tags          # what's loaded
+# ---------------------------------------------------------------------------
+
+name: code-daemon
+
+services:
+  daemon:
+    image: <private-desktop-repo>:daemon
+    restart: unless-stopped
+    ports:
+      # Published on all interfaces — the staging LAN deployment
+      # (deploy/lan/headlesscode) reaches this daemon for headlesscode
+      # session inference via HEADLESSCODE_OLLAMA_URL. No VRAM headroom
+      # on this GPU for a second, separate Qwen3-14B instance
+      # (12.6/16.3GB already in use by this + the chat daemon) — this
+      # benchmarking rig and staging's real traffic share the same
+      # daemon/GPU slot.
+      - "0.0.0.0:11435:11434"
+    environment:
+      AIRUNNER_INSECURE_NO_AUTH: "1"
+      AIRUNNER_LLM_AUTO_UNLOAD: "0"
+      # TESTED and REVERTED 2026-08-20: Qwen3-Coder-30B-A3B natively
+      # supports 256K context (no YaRN needed) — but its Q3_K_XL weight
+      # footprint alone is 15.1GB, measured live even at a modest 32768
+      # context (<1GB free on this 16.3GB card, WORSE headroom than
+      # Qwen3-14B gives at 40960). Its long-context capability is
+      # architecturally real but practically inaccessible on this GPU
+      # once quantized large enough to fit at all — likely why it was
+      # never adopted in this rig despite sitting on disk unused. Not
+      # worth revisiting without more VRAM.
+      # Qwen3.5-9B (Q8_0) — the default model for the dev code daemon.
+      # Smaller than Qwen3-14B, so generations complete much faster
+      # (the 14B Q4 model on this rig ran ~3% GPU util / 93% CPU and
+      # took 35-90s per call). 9B Q8_0 loads comfortably in the 16GB
+      # VRAM with the chat daemon stopped.
+      AIRUNNER_LLM_MODEL_PATH: /home/airunner/.local/share/airunner/text/models/llm/causallm/Qwen/Qwen3.5-9B-Q8_0.gguf
+      # provider_config.py's catalog entry claims native_context_length=131072
+      # for Qwen3-14B — WRONG, per llama.cpp's own GGUF metadata: the real
+      # trained context is 40960 (verified live 2026-08-20: 65536 logged
+      # "possible training context overflow"). 40960 itself loaded cleanly
+      # in isolation with no warning and 3.2GiB VRAM headroom — BUT under a
+      # real multi-turn agentic session it reproduced a genuine generation
+      # HANG twice in a row (first stream chunk arrives, then the daemon
+      # goes silent for the full 300s client timeout, no crash, no log
+      # line, GPU still shows the model loaded) at two different points in
+      # two separate trials. Reverted to 32768 — proven stable across many
+      # hours of real sessions on this exact daemon/model in prior nights;
+      # 40960's real ceiling isn't safe to run unattended until whatever
+      # causes the hang (VRAM-pressure GPU stall during generation is the
+      # leading theory, not confirmed) is actually diagnosed.
+      # RE-TESTING 2026-08-20: bumped back to 40960 (the value that
+      # reproduced the hang twice, see the comment above) now that the
+      # chat daemon (lan-daemon-daemon-1) is stopped — measured only
+      # ~1GB free with both loaded (15,325/16,303 MiB), which was never
+      # ruled out as the hang's real cause. If this reproduces clean
+      # across several real multi-turn trials, VRAM pressure was very
+      # likely it; if the hang still reproduces, it wasn't (or wasn't
+      # solely) that.
+      AIRUNNER_GGUF_N_CTX: "40960"
+      AIRUNNER_GGUF_N_GPU_LAYERS: "-1"
+      # RULED OUT (2026-08-20, round 2): F16 KV cache (GGML_TYPE_F16=1)
+      # tested with a clean run (identical-call guardrail now fixed, so the
+      # trial actually reached the hang) — hang STILL reproduced, this time
+      # at an even SMALLER context (~2950 tokens vs the ~4000-4300 seen at
+      # the Q8_0 default), weakening the "fixed ~4000-token threshold"
+      # theory too, not just ruling out KV cache quantization. Reverted to
+      # unset (Q8_0 default). Genuinely unexplained — see the handoff doc's
+      # "what to try next" for remaining candidates (flash_attn, llama-cpp-
+      # python version bisection).
+      # RULED OUT (2026-08-20): tested last_n_tokens_size=512 here after two
+      # fresh generation hangs at the default 4096 (<private-desktop-repo> commit
+      # <commit-hash>) both landed near ~4000-4300 accumulated prompt tokens —
+      # suspicious proximity to the 4096 window. A THIRD hang reproduced at
+      # last_n_tokens_size=512, at essentially the same context size
+      # (~4300 tokens) — well above the 512 window, so the window size
+      # cannot be the mechanism. This is the SAME pre-existing hang this
+      # file's n_ctx comment above already documents (first chunk, then
+      # silence past 300s) from an unrelated earlier experiment — genuinely
+      # independent of last_n_tokens_size. Left unset now (adapter default
+      # 4096 applies) since narrowing it provided no benefit.
+      AIRUNNER_OLLAMA_MODE: "1"
+      # RULED OUT, HARD FAILURE (2026-08-20, round 3): flash_attn=False
+      # was tested against the hang documented above and does NOT
+      # reproduce it — instead llama_context creation fails outright
+      # (retried n_ctx=32768→16384→8192→4096, all failed, model load
+      # status FAILED). Root cause: type_k/type_v are hardcoded to 8
+      # (GGML_TYPE_Q8_0) in chat_gguf_model_loading.py's
+      # _build_llama_kwargs — llama.cpp requires flash_attn when the KV
+      # cache is quantized (non-F16), so disabling flash_attn while
+      # keeping Q8_0 is an invalid combination, not a viable A/B. Left
+      # unset (enabled) — do not retry this exact combination; if
+      # flash_attn is worth revisiting, it would need to pair with
+      # AIRUNNER_GGUF_KV_CACHE_TYPE=1 (F16) at the same time, which was
+      # already tested alone and didn't fix the hang either.
+      HOME: /home/airunner
+      HF_HOME: /home/airunner/.cache/huggingface
+      QT_QPA_PLATFORM: offscreen
+    # SYS_PTRACE (2026-08-20): debug-only, so py-spy/gdb can attach to the
+    # daemon process to inspect the still-unresolved generation hang's
+    # real native stack. Remove once that investigation concludes.
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      # Isolated bench data dir (own settings DB, incl. use_yarn) — NOT the
+      # shared production dir, so a DB write here (e.g. enabling use_yarn for
+      # gpt-oss) can never leak into the production daemon's settings.
+      - /home/<user>/.local/share/airunner-bench:/home/airunner/.local/share/airunner
+      # Real model GGUFs (read-only), shadowed over the isolated dir's own
+      # (empty) models subtree so nothing needs re-downloading.
+      - /home/<user>/.local/share/airunner/text/models:/home/airunner/.local/share/airunner/text/models:ro
+      - /home/<user>/.cache/huggingface:/home/airunner/.cache/huggingface
+      # Fast-iteration bind mount (see handoff doc's methodology notes):
+      # picks up services/src edits without a full CUDA rebuild. Revert
+      # (remove this line) once repeat_penalty wiring is verified and no
+      # longer being actively iterated on.
+      - /home/<user>/Projects/<private-desktop-repo>/services/src:/app/services/src:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command:
+      - --headless
+      - --host
+      - 0.0.0.0
+      - --ollama-mode
+      - --no-preload
+      - --model
+      - /home/airunner/.local/share/airunner/text/models/llm/causallm/Qwen/Qwen3.5-9B-Q8_0.gguf
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      start_period: 180s
+      retries: 3

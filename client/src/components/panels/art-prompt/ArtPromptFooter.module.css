@@ -1,0 +1,20 @@
+/* ArtPromptFooter — progress bar + generate/cancel buttons (framework) */
+
+.progressBar {
+  height: 8px;
+}
+
+.cancelBtn {
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtn {
+  background: var(--bs-primary);
+  min-width: 30px;
+  height: 30px;
+  border: none;
+}

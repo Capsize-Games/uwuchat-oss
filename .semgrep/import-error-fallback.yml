@@ -1,0 +1,35 @@
+rules:
+  - id: auth-import-error-fallback
+    languages:
+      - python
+    severity: WARNING
+    message: |
+      Auth dependency import error handler falls back to a permissive or
+      loopback-only guard instead of failing closed.
+
+      When `extensions.auth.server.dependencies` is not importable, every
+      auth dependency must raise an HTTPException (4xx/5xx) — never fall
+      back to a weaker check like loopback-only or return a hardcoded
+      account_id.  The only acceptable response to "auth extension is
+      missing" is to deny all requests.
+
+      If this fallback is intentional and has been manually audited as
+      safe, add the comment:
+        # nosemgrep: auth-import-error-fallback
+      on the line immediately before the try/except block.
+    patterns:
+      - pattern: |
+          try:
+            from extensions.auth.server.dependencies import $DEP
+            ...
+            return $DEP
+          except ImportError:
+            ...
+      - pattern-not: |
+          try:
+            from extensions.auth.server.dependencies import $DEP
+            ...
+            return $DEP
+          except ImportError:
+            ...
+            raise ...

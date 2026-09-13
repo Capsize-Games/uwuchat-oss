@@ -1,0 +1,46 @@
+/* InfoItem — row in the generation info panel (framework) */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+}
+
+.rowClickable {
+  composes: row;
+  cursor: pointer;
+}
+
+.rowClickable:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.rowLabel {
+  color: var(--theme-text-secondary);
+  opacity: 0.55;
+  font-size: 10px;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.rowValue {
+  color: var(--theme-text);
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.rowValueDimmed {
+  composes: rowValue;
+  opacity: 0.35;
+}
+
+.editorWrap {
+  flex: 1;
+  min-width: 0;
+}

@@ -1,0 +1,52 @@
+.root {
+  padding: 4px 8px 6px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.sliderWrap {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.slider {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.value {
+  font-size: 10px;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background: rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: center;
+}

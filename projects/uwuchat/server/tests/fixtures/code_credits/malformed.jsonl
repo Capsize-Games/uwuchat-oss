@@ -1,0 +1,3 @@
+{this is not valid json
+{"sessionId": 123, "costUsd": 5, "status": "success"}
+{"sessionId": "malformed", "mode": "code", "model": "deepseek/deepseek-v4-flash", "iterations": 2, "inputTokens": 100, "outputTokens": 50, "costUsd": 0.0025, "startedAt": "2026-08-02T12:00:00.000Z", "endedAt": "2026-08-02T12:05:00.000Z", "status": "success", "workspaceRoot": "/fixture/workspace"}

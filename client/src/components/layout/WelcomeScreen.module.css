@@ -1,0 +1,83 @@
+/* Welcome screen — card buttons to open panels */
+
+.outer {
+  gap: 24px;
+  padding: 40px 24px;
+}
+
+.logoWrap {
+  gap: 12px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  opacity: 0.25;
+  filter: grayscale(1);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--theme-heading);
+  margin: 0;
+  opacity: 0.6;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.5;
+  text-align: center;
+  max-width: 320px;
+}
+
+.buttons {
+  gap: 8px;
+  max-width: 340px;
+}
+
+.cardBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: rgba(var(--theme-text-rgb), 0.03);
+  border: 1px solid rgba(var(--theme-text-rgb), 0.07);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.cardBtn:hover {
+  background: rgba(var(--theme-primary-rgb), 0.10);
+  border-color: rgba(var(--theme-primary-rgb), 0.30);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--theme-text-secondary);
+  transition: color 0.15s;
+}
+
+.cardBtn:hover .icon {
+  color: var(--bs-primary);
+}
+
+.btnLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--theme-text);
+}
+
+.btnHint {
+  font-size: 11px;
+  color: var(--theme-text-secondary);
+  opacity: 0.7;
+}
+
+.btnHintWrap {
+  gap: 2px;
+}

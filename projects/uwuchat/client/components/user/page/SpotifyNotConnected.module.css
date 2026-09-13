@@ -1,0 +1,28 @@
+/* SpotifyNotConnected — inline style refactor */
+
+.wrap {
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+.importing {
+  color: var(--theme-text-secondary);
+  font-size: 0.85rem;
+}
+
+.card {
+  padding: 32px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--theme-border);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.message {
+  color: var(--theme-text-secondary);
+  font-size: 0.85rem;
+}
