@@ -1,0 +1,53 @@
+.bubble {
+  position: relative;
+}
+
+.bubbleUser {
+  background: rgba(0, 132, 185, 0.15);
+  border: 1px solid rgba(0, 132, 185, 0.3);
+}
+
+.bubbleBot {
+  background: rgba(71, 0, 129, 0.15);
+  border: 1px solid rgba(71, 0, 129, 0.2);
+}
+
+.thinkingCard {
+  background: rgba(0, 132, 185, 0.08);
+  border: 1px solid rgba(0, 132, 185, 0.15);
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.thinkingHeader {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+}
+
+.thinkingBody {
+  white-space: pre-wrap;
+  font-style: italic;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.editTextarea {
+  resize: none;
+  background: var(--theme-input-bg);
+  color: var(--theme-text);
+  border-color: var(--theme-input-border);
+  font-size: 0.85rem;
+}
+
+.editBtn {
+  height: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.content {
+  color: var(--theme-text);
+}

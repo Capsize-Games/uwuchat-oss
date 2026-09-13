@@ -1,0 +1,206 @@
+import { useState, useMemo } from "react";
+import CivitaiSampleImages from "./CivitaiSampleImages";
+import styles from "./CivitaiModelDetail.module.css";
+
+interface CivitaiVersion {
+  id: number;
+  name: string;
+  baseModel?: string;
+  files?: CivitaiFile[];
+  images?: CivitaiImageInfo[];
+  downloadUrl?: string;
+}
+
+interface CivitaiFile {
+  id: number;
+  name: string;
+  sizeKB?: number;
+  downloadUrl?: string;
+}
+
+interface CivitaiImageInfo {
+  url: string;
+  nsfw?: string;
+  width?: number;
+  height?: number;
+}
+
+interface CivitaiModelDetailProps {
+  model: {
+    id: number;
+    name: string;
+    description?: string;
+    creator?: string;
+    type?: string;
+    stats?: {
+      downloadCount?: number;
+      favoriteCount?: number;
+      commentCount?: number;
+    };
+    versions?: CivitaiVersion[];
+  } | null;
+  onDownload: (fileUrl: string, fileName: string) => void;
+}
+
+function stripHtml(html: string): string {
+  // Remove HTML tags using a DOMParser which handles edge cases
+  // like <<tag> better than a plain regex.
+  if (typeof DOMParser !== "undefined") {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return (doc.body.textContent ?? "").trim();
+  }
+  return html.replace(/<[^>]*>/g, "").trim();
+}
+
+export default function CivitaiModelDetail({
+  model,
+  onDownload,
+}: CivitaiModelDetailProps) {
+  const [selectedVersionId, setSelectedVersionId] = useState<number | null>(
+    null,
+  );
+  const [selectedFileId, setSelectedFileId] = useState<number | null>(
+    null,
+  );
+
+  const versions = model?.versions ?? [];
+
+  // Auto-select first version when model changes
+  useMemo(() => {
+    if (versions.length > 0) {
+      setSelectedVersionId(versions[0].id);
+      const files = versions[0].files ?? [];
+      if (files.length > 0) {
+        setSelectedFileId(files[0].id);
+      }
+    }
+  }, [versions]);
+
+  const selectedVersion = versions.find(
+    (v) => v.id === selectedVersionId,
+  ) ?? null;
+  const selectedFile = (selectedVersion?.files ?? []).find(
+    (f) => f.id === selectedFileId,
+  ) ?? null;
+
+  if (!model) {
+    return (
+      <div className={`text-muted ${styles.empty}`}>
+        Select a model to view details
+      </div>
+    );
+  }
+
+  const stats = model.stats ?? {};
+  const desc = model.description ? stripHtml(model.description) : "";
+
+  const handleDownload = () => {
+    if (!selectedFile?.downloadUrl) return;
+    const fileName = selectedFile.name;
+    onDownload(selectedFile.downloadUrl, fileName);
+  };
+
+  return (
+    <div className={styles.root}>
+      {/* Model name + creator */}
+      <div className={styles.modelName}>
+        {model.name}
+      </div>
+      <div className="text-muted mb-1">
+        {model.creator ?? "Unknown"}
+        {model.type ? ` · ${model.type}` : ""}
+      </div>
+
+      {/* Stats */}
+      <div className={`d-flex gap-2 mb-1 ${styles.stats}`}>
+        <span>⬇ {stats.downloadCount ?? 0}</span>
+        <span>★ {stats.favoriteCount ?? 0}</span>
+        <span>💬 {stats.commentCount ?? 0}</span>
+      </div>
+
+      {/* Description (truncated) */}
+      {desc && (
+        <div className={`mb-1 text-muted ${styles.desc}`}>
+          {desc.length > 200 ? desc.slice(0, 200) + "..." : desc}
+        </div>
+      )}
+
+      {/* Version selector */}
+      {versions.length > 0 && (
+        <div className="mb-1">
+          <small className="text-muted d-block mb-1">Version</small>
+          <select
+            className={`form-select form-select-sm ${styles.select}`}
+            value={selectedVersionId ?? ""}
+            onChange={(e) => {
+              const vid = Number(e.target.value);
+              setSelectedVersionId(vid);
+              const v = versions.find((ver) => ver.id === vid);
+              const files = v?.files ?? [];
+              setSelectedFileId(
+                files.length > 0 ? files[0].id : null,
+              );
+            }}
+          >
+            {versions.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* File selector */}
+      {(selectedVersion?.files ?? []).length > 0 && (
+        <div className="mb-1">
+          <small className="text-muted d-block mb-1">File</small>
+          <select
+            className={`form-select form-select-sm ${styles.select}`}
+            value={selectedFileId ?? ""}
+            onChange={(e) => setSelectedFileId(Number(e.target.value))}
+          >
+            {(selectedVersion?.files ?? []).map((f) => (
+              <option key={f.id} value={f.id}>
+                {f.name}
+                {f.sizeKB
+                  ? ` (${(f.sizeKB / 1024 / 1024).toFixed(1)} GB)`
+                  : ""}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* Sample images */}
+      <CivitaiSampleImages
+        images={(selectedVersion?.images ?? []).filter(
+          (img) => img.nsfw !== "X",
+        )}
+      />
+
+      {/* Action buttons */}
+      <div className="d-flex gap-1 mb-1">
+        <button
+          className={`btn btn-sm btn-outline-primary flex-grow-1 ${styles.btn}`}
+          onClick={handleDownload}
+          disabled={!selectedFile?.downloadUrl}
+        >
+          Download
+        </button>
+        <button
+          className={`btn btn-sm btn-outline-secondary ${styles.btn}`}
+          onClick={() =>
+            window.open(
+              `https://civitai.com/models/${model.id}`,
+              "_blank",
+            )
+          }
+          title="Open on CivitAI"
+        >
+          ↗
+        </button>
+      </div>
+    </div>
+  );
+}

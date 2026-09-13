@@ -1,0 +1,103 @@
+/* PricingHealthTable — inline style refactor */
+
+.section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+}
+
+.header {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fixBtn {
+  background: none;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #f87171;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.table {
+  width: 100%;
+  font-size: 10px;
+  border-collapse: collapse;
+}
+
+.hdrRow {
+  color: rgba(255, 255, 255, 0.3);
+  text-align: left;
+}
+
+.hdrCell {
+  padding-bottom: 4px;
+}
+
+.hdrCellRight {
+  composes: hdrCell;
+  text-align: right;
+}
+
+.hdrCellCenter {
+  composes: hdrCell;
+  text-align: center;
+  width: 50px;
+}
+
+.trRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.modelCell {
+  padding: 3px 0;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #e0e0e0;
+}
+
+.priceCell {
+  padding: 3px 0;
+  text-align: right;
+  font-family: monospace;
+}
+
+.priceOk {
+  composes: priceCell;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.priceZero {
+  composes: priceCell;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.statusCell {
+  padding: 3px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.statusOk {
+  composes: statusCell;
+  color: #4ade80;
+}
+
+.statusBad {
+  composes: statusCell;
+  color: #f87171;
+}
+
+.footer {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 6px;
+}

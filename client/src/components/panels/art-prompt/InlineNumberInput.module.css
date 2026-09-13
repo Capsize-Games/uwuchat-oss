@@ -1,0 +1,25 @@
+/* InlineNumberInput — compact number editor (framework) */
+
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input {
+  height: 22px;
+  width: 56px;
+  background: var(--theme-input-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: var(--theme-text);
+  font-size: 10px;
+  text-align: center;
+  padding: 0 4px;
+}
+
+.hint {
+  font-size: 9px;
+  color: var(--theme-text-secondary);
+  opacity: 0.4;
+}

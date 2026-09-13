@@ -1,0 +1,83 @@
+/* SourceImagePanel — source image preview & controls for img2img/inpaint (framework) */
+
+.wrap {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(var(--theme-text-rgb), 0.03);
+  flex-shrink: 0;
+}
+
+.previewArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  background: #0e0e16;
+  min-height: 60px;
+}
+
+.sourceImg {
+  max-width: 100%;
+  max-height: 120px;
+  border-radius: 4px;
+  object-fit: contain;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.noImage {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+.sliderArea {
+  padding: 6px 8px;
+  background: #0e0e16;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toolbarRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px 8px;
+  background: #0e0e16;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
+}
+
+.iconBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.iconBtnActive {
+  composes: iconBtn;
+}
+
+.iconBtnActive:hover {
+  /* accent-shadow is set via --icon-accent custom property on the element */
+}

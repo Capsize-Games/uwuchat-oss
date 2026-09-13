@@ -1,0 +1,20 @@
+/* ConversationSection — summarization settings (framework) */
+
+.section {
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 0.8rem;
+}
+
+.range {
+  accent-color: var(--theme-primary);
+}

@@ -1,0 +1,57 @@
+/* RecentlyPlayedItem — inline style refactor */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.albumArt {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.albumArtFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--theme-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artistNames {
+  font-size: 0.68rem;
+  color: var(--theme-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timeAgo {
+  font-size: 0.65rem;
+  color: var(--theme-text-secondary);
+  flex-shrink: 0;
+}

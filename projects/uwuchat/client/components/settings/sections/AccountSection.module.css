@@ -1,0 +1,98 @@
+/* AccountSection — inline style refactor */
+
+.sectionHeading {
+  color: var(--theme-text-primary);
+}
+
+.emailLabel {
+  color: var(--theme-text-secondary);
+}
+
+.emailValue {
+  color: var(--theme-text-primary);
+}
+
+.settingsBtn {
+  composes: chipBtn from "../../../styles/primitives.module.css";
+  color: var(--theme-text-primary);
+}
+
+.settingsBtnSubtle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--theme-border);
+  color: var(--theme-text-primary);
+}
+.settingsBtnSubtle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.settingsBtnDanger {
+  background: rgba(var(--bs-danger-rgb), 0.12);
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.35);
+  color: var(--bs-danger);
+}
+.settingsBtnDanger:hover {
+  background: rgba(var(--bs-danger-rgb), 0.2);
+  border: 1px solid rgba(var(--bs-danger-rgb), 0.5);
+}
+
+.unverifiedAlert {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  background: rgba(255, 170, 0, 0.1);
+  color: var(--bs-warning);
+}
+
+.subText {
+  color: var(--theme-text-secondary);
+}
+
+.subTierLabel {
+  color: var(--theme-text-secondary);
+}
+
+.subTierValue {
+  color: var(--theme-text-primary);
+}
+
+.subStatus {
+  color: var(--theme-text-secondary);
+}
+
+.subRenews {
+  color: var(--theme-text-secondary);
+}
+
+.subRenewsValue {
+  color: var(--theme-text-primary);
+}
+
+.subManageBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.subManageBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dangerHeading {
+  color: var(--bs-danger);
+}
+
+.footer {
+  color: var(--theme-text-secondary);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+.linkText {
+  color: var(--bs-primary);
+  cursor: pointer;
+}
+
+.separator {
+  border-color: var(--theme-separator);
+}

@@ -1,0 +1,123 @@
+/* HeadlesscodeProjectsPanel — project registry settings */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hint {
+  font-size: 0.82rem;
+  color: var(--theme-text-secondary);
+  opacity: 0.85;
+  margin: 0;
+}
+
+.state {
+  font-size: 0.85rem;
+  color: var(--theme-text-secondary);
+  opacity: 0.8;
+  padding: 10px 0;
+}
+
+.error {
+  font-size: 0.82rem;
+  color: var(--theme-danger, #e05b5b);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(var(--theme-text-rgb), 0.08);
+}
+
+.rowText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rowName {
+  font-weight: 600;
+  color: var(--theme-text);
+}
+
+.rowPath {
+  font-size: 0.78rem;
+  color: var(--theme-text-secondary);
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(var(--theme-text-rgb), 0.1);
+}
+
+.input {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--theme-text-rgb), 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--theme-text);
+  font-size: 0.85rem;
+}
+
+.primaryBtn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--theme-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ghostBtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--theme-text-rgb), 0.18);
+  background: transparent;
+  color: var(--theme-text-secondary);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.dangerBtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--theme-danger, #e05b5b), 0.5);
+  background: transparent;
+  color: var(--theme-danger, #e05b5b);
+  font-size: 0.82rem;
+  cursor: pointer;
+}

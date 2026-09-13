@@ -1,0 +1,124 @@
+.page { display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; }
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 56px;
+  background: rgba(22, 22, 42, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  flex-shrink: 0;
+}
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--theme-text, #c8c8c8);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+}
+.navLink:hover {
+  opacity: 0.8;
+  color: var(--theme-text, #c8c8c8);
+  text-decoration: none;
+}
+.navCta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  background: var(--theme-primary, #0084b9);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.navCta:hover {
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.contentNoSticky {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+  padding: 20px 32px;
+  background: rgba(22, 22, 42, 0.5);
+}
+.footerInner {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footerLinks a {
+  color: var(--theme-text-secondary, #a0a0a8);
+  text-decoration: none;
+}
+.footerLinks a:hover {
+  color: var(--theme-text, #c8c8c8);
+}
+
+/* ── Specificity bump: beat global a:not(.btn) rule ── */
+.nav .navLink,
+.nav .navLink:hover {
+  color: var(--theme-text, #c8c8c8);
+  text-decoration: none;
+}
+.nav .navCta,
+.nav .navCta:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .brand,
+.nav .brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.footer .footerLinks a,
+.footer .footerLinks a:hover {
+  color: var(--theme-text-secondary, #a0a0a8);
+  text-decoration: none;
+}
+.footer .footerLinks a:hover {
+  color: var(--theme-text, #c8c8c8);
+}

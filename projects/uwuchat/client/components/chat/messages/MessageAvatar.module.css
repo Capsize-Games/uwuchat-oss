@@ -1,0 +1,33 @@
+/* MessageAvatar — inline style refactor */
+
+.avatarCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(var(--theme-text-rgb), 0.15);
+  flex-shrink: 0;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.avatarClickable {
+  composes: avatarCircle;
+  cursor: pointer;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kaomoji {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--theme-text-secondary);
+  letter-spacing: 0.03em;
+}

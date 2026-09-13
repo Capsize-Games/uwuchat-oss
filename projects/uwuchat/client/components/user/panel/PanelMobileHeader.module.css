@@ -1,0 +1,21 @@
+/* PanelMobileHeader */
+
+.wrapper {
+  composes: flexRowBetween from "@/styles/primitives.module.css";
+  padding: 0 16px;
+  height: 44px;
+  border-bottom: 1px solid var(--theme-border);
+  background: var(--theme-panel-bg);
+  flex-shrink: 0;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--theme-text-primary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
