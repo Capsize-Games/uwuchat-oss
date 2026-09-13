@@ -1,0 +1,6 @@
+/* Top bar — flex spacer for action menu */
+
+.menuArea {
+  flex: 1;
+  min-width: 0;
+}

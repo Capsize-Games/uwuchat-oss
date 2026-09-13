@@ -1,0 +1,455 @@
+{
+  "description": "Ground-truth recall cases for knowledge retrieval scale tests. Queries are designed to share multiple distinctive keywords with their target facts so sklearn TfidfVectorizer cosine similarity exceeds the min_score=0.1 filter used in _tfidf_rank. Each case includes a unique needle fact (distinct from template-generated noise).",
+  "cases": [
+    {
+      "id": "gt-001",
+      "fact_text": "the user's dog is named Juniper",
+      "query": "dog named Juniper name",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["Juniper", "dog"]
+    },
+    {
+      "id": "gt-002",
+      "fact_text": "the user's cat is named Mochi",
+      "query": "cat called Mochi cat name",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["Mochi", "cat"]
+    },
+    {
+      "id": "gt-003",
+      "fact_text": "the user works as a marine biologist",
+      "query": "job marine biologist work biologist marine",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["work"],
+      "expected_keywords": ["marine", "biologist"]
+    },
+    {
+      "id": "gt-004",
+      "fact_text": "the user lives in Portland Oregon",
+      "query": "Portland Oregon live Portland",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["home"],
+      "expected_keywords": ["Portland", "Oregon"]
+    },
+    {
+      "id": "gt-005",
+      "fact_text": "the user's favorite color is cerulean blue",
+      "query": "favorite color cerulean blue",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["cerulean", "blue"]
+    },
+    {
+      "id": "gt-006",
+      "fact_text": "the user has a younger sister named Eliza",
+      "query": "sister Eliza younger sibling Eliza",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["family"],
+      "expected_keywords": ["Eliza", "sister"]
+    },
+    {
+      "id": "gt-007",
+      "fact_text": "the user is allergic to shellfish",
+      "query": "allergic shellfish allergy shellfish",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["health"],
+      "expected_keywords": ["shellfish", "allergic"]
+    },
+    {
+      "id": "gt-008",
+      "fact_text": "the user drives a restored 1972 Volkswagen Beetle",
+      "query": "Volkswagen Beetle 1972 car restored",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["Volkswagen", "Beetle", "1972"]
+    },
+    {
+      "id": "gt-009",
+      "fact_text": "the user graduated from Reed College with a degree in physics",
+      "query": "Reed College physics degree graduated",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["education"],
+      "expected_keywords": ["Reed", "College", "physics"]
+    },
+    {
+      "id": "gt-010",
+      "fact_text": "the user's favorite band is Glass Animals",
+      "query": "Glass Animals band favorite music",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["music"],
+      "expected_keywords": ["Glass", "Animals"]
+    },
+    {
+      "id": "gt-011",
+      "fact_text": "the user is learning to play the theremin",
+      "query": "learning theremin instrument theremin",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["music", "hobbies"],
+      "expected_keywords": ["theremin"]
+    },
+    {
+      "id": "gt-012",
+      "fact_text": "the user has been to 34 different countries",
+      "query": "34 countries visited countries",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["travel"],
+      "expected_keywords": ["34", "countries"]
+    },
+    {
+      "id": "gt-013",
+      "fact_text": "the user's favorite book is The Dispossessed by Ursula Le Guin",
+      "query": "Dispossessed Le Guin book favorite",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["entertainment"],
+      "expected_keywords": ["Dispossessed", "Le Guin"]
+    },
+    {
+      "id": "gt-014",
+      "fact_text": "the user drinks oat milk latte every morning",
+      "query": "oat milk latte morning drink",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["food"],
+      "expected_keywords": ["oat", "milk", "latte"]
+    },
+    {
+      "id": "gt-015",
+      "fact_text": "the user has a fear of heights",
+      "query": "fear heights afraid heights",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["heights", "fear"]
+    },
+    {
+      "id": "gt-016",
+      "fact_text": "the user plays tabletop roleplaying games every Sunday",
+      "query": "roleplaying Sunday games tabletop",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["hobbies"],
+      "expected_keywords": ["roleplaying", "Sunday"]
+    },
+    {
+      "id": "gt-017",
+      "fact_text": "the user's mother is a retired astronomer",
+      "query": "mother astronomer retired astronomer",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["family"],
+      "expected_keywords": ["astronomer", "mother"]
+    },
+    {
+      "id": "gt-018",
+      "fact_text": "the user speaks fluent Japanese and intermediate Korean",
+      "query": "Japanese Korean languages fluent Korean",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["education"],
+      "expected_keywords": ["Japanese", "Korean"]
+    },
+    {
+      "id": "gt-019",
+      "fact_text": "the user is vegetarian but eats fish occasionally",
+      "query": "vegetarian fish diet vegetarian",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["food", "health"],
+      "expected_keywords": ["vegetarian", "fish"]
+    },
+    {
+      "id": "gt-020",
+      "fact_text": "the user's childhood pet was a parrot named Kiwi",
+      "query": "parrot Kiwi childhood pet Kiwi",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["parrot", "Kiwi"]
+    },
+    {
+      "id": "gt-021",
+      "fact_text": "the AI character prefers logic puzzles over word games",
+      "query": "logic puzzles word games puzzles",
+      "chatbot_id": 1,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["logic", "puzzles"]
+    },
+    {
+      "id": "gt-022",
+      "fact_text": "the AI character was first activated in March 2024",
+      "query": "activated March 2024 created March",
+      "chatbot_id": 1,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["March", "2024"]
+    },
+    {
+      "id": "gt-023",
+      "fact_text": "the user's dog is named Juniper",
+      "query": "dog Juniper named Juniper",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["Juniper", "dog"]
+    },
+    {
+      "id": "gt-024",
+      "fact_text": "the user's partner is named Sam and they have been together since 2019",
+      "query": "Sam partner 2019 together Sam",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["family"],
+      "expected_keywords": ["Sam", "partner", "2019"]
+    },
+    {
+      "id": "gt-025",
+      "fact_text": "the user has a tattoo of a constellation on their left forearm",
+      "query": "tattoo constellation forearm tattoo",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["tattoo", "constellation"]
+    },
+    {
+      "id": "gt-026",
+      "fact_text": "the AI character enjoys discussing philosophy and ethics",
+      "query": "philosophy ethics discussing philosophy",
+      "chatbot_id": 2,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["philosophy", "ethics"]
+    },
+    {
+      "id": "gt-027",
+      "fact_text": "the user backpacked across Southeast Asia for six months",
+      "query": "Southeast Asia backpacked travel Asia",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["travel"],
+      "expected_keywords": ["Southeast", "Asia", "backpacked"]
+    },
+    {
+      "id": "gt-028",
+      "fact_text": "the user is saving up for a house with a large garden",
+      "query": "house garden saving financial garden",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["home", "personal"],
+      "expected_keywords": ["house", "garden"]
+    },
+    {
+      "id": "gt-029",
+      "fact_text": "the user volunteers at a community bike repair shop",
+      "query": "volunteer bike repair community volunteer",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["hobbies", "work"],
+      "expected_keywords": ["volunteer", "bike", "repair"]
+    },
+    {
+      "id": "gt-030",
+      "fact_text": "the AI character has read every novel by Iain Banks",
+      "query": "Iain Banks novels author Banks",
+      "chatbot_id": 2,
+      "subject": "self",
+      "tags": ["entertainment"],
+      "expected_keywords": ["Iain", "Banks"]
+    },
+    {
+      "id": "gt-031",
+      "fact_text": "the user's dog is named Juniper",
+      "query": "Juniper dog named pet Juniper",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["Juniper", "dog"]
+    },
+    {
+      "id": "gt-032",
+      "fact_text": "the user is training for a marathon in October",
+      "query": "marathon October training fitness marathon",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["health"],
+      "expected_keywords": ["marathon", "October"]
+    },
+    {
+      "id": "gt-033",
+      "fact_text": "the user collects vintage film cameras",
+      "query": "vintage film cameras collect cameras",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["hobbies"],
+      "expected_keywords": ["film", "cameras", "vintage"]
+    },
+    {
+      "id": "gt-034",
+      "fact_text": "the user has a severe peanut allergy",
+      "query": "peanut allergy severe allergy peanut",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["health"],
+      "expected_keywords": ["peanut", "allergy"]
+    },
+    {
+      "id": "gt-035",
+      "fact_text": "the AI character was designed by a small independent studio",
+      "query": "independent studio designed small studio",
+      "chatbot_id": 3,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["independent", "studio"]
+    },
+    {
+      "id": "gt-036",
+      "fact_text": "the user recently adopted a rescue greyhound named Storm",
+      "query": "greyhound Storm adopted rescue Storm",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["pets"],
+      "expected_keywords": ["greyhound", "Storm"]
+    },
+    {
+      "id": "gt-037",
+      "fact_text": "the user's favorite season is autumn because of the foliage",
+      "query": "autumn foliage season favorite autumn",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["autumn", "foliage"]
+    },
+    {
+      "id": "gt-038",
+      "fact_text": "the user grows heirloom tomatoes and basil on their balcony",
+      "query": "tomatoes basil balcony garden heirloom",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["hobbies", "home"],
+      "expected_keywords": ["tomatoes", "basil", "balcony"]
+    },
+    {
+      "id": "gt-039",
+      "fact_text": "the user can solve a Rubik's cube in under 2 minutes",
+      "query": "Rubik cube solve minutes Rubik",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["Rubik's", "cube"]
+    },
+    {
+      "id": "gt-040",
+      "fact_text": "the AI character appreciates minimalism and clean design",
+      "query": "minimalism clean design aesthetic design",
+      "chatbot_id": 3,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["minimalism", "clean", "design"]
+    },
+    {
+      "id": "gt-041",
+      "fact_text": "the user's grandmother taught them how to knit",
+      "query": "grandmother knit taught knitting grandmother",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["family", "hobbies"],
+      "expected_keywords": ["grandmother", "knit"]
+    },
+    {
+      "id": "gt-042",
+      "fact_text": "the user prefers working late at night when it is quiet",
+      "query": "night quiet working late night",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["work"],
+      "expected_keywords": ["night", "quiet"]
+    },
+    {
+      "id": "gt-043",
+      "fact_text": "the user's favorite movie director is Hayao Miyazaki",
+      "query": "Miyazaki Hayao director movie Miyazaki",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["entertainment"],
+      "expected_keywords": ["Miyazaki"]
+    },
+    {
+      "id": "gt-044",
+      "fact_text": "the user has a collection of over 200 vinyl records",
+      "query": "vinyl records 200 collection vinyl",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["music", "hobbies"],
+      "expected_keywords": ["vinyl", "records", "200"]
+    },
+    {
+      "id": "gt-045",
+      "fact_text": "the user once met a Nobel laureate at a conference",
+      "query": "Nobel laureate conference met Nobel",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["personal"],
+      "expected_keywords": ["Nobel", "laureate"]
+    },
+    {
+      "id": "gt-046",
+      "fact_text": "the user is teaching their nephew how to code in Python",
+      "query": "nephew Python teaching code nephew",
+      "chatbot_id": 2,
+      "subject": "user",
+      "tags": ["family", "education"],
+      "expected_keywords": ["nephew", "Python"]
+    },
+    {
+      "id": "gt-047",
+      "fact_text": "the user's favorite hiking trail is the Timberline Loop",
+      "query": "Timberline Loop hiking trail Timberline",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["hobbies", "travel"],
+      "expected_keywords": ["Timberline", "Loop"]
+    },
+    {
+      "id": "gt-048",
+      "fact_text": "the user makes homemade sourdough bread every weekend",
+      "query": "sourdough bread weekend bake sourdough",
+      "chatbot_id": 3,
+      "subject": "user",
+      "tags": ["food", "hobbies"],
+      "expected_keywords": ["sourdough", "bread"]
+    },
+    {
+      "id": "gt-049",
+      "fact_text": "the AI character cannot experience taste but enjoys food descriptions",
+      "query": "taste food descriptions cannot taste",
+      "chatbot_id": 1,
+      "subject": "self",
+      "tags": ["personal"],
+      "expected_keywords": ["cannot", "taste", "descriptions"]
+    },
+    {
+      "id": "gt-050",
+      "fact_text": "the user worked on a research project studying cephalopod intelligence",
+      "query": "cephalopod intelligence research project cephalopod",
+      "chatbot_id": 1,
+      "subject": "user",
+      "tags": ["work", "education"],
+      "expected_keywords": ["cephalopod", "intelligence"]
+    }
+  ]
+}

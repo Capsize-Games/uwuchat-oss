@@ -1,0 +1,51 @@
+[tool.ruff]
+exclude = ["**/vendor/"]
+
+[tool.ruff.lint.per-file-ignores]
+# Vendor code — pre-existing violations we do not own
+"**/vendor/**" = ["ALL"]
+# Test files — E402 imports intentional after path setup
+"**/tests/**" = ["E402"]
+
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+exclude = '.*_ui\.py$'
+line-length = 79
+
+[tool.pytest.ini_options]
+markers = [
+    "gui: tests that require Qt GUI components (may cause thread issues when run in bulk)",
+    "gui_functional: headless GUI functional tests with mocked backends",
+    "slow: tests that take a long time to run",
+    "fast: tests that use mocked responses and run quickly",
+    "asyncio: asynchronous test marker",
+    "integration: integration test marker",
+    "gpu: tests that require GPU hardware",
+    "eval: evaluation tests for LLM/model quality testing",
+    "streaming: tests for streaming response functionality",
+    "llm_runtime_smoke: safe llama.cpp runtime smoke tests using doubles only",
+    "stt_runtime_smoke: safe STT runtime smoke tests using doubles only",
+    "art_runtime_smoke: safe art runtime smoke tests using doubles only",
+    "art_service_runtime: direct art service runtime tests using real local models",
+    "functional: DB-backed functional tests requiring a real database",
+    "tts_runtime_smoke: safe TTS runtime smoke tests using doubles only",
+    "llm_required: tests that require an LLM model to be loaded",
+    "benchmark: tests using standard benchmark datasets (GSM8K, MATH, HumanEval)",
+    "code: tests for code generation capabilities",
+]
+testpaths = [
+    "server/tests",
+    "server/src/airunner_services/tests",
+    "extensions/auth/tests",
+    "extensions/fastsearch/tests",
+    "projects/uwuchat/server/tests",
+]
+asyncio_mode = "auto"
+# Disable parallel execution to prevent worker cleanup issues
+# Use serial execution for now until worker cleanup is fixed
+# -s disables output capturing for real-time feedback
+# -v shows verbose test names
+addopts = "--maxfail=100 --timeout=30 -s -v"

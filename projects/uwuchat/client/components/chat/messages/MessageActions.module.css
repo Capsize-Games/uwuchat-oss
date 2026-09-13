@@ -1,0 +1,32 @@
+/* MessageActions — inline style refactor */
+
+.wrap {
+  left: 4px;
+  right: auto;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.bar {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 2px 4px;
+  pointer-events: auto;
+}
+
+.actionBtn {
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 11;
+}
+
+.reportBtn {
+  composes: actionBtn;
+  color: rgba(255, 200, 100, 0.7);
+}
+
+.deleteBtn {
+  composes: actionBtn;
+  color: rgba(255, 100, 100, 0.8);
+}

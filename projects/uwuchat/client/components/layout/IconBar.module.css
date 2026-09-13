@@ -1,0 +1,14 @@
+/* IconBar — inline style refactor */
+
+.bar { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 2px; flex-shrink: 0; overflow-y: auto; }
+.homeWrap { padding: 10px 0; display: flex; justify-content: center; flex-shrink: 0; }
+.homeBtn { width: 36px; height: 36px; border-radius: 50%; background: var(--bs-primary); display: flex; align-items: center; justify-content: center; color: #fff; border: none; padding: 0; cursor: pointer; transition: opacity 0.15s ease; }
+.homeBtn:hover { opacity: 0.85; }
+.iconBtn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.4); padding: 4px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; transition: background 0.1s,color 0.1s; flex-shrink: 0; }
+.iconBtn:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); }
+.iconBtnActive { composes: iconBtn; color: var(--bs-primary); }
+.iconBtnActive:hover { background: none; color: var(--bs-primary); }
+.msgCount { font-size: 9px; font-weight: 700; color: #4ade80; margin-top: -4px; }
+.sep { width: 20px; height: 1px; background: rgba(255,255,255,0.08); margin: 4px 0; flex-shrink: 0; }
+.tooltip { position: fixed; z-index: 9999; padding: 4px 8px; border-radius: 4px; background: rgba(0,0,0,0.85); color: #fff; font-size: 11px; white-space: nowrap; pointer-events: none; }
+.accountBtnWrap { position: relative; }

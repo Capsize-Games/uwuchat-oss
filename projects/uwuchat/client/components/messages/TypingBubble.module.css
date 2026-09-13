@@ -1,0 +1,10 @@
+@keyframes uwu-typing-dot { 0%, 60%, 100% { transform: scale(0.65); opacity: 0.35; } 30% { transform: scale(1.1); opacity: 1; } }
+.wrap { display: flex; align-items: center; gap: 8px; padding: 6px 16px; margin-top: 12px; }
+.avatarCircle { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 2px solid rgba(var(--theme-text-rgb), 0.15); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.bubble { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 6px 12px; display: flex; align-items: center; gap: 8px; }
+.nameLabel { font-size: 0.8rem; color: var(--theme-text-secondary); font-weight: 500; }
+.avatar { font-size: 1.2rem; opacity: 0.55; flex-shrink: 0; }
+.dots { display: flex; align-items: center; gap: 5px; height: 22px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--theme-text-secondary, #b5bac1); display: inline-block; animation: uwu-typing-dot 1.2s ease-in-out infinite; }
+.dot:nth-child(2) { animation-delay: 0.15s; }
+.dot:nth-child(3) { animation-delay: 0.3s; }

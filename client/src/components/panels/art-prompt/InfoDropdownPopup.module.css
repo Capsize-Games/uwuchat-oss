@@ -1,0 +1,33 @@
+/* InfoDropdownPopup — version/model/scheduler/gentype dropdown portal (framework) */
+
+.popup {
+  composes: popupFixed from "./PopupShared.module.css";
+  max-height: 240px;
+  max-width: 280px;
+}
+
+.genTypeBtn {
+  composes: genTypeBtn from "./PopupShared.module.css";
+}
+
+.genTypeBtnActive {
+  composes: genTypeBtnActive from "./PopupShared.module.css";
+}
+
+.genTypeDesc {
+  composes: genTypeDesc from "./PopupShared.module.css";
+}
+
+.opt {
+  composes: dropdownOpt from "./PopupShared.module.css";
+}
+
+.optActive {
+  composes: dropdownOptActive from "./PopupShared.module.css";
+}
+
+.noOptions {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary);
+}

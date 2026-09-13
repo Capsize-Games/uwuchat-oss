@@ -1,0 +1,12 @@
+{
+  "sessionId": "both",
+  "mode": "code",
+  "model": "deepseek/deepseek-v4-flash",
+  "iterations": 2,
+  "inputTokens": 80,
+  "outputTokens": 40,
+  "costUsd": 0.003,
+  "startedAt": "2026-08-02T12:00:00.000Z",
+  "status": "running",
+  "workspaceRoot": "/fixture/workspace"
+}

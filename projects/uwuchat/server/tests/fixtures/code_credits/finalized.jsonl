@@ -1,0 +1,1 @@
+{"sessionId": "finalized", "mode": "code", "model": "deepseek/deepseek-v4-flash", "iterations": 10, "inputTokens": 400, "outputTokens": 200, "costUsd": 0.0109, "startedAt": "2026-08-02T12:00:00.000Z", "endedAt": "2026-08-02T12:15:00.000Z", "status": "success", "workspaceRoot": "/fixture/workspace"}

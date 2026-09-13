@@ -1,0 +1,35 @@
+/* ArtPromptToolbar — version/model/scheduler toolbar (framework) */
+
+.toolbar {
+  gap: 4px;
+  padding: 4px 0;
+  margin-bottom: 4px;
+}
+
+.spinner {
+  color: var(--theme-text-secondary);
+  width: 12px;
+  height: 12px;
+}
+
+.selectSm {
+  font-size: 11px;
+}
+
+.select1 {
+  composes: selectSm;
+  flex: 1;
+  min-width: 90px;
+}
+
+.select2 {
+  composes: selectSm;
+  flex: 2;
+  min-width: 110px;
+}
+
+.select3 {
+  composes: selectSm;
+  flex: 1;
+  min-width: 100px;
+}

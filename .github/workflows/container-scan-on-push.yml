@@ -1,0 +1,54 @@
+name: Container Image Vulnerability Scan
+
+# docker-build.yml only builds+publishes images on a GitHub release or
+# manual dispatch -- it never runs on a routine push to master, so
+# Trivy's OS-level CVE coverage there never actually executes for the
+# normal commit-straight-to-master workflow this repo uses. This
+# workflow closes that gap: it builds the server image locally (without
+# publishing to GHCR) on every push to master and scans it.
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: container-scan-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build server image (local only, not pushed)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./docker/Dockerfile
+          build-args: |
+            BUILD_DEPS_LOCAL=1
+            EXTRAS=core
+          platforms: linux/amd64
+          push: false
+          load: true
+          tags: airunner-server:scan-${{ github.sha }}
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/cache:uwuchat-server
+
+      - name: Scan server image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "airunner-server:scan-${{ github.sha }}"
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+

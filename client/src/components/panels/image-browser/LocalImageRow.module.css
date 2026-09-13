@@ -1,0 +1,26 @@
+/* LocalImageRow — local image row in browser (framework) */
+
+.row {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.thumbnail {
+  width: 96px;
+  height: 96px;
+}
+
+.thumbImg {
+  object-fit: cover;
+}
+
+.filename {
+  word-break: break-all;
+}
+
+.deleteLink {
+  vertical-align: baseline;
+}
+
+.metaBlock {
+  line-height: 1.4;
+}

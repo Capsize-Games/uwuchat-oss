@@ -1,0 +1,52 @@
+/* ActivePills — embedding & LoRA pill styles (framework) */
+
+.pillGroup {
+  background: rgba(0, 132, 185, 0.05);
+  border: 1px solid rgba(0, 132, 185, 0.25);
+}
+
+.pillGroupLora {
+  background: rgba(185, 0, 132, 0.05);
+  border: 1px solid rgba(184, 0, 132, 0.25);
+}
+
+.pillLabel {
+  color: #0084b8;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.pillLabelLora {
+  color: #b80084;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 132, 185, 0.2);
+  border: 1px solid #0084b8;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  color: var(--theme-text);
+}
+
+.pillLora {
+  composes: pill;
+  background: rgba(185, 0, 132, 0.2);
+  border-color: #b80084;
+}
+
+.pillClose {
+  cursor: pointer;
+  color: #ff5555;
+  font-size: 0.7rem;
+  line-height: 1;
+}

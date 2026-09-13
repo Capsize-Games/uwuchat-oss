@@ -1,0 +1,44 @@
+/* ChatToolbar — inline style refactor */
+
+.toolbar {
+  gap: 2px;
+  padding: 3px 4px;
+}
+
+.spacer {
+  margin-left: auto;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.sendActive {
+  composes: actionBtn;
+  background: var(--bs-primary);
+  cursor: pointer;
+}
+
+.sendDisabled {
+  composes: actionBtn;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: default;
+}
+
+.cancelBtn {
+  composes: actionBtn;
+  background: var(--bs-danger);
+  cursor: pointer;
+}
+
+.btnIcon {
+  font-size: 14px;
+}

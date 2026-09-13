@@ -1,0 +1,22 @@
+/* SizePopup — image size picker portal (framework) */
+
+.popup {
+  composes: popupFixed from "./PopupShared.module.css";
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.row {
+  gap: 6px;
+}
+
+.label {
+  font-size: 9px;
+  color: var(--theme-text-secondary);
+  width: 10px;
+  flex-shrink: 0;
+}
+
+.input {
+  composes: numInputSm from "./ArtShared.module.css";
+}

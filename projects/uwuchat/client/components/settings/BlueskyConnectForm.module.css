@@ -1,0 +1,21 @@
+/* BlueskyConnectForm — inputs and button row */
+
+.input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-border);
+  background: var(--theme-input-bg);
+  color: var(--theme-text-primary);
+  font-size: 0.82rem;
+  outline: none;
+}
+
+.errorText {
+  font-size: 0.72rem;
+  color: var(--bs-danger);
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+}

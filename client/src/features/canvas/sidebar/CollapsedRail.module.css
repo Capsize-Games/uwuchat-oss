@@ -1,0 +1,28 @@
+.root {
+  width: 32px;
+  background: #181824;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 4px 0;
+  gap: 2px;
+}
+
+.railBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+
+.railBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}

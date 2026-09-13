@@ -1,0 +1,6 @@
+/* LoraPanel — LoRA model list panel (framework) */
+
+.header {
+  padding: 8px 12px 6px;
+  z-index: 1;
+}

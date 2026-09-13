@@ -1,0 +1,41 @@
+.menu {
+  position: fixed;
+  z-index: 9999;
+  background: #1e1e2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 4px 0;
+  min-width: 160px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: 6px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 12px;
+}
+
+.menuItem:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.menuItemEnabled {
+  cursor: pointer;
+}
+
+.menuItemDisabled {
+  cursor: default;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.menuItemNormal {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.menuItemDanger {
+  color: rgba(255, 100, 100, 0.8);
+}

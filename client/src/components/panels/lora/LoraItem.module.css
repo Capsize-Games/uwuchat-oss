@@ -1,0 +1,50 @@
+/* LoraItem — LoRA card in the LoRA panel (framework) */
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+}
+
+.nameEnabled {
+  color: #c8c8c8;
+}
+
+.nameDisabled {
+  color: #666;
+}
+
+.word {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(0, 132, 185, 0.15);
+  border: 1px solid var(--bs-primary);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  color: var(--theme-text);
+  cursor: pointer;
+}
+
+.wordClose {
+  cursor: pointer;
+  color: #ff5555;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 1px 2px;
+}
+
+.input {
+  background: #1a1a2e;
+  color: var(--theme-text);
+  border-color: #333;
+  font-size: 0.7rem;
+}
+
+.addBtn {
+  background: var(--bs-primary);
+  border: none;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+}

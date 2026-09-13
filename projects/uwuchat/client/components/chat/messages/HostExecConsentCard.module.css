@@ -1,0 +1,74 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--theme-border, #333);
+  border-radius: 10px;
+  background: var(--theme-surface, #1e1e1e);
+  max-width: 520px;
+}
+
+.header {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.command {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  padding: 6px 8px;
+  background: var(--theme-input-bg, #141414);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+.group {
+  font-size: 0.8rem;
+  color: var(--theme-text-secondary, #888);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.actions button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.approve {
+  background: var(--theme-success, #57f287);
+  color: #08140a;
+}
+
+.always {
+  background: var(--theme-accent, #5865f2);
+  color: #fff;
+}
+
+.deny {
+  background: var(--theme-danger, #ed4245);
+  color: #fff;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: var(--theme-text-secondary, #888);
+}
+
+.done {
+  font-size: 0.9rem;
+  color: var(--theme-success, #57f287);
+}
+
+.error {
+  font-size: 0.9rem;
+  color: var(--theme-danger, #ed4245);
+}

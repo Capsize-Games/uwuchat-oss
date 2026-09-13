@@ -1,0 +1,3 @@
+.hero { padding: 60px 20px 40px; text-align: center; }
+.heroTitle { font-size: 2rem; font-weight: 800; color: var(--theme-heading); }
+.heroSub { font-size: 1rem; color: var(--theme-text-secondary); max-width: 500px; margin: 12px auto 0; }
